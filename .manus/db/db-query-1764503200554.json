@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS endpoint_performance_metrics (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  baseline_id INT NOT NULL,\n  response_time INT NOT NULL,\n  status_code INT NOT NULL,\n  success BOOLEAN NOT NULL,\n  error_message TEXT,\n  request_payload JSON,\n  response_size INT,\n  measured_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,\n  FOREIGN KEY (baseline_id) REFERENCES performance_baselines(id) ON DELETE CASCADE\n)",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS endpoint_performance_metrics (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  baseline_id INT NOT NULL,\n  response_time INT NOT NULL,\n  status_code INT NOT NULL,\n  success BOOLEAN NOT NULL,\n  error_message TEXT,\n  request_payload JSON,\n  response_size INT,\n  measured_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,\n  FOREIGN KEY (baseline_id) REFERENCES performance_baselines(id) ON DELETE CASCADE\n)",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1716
+}

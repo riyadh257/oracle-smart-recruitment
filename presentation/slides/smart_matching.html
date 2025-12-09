@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Matching Algorithm</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #0A0E27 0%, #1a1f3a 50%, #0A0E27 100%);
+            position: relative;
+            overflow: hidden;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        /* Header */
+        .header {
+            padding-top: 60px;
+            padding-left: 80px;
+            padding-right: 80px;
+            margin-bottom: 45px;
+        }
+        
+        .page-title {
+            font-size: 36px;
+            font-weight: 600;
+            color: #00D9FF;
+            margin-bottom: 12px;
+        }
+        
+        .page-subtitle {
+            font-size: 18px;
+            color: #E8EDF2;
+            opacity: 0.8;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* Main content */
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr 1fr;
+            gap: 40px;
+            padding-left: 80px;
+            padding-right: 80px;
+            align-items: center;
+        }
+        
+        /* Matching Factors Section */
+        .factors-section {
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+        
+        .section-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #7B61FF;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        
+        .factor-item {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .factor-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .factor-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: #E8EDF2;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .factor-icon {
+            width: 32px;
+            height: 32px;
+            background: rgba(0, 217, 255, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #00D9FF;
+        }
+        
+        .factor-weight {
+            font-size: 16px;
+            font-weight: 700;
+            color: #00D9FF;
+        }
+        
+        .factor-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .factor-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #00D9FF, #7B61FF);
+        }
+        
+        /* Algorithm Visualization */
+        .algorithm-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+        }
+        
+        .algorithm-box {
+            width: 100%;
+            background: rgba(0, 217, 255, 0.08);
+            padding-top: 30px;
+            padding-left: 25px;
+            padding-right: 25px;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .algorithm-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #00D9FF, #7B61FF);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            color: #0A0E27;
+        }
+        
+        .algorithm-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #00D9FF;
+            text-align: center;
+        }
+        
+        .algorithm-description {
+            font-size: 15px;
+            color: #E8EDF2;
+            opacity: 0.85;
+            text-align: center;
+            line-height: 1.5;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .process-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+        }
+        
+        .process-step {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            color: #E8EDF2;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .step-number {
+            width: 24px;
+            height: 24px;
+            background: rgba(123, 97, 255, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+            color: #7B61FF;
+            flex-shrink: 0;
+        }
+        
+        /* Results Section */
+        .results-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .match-score-display {
+            background: rgba(123, 97, 255, 0.1);
+            padding-top: 25px;
+            padding-left: 25px;
+            padding-right: 25px;
+            min-height: 140px;
+            text-align: center;
+        }
+        
+        .score-label {
+            font-size: 16px;
+            color: #E8EDF2;
+            opacity: 0.8;
+            margin-bottom: 10px;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .score-value {
+            font-size: 64px;
+            font-weight: 700;
+            color: #7B61FF;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+        
+        .score-status {
+            font-size: 14px;
+            font-weight: 600;
+            color: #00D9FF;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .chart-container {
+            width: 100%;
+            height: 240px;
+            position: relative;
+        }
+        
+        /* Feature highlights */
+        .features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .feature-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: #E8EDF2;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .badge-icon {
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #00D9FF;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1 class="page-title">Advanced Matching Algorithm: 95% Accuracy</h1>
+            <p class="page-subtitle">Multi-factor analysis delivering precise candidate-job fit predictions</p>
+        </div>
+        
+        <div class="content-wrapper">
+            <!-- Matching Factors -->
+            <div class="factors-section">
+                <div class="section-label">Matching Factors</div>
+                
+                <div class="factor-item">
+                    <div class="factor-header">
+                        <div class="factor-name">
+                            <div class="factor-icon"><i class="fas fa-cogs"></i></div>
+                            Skills Match
+                        </div>
+                        <div class="factor-weight">45%</div>
+                    </div>
+                    <div class="factor-bar">
+                        <div class="factor-bar-fill" style="width: 45%;"></div>
+                    </div>
+                </div>
+                
+                <div class="factor-item">
+                    <div class="factor-header">
+                        <div class="factor-name">
+                            <div class="factor-icon"><i class="fas fa-briefcase"></i></div>
+                            Experience
+                        </div>
+                        <div class="factor-weight">30%</div>
+                    </div>
+                    <div class="factor-bar">
+                        <div class="factor-bar-fill" style="width: 30%;"></div>
+                    </div>
+                </div>
+                
+                <div class="factor-item">
+                    <div class="factor-header">
+                        <div class="factor-name">
+                            <div class="factor-icon"><i class="fas fa-certificate"></i></div>
+                            Certifications
+                        </div>
+                        <div class="factor-weight">15%</div>
+                    </div>
+                    <div class="factor-bar">
+                        <div class="factor-bar-fill" style="width: 15%;"></div>
+                    </div>
+                </div>
+                
+                <div class="factor-item">
+                    <div class="factor-header">
+                        <div class="factor-name">
+                            <div class="factor-icon"><i class="fas fa-heart"></i></div>
+                            Preferences
+                        </div>
+                        <div class="factor-weight">10%</div>
+                    </div>
+                    <div class="factor-bar">
+                        <div class="factor-bar-fill" style="width: 10%;"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Algorithm Visualization -->
+            <div class="algorithm-section">
+                <div class="algorithm-box">
+                    <div class="algorithm-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="algorithm-title">AI Matching Engine</div>
+                    <div class="algorithm-description">
+                        Machine learning model trained on 10,000+ successful placements
+                    </div>
+                </div>
+                
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <span>Parse candidate profile & job requirements</span>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <span>Extract & normalize skills taxonomy</span>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <span>Calculate weighted factor scores</span>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <span>Generate comprehensive match report</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Results Display -->
+            <div class="results-section">
+                <div class="match-score-display">
+                    <div class="score-label">Match Score</div>
+                    <div class="score-value">92%</div>
+                    <div class="score-status">Excellent Fit</div>
+                </div>
+                
+                <div class="chart-container">
+                    <canvas id="matchBreakdownChart"></canvas>
+                </div>
+                
+                <div class="features-list">
+                    <div class="feature-badge">
+                        <div class="badge-icon"><i class="fas fa-check-circle"></i></div>
+                        <span>Real-time scoring updates</span>
+                    </div>
+                    <div class="feature-badge">
+                        <div class="badge-icon"><i class="fas fa-check-circle"></i></div>
+                        <span>Detailed skill-by-skill breakdown</span>
+                    </div>
+                    <div class="feature-badge">
+                        <div class="badge-icon"><i class="fas fa-check-circle"></i></div>
+                        <span>Bidirectional matching (candidate ↔ job)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Match Breakdown Chart
+        const ctx = document.getElementById('matchBreakdownChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: ['Technical Skills', 'Experience Level', 'Certifications', 'Cultural Fit', 'Career Goals'],
+                datasets: [{
+                    label: 'Candidate Score',
+                    data: [92, 88, 95, 85, 90],
+                    backgroundColor: 'rgba(0, 217, 255, 0.2)',
+                    borderColor: '#00D9FF',
+                    borderWidth: 2,
+                    pointBackgroundColor: '#00D9FF',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: '#00D9FF'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    r: {
+                        beginAtZero: true,
+                        max: 100,
+                        ticks: {
+                            stepSize: 20,
+                            color: '#E8EDF2',
+                            backdropColor: 'transparent',
+                            font: {
+                                size: 11,
+                                family: 'Inter'
+                            }
+                        },
+                        grid: {
+                            color: 'rgba(232, 237, 242, 0.2)'
+                        },
+                        pointLabels: {
+                            color: '#E8EDF2',
+                            font: {
+                                size: 12,
+                                family: 'Inter'
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

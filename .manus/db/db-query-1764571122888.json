@@ -1,0 +1,9 @@
+{
+  "query": "ALTER TABLE notification_preferences \nADD COLUMN IF NOT EXISTS email_notifications boolean DEFAULT true,\nADD COLUMN IF NOT EXISTS push_notifications boolean DEFAULT true,\nADD COLUMN IF NOT EXISTS in_app_notifications boolean DEFAULT true,\nADD COLUMN IF NOT EXISTS sound_enabled boolean DEFAULT true,\nADD COLUMN IF NOT EXISTS notify_on_candidate_applied boolean DEFAULT true,\nADD COLUMN IF NOT EXISTS notify_on_interview_scheduled boolean DEFAULT true,\nADD COLUMN IF NOT EXISTS notify_on_high_match boolean DEFAULT true,\nADD COLUMN IF NOT EXISTS high_match_threshold int DEFAULT 85,\nADD COLUMN IF NOT EXISTS enable_skill_update_alerts boolean DEFAULT false,\nADD COLUMN IF NOT EXISTS notification_frequency enum('instant','hourly','daily','weekly') DEFAULT 'instant';",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute ALTER TABLE notification_preferences \nADD COLUMN IF NOT EXISTS email_notifications boolean DEFAULT true,\nADD COLUMN IF NOT EXISTS push_notifications boolean DEFAULT true,\nADD COLUMN IF NOT EXISTS in_app_notifications boolean DEFAULT true,\nADD COLUMN IF NOT EXISTS sound_enabled boolean DEFAULT true,\nADD COLUMN IF NOT EXISTS notify_on_candidate_applied boolean DEFAULT true,\nADD COLUMN IF NOT EXISTS notify_on_interview_scheduled boolean DEFAULT true,\nADD COLUMN IF NOT EXISTS notify_on_high_match boolean DEFAULT true,\nADD COLUMN IF NOT EXISTS high_match_threshold int DEFAULT 85,\nADD COLUMN IF NOT EXISTS enable_skill_update_alerts boolean DEFAULT false,\nADD COLUMN IF NOT EXISTS notification_frequency enum('instant','hourly','daily','weekly') DEFAULT 'instant';",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 3824
+}

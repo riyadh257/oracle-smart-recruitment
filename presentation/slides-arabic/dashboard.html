@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font-family: 'Cairo', sans-serif; }
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .header {
+        padding-top: 50px;
+        padding-right: 80px;
+        padding-left: 80px;
+        margin-bottom: 40px;
+      }
+      
+      .title {
+        font-size: 36px;
+        font-weight: 700;
+        color: #60A5FA;
+        margin-bottom: 10px;
+      }
+      
+      .subtitle {
+        font-size: 18px;
+        color: #94A3B8;
+      }
+      
+      .stats-section {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+        padding-right: 80px;
+        padding-left: 80px;
+        margin-bottom: 35px;
+      }
+      
+      .stat-card {
+        background: rgba(30, 41, 59, 0.6);
+        padding-top: 25px;
+        padding-right: 25px;
+        padding-left: 25px;
+        min-height: 120px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      
+      .stat-icon-wrapper {
+        width: 60px;
+        height: 60px;
+        min-width: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(96, 165, 250, 0.15);
+      }
+      
+      .stat-icon {
+        font-size: 28px;
+        color: #60A5FA;
+      }
+      
+      .stat-icon.green {
+        color: #10B981;
+      }
+      
+      .stat-icon.purple {
+        color: #8B5CF6;
+      }
+      
+      .stat-icon-wrapper.green {
+        background: rgba(16, 185, 129, 0.15);
+      }
+      
+      .stat-icon-wrapper.purple {
+        background: rgba(139, 92, 246, 0.15);
+      }
+      
+      .stat-content {
+        flex: 1;
+      }
+      
+      .stat-value {
+        font-size: 32px;
+        font-weight: 700;
+        color: #E2E8F0;
+        margin-bottom: 5px;
+      }
+      
+      .stat-label {
+        font-size: 14px;
+        color: #94A3B8;
+      }
+      
+      .candidates-section {
+        padding-right: 80px;
+        padding-left: 80px;
+      }
+      
+      .section-title {
+        font-size: 20px;
+        font-weight: 700;
+        color: #E2E8F0;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      
+      .section-title i {
+        color: #60A5FA;
+        font-size: 18px;
+      }
+      
+      .candidates-table {
+        width: 100%;
+        border-collapse: collapse;
+        background: rgba(30, 41, 59, 0.4);
+      }
+      
+      .candidates-table thead {
+        background: rgba(30, 41, 59, 0.8);
+      }
+      
+      .candidates-table th {
+        padding-top: 15px;
+        padding-right: 20px;
+        padding-left: 20px;
+        min-height: 50px;
+        text-align: right;
+        font-size: 14px;
+        font-weight: 700;
+        color: #60A5FA;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      
+      .candidates-table td {
+        padding-top: 18px;
+        padding-right: 20px;
+        padding-left: 20px;
+        min-height: 60px;
+        text-align: right;
+        font-size: 15px;
+        color: #E2E8F0;
+        border-top: 1px solid rgba(71, 85, 105, 0.3);
+      }
+      
+      .candidate-name {
+        font-weight: 600;
+        color: #E2E8F0;
+      }
+      
+      .score-badge {
+        display: inline-block;
+        padding-top: 6px;
+        padding-right: 14px;
+        padding-left: 14px;
+        min-height: 32px;
+        background: rgba(16, 185, 129, 0.2);
+        color: #10B981;
+        font-weight: 700;
+        font-size: 14px;
+      }
+      
+      .status-badge {
+        display: inline-block;
+        padding-top: 6px;
+        padding-right: 14px;
+        padding-left: 14px;
+        min-height: 32px;
+        font-weight: 600;
+        font-size: 13px;
+      }
+      
+      .status-pending {
+        background: rgba(251, 191, 36, 0.2);
+        color: #FCD34D;
+      }
+      
+      .status-approved {
+        background: rgba(16, 185, 129, 0.2);
+        color: #10B981;
+      }
+      
+      .status-review {
+        background: rgba(96, 165, 250, 0.2);
+        color: #60A5FA;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1 class="title">لوحة التحكم التفاعلية</h1>
+            <p class="subtitle">متابعة شاملة لجميع المرشحين والتقييمات في مكان واحد</p>
+        </div>
+        
+        <div class="stats-section">
+            <div class="stat-card">
+                <div class="stat-icon-wrapper">
+                    <i class="fas fa-users stat-icon"></i>
+                </div>
+                <div class="stat-content">
+                    <div class="stat-value">247</div>
+                    <div class="stat-label">إجمالي المرشحين</div>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon-wrapper purple">
+                    <i class="fas fa-clock stat-icon purple"></i>
+                </div>
+                <div class="stat-content">
+                    <div class="stat-value">89</div>
+                    <div class="stat-label">قيد المراجعة</div>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon-wrapper green">
+                    <i class="fas fa-check-circle stat-icon green"></i>
+                </div>
+                <div class="stat-content">
+                    <div class="stat-value">52</div>
+                    <div class="stat-label">تم القبول</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="candidates-section">
+            <h2 class="section-title">
+                <i class="fas fa-list"></i>
+                <span>أحدث المرشحين</span>
+            </h2>
+            
+            <table class="candidates-table">
+                <thead>
+                    <tr>
+                        <th>الحالة</th>
+                        <th>الدرجة</th>
+                        <th>الوظيفة</th>
+                        <th>اسم المرشح</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="status-badge status-review">قيد المراجعة</span></td>
+                        <td><span class="score-badge">92/100</span></td>
+                        <td>مطور برمجيات</td>
+                        <td class="candidate-name">أحمد محمد علي</td>
+                    </tr>
+                    <tr>
+                        <td><span class="status-badge status-approved">مقبول</span></td>
+                        <td><span class="score-badge">88/100</span></td>
+                        <td>محلل بيانات</td>
+                        <td class="candidate-name">فاطمة حسن</td>
+                    </tr>
+                    <tr>
+                        <td><span class="status-badge status-pending">في الانتظار</span></td>
+                        <td><span class="score-badge">85/100</span></td>
+                        <td>مصمم UI/UX</td>
+                        <td class="candidate-name">خالد عبدالله</td>
+                    </tr>
+                    <tr>
+                        <td><span class="status-badge status-review">قيد المراجعة</span></td>
+                        <td><span class="score-badge">90/100</span></td>
+                        <td>مهندس DevOps</td>
+                        <td class="candidate-name">سارة أحمد</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

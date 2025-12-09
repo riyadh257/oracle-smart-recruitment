@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS `interview_email_templates` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `name` varchar(255) NOT NULL,\n  `type` enum('confirmation','reminder','cancellation','reschedule') NOT NULL,\n  `subject` varchar(500) NOT NULL,\n  `body` text NOT NULL,\n  `is_default` int NOT NULL DEFAULT 0,\n  `created_by` int,\n  `created_at` timestamp NOT NULL DEFAULT (now()),\n  `updated_at` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,\n  CONSTRAINT `interview_email_templates_id` PRIMARY KEY(`id`)\n);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS `interview_email_templates` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `name` varchar(255) NOT NULL,\n  `type` enum('confirmation','reminder','cancellation','reschedule') NOT NULL,\n  `subject` varchar(500) NOT NULL,\n  `body` text NOT NULL,\n  `is_default` int NOT NULL DEFAULT 0,\n  `created_by` int,\n  `created_at` timestamp NOT NULL DEFAULT (now()),\n  `updated_at` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,\n  CONSTRAINT `interview_email_templates_id` PRIMARY KEY(`id`)\n);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1846
+}

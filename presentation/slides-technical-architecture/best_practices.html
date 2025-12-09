@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            font-family: 'Cairo', sans-serif;
+            color: #E2E8F0;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .header {
+            padding-top: 50px; /* keep upper padding of title unchanged */
+            padding-right: 60px;
+            padding-left: 60px;
+            margin-bottom: 10px; /* was 35px */
+        }
+        
+        .page-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #60A5FA;
+            margin-bottom: 10px;
+        }
+        
+        .title-underline {
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(90deg, #10B981 0%, #60A5FA 100%);
+            border-radius: 2px;
+        }
+        
+        .practices-grid {
+            padding-right: 60px;
+            padding-left: 60px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px; /* was 25px */
+            margin-bottom: 12px; /* was 30px */
+        }
+        
+        .practice-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 2px solid rgba(96, 165, 250, 0.2);
+            min-height: 0; /* allow content to define height (was 160px) */
+            display: flex;
+            flex-direction: column;
+            padding-top: 12px; /* was 20px */
+            padding-right: 25px;
+            padding-left: 25px;
+        }
+        
+        .practice-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 8px; /* was 12px */
+        }
+        
+        .practice-icon {
+            width: 48px;
+            height: 48px;
+            min-width: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 22px;
+        }
+        
+        .icon-green {
+            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+            color: #0F172A;
+        }
+        
+        .icon-blue {
+            background: linear-gradient(135deg, #60A5FA 0%, #3B82F6 100%);
+            color: #0F172A;
+        }
+        
+        .icon-orange {
+            background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+            color: #0F172A;
+        }
+        
+        .icon-purple {
+            background: linear-gradient(135deg, #A78BFA 0%, #8B5CF6 100%);
+            color: #0F172A;
+        }
+        
+        .icon-red {
+            background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);
+            color: #0F172A;
+        }
+        
+        .icon-cyan {
+            background: linear-gradient(135deg, #06B6D4 0%, #0891B2 100%);
+            color: #0F172A;
+        }
+        
+        .practice-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #60A5FA;
+        }
+        
+        .practice-description {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #E2E8F0;
+        }
+        
+        .practice-points {
+            display: flex;
+            flex-direction: column;
+            gap: 6px; /* was 8px */
+            margin-top: 6px; /* was 10px */
+        }
+        
+        .practice-point {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .point-bullet {
+            width: 5px;
+            height: 5px;
+            min-width: 5px;
+            background: #10B981;
+            border-radius: 50%;
+            margin-top: 6px;
+        }
+        
+        .security-alert {
+            padding-right: 60px;
+            padding-left: 60px;
+        }
+        
+        .alert-box {
+            background: rgba(239, 68, 68, 0.1);
+            border: 2px solid rgba(239, 68, 68, 0.4);
+            padding-top: 12px; /* was 20px */
+            padding-right: 25px;
+            padding-left: 25px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .alert-icon {
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
+            background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #0F172A;
+        }
+        
+        .alert-content {
+            display: flex;
+            flex-direction: column;
+            gap: 4px; /* was 6px */
+        }
+        
+        .alert-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #EF4444;
+            line-height: 1.3; /* tighter to save height */
+        }
+        
+        .alert-text {
+            font-size: 15px;
+            line-height: 1.4; /* was 1.6 */
+            color: #E2E8F0;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <div class="page-title">أفضل الممارسات</div>
+            <div class="title-underline"></div>
+        </div>
+        
+        <div class="practices-grid">
+            <div class="practice-card">
+                <div class="practice-header">
+                    <div class="practice-icon icon-green">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="practice-title">عزل البيانات</div>
+                </div>
+                <div class="practice-description">
+                    تطبيق فحص tenant_id في كل استعلام على مستوى التطبيق وقاعدة البيانات
+                </div>
+                <div class="practice-points">
+                    <div class="practice-point">
+                        <div class="point-bullet"></div>
+                        <div>استخدام Row-Level Security في قاعدة البيانات</div>
+                    </div>
+                    <div class="practice-point">
+                        <div class="point-bullet"></div>
+                        <div>اختبارات آلية للتحقق من عدم تسرب البيانات</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="practice-card">
+                <div class="practice-header">
+                    <div class="practice-icon icon-blue">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="practice-title">المراقبة والقياس</div>
+                </div>
+                <div class="practice-description">
+                    تتبع الأداء والموارد لكل مستأجر لتحديد المشاكل مبكراً
+                </div>
+                <div class="practice-points">
+                    <div class="practice-point">
+                        <div class="point-bullet"></div>
+                        <div>مقاييس منفصلة لكل tenant (CPU, Memory, DB)</div>
+                    </div>
+                    <div class="practice-point">
+                        <div class="point-bullet"></div>
+                        <div>تنبيهات تلقائية عند تجاوز الحدود</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="practice-card">
+                <div class="practice-header">
+                    <div class="practice-icon icon-orange">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="practice-title">استراتيجية النسخ الاحتياطي</div>
+                </div>
+                <div class="practice-description">
+                    القدرة على استعادة بيانات مستأجر واحد دون التأثير على الآخرين
+                </div>
+                <div class="practice-points">
+                    <div class="practice-point">
+                        <div class="point-bullet"></div>
+                        <div>نسخ احتياطي منفصل لكل tenant في Database-per-Tenant</div>
+                    </div>
+                    <div class="practice-point">
+                        <div class="point-bullet"></div>
+                        <div>Point-in-time recovery لكل مستأجر</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="practice-card">
+                <div class="practice-header">
+                    <div class="practice-icon icon-purple">
+                        <i class="fas fa-code-branch"></i>
+                    </div>
+                    <div class="practice-title">إدارة Schema</div>
+                </div>
+                <div class="practice-description">
+                    أتمتة تحديثات Schema عبر جميع المستأجرين مع الحفاظ على التوافقية
+                </div>
+                <div class="practice-points">
+                    <div class="practice-point">
+                        <div class="point-bullet"></div>
+                        <div>استخدام أدوات Migration (Flyway, Liquibase)</div>
+                    </div>
+                    <div class="practice-point">
+                        <div class="point-bullet"></div>
+                        <div>اختبار التحديثات على بيئة staging أولاً</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="practice-card">
+                <div class="practice-header">
+                    <div class="practice-icon icon-red">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="practice-title">تطبيق الأمان</div>
+                </div>
+                <div class="practice-description">
+                    تشفير البيانات وتطبيق مبدأ الصلاحيات الأقل (Least Privilege)
+                </div>
+                <div class="practice-points">
+                    <div class="practice-point">
+                        <div class="point-bullet"></div>
+                        <div>تشفير البيانات الحساسة في قاعدة البيانات</div>
+                    </div>
+                    <div class="practice-point">
+                        <div class="point-bullet"></div>
+                        <div>مراجعة أمنية دورية للتحقق من العزل</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="practice-card">
+                <div class="practice-header">
+                    <div class="practice-icon icon-cyan">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <div class="practice-title">تحسين الأداء</div>
+                </div>
+                <div class="practice-description">
+                    منع مشكلة Noisy Neighbor من خلال حدود الموارد والفهرسة الذكية
+                </div>
+                <div class="practice-points">
+                    <div class="practice-point">
+                        <div class="point-bullet"></div>
+                        <div>تطبيق Rate Limiting لكل مستأجر</div>
+                    </div>
+                    <div class="practice-point">
+                        <div class="point-bullet"></div>
+                        <div>فهرسة مركبة تتضمن tenant_id في كل Index</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="security-alert">
+            <div class="alert-box">
+                <div class="alert-icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <div class="alert-content">
+                    <div class="alert-title">تحذير أمني حرج</div>
+                    <div class="alert-text">
+                        خطأ واحد في فحص tenant_id يمكن أن يؤدي إلى تسرب بيانات جميع المستأجرين. يجب تطبيق اختبارات آلية شاملة (Integration Tests) للتحقق من عزل البيانات في كل عملية CRUD.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

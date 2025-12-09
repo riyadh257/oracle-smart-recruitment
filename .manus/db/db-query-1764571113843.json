@@ -1,0 +1,114 @@
+{
+  "query": "SHOW COLUMNS FROM notification_preferences;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute SHOW COLUMNS FROM notification_preferences;",
+  "rows": [
+    {
+      "Field": "id",
+      "Type": "int(11)",
+      "Null": "NO",
+      "Key": "PRI",
+      "Default": "NULL",
+      "Extra": "auto_increment"
+    },
+    {
+      "Field": "user_id",
+      "Type": "int(11)",
+      "Null": "NO",
+      "Key": "UNI",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "high_match_threshold",
+      "Type": "int(11)",
+      "Null": "NO",
+      "Key": "",
+      "Default": "85",
+      "Extra": ""
+    },
+    {
+      "Field": "enable_email_notifications",
+      "Type": "tinyint(1)",
+      "Null": "NO",
+      "Key": "",
+      "Default": "1",
+      "Extra": ""
+    },
+    {
+      "Field": "enable_push_notifications",
+      "Type": "tinyint(1)",
+      "Null": "NO",
+      "Key": "",
+      "Default": "1",
+      "Extra": ""
+    },
+    {
+      "Field": "enable_high_match_alerts",
+      "Type": "tinyint(1)",
+      "Null": "NO",
+      "Key": "",
+      "Default": "1",
+      "Extra": ""
+    },
+    {
+      "Field": "enable_new_application_alerts",
+      "Type": "tinyint(1)",
+      "Null": "NO",
+      "Key": "",
+      "Default": "1",
+      "Extra": ""
+    },
+    {
+      "Field": "enable_skill_update_alerts",
+      "Type": "tinyint(1)",
+      "Null": "NO",
+      "Key": "",
+      "Default": "0",
+      "Extra": ""
+    },
+    {
+      "Field": "notification_frequency",
+      "Type": "enum('instant','hourly','daily','weekly')",
+      "Null": "NO",
+      "Key": "",
+      "Default": "instant",
+      "Extra": ""
+    },
+    {
+      "Field": "quiet_hours_start",
+      "Type": "int(11)",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "quiet_hours_end",
+      "Type": "int(11)",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "createdAt",
+      "Type": "timestamp",
+      "Null": "NO",
+      "Key": "",
+      "Default": "CURRENT_TIMESTAMP",
+      "Extra": ""
+    },
+    {
+      "Field": "updatedAt",
+      "Type": "timestamp",
+      "Null": "NO",
+      "Key": "",
+      "Default": "CURRENT_TIMESTAMP",
+      "Extra": "DEFAULT_GENERATED on update CURRENT_TIMESTAMP"
+    }
+  ],
+  "messages": [],
+  "stdout": "Field\tType\tNull\tKey\tDefault\tExtra\nid\tint(11)\tNO\tPRI\tNULL\tauto_increment\nuser_id\tint(11)\tNO\tUNI\tNULL\t\nhigh_match_threshold\tint(11)\tNO\t\t85\t\nenable_email_notifications\ttinyint(1)\tNO\t\t1\t\nenable_push_notifications\ttinyint(1)\tNO\t\t1\t\nenable_high_match_alerts\ttinyint(1)\tNO\t\t1\t\nenable_new_application_alerts\ttinyint(1)\tNO\t\t1\t\nenable_skill_update_alerts\ttinyint(1)\tNO\t\t0\t\nnotification_frequency\tenum('instant','hourly','daily','weekly')\tNO\t\tinstant\t\nquiet_hours_start\tint(11)\tYES\t\tNULL\t\nquiet_hours_end\tint(11)\tYES\t\tNULL\t\ncreatedAt\ttimestamp\tNO\t\tCURRENT_TIMESTAMP\t\nupdatedAt\ttimestamp\tNO\t\tCURRENT_TIMESTAMP\tDEFAULT_GENERATED on update CURRENT_TIMESTAMP\n",
+  "stderr": "",
+  "execution_time_ms": 1602
+}

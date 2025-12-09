@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #0A1628 0%, #0D1F38 100%);
+            position: relative;
+            font-family: 'Cairo', sans-serif;
+            color: #E8F1F5;
+        }
+        
+        /* Grid background */
+        .grid-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.05;
+            background-image: 
+                linear-gradient(rgba(0, 217, 255, 0.3) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 217, 255, 0.3) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        
+        /* Accent line */
+        .accent-line {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #00D9FF 0%, #7C3AED 100%);
+        }
+        
+        /* Content wrapper */
+        .content {
+            position: relative;
+            z-index: 10;
+            min-height: 720px;
+        }
+        
+        /* Header */
+        .header {
+            padding-top: 50px;
+            padding-right: 80px;
+            padding-left: 80px;
+            margin-bottom: 40px;
+        }
+        
+        .title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #00D9FF;
+        }
+        
+        /* Integration grid */
+        .integration-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            padding-right: 80px;
+            padding-left: 80px;
+        }
+        
+        /* Integration category */
+        .integration-category {
+            background: rgba(0, 217, 255, 0.03);
+            border: 1px solid rgba(0, 217, 255, 0.15);
+            min-height: 520px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .category-header {
+            background: rgba(0, 217, 255, 0.1);
+            padding-top: 25px;
+            padding-bottom: 25px;
+            padding-right: 25px;
+            padding-left: 25px;
+            border-bottom: 2px solid rgba(0, 217, 255, 0.3);
+        }
+        
+        .integration-category:nth-child(2) .category-header {
+            background: rgba(16, 185, 129, 0.1);
+            border-bottom-color: rgba(16, 185, 129, 0.3);
+        }
+        
+        .integration-category:nth-child(3) .category-header {
+            background: rgba(124, 58, 237, 0.1);
+            border-bottom-color: rgba(124, 58, 237, 0.3);
+        }
+        
+        .category-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 217, 255, 0.15);
+            border: 2px solid rgba(0, 217, 255, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #00D9FF;
+            margin-bottom: 15px;
+        }
+        
+        .integration-category:nth-child(2) .category-icon {
+            background: rgba(16, 185, 129, 0.15);
+            border-color: rgba(16, 185, 129, 0.4);
+            color: #10B981;
+        }
+        
+        .integration-category:nth-child(3) .category-icon {
+            background: rgba(124, 58, 237, 0.15);
+            border-color: rgba(124, 58, 237, 0.4);
+            color: #7C3AED;
+        }
+        
+        .category-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #E8F1F5;
+            margin-bottom: 5px;
+        }
+        
+        .category-subtitle {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 11px;
+            color: #00D9FF;
+            opacity: 0.7;
+            letter-spacing: 1px;
+        }
+        
+        .integration-category:nth-child(2) .category-subtitle {
+            color: #10B981;
+        }
+        
+        .integration-category:nth-child(3) .category-subtitle {
+            color: #7C3AED;
+        }
+        
+        /* Integration list */
+        .integration-list {
+            padding-top: 25px;
+            padding-right: 25px;
+            padding-left: 25px;
+            flex: 1;
+        }
+        
+        .integration-item {
+            margin-bottom: 20px;
+            display: flex;
+            gap: 15px;
+        }
+        
+        .integration-bullet {
+            width: 35px;
+            height: 35px;
+            background: rgba(0, 217, 255, 0.1);
+            border: 1px solid rgba(0, 217, 255, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        
+        .integration-category:nth-child(2) .integration-bullet {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: rgba(16, 185, 129, 0.3);
+        }
+        
+        .integration-category:nth-child(3) .integration-bullet {
+            background: rgba(124, 58, 237, 0.1);
+            border-color: rgba(124, 58, 237, 0.3);
+        }
+        
+        .integration-icon {
+            font-size: 16px;
+            color: #00D9FF;
+        }
+        
+        .integration-category:nth-child(2) .integration-icon {
+            color: #10B981;
+        }
+        
+        .integration-category:nth-child(3) .integration-icon {
+            color: #7C3AED;
+        }
+        
+        .integration-info {
+            flex: 1;
+        }
+        
+        .integration-name {
+            font-size: 16px;
+            font-weight: 700;
+            color: #E8F1F5;
+            margin-bottom: 3px;
+        }
+        
+        .integration-tech {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 12px;
+            color: #E8F1F5;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <!-- Grid background -->
+        <div class="grid-background"></div>
+        
+        <!-- Accent line -->
+        <div class="accent-line"></div>
+        
+        <!-- Content -->
+        <div class="content">
+            <!-- Header -->
+            <div class="header">
+                <h1 class="title">التكاملات والواجهات البرمجية</h1>
+            </div>
+            
+            <!-- Integration grid -->
+            <div class="integration-grid">
+                <!-- Communication & Collaboration -->
+                <div class="integration-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <div class="category-title">الاتصالات والتعاون</div>
+                        <div class="category-subtitle">COMMUNICATION & COLLABORATION</div>
+                    </div>
+                    
+                    <div class="integration-list">
+                        <div class="integration-item">
+                            <div class="integration-bullet">
+                                <i class="fas fa-envelope integration-icon"></i>
+                            </div>
+                            <div class="integration-info">
+                                <div class="integration-name">خدمة البريد الإلكتروني</div>
+                                <div class="integration-tech">SMTP Integration</div>
+                            </div>
+                        </div>
+                        
+                        <div class="integration-item">
+                            <div class="integration-bullet">
+                                <i class="fas fa-calendar integration-icon"></i>
+                            </div>
+                            <div class="integration-info">
+                                <div class="integration-name">تقويم Google/Outlook</div>
+                                <div class="integration-tech">Calendar APIs</div>
+                            </div>
+                        </div>
+                        
+                        <div class="integration-item">
+                            <div class="integration-bullet">
+                                <i class="fas fa-sms integration-icon"></i>
+                            </div>
+                            <div class="integration-info">
+                                <div class="integration-name">بوابة الرسائل النصية</div>
+                                <div class="integration-tech">SMS Gateway</div>
+                            </div>
+                        </div>
+                        
+                        <div class="integration-item">
+                            <div class="integration-bullet">
+                                <i class="fab fa-whatsapp integration-icon"></i>
+                            </div>
+                            <div class="integration-info">
+                                <div class="integration-name">واتساب للأعمال</div>
+                                <div class="integration-tech">WhatsApp Business API</div>
+                            </div>
+                        </div>
+                        
+                        <div class="integration-item">
+                            <div class="integration-bullet">
+                                <i class="fas fa-bell integration-icon"></i>
+                            </div>
+                            <div class="integration-info">
+                                <div class="integration-name">نظام الإشعارات</div>
+                                <div class="integration-tech">Push Notifications</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Job Boards & Professional Networks -->
+                <div class="integration-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="category-title">منصات التوظيف</div>
+                        <div class="category-subtitle">JOB BOARDS & NETWORKS</div>
+                    </div>
+                    
+                    <div class="integration-list">
+                        <div class="integration-item">
+                            <div class="integration-bullet">
+                                <i class="fab fa-linkedin integration-icon"></i>
+                            </div>
+                            <div class="integration-info">
+                                <div class="integration-name">LinkedIn</div>
+                                <div class="integration-tech">LinkedIn API</div>
+                            </div>
+                        </div>
+                        
+                        <div class="integration-item">
+                            <div class="integration-bullet">
+                                <i class="fas fa-globe integration-icon"></i>
+                            </div>
+                            <div class="integration-info">
+                                <div class="integration-name">Bayt.com</div>
+                                <div class="integration-tech">Bayt Integration</div>
+                            </div>
+                        </div>
+                        
+                        <div class="integration-item">
+                            <div class="integration-bullet">
+                                <i class="fas fa-search integration-icon"></i>
+                            </div>
+                            <div class="integration-info">
+                                <div class="integration-name">Indeed</div>
+                                <div class="integration-tech">Indeed API</div>
+                            </div>
+                        </div>
+                        
+                        <div class="integration-item">
+                            <div class="integration-bullet">
+                                <i class="fas fa-user-tie integration-icon"></i>
+                            </div>
+                            <div class="integration-info">
+                                <div class="integration-name">GulfTalent</div>
+                                <div class="integration-tech">GulfTalent API</div>
+                            </div>
+                        </div>
+                        
+                        <div class="integration-item">
+                            <div class="integration-bullet">
+                                <i class="fas fa-plug integration-icon"></i>
+                            </div>
+                            <div class="integration-info">
+                                <div class="integration-name">امتداد Chrome</div>
+                                <div class="integration-tech">Chrome Extension</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Government & Regional -->
+                <div class="integration-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-landmark"></i>
+                        </div>
+                        <div class="category-title">الجهات الحكومية</div>
+                        <div class="category-subtitle">GOVERNMENT & REGIONAL</div>
+                    </div>
+                    
+                    <div class="integration-list">
+                        <div class="integration-item">
+                            <div class="integration-bullet">
+                                <i class="fas fa-shield-alt integration-icon"></i>
+                            </div>
+                            <div class="integration-info">
+                                <div class="integration-name">التأمينات الاجتماعية</div>
+                                <div class="integration-tech">GOSI Integration</div>
+                            </div>
+                        </div>
+                        
+                        <div class="integration-item">
+                            <div class="integration-bullet">
+                                <i class="fas fa-building integration-icon"></i>
+                            </div>
+                            <div class="integration-info">
+                                <div class="integration-name">منصة قوى</div>
+                                <div class="integration-tech">Qiwa Platform API</div>
+                            </div>
+                        </div>
+                        
+                        <div class="integration-item">
+                            <div class="integration-bullet">
+                                <i class="fas fa-chart-pie integration-icon"></i>
+                            </div>
+                            <div class="integration-info">
+                                <div class="integration-name">نطاقات</div>
+                                <div class="integration-tech">Nitaqat Compliance</div>
+                            </div>
+                        </div>
+                        
+                        <div class="integration-item">
+                            <div class="integration-bullet">
+                                <i class="fas fa-exchange-alt integration-icon"></i>
+                            </div>
+                            <div class="integration-info">
+                                <div class="integration-name">Webhooks</div>
+                                <div class="integration-tech">Third-party Systems</div>
+                            </div>
+                        </div>
+                        
+                        <div class="integration-item">
+                            <div class="integration-bullet">
+                                <i class="fas fa-file-invoice integration-icon"></i>
+                            </div>
+                            <div class="integration-info">
+                                <div class="integration-name">التقارير الحكومية</div>
+                                <div class="integration-tech">Government Reports</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saudi Arabia Compliance Automation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow: hidden;
+        }
+        
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #0A1628;
+            position: relative;
+        }
+        
+        .header {
+            padding-top: 60px;
+            padding-left: 80px;
+            padding-right: 80px;
+            margin-bottom: 50px;
+        }
+        
+        .title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #00D4FF;
+            margin-bottom: 12px;
+        }
+        
+        .title-underline {
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(90deg, #10B981, #00D4FF);
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            padding-left: 80px;
+            padding-right: 80px;
+            margin-bottom: 50px;
+        }
+        
+        .compliance-section {
+            position: relative;
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 30px;
+        }
+        
+        .section-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #6366F1, #00D4FF);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #0A1628;
+        }
+        
+        .section-title {
+            font-size: 26px;
+            font-weight: 700;
+            color: #E8EDF2;
+        }
+        
+        .features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        
+        .feature-bullet {
+            flex-shrink: 0;
+            width: 8px;
+            height: 8px;
+            background: #00D4FF;
+            margin-top: 8px;
+        }
+        
+        .feature-text {
+            font-size: 18px;
+            color: #E8EDF2;
+            line-height: 1.6;
+            opacity: 0.85;
+        }
+        
+        .feature-detail {
+            font-size: 15px;
+            color: #E8EDF2;
+            opacity: 0.6;
+            margin-top: 4px;
+        }
+        
+        .nitaqat-bands {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-top: 20px;
+        }
+        
+        .band-item {
+            text-align: center;
+            padding-top: 12px;
+        }
+        
+        .band-color {
+            width: 100%;
+            height: 6px;
+            margin-bottom: 8px;
+        }
+        
+        .band-platinum { background: linear-gradient(90deg, #E5E7EB, #9CA3AF); }
+        .band-green { background: #10B981; }
+        .band-yellow { background: #F59E0B; }
+        .band-red { background: #EF4444; }
+        
+        .band-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #E8EDF2;
+            margin-bottom: 4px;
+        }
+        
+        .band-range {
+            font-size: 12px;
+            color: #E8EDF2;
+            opacity: 0.6;
+        }
+        
+        .bottom-summary {
+            padding-left: 80px;
+            padding-right: 80px;
+            text-align: center;
+        }
+        
+        .summary-text {
+            font-size: 18px;
+            color: #10B981;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+        
+        .divider {
+            position: absolute;
+            left: 50%;
+            top: 140px;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 400px;
+            background: linear-gradient(180deg, transparent, #6366F1, transparent);
+            opacity: 0.3;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1 class="title">Saudi Arabia Compliance Automation</h1>
+            <div class="title-underline"></div>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <div class="content-grid">
+            <div class="compliance-section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h2 class="section-title">GOSI Integration</h2>
+                </div>
+                
+                <div class="features-list">
+                    <div class="feature-item">
+                        <div class="feature-bullet"></div>
+                        <div>
+                            <div class="feature-text">Employee Verification</div>
+                            <div class="feature-detail">Real-time validation with GOSI database</div>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-bullet"></div>
+                        <div>
+                            <div class="feature-text">Contribution Calculations</div>
+                            <div class="feature-detail">Saudi: 10% employee + 12% employer</div>
+                            <div class="feature-detail">Non-Saudi: 0% employee + 2% employer</div>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-bullet"></div>
+                        <div>
+                            <div class="feature-text">Automated Registration</div>
+                            <div class="feature-detail">Seamless employee onboarding and updates</div>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-bullet"></div>
+                        <div>
+                            <div class="feature-text">Compliance Reporting</div>
+                            <div class="feature-detail">Automated reports and bulk employee sync</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="compliance-section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h2 class="section-title">Nitaqat Compliance</h2>
+                </div>
+                
+                <div class="features-list">
+                    <div class="feature-item">
+                        <div class="feature-bullet"></div>
+                        <div>
+                            <div class="feature-text">Saudization Percentage Tracking</div>
+                            <div class="feature-detail">Real-time calculation and monitoring</div>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-bullet"></div>
+                        <div>
+                            <div class="feature-text">Color Band Determination</div>
+                            <div class="feature-detail">Automatic classification and status updates</div>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-bullet"></div>
+                        <div>
+                            <div class="feature-text">Hiring Recommendations</div>
+                            <div class="feature-detail">AI-powered what-if scenarios and planning</div>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-bullet"></div>
+                        <div>
+                            <div class="feature-text">Penalty Risk Assessment</div>
+                            <div class="feature-detail">Proactive alerts and mitigation strategies</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="nitaqat-bands">
+                    <div class="band-item">
+                        <div class="band-color band-platinum"></div>
+                        <div class="band-label">Platinum</div>
+                        <div class="band-range">≥14%</div>
+                    </div>
+                    <div class="band-item">
+                        <div class="band-color band-green"></div>
+                        <div class="band-label">Green</div>
+                        <div class="band-range">10-14%</div>
+                    </div>
+                    <div class="band-item">
+                        <div class="band-color band-yellow"></div>
+                        <div class="band-label">Yellow</div>
+                        <div class="band-range">6-10%</div>
+                    </div>
+                    <div class="band-item">
+                        <div class="band-color band-red"></div>
+                        <div class="band-label">Red</div>
+                        <div class="band-range">&lt;6%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="bottom-summary">
+            <p class="summary-text">
+                Automated compliance monitoring reduces penalties by 90% and ensures continuous regulatory adherence
+            </p>
+        </div>
+    </div>
+</body>
+</html>

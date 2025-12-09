@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Recruitment Challenge</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #0A1929 0%, #1A2332 100%);
+            font-family: 'Inter', sans-serif;
+            color: #E8EEF2;
+            position: relative;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 55% 45%;
+            min-height: 720px;
+            align-items: center;
+        }
+        
+        .left-content {
+            padding-top: 80px; /* keep title top spacing consistent */
+            padding-left: 80px;
+            padding-right: 40px;
+        }
+        
+        .page-heading {
+            font-size: 44px;
+            font-weight: 700;
+            color: #00D4FF;
+            line-height: 1.2;
+            margin-bottom: 36px; /* reduced from 50px to save height */
+            max-width: 550px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px; /* reduced from 35px */
+            margin-bottom: 24px; /* reduced from 35px */
+        }
+        
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .stat-number {
+            font-size: 52px;
+            font-weight: 700;
+            color: #00D4FF;
+            line-height: 1;
+            margin-bottom: 8px; /* reduced from 12px */
+        }
+        
+        .stat-label {
+            font-size: 16px;
+            font-weight: 500;
+            color: rgba(232, 238, 242, 0.85);
+            line-height: 1.4;
+        }
+        
+        .stat-full {
+            grid-column: 1 / -1;
+            padding-top: 14px; /* reduced from 20px */
+            border-top: 1px solid rgba(0, 212, 255, 0.2);
+        }
+        
+        .supporting-text {
+            font-size: 18px;
+            font-weight: 400;
+            color: rgba(232, 238, 242, 0.7);
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+        
+        .right-content {
+            padding-top: 80px;
+            padding-right: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .image-wrapper {
+            width: 480px;
+            height: 560px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .image-wrapper img {
+            width: 480px;
+            height: 280px;
+            object-fit: contain;
+        }
+        
+        .accent-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #00D4FF 0%, #0066FF 50%, #7B61FF 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="content-grid">
+            <div class="left-content">
+                <h1 class="page-heading">Traditional Hiring Faces Critical Inefficiencies</h1>
+                
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">45</div>
+                        <div class="stat-label">Days average hiring cycle with traditional processes</div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-number">$6K</div>
+                        <div class="stat-label">Cost per hire in manual recruitment workflows</div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-number">64%</div>
+                        <div class="stat-label">Employers struggle to find candidates with right skills</div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-number">23hrs</div>
+                        <div class="stat-label">Per week spent manually reviewing resumes</div>
+                    </div>
+                    
+                    <div class="stat-item stat-full">
+                        <div class="stat-number">+30%</div>
+                        <div class="stat-label">Unnecessary costs from inefficient hiring processes while missing top talent</div>
+                    </div>
+                </div>
+                
+                <p class="supporting-text">
+                    AI recruitment market valued at $661.56M in 2023, projected to reach $1.12B by 2030. 
+                    87% of companies now use AI-driven tools to address these challenges.
+                </p>
+            </div>
+            
+            <div class="right-content">
+                <div class="image-wrapper">
+                    <img src="/home/ubuntu/oracle-smart-recruitment/presentation/assets/automation.jpeg" alt="Recruitment automation process">
+                </div>
+            </div>
+        </div>
+        
+        <div class="accent-bar"></div>
+    </div>
+</body>
+</html>

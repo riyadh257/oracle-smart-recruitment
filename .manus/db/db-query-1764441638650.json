@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS `saudization_metrics` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `month` int NOT NULL,\n  `year` int NOT NULL,\n  `saudi_count` int NOT NULL DEFAULT 0,\n  `total_count` int NOT NULL DEFAULT 0,\n  `percentage` int NOT NULL DEFAULT 0,\n  `female_count` int DEFAULT 0,\n  `disabled_count` int DEFAULT 0,\n  `notes` text,\n  `createdAt` timestamp NOT NULL DEFAULT (now()),\n  `updatedAt` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,\n  CONSTRAINT `saudization_metrics_id` PRIMARY KEY(`id`)\n);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS `saudization_metrics` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `month` int NOT NULL,\n  `year` int NOT NULL,\n  `saudi_count` int NOT NULL DEFAULT 0,\n  `total_count` int NOT NULL DEFAULT 0,\n  `percentage` int NOT NULL DEFAULT 0,\n  `female_count` int DEFAULT 0,\n  `disabled_count` int DEFAULT 0,\n  `notes` text,\n  `createdAt` timestamp NOT NULL DEFAULT (now()),\n  `updatedAt` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,\n  CONSTRAINT `saudization_metrics_id` PRIMARY KEY(`id`)\n);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1754
+}

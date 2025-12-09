@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #0a1628;
+            font-family: 'Inter', sans-serif;
+            color: #e0e7ff;
+        }
+        
+        .header {
+            padding-left: 80px;
+            padding-top: 60px;
+            margin-bottom: 45px;
+        }
+        
+        .page-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #00d4ff;
+            margin-bottom: 12px;
+        }
+        
+        .page-subtitle {
+            font-size: 20px;
+            font-weight: 400;
+            color: #e0e7ff;
+            opacity: 0.8;
+        }
+        
+        .content-grid {
+            padding-left: 80px;
+            padding-right: 80px;
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 50px;
+        }
+        
+        .overview-section {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .ai-highlight {
+            background: rgba(124, 58, 237, 0.15);
+            border: 3px solid #7c3aed;
+            padding-top: 25px;
+            padding-left: 25px;
+            padding-right: 25px;
+            min-height: 120px;
+        }
+        
+        .highlight-icon {
+            font-size: 48px;
+            color: #7c3aed;
+            margin-bottom: 15px;
+        }
+        
+        .highlight-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #00d4ff;
+            margin-bottom: 10px;
+        }
+        
+        .highlight-text {
+            font-size: 15px;
+            color: #e0e7ff;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+        
+        .capability-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .capability-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        
+        .capability-icon {
+            width: 32px;
+            height: 32px;
+            background: rgba(16, 185, 129, 0.15);
+            border: 2px solid #10b981;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+        
+        .capability-icon i {
+            color: #10b981;
+            font-size: 14px;
+        }
+        
+        .capability-text {
+            flex: 1;
+            font-size: 15px;
+            color: #e0e7ff;
+            line-height: 1.6;
+        }
+        
+        .capability-text strong {
+            color: #10b981;
+            font-weight: 700;
+        }
+        
+        .tech-note {
+            background: rgba(0, 212, 255, 0.05);
+            border: 2px solid #00d4ff;
+            border-left: 6px solid #00d4ff;
+            padding-top: 15px;
+            padding-left: 20px;
+            padding-right: 20px;
+            min-height: 70px;
+            font-size: 14px;
+            color: #e0e7ff;
+            line-height: 1.6;
+        }
+        
+        .features-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .feature-card {
+            background: rgba(0, 212, 255, 0.05);
+            border: 2px solid #00d4ff;
+            padding-top: 20px;
+            padding-left: 22px;
+            padding-right: 22px;
+            min-height: 160px;
+        }
+        
+        .feature-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(124, 58, 237, 0.2);
+            border: 2px solid #7c3aed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .feature-icon i {
+            color: #7c3aed;
+            font-size: 18px;
+        }
+        
+        .feature-name {
+            font-size: 17px;
+            font-weight: 700;
+            color: #00d4ff;
+            line-height: 1.3;
+        }
+        
+        .feature-description {
+            font-size: 14px;
+            color: #e0e7ff;
+            line-height: 1.6;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+        
+        .feature-tech {
+            font-size: 12px;
+            color: #10b981;
+            font-family: 'Roboto Mono', monospace;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <div class="page-title">AI & Machine Learning Services</div>
+            <div class="page-subtitle">Intelligent Automation Across the Recruitment Lifecycle</div>
+        </div>
+        
+        <div class="content-grid">
+            <div class="overview-section">
+                <div class="ai-highlight">
+                    <i class="fas fa-brain highlight-icon"></i>
+                    <div class="highlight-title">Generative AI Foundation</div>
+                    <div class="highlight-text">
+                        Powered by large language models and custom ML algorithms to automate complex recruitment tasks and provide intelligent insights.
+                    </div>
+                </div>
+                
+                <div class="capability-list">
+                    <div class="capability-item">
+                        <div class="capability-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="capability-text">
+                            <strong>Natural Language Processing:</strong> Semantic understanding of resumes, job descriptions, and candidate communications
+                        </div>
+                    </div>
+                    
+                    <div class="capability-item">
+                        <div class="capability-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="capability-text">
+                            <strong>Predictive Analytics:</strong> Machine learning models forecast hiring needs and candidate success probability
+                        </div>
+                    </div>
+                    
+                    <div class="capability-item">
+                        <div class="capability-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="capability-text">
+                            <strong>Continuous Learning:</strong> Models improve accuracy through feedback loops and successful placement data
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tech-note">
+                    <strong>Technology Stack:</strong> GPT-4 for generative tasks, custom neural networks for matching algorithms, vector databases for semantic search, and real-time inference pipelines.
+                </div>
+            </div>
+            
+            <div class="features-section">
+                <div class="feature-card">
+                    <div class="feature-header">
+                        <div class="feature-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="feature-name">Resume Parsing</div>
+                    </div>
+                    <div class="feature-description">
+                        Automatically extracts structured data from resumes including skills, experience, education, and certifications. Handles multiple formats (PDF, DOCX) with 95% accuracy.
+                    </div>
+                    <div class="feature-tech">LLM-powered extraction</div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-header">
+                        <div class="feature-icon">
+                            <i class="fas fa-edit"></i>
+                        </div>
+                        <div class="feature-name">Job Description Enrichment</div>
+                    </div>
+                    <div class="feature-description">
+                        Enhances job postings with inferred requirements, skill suggestions, and optimized language to attract qualified candidates. Improves clarity and completeness scores.
+                    </div>
+                    <div class="feature-tech">GPT-4 content generation</div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-header">
+                        <div class="feature-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <div class="feature-name">Career Coaching Chatbot</div>
+                    </div>
+                    <div class="feature-description">
+                        Provides personalized career guidance, resume feedback, and interview preparation advice. Available 24/7 with context-aware responses based on candidate profile.
+                    </div>
+                    <div class="feature-tech">Conversational AI</div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-header">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="feature-name">Predictive Hiring Needs</div>
+                    </div>
+                    <div class="feature-description">
+                        Analyzes historical hiring patterns, business growth metrics, and market trends to forecast future staffing requirements and optimal hiring timelines.
+                    </div>
+                    <div class="feature-tech">Time-series forecasting</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

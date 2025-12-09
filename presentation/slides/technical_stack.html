@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Technology Stack</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .slide-container {
+      width: 1280px;
+      min-height: 720px;
+      background: #1F233E;
+      font-family: 'Space Grotesk', sans-serif;
+      color: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      padding-top: 60px;
+      padding-left: 80px;
+      padding-right: 80px;
+      margin-bottom: 40px;
+    }
+
+    .page-title {
+      font-size: 48px;
+      font-weight: 700;
+      color: #FFFFFF;
+      position: relative;
+      display: inline-block;
+    }
+
+    .page-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 120px;
+      height: 4px;
+      background: linear-gradient(90deg, #04DBFA, #00E3B5);
+    }
+
+    .stack-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      padding-left: 80px;
+      padding-right: 80px;
+      padding-top: 20px;
+    }
+
+    .stack-column {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .column-header {
+      font-size: 24px;
+      font-weight: 600;
+      color: #04DBFA;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .column-header i {
+      font-size: 28px;
+    }
+
+    .tech-item {
+      background: rgba(255, 255, 255, 0.03);
+      border: 2px solid rgba(4, 219, 250, 0.2);
+      min-height: 90px;
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .tech-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      margin-left: 15px;
+    }
+
+    .tech-icon i {
+      font-size: 32px;
+      color: #04DBFA;
+    }
+
+    .tech-content {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding-right: 20px;
+    }
+
+    .tech-name {
+      font-size: 22px;
+      font-weight: 600;
+      color: #FFFFFF;
+    }
+
+    .tech-description {
+      font-size: 14px;
+      font-weight: 300;
+      color: #8EC5FC;
+      line-height: 1.4;
+    }
+
+    .stack-column:nth-child(2) .tech-item {
+      border-color: rgba(0, 227, 181, 0.2);
+    }
+
+    .stack-column:nth-child(2) .tech-icon i {
+      color: #00E3B5;
+    }
+
+    .stack-column:nth-child(2) .column-header {
+      color: #00E3B5;
+    }
+
+    .accent-line {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #04DBFA 0%, #00E3B5 50%, #1F233E 100%);
+    }
+
+    .background-grid {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.03;
+      background-image: 
+        linear-gradient(rgba(4, 219, 250, 0.3) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(4, 219, 250, 0.3) 1px, transparent 1px);
+      background-size: 50px 50px;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="background-grid"></div>
+    
+    <div class="header">
+      <h1 class="page-title">Modern Technology Stack</h1>
+    </div>
+
+    <div class="stack-container">
+      <div class="stack-column">
+        <div class="column-header">
+          <i class="fas fa-desktop"></i>
+          Frontend Technologies
+        </div>
+
+        <div class="tech-item">
+          <div class="tech-icon">
+            <i class="fab fa-react"></i>
+          </div>
+          <div class="tech-content">
+            <div class="tech-name">React 19</div>
+            <div class="tech-description">Modern UI framework with latest features</div>
+          </div>
+        </div>
+
+        <div class="tech-item">
+          <div class="tech-icon">
+            <i class="fas fa-code"></i>
+          </div>
+          <div class="tech-content">
+            <div class="tech-name">TypeScript</div>
+            <div class="tech-description">Type-safe development environment</div>
+          </div>
+        </div>
+
+        <div class="tech-item">
+          <div class="tech-icon">
+            <i class="fas fa-exchange-alt"></i>
+          </div>
+          <div class="tech-content">
+            <div class="tech-name">tRPC</div>
+            <div class="tech-description">End-to-end type-safe API layer</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stack-column">
+        <div class="column-header">
+          <i class="fas fa-server"></i>
+          Backend Technologies
+        </div>
+
+        <div class="tech-item">
+          <div class="tech-icon">
+            <i class="fas fa-database"></i>
+          </div>
+          <div class="tech-content">
+            <div class="tech-name">Drizzle ORM + MySQL</div>
+            <div class="tech-description">Type-safe database operations</div>
+          </div>
+        </div>
+
+        <div class="tech-item">
+          <div class="tech-icon">
+            <i class="fas fa-brain"></i>
+          </div>
+          <div class="tech-content">
+            <div class="tech-name">Integrated LLM</div>
+            <div class="tech-description">AI-powered candidate screening</div>
+          </div>
+        </div>
+
+        <div class="tech-item">
+          <div class="tech-icon">
+            <i class="fas fa-cloud"></i>
+          </div>
+          <div class="tech-content">
+            <div class="tech-name">S3 Storage</div>
+            <div class="tech-description">Scalable document management</div>
+          </div>
+        </div>
+
+        <div class="tech-item">
+          <div class="tech-icon">
+            <i class="fas fa-chart-bar"></i>
+          </div>
+          <div class="tech-content">
+            <div class="tech-name">Analytics Engine</div>
+            <div class="tech-description">Comprehensive hiring insights</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accent-line"></div>
+  </div>
+</body>
+</html>

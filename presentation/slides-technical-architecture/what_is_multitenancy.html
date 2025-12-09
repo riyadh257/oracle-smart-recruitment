@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            font-family: 'Cairo', sans-serif;
+            color: #E2E8F0;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .header {
+            padding-top: 50px;
+            padding-right: 60px;
+            padding-left: 60px;
+            margin-bottom: 40px;
+        }
+        
+        .page-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #60A5FA;
+            margin-bottom: 10px;
+        }
+        
+        .title-underline {
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(90deg, #10B981 0%, #60A5FA 100%);
+            border-radius: 2px;
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            padding-right: 60px;
+            padding-left: 60px;
+            align-items: center;
+        }
+        
+        .text-section {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .definition {
+            background: rgba(96, 165, 250, 0.1);
+            border-right: 4px solid #60A5FA;
+            padding-top: 20px;
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+        
+        .definition-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #60A5FA;
+            margin-bottom: 12px;
+        }
+        
+        .definition-text {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #E2E8F0;
+        }
+        
+        .key-points {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+        
+        .point {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .point-icon {
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 3px;
+        }
+        
+        .point-icon i {
+            font-size: 14px;
+            color: #0F172A;
+        }
+        
+        .point-text {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #E2E8F0;
+        }
+        
+        .visual-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .diagram-container {
+            width: 550px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(96, 165, 250, 0.2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .diagram-container img {
+            width: 520px;
+            height: 380px;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <div class="page-title">ما هو نظام Multi-Tenancy؟</div>
+            <div class="title-underline"></div>
+        </div>
+        
+        <div class="main-content">
+            <div class="text-section">
+                <div class="definition">
+                    <div class="definition-title">التعريف</div>
+                    <div class="definition-text">
+                        هندسة برمجية تسمح لتطبيق واحد بخدمة عملاء متعددين (مستأجرين)، حيث يتشارك جميع المستأجرين نفس البنية التحتية والموارد مع ضمان عزل كامل للبيانات والخصوصية.
+                    </div>
+                </div>
+                
+                <div class="key-points">
+                    <div class="point">
+                        <div class="point-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="point-text">
+                            <strong style="color: #10B981;">نسخة واحدة من التطبيق</strong> تخدم مئات أو آلاف العملاء في نفس الوقت
+                        </div>
+                    </div>
+                    
+                    <div class="point">
+                        <div class="point-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="point-text">
+                            <strong style="color: #10B981;">عزل تام للبيانات</strong> - كل مستأجر لا يرى سوى بياناته الخاصة
+                        </div>
+                    </div>
+                    
+                    <div class="point">
+                        <div class="point-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="point-text">
+                            <strong style="color: #10B981;">مشاركة الموارد</strong> - خوادم، قواعد بيانات، وذاكرة مشتركة لتقليل التكاليف
+                        </div>
+                    </div>
+                    
+                    <div class="point">
+                        <div class="point-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="point-text">
+                            <strong style="color: #10B981;">صيانة مركزية</strong> - تحديث واحد يطبق على جميع المستأجرين
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="visual-section">
+                <div class="diagram-container">
+                    <img src="/home/ubuntu/oracle-smart-recruitment/presentation/slides-technical-architecture/assets/multi-tenant-overview.png" alt="Multi-Tenancy Architecture">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

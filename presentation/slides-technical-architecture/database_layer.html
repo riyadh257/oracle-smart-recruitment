@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #0A1628 0%, #0D1F38 100%);
+            position: relative;
+            font-family: 'Cairo', sans-serif;
+            color: #E8F1F5;
+        }
+        
+        /* Grid background */
+        .grid-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.05;
+            background-image: 
+                linear-gradient(rgba(0, 217, 255, 0.3) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 217, 255, 0.3) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        
+        /* Accent line */
+        .accent-line {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #00D9FF 0%, #7C3AED 100%);
+        }
+        
+        /* Content wrapper */
+        .content {
+            position: relative;
+            z-index: 10;
+            min-height: 720px;
+        }
+        
+        /* Header */
+        .header {
+            padding-top: 50px;
+            padding-right: 80px;
+            padding-left: 80px;
+            margin-bottom: 40px;
+        }
+        
+        .title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #00D9FF;
+        }
+        
+        /* Main layout */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 50px;
+            padding-right: 80px;
+            padding-left: 80px;
+        }
+        
+        /* Left column - Database stack */
+        .database-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .db-item {
+            background: rgba(0, 217, 255, 0.05);
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            border-right: 4px solid #00D9FF;
+            min-height: 140px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-top: 25px;
+            padding-right: 30px;
+            padding-left: 30px;
+        }
+        
+        .db-item:nth-child(2) {
+            border-right-color: #10B981;
+        }
+        
+        .db-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 12px;
+        }
+        
+        .db-icon {
+            font-size: 32px;
+            color: #00D9FF;
+        }
+        
+        .db-item:nth-child(2) .db-icon {
+            color: #10B981;
+        }
+        
+        .db-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: #E8F1F5;
+        }
+        
+        .db-tech {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 14px;
+            color: #00D9FF;
+            opacity: 0.8;
+            letter-spacing: 1px;
+            margin-top: 3px;
+        }
+        
+        .db-description {
+            font-size: 15px;
+            color: #E8F1F5;
+            opacity: 0.85;
+            line-height: 1.6;
+            margin-top: 8px;
+        }
+        
+        /* Right column - Features grid */
+        .features-section {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .features-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #00D9FF;
+            margin-bottom: 25px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .feature-card {
+            background: rgba(124, 58, 237, 0.08);
+            border: 1px solid rgba(124, 58, 237, 0.25);
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-top: 20px;
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+        
+        .feature-icon {
+            font-size: 26px;
+            color: #7C3AED;
+            margin-bottom: 12px;
+        }
+        
+        .feature-card:nth-child(2) .feature-icon { color: #10B981; }
+        .feature-card:nth-child(3) .feature-icon { color: #F59E0B; }
+        .feature-card:nth-child(4) .feature-icon { color: #EF4444; }
+        .feature-card:nth-child(5) .feature-icon { color: #06B6D4; }
+        .feature-card:nth-child(6) .feature-icon { color: #8B5CF6; }
+        
+        .feature-name {
+            font-size: 17px;
+            font-weight: 700;
+            color: #E8F1F5;
+            line-height: 1.4;
+        }
+        
+        .feature-desc {
+            font-size: 13px;
+            color: #E8F1F5;
+            opacity: 0.75;
+            line-height: 1.5;
+            margin-top: 6px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <!-- Grid background -->
+        <div class="grid-background"></div>
+        
+        <!-- Accent line -->
+        <div class="accent-line"></div>
+        
+        <!-- Content -->
+        <div class="content">
+            <!-- Header -->
+            <div class="header">
+                <h1 class="title">طبقة قاعدة البيانات والتخزين</h1>
+            </div>
+            
+            <!-- Main layout -->
+            <div class="main-layout">
+                <!-- Left: Database Stack -->
+                <div class="database-stack">
+                    <!-- MySQL/TiDB -->
+                    <div class="db-item">
+                        <div class="db-header">
+                            <i class="fas fa-database db-icon"></i>
+                            <div>
+                                <div class="db-name">MySQL / TiDB</div>
+                                <div class="db-tech">RELATIONAL DATABASE</div>
+                            </div>
+                        </div>
+                        <div class="db-description">
+                            قاعدة بيانات علائقية قوية مع إمكانية التوسع الأفقي، تدعم معاملات ACID الكاملة، وتوفر أداءً عالياً للاستعلامات المعقدة مع ضمان سلامة البيانات
+                        </div>
+                    </div>
+                    
+                    <!-- Drizzle ORM -->
+                    <div class="db-item">
+                        <div class="db-header">
+                            <i class="fas fa-code db-icon"></i>
+                            <div>
+                                <div class="db-name">Drizzle ORM</div>
+                                <div class="db-tech">TYPE-SAFE QUERIES</div>
+                            </div>
+                        </div>
+                        <div class="db-description">
+                            أداة تعيين علائقية كائنية حديثة توفر استعلامات آمنة نوعياً مع TypeScript، تمنع أخطاء SQL في وقت التطوير، وتوفر واجهة برمجية بديهية للتعامل مع البيانات
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right: Features -->
+                <div class="features-section">
+                    <div class="features-title">الميزات والقدرات الأساسية</div>
+                    
+                    <div class="features-grid">
+                        <!-- Feature 1 -->
+                        <div class="feature-card">
+                            <i class="fas fa-code-branch feature-icon"></i>
+                            <div class="feature-name">إدارة الترحيلات</div>
+                            <div class="feature-desc">تحكم في إصدارات المخطط مع ترحيلات آمنة ومتسقة</div>
+                        </div>
+                        
+                        <!-- Feature 2 -->
+                        <div class="feature-card">
+                            <i class="fas fa-link feature-icon"></i>
+                            <div class="feature-name">تجميع الاتصالات</div>
+                            <div class="feature-desc">إعادة استخدام اتصالات قاعدة البيانات لأداء محسّن</div>
+                        </div>
+                        
+                        <!-- Feature 3 -->
+                        <div class="feature-card">
+                            <i class="fas fa-list-ol feature-icon"></i>
+                            <div class="feature-name">استراتيجية الفهرسة</div>
+                            <div class="feature-desc">فهارس محسّنة لتنفيذ استعلامات سريع وفعّال</div>
+                        </div>
+                        
+                        <!-- Feature 4 -->
+                        <div class="feature-card">
+                            <i class="fas fa-save feature-icon"></i>
+                            <div class="feature-name">النسخ الاحتياطي التلقائي</div>
+                            <div class="feature-desc">حماية البيانات مع نسخ احتياطي واستعادة آلية</div>
+                        </div>
+                        
+                        <!-- Feature 5 -->
+                        <div class="feature-card">
+                            <i class="fas fa-expand-arrows-alt feature-icon"></i>
+                            <div class="feature-name">التوسع الأفقي</div>
+                            <div class="feature-desc">قابلية التوسع السلس مع نمو البيانات والمستخدمين</div>
+                        </div>
+                        
+                        <!-- Feature 6 -->
+                        <div class="feature-card">
+                            <i class="fas fa-lock feature-icon"></i>
+                            <div class="feature-name">أمن البيانات</div>
+                            <div class="feature-desc">تشفير شامل للبيانات أثناء التخزين والنقل</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

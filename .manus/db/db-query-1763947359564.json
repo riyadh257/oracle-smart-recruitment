@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS candidateNotes (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  candidateId INT NOT NULL,\n  userId INT NOT NULL,\n  note TEXT NOT NULL,\n  createdAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP\n);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS candidateNotes (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  candidateId INT NOT NULL,\n  userId INT NOT NULL,\n  note TEXT NOT NULL,\n  createdAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP\n);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1690
+}

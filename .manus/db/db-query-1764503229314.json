@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS health_check_results (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  health_check_id INT NOT NULL,\n  status ENUM('healthy', 'warning', 'critical', 'failed') NOT NULL,\n  response_time INT,\n  status_code INT,\n  success BOOLEAN NOT NULL,\n  error_message TEXT,\n  check_data JSON,\n  cpu_usage INT,\n  memory_usage INT,\n  disk_usage INT,\n  active_connections INT,\n  checked_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,\n  FOREIGN KEY (health_check_id) REFERENCES health_checks(id) ON DELETE CASCADE\n)",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS health_check_results (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  health_check_id INT NOT NULL,\n  status ENUM('healthy', 'warning', 'critical', 'failed') NOT NULL,\n  response_time INT,\n  status_code INT,\n  success BOOLEAN NOT NULL,\n  error_message TEXT,\n  check_data JSON,\n  cpu_usage INT,\n  memory_usage INT,\n  disk_usage INT,\n  active_connections INT,\n  checked_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,\n  FOREIGN KEY (health_check_id) REFERENCES health_checks(id) ON DELETE CASCADE\n)",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1705
+}

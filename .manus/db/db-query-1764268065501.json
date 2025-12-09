@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS notification_preferences (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  user_id INT NOT NULL UNIQUE,\n  video_analysis_enabled INT DEFAULT 1,\n  agent_task_enabled INT DEFAULT 1,\n  interview_question_enabled INT DEFAULT 1,\n  matching_enabled INT DEFAULT 1,\n  email_notifications INT DEFAULT 1,\n  push_notifications INT DEFAULT 1,\n  sound_enabled INT DEFAULT 1,\n  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,\n  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,\n  INDEX idx_user_id (user_id)\n)",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS notification_preferences (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  user_id INT NOT NULL UNIQUE,\n  video_analysis_enabled INT DEFAULT 1,\n  agent_task_enabled INT DEFAULT 1,\n  interview_question_enabled INT DEFAULT 1,\n  matching_enabled INT DEFAULT 1,\n  email_notifications INT DEFAULT 1,\n  push_notifications INT DEFAULT 1,\n  sound_enabled INT DEFAULT 1,\n  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,\n  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,\n  INDEX idx_user_id (user_id)\n)",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1624
+}

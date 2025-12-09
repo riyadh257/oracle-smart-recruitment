@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS `email_logs` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `template_id` int,\n  `recipient_email` varchar(320) NOT NULL,\n  `subject` varchar(500) NOT NULL,\n  `body` text NOT NULL,\n  `status` enum('sent','failed','queued') NOT NULL DEFAULT 'queued',\n  `sent_at` timestamp,\n  `error_message` text,\n  `metadata` json,\n  `createdAt` timestamp NOT NULL DEFAULT (now()),\n  CONSTRAINT `email_logs_id` PRIMARY KEY(`id`)\n);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS `email_logs` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `template_id` int,\n  `recipient_email` varchar(320) NOT NULL,\n  `subject` varchar(500) NOT NULL,\n  `body` text NOT NULL,\n  `status` enum('sent','failed','queued') NOT NULL DEFAULT 'queued',\n  `sent_at` timestamp,\n  `error_message` text,\n  `metadata` json,\n  `createdAt` timestamp NOT NULL DEFAULT (now()),\n  CONSTRAINT `email_logs_id` PRIMARY KEY(`id`)\n);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1741
+}

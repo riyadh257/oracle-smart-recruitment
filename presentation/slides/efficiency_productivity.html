@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كفاءة التوظيف والإنتاجية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: transparent;
+        }
+
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: white;
+            position: relative;
+        }
+
+        .header-bar {
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, #1E3A8A 0%, #3B82F6 100%);
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 50px;
+            min-height: 712px;
+        }
+
+        .metrics-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .page-title {
+            font-size: 42px;
+            font-weight: 700;
+            color: #1E3A8A;
+            margin-bottom: 25px;
+            line-height: 1.4;
+        }
+
+        .intro-text {
+            font-size: 17px;
+            font-weight: 400;
+            color: #1F2937;
+            line-height: 1.7;
+            margin-bottom: 40px;
+        }
+
+        .kpi-list {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .kpi-item {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .kpi-number {
+            font-size: 56px;
+            font-weight: 800;
+            min-width: 140px;
+            text-align: center;
+            line-height: 1;
+        }
+
+        .kpi-number.primary {
+            color: #3B82F6;
+        }
+
+        .kpi-number.success {
+            color: #10B981;
+        }
+
+        .kpi-description {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1F2937;
+            line-height: 1.5;
+            flex: 1;
+        }
+
+        .kpi-bar {
+            width: 6px;
+            height: 60px;
+            background: linear-gradient(180deg, #3B82F6 0%, #10B981 100%);
+        }
+
+        .image-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image-section img {
+            width: 450px;
+            height: 520px;
+            object-fit: contain;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
+            border-right: 4px solid #3B82F6;
+            margin-top: 35px;
+        }
+
+        .highlight-text {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1E3A8A;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header-bar"></div>
+
+        <div class="content-grid" style="padding: 55px 70px;">
+            <div class="metrics-section">
+                <h2 class="page-title">كفاءة التوظيف والإنتاجية</h2>
+
+                <p class="intro-text">
+                    من خلال الأتمتة والذكاء الاصطناعي، يحقق Oracle Recruiting تحسينات كبيرة في كفاءة عمليات التوظيف وإنتاجية الفرق.
+                </p>
+
+                <div class="kpi-list">
+                    <div class="kpi-item">
+                        <div class="kpi-number primary">53%</div>
+                        <div class="kpi-bar"></div>
+                        <div class="kpi-description">
+                            زيادة في إنتاجية المسؤولين عن التوظيف من خلال أتمتة المهام الروتينية
+                        </div>
+                    </div>
+
+                    <div class="kpi-item">
+                        <div class="kpi-number success">40%</div>
+                        <div class="kpi-bar"></div>
+                        <div class="kpi-description">
+                            تقليل وقت التوظيف عبر التوصيات الذكية والمطابقة التلقائية
+                        </div>
+                    </div>
+
+                    <div class="kpi-item">
+                        <div class="kpi-number primary">35%</div>
+                        <div class="kpi-bar"></div>
+                        <div class="kpi-description">
+                            تحسين جودة التوظيف من خلال رؤى البيانات والتحليلات المتقدمة
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlight-box" style="padding: 20px 25px;">
+                    <p class="highlight-text">
+                        أدوات CRM الأصلية لبناء علاقات قوية مع المرشحين على نطاق واسع، مع إدارة مقابلات فعالة وجدولة مبسطة
+                    </p>
+                </div>
+            </div>
+
+            <div class="image-section">
+                <img src="/home/ubuntu/oracle-smart-recruitment/presentation/assets/dashboard.png" alt="Recruitment Dashboard">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

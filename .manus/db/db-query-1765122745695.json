@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE `candidateNationality` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `candidateId` int NOT NULL,\n  `isSaudi` tinyint DEFAULT 0 NOT NULL,\n  `nationality` varchar(100) NOT NULL,\n  `iqamaNumber` varchar(50),\n  `iqamaExpiry` timestamp,\n  `workPermitStatus` varchar(50),\n  `workPermitExpiry` timestamp,\n  `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,\n  `updatedAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,\n  CONSTRAINT `candidateNationality_id` PRIMARY KEY(`id`),\n  KEY `candidateId_idx` (`candidateId`),\n  KEY `isSaudi_idx` (`isSaudi`)\n)",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE `candidateNationality` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `candidateId` int NOT NULL,\n  `isSaudi` tinyint DEFAULT 0 NOT NULL,\n  `nationality` varchar(100) NOT NULL,\n  `iqamaNumber` varchar(50),\n  `iqamaExpiry` timestamp,\n  `workPermitStatus` varchar(50),\n  `workPermitExpiry` timestamp,\n  `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,\n  `updatedAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,\n  CONSTRAINT `candidateNationality_id` PRIMARY KEY(`id`),\n  KEY `candidateId_idx` (`candidateId`),\n  KEY `isSaudi_idx` (`isSaudi`)\n)",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1844
+}

@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS `notifications` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `user_id` int NOT NULL,\n  `type` enum('candidate_applied','interview_scheduled','interview_updated','interview_cancelled','high_match_candidate','application_status_changed','new_message','system_alert','custom') NOT NULL,\n  `title` varchar(255) NOT NULL,\n  `message` text NOT NULL,\n  `metadata` json,\n  `is_read` boolean NOT NULL DEFAULT false,\n  `read_at` timestamp,\n  `priority` enum('low','medium','high','urgent') NOT NULL DEFAULT 'medium',\n  `createdAt` timestamp NOT NULL DEFAULT (now()),\n  CONSTRAINT `notifications_id` PRIMARY KEY(`id`)\n);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS `notifications` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `user_id` int NOT NULL,\n  `type` enum('candidate_applied','interview_scheduled','interview_updated','interview_cancelled','high_match_candidate','application_status_changed','new_message','system_alert','custom') NOT NULL,\n  `title` varchar(255) NOT NULL,\n  `message` text NOT NULL,\n  `metadata` json,\n  `is_read` boolean NOT NULL DEFAULT false,\n  `read_at` timestamp,\n  `priority` enum('low','medium','high','urgent') NOT NULL DEFAULT 'medium',\n  `createdAt` timestamp NOT NULL DEFAULT (now()),\n  CONSTRAINT `notifications_id` PRIMARY KEY(`id`)\n);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 2372
+}

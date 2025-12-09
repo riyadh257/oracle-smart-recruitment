@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: #FFFFFF;
+        font-family: 'Inter', sans-serif;
+        position: relative;
+      }
+      
+      .content-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 60px;
+        min-height: 720px;
+        padding-left: 80px;
+        padding-right: 80px;
+      }
+      
+      .left-column {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 60px;
+      }
+      
+      .accent-bar {
+        width: 80px;
+        height: 4px;
+        background: #0066CC;
+        margin-bottom: 32px;
+      }
+      
+      .page-title {
+        font-size: 40px;
+        font-weight: 700;
+        color: #1a1a1a;
+        line-height: 1.2;
+        margin-bottom: 48px;
+      }
+      
+      .highlight {
+        color: #0066CC;
+      }
+      
+      .features-list {
+        display: flex;
+        flex-direction: column;
+        gap: 36px;
+      }
+      
+      .feature-item {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+      }
+      
+      .icon-box {
+        width: 52px;
+        height: 52px;
+        background: #0066CC;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      
+      .feature-item:nth-child(2) .icon-box {
+        background: #FF6B35;
+      }
+      
+      .feature-item:nth-child(4) .icon-box {
+        background: #FF6B35;
+      }
+      
+      .icon-box i {
+        color: #FFFFFF;
+        font-size: 24px;
+      }
+      
+      .feature-content {
+        flex: 1;
+      }
+      
+      .feature-title {
+        font-size: 24px;
+        font-weight: 600;
+        color: #1a1a1a;
+        margin-bottom: 8px;
+      }
+      
+      .feature-description {
+        font-size: 16px;
+        font-weight: 400;
+        color: #666666;
+        line-height: 1.6;
+      }
+      
+      .right-column {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+      
+      .image-wrapper {
+        width: 480px;
+        height: 540px;
+        position: relative;
+      }
+      
+      .interview-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      
+      .accent-frame {
+        position: absolute;
+        top: -15px;
+        right: -15px;
+        width: 120px;
+        height: 120px;
+        border-top: 4px solid #0066CC;
+        border-right: 4px solid #0066CC;
+      }
+      
+      .accent-frame-bottom {
+        position: absolute;
+        bottom: -15px;
+        left: -15px;
+        width: 120px;
+        height: 120px;
+        border-bottom: 4px solid #FF6B35;
+        border-left: 4px solid #FF6B35;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="content-grid">
+            <div class="left-column">
+                <div class="accent-bar"></div>
+                <h2 class="page-title">
+                    Seamless <span class="highlight">Interview Experience</span>
+                </h2>
+                
+                <div class="features-list">
+                    <div class="feature-item">
+                        <div class="icon-box">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 class="feature-title">Automated Scheduling</h3>
+                            <p class="feature-description">Smart calendar integration with multi-timezone support, automatic conflict detection, and one-click booking for seamless coordination.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="icon-box">
+                            <i class="fas fa-th-large"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 class="feature-title">Multi-format Support</h3>
+                            <p class="feature-description">Flexible interview types including phone screens, video calls, onsite meetings, and technical assessments tailored to your hiring process.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="icon-box">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 class="feature-title">Integrated Video Conferencing</h3>
+                            <p class="feature-description">Native integration with Zoom, Microsoft Teams, and Google Meet with automatic meeting link generation and recording capabilities.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="icon-box">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 class="feature-title">Structured Feedback</h3>
+                            <p class="feature-description">Customizable scorecard templates ensure consistent evaluation across interviewers with real-time feedback collection and aggregation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="right-column">
+                <div class="image-wrapper">
+                    <div class="accent-frame"></div>
+                    <img src="/home/ubuntu/oracle-smart-recruitment/presentation/assets/video-interview.jpg" alt="Video interview in progress" class="interview-image">
+                    <div class="accent-frame-bottom"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

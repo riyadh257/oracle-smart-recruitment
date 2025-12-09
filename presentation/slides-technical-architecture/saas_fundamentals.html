@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            font-family: 'Cairo', sans-serif;
+            color: #E2E8F0;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .header {
+            padding-top: 50px;
+            padding-right: 60px;
+            padding-left: 60px;
+            margin-bottom: 35px;
+        }
+        
+        .page-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #60A5FA;
+            margin-bottom: 10px;
+        }
+        
+        .title-underline {
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(90deg, #10B981 0%, #60A5FA 100%);
+            border-radius: 2px;
+        }
+        
+        .content {
+            padding-right: 60px;
+            padding-left: 60px;
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+        }
+        
+        .comparison-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .model-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 2px solid;
+            min-height: 280px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .traditional-model {
+            border-color: rgba(239, 68, 68, 0.4);
+        }
+        
+        .saas-model {
+            border-color: rgba(16, 185, 129, 0.4);
+        }
+        
+        .model-header {
+            padding-top: 25px;
+            padding-right: 30px;
+            padding-left: 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .model-icon {
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-size: 24px;
+        }
+        
+        .traditional-icon {
+            background: rgba(239, 68, 68, 0.2);
+            color: #EF4444;
+        }
+        
+        .saas-icon {
+            background: rgba(16, 185, 129, 0.2);
+            color: #10B981;
+        }
+        
+        .model-title {
+            font-size: 24px;
+            font-weight: 700;
+        }
+        
+        .traditional-title {
+            color: #EF4444;
+        }
+        
+        .saas-title {
+            color: #10B981;
+        }
+        
+        .model-content {
+            padding-top: 25px;
+            padding-right: 30px;
+            padding-left: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .model-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        
+        .item-bullet {
+            width: 6px;
+            height: 6px;
+            min-width: 6px;
+            border-radius: 50%;
+            margin-top: 8px;
+        }
+        
+        .traditional-bullet {
+            background: #EF4444;
+        }
+        
+        .saas-bullet {
+            background: #10B981;
+        }
+        
+        .saas-characteristics {
+            background: rgba(96, 165, 250, 0.08);
+            border-right: 4px solid #60A5FA;
+            padding-top: 25px;
+            padding-right: 30px;
+            padding-left: 30px;
+        }
+        
+        .characteristics-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #60A5FA;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .characteristics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+        
+        .characteristic-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .char-icon {
+            width: 36px;
+            height: 36px;
+            min-width: 36px;
+            background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            color: #0F172A;
+        }
+        
+        .char-text {
+            font-size: 16px;
+            font-weight: 600;
+            color: #E2E8F0;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <div class="page-title">المفاهيم الأساسية لنموذج SaaS</div>
+            <div class="title-underline"></div>
+        </div>
+        
+        <div class="content">
+            <div class="comparison-section">
+                <div class="model-box traditional-model">
+                    <div class="model-header">
+                        <div class="model-icon traditional-icon">
+                            <i class="fas fa-box"></i>
+                        </div>
+                        <div class="model-title traditional-title">النموذج التقليدي</div>
+                    </div>
+                    <div class="model-content">
+                        <div class="model-item">
+                            <div class="item-bullet traditional-bullet"></div>
+                            <div>بيع <strong>تراخيص</strong> البرمجيات للعملاء</div>
+                        </div>
+                        <div class="model-item">
+                            <div class="item-bullet traditional-bullet"></div>
+                            <div>كل عميل يحصل على نسخة منفصلة</div>
+                        </div>
+                        <div class="model-item">
+                            <div class="item-bullet traditional-bullet"></div>
+                            <div>تكلفة أولية عالية للشراء</div>
+                        </div>
+                        <div class="model-item">
+                            <div class="item-bullet traditional-bullet"></div>
+                            <div>العميل مسؤول عن الصيانة والتحديثات</div>
+                        </div>
+                        <div class="model-item">
+                            <div class="item-bullet traditional-bullet"></div>
+                            <div>تثبيت محلي على خوادم العميل</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="model-box saas-model">
+                    <div class="model-header">
+                        <div class="model-icon saas-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <div class="model-title saas-title">نموذج SaaS</div>
+                    </div>
+                    <div class="model-content">
+                        <div class="model-item">
+                            <div class="item-bullet saas-bullet"></div>
+                            <div>دفع <strong>إيجار شهري/سنوي</strong> للوصول</div>
+                        </div>
+                        <div class="model-item">
+                            <div class="item-bullet saas-bullet"></div>
+                            <div>كل عميل = <strong>مستأجر (Tenant)</strong></div>
+                        </div>
+                        <div class="model-item">
+                            <div class="item-bullet saas-bullet"></div>
+                            <div>تكلفة منخفضة ومرنة حسب الاستخدام</div>
+                        </div>
+                        <div class="model-item">
+                            <div class="item-bullet saas-bullet"></div>
+                            <div>المزود مسؤول عن كل شيء</div>
+                        </div>
+                        <div class="model-item">
+                            <div class="item-bullet saas-bullet"></div>
+                            <div>وصول عبر الإنترنت من أي مكان</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="saas-characteristics">
+                <div class="characteristics-title">
+                    <i class="fas fa-star"></i>
+                    <span>خصائص نموذج SaaS الأساسية</span>
+                </div>
+                <div class="characteristics-grid">
+                    <div class="characteristic-item">
+                        <div class="char-icon">
+                            <i class="fas fa-sync"></i>
+                        </div>
+                        <div class="char-text">تحديثات تلقائية</div>
+                    </div>
+                    <div class="characteristic-item">
+                        <div class="char-icon">
+                            <i class="fas fa-expand-arrows-alt"></i>
+                        </div>
+                        <div class="char-text">قابلية توسع عالية</div>
+                    </div>
+                    <div class="characteristic-item">
+                        <div class="char-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="char-text">تكلفة تشغيلية منخفضة</div>
+                    </div>
+                    <div class="characteristic-item">
+                        <div class="char-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="char-text">خدمة متعددة المستأجرين</div>
+                    </div>
+                    <div class="characteristic-item">
+                        <div class="char-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="char-text">وصول عالمي</div>
+                    </div>
+                    <div class="characteristic-item">
+                        <div class="char-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="char-text">أمان مركزي</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

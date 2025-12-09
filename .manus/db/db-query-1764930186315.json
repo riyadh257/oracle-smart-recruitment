@@ -1,0 +1,134 @@
+{
+  "query": "SELECT \n  TABLE_NAME,\n  COUNT(*) as FK_COUNT\nFROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE\nWHERE TABLE_SCHEMA = DATABASE()\n  AND REFERENCED_TABLE_NAME IS NOT NULL\nGROUP BY TABLE_NAME\nORDER BY FK_COUNT DESC;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute SELECT \n  TABLE_NAME,\n  COUNT(*) as FK_COUNT\nFROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE\nWHERE TABLE_SCHEMA = DATABASE()\n  AND REFERENCED_TABLE_NAME IS NOT NULL\nGROUP BY TABLE_NAME\nORDER BY FK_COUNT DESC;",
+  "rows": [
+    {
+      "TABLE_NAME": "videoInterviews",
+      "FK_COUNT": "4"
+    },
+    {
+      "TABLE_NAME": "retentionMetrics",
+      "FK_COUNT": "3"
+    },
+    {
+      "TABLE_NAME": "alertHistory",
+      "FK_COUNT": "3"
+    },
+    {
+      "TABLE_NAME": "strategicRoi",
+      "FK_COUNT": "3"
+    },
+    {
+      "TABLE_NAME": "talentPool",
+      "FK_COUNT": "3"
+    },
+    {
+      "TABLE_NAME": "applications",
+      "FK_COUNT": "2"
+    },
+    {
+      "TABLE_NAME": "savedJobs",
+      "FK_COUNT": "2"
+    },
+    {
+      "TABLE_NAME": "listMembers",
+      "FK_COUNT": "2"
+    },
+    {
+      "TABLE_NAME": "emailAbVariants",
+      "FK_COUNT": "2"
+    },
+    {
+      "TABLE_NAME": "billingRecords",
+      "FK_COUNT": "1"
+    },
+    {
+      "TABLE_NAME": "employeeSkills",
+      "FK_COUNT": "1"
+    },
+    {
+      "TABLE_NAME": "emailAnalytics",
+      "FK_COUNT": "1"
+    },
+    {
+      "TABLE_NAME": "performanceAlerts",
+      "FK_COUNT": "1"
+    },
+    {
+      "TABLE_NAME": "emailTemplates",
+      "FK_COUNT": "1"
+    },
+    {
+      "TABLE_NAME": "coachingSessions",
+      "FK_COUNT": "1"
+    },
+    {
+      "TABLE_NAME": "atsIntegrations",
+      "FK_COUNT": "1"
+    },
+    {
+      "TABLE_NAME": "candidateLists",
+      "FK_COUNT": "1"
+    },
+    {
+      "TABLE_NAME": "employers",
+      "FK_COUNT": "1"
+    },
+    {
+      "TABLE_NAME": "employeeSurveys",
+      "FK_COUNT": "1"
+    },
+    {
+      "TABLE_NAME": "emailBranding",
+      "FK_COUNT": "1"
+    },
+    {
+      "TABLE_NAME": "predictiveInsights",
+      "FK_COUNT": "1"
+    },
+    {
+      "TABLE_NAME": "ksaCoachingSessions",
+      "FK_COUNT": "1"
+    },
+    {
+      "TABLE_NAME": "jobAttributes",
+      "FK_COUNT": "1"
+    },
+    {
+      "TABLE_NAME": "teamMetrics",
+      "FK_COUNT": "1"
+    },
+    {
+      "TABLE_NAME": "candidateAttributes",
+      "FK_COUNT": "1"
+    },
+    {
+      "TABLE_NAME": "emailAbTests",
+      "FK_COUNT": "1"
+    },
+    {
+      "TABLE_NAME": "candidates",
+      "FK_COUNT": "1"
+    },
+    {
+      "TABLE_NAME": "skillGapAnalysis",
+      "FK_COUNT": "1"
+    },
+    {
+      "TABLE_NAME": "notificationPreferences",
+      "FK_COUNT": "1"
+    },
+    {
+      "TABLE_NAME": "shifts",
+      "FK_COUNT": "1"
+    },
+    {
+      "TABLE_NAME": "jobs",
+      "FK_COUNT": "1"
+    }
+  ],
+  "messages": [],
+  "stdout": "TABLE_NAME\tFK_COUNT\nvideoInterviews\t4\nretentionMetrics\t3\nalertHistory\t3\nstrategicRoi\t3\ntalentPool\t3\napplications\t2\nsavedJobs\t2\nlistMembers\t2\nemailAbVariants\t2\nbillingRecords\t1\nemployeeSkills\t1\nemailAnalytics\t1\nperformanceAlerts\t1\nemailTemplates\t1\ncoachingSessions\t1\natsIntegrations\t1\ncandidateLists\t1\nemployers\t1\nemployeeSurveys\t1\nemailBranding\t1\npredictiveInsights\t1\nksaCoachingSessions\t1\njobAttributes\t1\nteamMetrics\t1\ncandidateAttributes\t1\nemailAbTests\t1\ncandidates\t1\nskillGapAnalysis\t1\nnotificationPreferences\t1\nshifts\t1\njobs\t1\n",
+  "stderr": "",
+  "execution_time_ms": 1478
+}

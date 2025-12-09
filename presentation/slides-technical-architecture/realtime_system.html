@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      
+      .slide-container {
+        width: 1280px;
+        min-height: 720px;
+        background: #0A0E27;
+        font-family: 'Space Grotesk', sans-serif;
+        color: #E0E6ED;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .content-wrapper {
+        padding-top: 60px;
+        padding-left: 80px;
+        padding-right: 80px;
+      }
+      
+      .headline {
+        font-size: 36px;
+        font-weight: 700;
+        color: #00D9FF;
+        line-height: 1.2;
+        margin-bottom: 35px;
+      }
+      
+      .main-grid {
+        display: grid;
+        grid-template-columns: 45% 55%;
+        gap: 50px;
+        margin-bottom: 30px;
+      }
+      
+      .architecture-section {
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .section-title {
+        font-size: 20px;
+        font-weight: 600;
+        color: #7B61FF;
+        margin-bottom: 20px;
+        font-family: 'JetBrains Mono', monospace;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        font-size: 14px;
+      }
+      
+      .arch-component {
+        margin-bottom: 18px;
+        padding-left: 20px;
+        position: relative;
+      }
+      
+      .arch-component::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 6px;
+        width: 8px;
+        height: 8px;
+        background: #00FF88;
+        transform: rotate(45deg);
+      }
+      
+      .arch-title {
+        font-size: 17px;
+        font-weight: 600;
+        color: #00D9FF;
+        margin-bottom: 4px;
+      }
+      
+      .arch-description {
+        font-size: 15px;
+        line-height: 1.5;
+        color: rgba(224, 230, 237, 0.8);
+      }
+      
+      .features-section {
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .feature-item {
+        margin-bottom: 16px;
+        display: grid;
+        grid-template-columns: 30px 1fr;
+        gap: 12px;
+        align-items: start;
+      }
+      
+      .feature-number {
+        width: 30px;
+        height: 30px;
+        background: rgba(123, 97, 255, 0.2);
+        color: #7B61FF;
+        font-weight: 700;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'JetBrains Mono', monospace;
+      }
+      
+      .feature-content {
+        padding-top: 2px;
+      }
+      
+      .feature-title {
+        font-size: 17px;
+        font-weight: 600;
+        color: #E0E6ED;
+        margin-bottom: 4px;
+      }
+      
+      .feature-description {
+        font-size: 14px;
+        line-height: 1.5;
+        color: rgba(224, 230, 237, 0.7);
+      }
+      
+      .code-section {
+        background: rgba(0, 217, 255, 0.03);
+        border-top: 2px solid rgba(0, 217, 255, 0.3);
+        padding-top: 16px;
+        padding-left: 30px;
+        padding-right: 30px;
+        margin-top: 20px;
+      }
+      
+      .code-label {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 12px;
+        color: #00FF88;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+      
+      .code-block {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 13px;
+        line-height: 1.6;
+        color: #E0E6ED;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+      }
+      
+      .code-snippet {
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .code-comment {
+        color: rgba(0, 255, 136, 0.7);
+        margin-bottom: 4px;
+      }
+      
+      .code-line {
+        color: #E0E6ED;
+      }
+      
+      .code-keyword {
+        color: #7B61FF;
+      }
+      
+      .code-string {
+        color: #00FF88;
+      }
+      
+      .code-function {
+        color: #00D9FF;
+      }
+      
+      .accent-bar {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(90deg, #7B61FF, #00D9FF, #00FF88);
+      }
+      
+      .slide-container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: 
+          linear-gradient(rgba(0, 217, 255, 0.02) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 217, 255, 0.02) 1px, transparent 1px);
+        background-size: 80px 80px;
+        pointer-events: none;
+        z-index: 0;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="content-wrapper">
+            <h1 class="headline">Socket.io Powers Live Updates for Collaborative Recruitment Workflows</h1>
+            
+            <div class="main-grid">
+                <div class="architecture-section">
+                    <div class="section-title">Technical Architecture</div>
+                    
+                    <div class="arch-component">
+                        <div class="arch-title">WebSocket Connections</div>
+                        <div class="arch-description">Bidirectional communication with automatic reconnection logic</div>
+                    </div>
+                    
+                    <div class="arch-component">
+                        <div class="arch-title">Room-Based Broadcasting</div>
+                        <div class="arch-description">Multi-user collaboration with targeted event delivery</div>
+                    </div>
+                    
+                    <div class="arch-component">
+                        <div class="arch-title">Event-Driven Architecture</div>
+                        <div class="arch-description">Typed message contracts ensure type safety across client-server boundary</div>
+                    </div>
+                    
+                    <div class="arch-component">
+                        <div class="arch-title">Horizontal Scaling</div>
+                        <div class="arch-description">Redis adapter support for multi-instance deployments</div>
+                    </div>
+                </div>
+                
+                <div class="features-section">
+                    <div class="section-title">Real-Time Features</div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-number">01</div>
+                        <div class="feature-content">
+                            <div class="feature-title">Application Status Updates</div>
+                            <div class="feature-description">Instant notifications when application status changes</div>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-number">02</div>
+                        <div class="feature-content">
+                            <div class="feature-title">Interview Scheduling</div>
+                            <div class="feature-description">Live calendar availability updates during scheduling</div>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-number">03</div>
+                        <div class="feature-content">
+                            <div class="feature-title">Chat Messaging</div>
+                            <div class="feature-description">Real-time communication between candidates and recruiters</div>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-number">04</div>
+                        <div class="feature-content">
+                            <div class="feature-title">Dashboard Metrics</div>
+                            <div class="feature-description">Live updates to employer analytics dashboards</div>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-number">05</div>
+                        <div class="feature-content">
+                            <div class="feature-title">Notification System</div>
+                            <div class="feature-description">In-app alerts for important events and reminders</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="code-section">
+                <div class="code-label">Implementation Example</div>
+                <div class="code-block">
+                    <div class="code-snippet">
+                        <div class="code-comment">// Server-side event emission</div>
+                        <div class="code-line"><span class="code-keyword">io</span>.<span class="code-function">to</span>(<span class="code-string">`employer-${employerId}`</span>)</div>
+                        <div class="code-line">  .<span class="code-function">emit</span>(<span class="code-string">'newApplication'</span>, data);</div>
+                    </div>
+                    <div class="code-snippet">
+                        <div class="code-comment">// Client-side event handling</div>
+                        <div class="code-line"><span class="code-keyword">socket</span>.<span class="code-function">on</span>(<span class="code-string">'newApplication'</span>, (data) => {</div>
+                        <div class="code-line">  queryClient.<span class="code-function">invalidateQueries</span>();</div>
+                        <div class="code-line">});</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="accent-bar"></div>
+    </div>
+</body>
+</html>

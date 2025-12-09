@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .slide-container {
+      width: 1280px;
+      min-height: 720px;
+      background: #0A1628;
+      position: relative;
+    }
+    
+    .header {
+      padding-top: 60px;
+      padding-left: 80px;
+      padding-right: 80px;
+      margin-bottom: 60px;
+    }
+    
+    .page-title {
+      font-size: 40px;
+      font-weight: 700;
+      color: #FFFFFF;
+      line-height: 1.2;
+    }
+    
+    .challenges-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 520px);
+      gap: 40px;
+      padding-left: 80px;
+      padding-right: 80px;
+      justify-content: center;
+    }
+    
+    .challenge-card {
+      background: rgba(239, 68, 68, 0.08);
+      border-left: 4px solid #EF4444;
+      padding-left: 30px;
+      padding-top: 25px;
+      min-height: 180px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    
+    .challenge-icon {
+      font-size: 36px;
+      line-height: 1;
+      margin-bottom: 5px;
+    }
+    
+    .challenge-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: #FFFFFF;
+      line-height: 1.3;
+    }
+    
+    .challenge-description {
+      font-size: 16px;
+      font-weight: 400;
+      color: #E2E8F0;
+      line-height: 1.6;
+      max-width: 450px;
+    }
+    
+    .stat-highlight {
+      font-weight: 700;
+      color: #F97316;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="header">
+      <div class="page-title">The Modern Recruitment Challenge</div>
+    </div>
+    
+    <div class="challenges-grid">
+      <div class="challenge-card">
+        <div class="challenge-icon">📊</div>
+        <div class="challenge-title">Overwhelming Application Volume</div>
+        <div class="challenge-description">
+          HR teams receive <span class="stat-highlight">hundreds of applications</span> per position, spending countless hours manually reviewing resumes and struggling to identify qualified candidates efficiently.
+        </div>
+      </div>
+      
+      <div class="challenge-card">
+        <div class="challenge-icon">⚖️</div>
+        <div class="challenge-title">Unconscious Bias in Screening</div>
+        <div class="challenge-description">
+          Manual resume review introduces <span class="stat-highlight">subjective bias</span> based on names, education, or demographics, leading to missed talent and potential legal risks.
+        </div>
+      </div>
+      
+      <div class="challenge-card">
+        <div class="challenge-icon">⏱️</div>
+        <div class="challenge-title">Lengthy Hiring Cycles</div>
+        <div class="challenge-description">
+          Traditional recruitment processes take <span class="stat-highlight">45-60 days on average</span>, causing organizations to lose top candidates to faster competitors.
+        </div>
+      </div>
+      
+      <div class="challenge-card">
+        <div class="challenge-icon">😞</div>
+        <div class="challenge-title">Poor Candidate Experience</div>
+        <div class="challenge-description">
+          Lack of communication and transparency leads to <span class="stat-highlight">60% of candidates</span> having negative experiences, damaging employer brand and future talent pipelines.
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Candidate Intelligence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #000;
+        }
+        
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #0B1A3E;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .content-wrapper {
+            padding-top: 60px;
+            padding-left: 80px;
+            padding-right: 80px;
+        }
+        
+        .slide-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 45px;
+            line-height: 1.3;
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 55% 45%;
+            gap: 40px;
+            align-items: start;
+        }
+        
+        .features-section {
+            position: relative;
+            min-height: 450px;
+        }
+        
+        .center-metric {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 2;
+        }
+        
+        .metric-number {
+            font-size: 72px;
+            font-weight: 800;
+            color: #3B82F6;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+        
+        .metric-label {
+            font-size: 18px;
+            font-weight: 600;
+            color: #FFFFFF;
+            line-height: 1.3;
+        }
+        
+        .metric-sublabel {
+            font-size: 14px;
+            font-weight: 400;
+            color: #E8EDF5;
+            margin-top: 5px;
+        }
+        
+        .feature-card {
+            position: absolute;
+            width: 220px;
+            background: rgba(59, 130, 246, 0.08);
+            border-left: 3px solid #3B82F6;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 15px;
+            min-height: 85px;
+        }
+        
+        .feature-card.green {
+            background: rgba(16, 185, 129, 0.08);
+            border-left-color: #10B981;
+        }
+        
+        .feature-icon {
+            font-size: 20px;
+            color: #3B82F6;
+            margin-bottom: 8px;
+        }
+        
+        .feature-card.green .feature-icon {
+            color: #10B981;
+        }
+        
+        .feature-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #FFFFFF;
+            line-height: 1.3;
+            margin-bottom: 5px;
+        }
+        
+        .feature-desc {
+            font-size: 13px;
+            font-weight: 400;
+            color: #E8EDF5;
+            line-height: 1.4;
+        }
+        
+        .card-1 {
+            top: 0;
+            left: 0;
+        }
+        
+        .card-2 {
+            top: 0;
+            right: 0;
+        }
+        
+        .card-3 {
+            top: 180px;
+            left: -10px;
+        }
+        
+        .card-4 {
+            top: 180px;
+            right: -10px;
+        }
+        
+        .card-5 {
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .visual-section {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .dashboard-preview {
+            width: 500px;
+            height: 300px;
+            object-fit: contain;
+        }
+        
+        .evidence-box {
+            background: rgba(16, 185, 129, 0.1);
+            border-left: 4px solid #10B981;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 20px;
+            min-height: 100px;
+        }
+        
+        .evidence-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #10B981;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+        
+        .evidence-text {
+            font-size: 14px;
+            font-weight: 400;
+            color: #E8EDF5;
+            line-height: 1.5;
+        }
+        
+        .evidence-stat {
+            font-size: 15px;
+            font-weight: 600;
+            color: #FFFFFF;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="content-wrapper">
+            <h1 class="slide-title">Automated Screening and Matching Reduces Review Time by 68%</h1>
+            
+            <div class="main-content">
+                <div class="features-section">
+                    <div class="center-metric">
+                        <div class="metric-number">68%</div>
+                        <div class="metric-label">Time Reduction</div>
+                        <div class="metric-sublabel">in candidate review process</div>
+                    </div>
+                    
+                    <div class="feature-card card-1">
+                        <div class="feature-icon"><i class="fas fa-file-alt"></i></div>
+                        <div class="feature-title">Resume Parsing</div>
+                        <div class="feature-desc">Automatic extraction of skills, experience, and qualifications</div>
+                    </div>
+                    
+                    <div class="feature-card card-2 green">
+                        <div class="feature-icon"><i class="fas fa-brain"></i></div>
+                        <div class="feature-title">Intelligent Matching</div>
+                        <div class="feature-desc">ML algorithms score candidates against job requirements</div>
+                    </div>
+                    
+                    <div class="feature-card card-3">
+                        <div class="feature-icon"><i class="fas fa-filter"></i></div>
+                        <div class="feature-title">Automated Screening</div>
+                        <div class="feature-desc">Filter applications by must-have qualifications instantly</div>
+                    </div>
+                    
+                    <div class="feature-card card-4 green">
+                        <div class="feature-icon"><i class="fas fa-video"></i></div>
+                        <div class="feature-title">Video Analysis</div>
+                        <div class="feature-desc">AI assessment of communication and cultural fit</div>
+                    </div>
+                    
+                    <div class="feature-card card-5">
+                        <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+                        <div class="feature-title">Predictive Analytics</div>
+                        <div class="feature-desc">Identify candidates likely to accept and succeed long-term</div>
+                    </div>
+                </div>
+                
+                <div class="visual-section">
+                    <img src="/home/ubuntu/oracle-smart-recruitment/presentation/ai-recruitment-dashboard.jpg" alt="AI Recruitment Dashboard" class="dashboard-preview">
+                    
+                    <div class="evidence-box">
+                        <div class="evidence-title"><i class="fas fa-chart-bar"></i> Industry Adoption</div>
+                        <div class="evidence-text">AI is rapidly becoming the standard in recruitment processes across organizations</div>
+                        <div class="evidence-stat">43% of organizations use AI for HR tasks (up from 26% in 2024)</div>
+                        <div class="evidence-stat">99% of hiring managers report AI use in their process</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

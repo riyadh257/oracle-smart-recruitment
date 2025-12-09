@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #0A1628 0%, #1a2942 100%);
+            font-family: 'Tajawal', sans-serif;
+            color: #E8F1F5;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .geometric-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+        }
+        
+        .geometric-bg::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(45deg, #00D9FF, #4ECDC4);
+            border-radius: 50%;
+            top: -100px;
+            left: -100px;
+            filter: blur(80px);
+        }
+        
+        .geometric-bg::after {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: linear-gradient(225deg, #FF6B35, #00D9FF);
+            border-radius: 50%;
+            bottom: -150px;
+            right: -150px;
+            filter: blur(100px);
+        }
+        
+        .content-wrapper {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .title-section {
+            text-align: right;
+        }
+        
+        .main-title {
+            font-size: 64px;
+            font-weight: 900;
+            color: #00D9FF;
+            line-height: 1.2;
+            margin-bottom: 30px;
+            text-shadow: 0 0 30px rgba(0, 217, 255, 0.3);
+        }
+        
+        .subtitle {
+            font-size: 28px;
+            font-weight: 400;
+            color: #E8F1F5;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+        
+        .accent-line {
+            width: 120px;
+            height: 6px;
+            background: linear-gradient(90deg, #FF6B35, #00D9FF);
+            margin-right: auto;
+            border-radius: 3px;
+        }
+        
+        .visual-section {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .hexagon-container {
+            position: relative;
+            width: 350px;
+            height: 350px;
+        }
+        
+        .hexagon {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            border: 3px solid;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+        
+        .hex-1 {
+            top: 0;
+            left: 100px;
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.2), rgba(0, 217, 255, 0.05));
+            border-color: #00D9FF;
+            color: #00D9FF;
+        }
+        
+        .hex-2 {
+            top: 100px;
+            left: 0;
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.2), rgba(255, 107, 53, 0.05));
+            border-color: #FF6B35;
+            color: #FF6B35;
+        }
+        
+        .hex-3 {
+            top: 100px;
+            right: 0;
+            background: linear-gradient(135deg, rgba(78, 205, 196, 0.2), rgba(78, 205, 196, 0.05));
+            border-color: #4ECDC4;
+            color: #4ECDC4;
+        }
+        
+        .hex-4 {
+            bottom: 0;
+            left: 100px;
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.3), rgba(255, 107, 53, 0.1));
+            border-color: #00D9FF;
+            color: #E8F1F5;
+            font-size: 24px;
+            font-weight: 700;
+        }
+        
+        .oracle-badge {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(135deg, #0A1628, #1a2942);
+            border: 3px solid #00D9FF;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            color: #00D9FF;
+            box-shadow: 0 0 40px rgba(0, 217, 255, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="geometric-bg"></div>
+        
+        <div class="content-wrapper">
+            <div class="title-section">
+                <h1 class="main-title">نظام Oracle<br>للتوظيف الذكي</h1>
+                <p class="subtitle">منصة متكاملة تدعمها تقنيات الذكاء الاصطناعي لتحويل عملية التوظيف في منطقة الخليج</p>
+                <div class="accent-line"></div>
+            </div>
+            
+            <div class="visual-section">
+                <div class="hexagon-container">
+                    <div class="hexagon hex-1">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="hexagon hex-2">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="hexagon hex-3">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="hexagon hex-4">
+                        AI Powered
+                    </div>
+                    <div class="oracle-badge">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

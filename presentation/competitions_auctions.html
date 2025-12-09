@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #0A1628 0%, #1a2942 100%);
+            font-family: 'Tajawal', sans-serif;
+            color: #E8F1F5;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .main-title {
+            text-align: center;
+            font-size: 48px;
+            font-weight: 900;
+            color: #00D9FF;
+            padding-top: 60px;
+            margin-bottom: 50px;
+        }
+        
+        .content-wrapper {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            min-height: 550px;
+        }
+        
+        .divider {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(180deg, transparent, #00D9FF 20%, #00D9FF 80%, transparent);
+            transform: translateX(-50%);
+        }
+        
+        .section {
+            padding-right: 60px;
+            padding-left: 60px;
+            padding-top: 40px;
+            text-align: right;
+            position: relative;
+        }
+        
+        .section-icon {
+            width: 80px;
+            height: 80px;
+            margin-right: auto;
+            margin-left: auto;
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.2), rgba(78, 205, 196, 0.1));
+            border: 3px solid;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            margin-bottom: 25px;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+        
+        .competition-section .section-icon {
+            border-color: #FF6B35;
+            color: #FF6B35;
+        }
+        
+        .auction-section .section-icon {
+            border-color: #4ECDC4;
+            color: #4ECDC4;
+        }
+        
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .competition-section .section-title {
+            color: #FF6B35;
+        }
+        
+        .auction-section .section-title {
+            color: #4ECDC4;
+        }
+        
+        .section-subtitle {
+            font-size: 16px;
+            color: rgba(232, 241, 245, 0.7);
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+        
+        .features-list {
+            list-style: none;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            flex-direction: row-reverse;
+            text-align: right;
+            margin-bottom: 18px;
+        }
+        
+        .feature-bullet {
+            width: 28px;
+            min-width: 28px;
+            height: 28px;
+            border: 2px solid;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+        }
+        
+        .competition-section .feature-bullet {
+            border-color: #FF6B35;
+            color: #FF6B35;
+        }
+        
+        .auction-section .feature-bullet {
+            border-color: #4ECDC4;
+            color: #4ECDC4;
+        }
+        
+        .feature-text {
+            font-size: 16px;
+            color: #E8F1F5;
+            line-height: 1.6;
+        }
+        
+        .use-case {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid rgba(0, 217, 255, 0.2);
+            text-align: center;
+        }
+        
+        .use-case-label {
+            font-size: 14px;
+            color: rgba(232, 241, 245, 0.6);
+            margin-bottom: 8px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        
+        .use-case-text {
+            font-size: 15px;
+            color: #E8F1F5;
+            line-height: 1.5;
+        }
+        
+        .corner-decoration {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border: 2px solid;
+            opacity: 0.3;
+        }
+        
+        .competition-section .corner-decoration {
+            border-color: #FF6B35 transparent transparent #FF6B35;
+            top: 20px;
+            right: 20px;
+        }
+        
+        .auction-section .corner-decoration {
+            border-color: transparent #4ECDC4 #4ECDC4 transparent;
+            bottom: 20px;
+            left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <h2 class="main-title">المسابقات والمزادات الرقمية</h2>
+        
+        <div class="content-wrapper">
+            <div class="divider"></div>
+            
+            <div class="section competition-section">
+                <div class="corner-decoration"></div>
+                <div class="section-icon">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <h3 class="section-title">نظام المسابقات الإبداعية</h3>
+                <p class="section-subtitle">Creative Competition Engine</p>
+                
+                <ul class="features-list">
+                    <li class="feature-item">
+                        <div class="feature-bullet">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="feature-text">
+                            نشر مسابقة مع وصف تفصيلي للعمل المطلوب
+                        </div>
+                    </li>
+                    
+                    <li class="feature-item">
+                        <div class="feature-bullet">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="feature-text">
+                            استقبال أعمال من متنافسين متعددين
+                        </div>
+                    </li>
+                    
+                    <li class="feature-item">
+                        <div class="feature-bullet">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="feature-text">
+                            اختيار الفائز ودفع المكافأة بشكل آمن
+                        </div>
+                    </li>
+                    
+                    <li class="feature-item">
+                        <div class="feature-bullet">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="feature-text">
+                            حماية حقوق الملكية الفكرية للأعمال
+                        </div>
+                    </li>
+                </ul>
+                
+                <div class="use-case">
+                    <div class="use-case-label">مثالي لـ</div>
+                    <div class="use-case-text">التصميم الجرافيكي • الشعارات • المحتوى الإبداعي • الكتابة</div>
+                </div>
+            </div>
+            
+            <div class="section auction-section">
+                <div class="corner-decoration"></div>
+                <div class="section-icon">
+                    <i class="fas fa-gavel"></i>
+                </div>
+                <h3 class="section-title">مزادات المنتجات الرقمية</h3>
+                <p class="section-subtitle">Digital Product Auction Engine</p>
+                
+                <ul class="features-list">
+                    <li class="feature-item">
+                        <div class="feature-bullet">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="feature-text">
+                            بيع المنتجات الرقمية بنظام المزاد العلني
+                        </div>
+                    </li>
+                    
+                    <li class="feature-item">
+                        <div class="feature-bullet">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="feature-text">
+                            نظام مزايدات آمن مع حماية المشتري
+                        </div>
+                    </li>
+                    
+                    <li class="feature-item">
+                        <div class="feature-bullet">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="feature-text">
+                            تسليم تلقائي للمنتجات بعد إتمام الدفع
+                        </div>
+                    </li>
+                    
+                    <li class="feature-item">
+                        <div class="feature-bullet">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="feature-text">
+                            تتبع المزايدات والإشعارات الفورية
+                        </div>
+                    </li>
+                </ul>
+                
+                <div class="use-case">
+                    <div class="use-case-label">مثالي لـ</div>
+                    <div class="use-case-text">Templates • Source Code • Digital Assets • Courses</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

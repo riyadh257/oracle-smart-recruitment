@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS candidate_job_matches (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  candidate_id INT NOT NULL,\n  job_id INT NOT NULL,\n  match_score INT NOT NULL,\n  skills_match INT,\n  experience_match INT,\n  location_match INT,\n  salary_match INT,\n  reasoning TEXT,\n  strengths TEXT,\n  gaps TEXT,\n  recommendations TEXT,\n  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,\n  UNIQUE KEY unique_match (candidate_id, job_id)\n)",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS candidate_job_matches (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  candidate_id INT NOT NULL,\n  job_id INT NOT NULL,\n  match_score INT NOT NULL,\n  skills_match INT,\n  experience_match INT,\n  location_match INT,\n  salary_match INT,\n  reasoning TEXT,\n  strengths TEXT,\n  gaps TEXT,\n  recommendations TEXT,\n  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,\n  UNIQUE KEY unique_match (candidate_id, job_id)\n)",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1629
+}

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated GOSI & Nitaqat Compliance</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #0A0E27 0%, #1a1f3a 50%, #0A0E27 100%);
+            position: relative;
+            overflow: hidden;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        /* Background accent */
+        .bg-accent {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(123, 97, 255, 0.15) 0%, transparent 70%);
+            opacity: 0.6;
+        }
+        
+        /* Header */
+        .header {
+            padding-top: 50px;
+            padding-left: 80px;
+            padding-right: 80px;
+            margin-bottom: 25px; /* reduced from 35 to save height without touching title upper padding */
+            position: relative;
+            z-index: 10;
+        }
+        
+        .page-title {
+            font-size: 36px;
+            font-weight: 600;
+            color: #00D9FF;
+            margin-bottom: 10px;
+        }
+        
+        .page-subtitle {
+            font-size: 18px;
+            color: #E8EDF2;
+            opacity: 0.8;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* Main content grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 35px;
+            padding-left: 80px;
+            padding-right: 80px;
+            position: relative;
+            z-index: 10;
+            margin-bottom: 15px; /* reduced from 40 */
+        }
+        
+        /* Feature block */
+        .feature-block {
+            background: rgba(0, 217, 255, 0.03);
+            padding-top: 24px; /* reduced from 30 */
+            padding-left: 25px;
+            padding-right: 25px;
+            min-height: 280px;
+            position: relative;
+        }
+        
+        .feature-block::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #00D9FF, #7B61FF);
+        }
+        
+        .feature-block:nth-child(2)::before {
+            background: linear-gradient(90deg, #7B61FF, #FF6B9D);
+        }
+        
+        .feature-block:nth-child(3)::before {
+            background: linear-gradient(90deg, #FF6B9D, #00D9FF);
+        }
+        
+        .feature-icon-wrapper {
+            width: 60px;
+            height: 60px;
+            background: rgba(0, 217, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px; /* reduced from 20 */
+        }
+        
+        .feature-icon {
+            font-size: 28px;
+            color: #00D9FF;
+        }
+        
+        .feature-block:nth-child(2) .feature-icon-wrapper {
+            background: rgba(123, 97, 255, 0.1);
+        }
+        
+        .feature-block:nth-child(2) .feature-icon {
+            color: #7B61FF;
+        }
+        
+        .feature-block:nth-child(3) .feature-icon-wrapper {
+            background: rgba(255, 107, 157, 0.1);
+        }
+        
+        .feature-block:nth-child(3) .feature-icon {
+            color: #FF6B9D;
+        }
+        
+        .feature-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #E8EDF2;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+        
+        .feature-description {
+            font-size: 15px;
+            color: #E8EDF2;
+            opacity: 0.85;
+            line-height: 1.5;
+            font-family: 'Inter', sans-serif;
+            margin-bottom: 10px; /* reduced from 15 */
+        }
+        
+        .feature-list {
+            list-style: none;
+            margin-top: 10px; /* reduced from 15 */
+        }
+        
+        .feature-list li {
+            font-size: 14px;
+            color: #E8EDF2;
+            opacity: 0.8;
+            font-family: 'Inter', sans-serif;
+            padding-left: 20px;
+            position: relative;
+            margin-bottom: 8px;
+        }
+        
+        .feature-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #00D9FF;
+            font-weight: 700;
+        }
+        
+        .feature-block:nth-child(2) .feature-list li::before {
+            color: #7B61FF;
+        }
+        
+        .feature-block:nth-child(3) .feature-list li::before {
+            color: #FF6B9D;
+        }
+        
+        /* Bottom section */
+        .bottom-section {
+            padding-left: 80px;
+            padding-right: 80px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .compliance-features {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+        
+        .compliance-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .compliance-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(123, 97, 255, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .compliance-icon i {
+            color: #7B61FF;
+            font-size: 18px;
+        }
+        
+        .compliance-text {
+            font-size: 16px;
+            color: #E8EDF2;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .compliance-highlight {
+            font-weight: 600;
+            color: #00D9FF;
+        }
+        
+        /* Stats section */
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .stat-box {
+            background: rgba(0, 217, 255, 0.05);
+            padding-top: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+            min-height: 90px;
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: #00D9FF;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: #E8EDF2;
+            opacity: 0.8;
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="bg-accent"></div>
+        
+        <div class="header">
+            <h1 class="page-title">Automated GOSI & Nitaqat Compliance</h1>
+            <p class="page-subtitle">Real-time integration with Saudi government systems for seamless compliance</p>
+        </div>
+        
+        <!-- Main Features Grid -->
+        <div class="content-grid">
+            <!-- Feature 1: Real-time Integration -->
+            <div class="feature-block">
+                <div class="feature-icon-wrapper">
+                    <i class="fas fa-sync-alt feature-icon"></i>
+                </div>
+                <div class="feature-title">Real-Time GOSI/Qiwa Integration</div>
+                <div class="feature-description">
+                    Direct API connection to government platforms for instant employee verification and status updates
+                </div>
+                <ul class="feature-list">
+                    <li>Automated employee registration</li>
+                    <li>Live status synchronization</li>
+                    <li>Instant verification checks</li>
+                    <li>Bi-directional data sync</li>
+                </ul>
+            </div>
+            
+            <!-- Feature 2: Saudization Tracking -->
+            <div class="feature-block">
+                <div class="feature-icon-wrapper">
+                    <i class="fas fa-chart-line feature-icon"></i>
+                </div>
+                <div class="feature-title">Intelligent Saudization Tracking</div>
+                <div class="feature-description">
+                    Advanced monitoring with multiplier calculations for female and disabled Saudi employees
+                </div>
+                <ul class="feature-list">
+                    <li>Monthly percentage tracking</li>
+                    <li>2x multiplier for females</li>
+                    <li>4x multiplier for disabled</li>
+                    <li>Historical trend analysis</li>
+                </ul>
+            </div>
+            
+            <!-- Feature 3: Predictive Alerts -->
+            <div class="feature-block">
+                <div class="feature-icon-wrapper">
+                    <i class="fas fa-bell feature-icon"></i>
+                </div>
+                <div class="feature-title">Predictive Compliance Alerts</div>
+                <div class="feature-description">
+                    AI-powered early warning system for potential compliance violations before they occur
+                </div>
+                <ul class="feature-list">
+                    <li>Threshold breach detection</li>
+                    <li>Consecutive decline alerts</li>
+                    <li>Multi-level escalation</li>
+                    <li>Email & in-app notifications</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Bottom Section -->
+        <div class="bottom-section">
+            <!-- Additional Features -->
+            <div class="compliance-features">
+                <div class="compliance-item">
+                    <div class="compliance-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="compliance-text">
+                        <span class="compliance-highlight">Automated Reporting:</span> Generate compliance reports on-demand or scheduled delivery
+                    </div>
+                </div>
+                
+                <div class="compliance-item">
+                    <div class="compliance-icon">
+                        <i class="fas fa-history"></i>
+                    </div>
+                    <div class="compliance-text">
+                        <span class="compliance-highlight">Audit Trail Management:</span> Complete history of all compliance actions and changes
+                    </div>
+                </div>
+                
+                <div class="compliance-item">
+                    <div class="compliance-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="compliance-text">
+                        <span class="compliance-highlight">Violation Prediction:</span> ML models forecast compliance risks 3-6 months ahead
+                    </div>
+                </div>
+                
+                <div class="compliance-item">
+                    <div class="compliance-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="compliance-text">
+                        <span class="compliance-highlight">Scenario Planning:</span> Test hiring scenarios to maintain optimal Nitaqat status
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Stats -->
+            <div class="stats-section">
+                <div class="stat-box">
+                    <div class="stat-value">100%</div>
+                    <div class="stat-label">Compliance Accuracy</div>
+                </div>
+                
+                <div class="stat-box">
+                    <div class="stat-value">Real-Time</div>
+                    <div class="stat-label">Data Synchronization</div>
+                </div>
+                
+                <div class="stat-box">
+                    <div class="stat-value">90 Days</div>
+                    <div class="stat-label">Predictive Window</div>
+                </div>
+                
+                <div class="stat-box">
+                    <div class="stat-value">Zero</div>
+                    <div class="stat-label">Manual Entry Required</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            font-family: 'Cairo', sans-serif;
+            color: #E2E8F0;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .header {
+            padding-top: 50px;
+            padding-right: 60px;
+            padding-left: 60px;
+            margin-bottom: 35px;
+        }
+        
+        .page-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #60A5FA;
+            margin-bottom: 10px;
+        }
+        
+        .title-underline {
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(90deg, #10B981 0%, #60A5FA 100%);
+            border-radius: 2px;
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 500px 1fr;
+            gap: 45px;
+            padding-right: 60px;
+            padding-left: 60px;
+        }
+        
+        .visual-section {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .diagram-container {
+            width: 500px;
+            height: 380px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(96, 165, 250, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .diagram-container img {
+            width: 480px;
+            height: 360px;
+            object-fit: contain;
+        }
+        
+        .diagram-label {
+            text-align: center;
+            font-size: 14px;
+            color: #94A3B8;
+            font-style: italic;
+        }
+        
+        .info-section {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .description {
+            background: rgba(96, 165, 250, 0.1);
+            border-right: 4px solid #60A5FA;
+            padding-top: 18px;
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+        
+        .description-text {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #E2E8F0;
+        }
+        
+        .pros-cons-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .pros-section, .cons-section {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+        
+        .section-icon {
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 14px;
+        }
+        
+        .pros-icon {
+            background: rgba(16, 185, 129, 0.2);
+            color: #10B981;
+        }
+        
+        .cons-icon {
+            background: rgba(239, 68, 68, 0.2);
+            color: #EF4444;
+        }
+        
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+        }
+        
+        .pros-title {
+            color: #10B981;
+        }
+        
+        .cons-title {
+            color: #EF4444;
+        }
+        
+        .item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+        
+        .item-marker {
+            width: 18px;
+            height: 18px;
+            min-width: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-top: 2px;
+            font-size: 10px;
+        }
+        
+        .pros-marker {
+            background: rgba(16, 185, 129, 0.2);
+            color: #10B981;
+        }
+        
+        .cons-marker {
+            background: rgba(239, 68, 68, 0.2);
+            color: #EF4444;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <div class="page-title">معمارية Single-Tenant</div>
+            <div class="title-underline"></div>
+        </div>
+        
+        <div class="main-content">
+            <div class="visual-section">
+                <div class="diagram-container">
+                    <img src="/home/ubuntu/oracle-smart-recruitment/presentation/slides-technical-architecture/assets/saas-architecture.jpg" alt="Single-Tenant Architecture">
+                </div>
+                <div class="diagram-label">نموذج Single-Tenant: تطبيق وقاعدة بيانات منفصلة لكل عميل</div>
+            </div>
+            
+            <div class="info-section">
+                <div class="description">
+                    <div class="description-text">
+                        في هذا النموذج، يحصل <strong>كل مستأجر على نسخة منفصلة تماماً</strong> من التطبيق وقاعدة البيانات. كل عميل يعمل في بيئة معزولة بالكامل عن العملاء الآخرين، مما يوفر أعلى مستوى من العزل والأمان ولكن بتكلفة أعلى.
+                    </div>
+                </div>
+                
+                <div class="pros-cons-container">
+                    <div class="pros-section">
+                        <div class="section-header">
+                            <div class="section-icon pros-icon">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="section-title pros-title">المزايا</div>
+                        </div>
+                        
+                        <div class="item">
+                            <div class="item-marker pros-marker">
+                                <i class="fas fa-plus"></i>
+                            </div>
+                            <div>عزل كامل للبيانات والأمان</div>
+                        </div>
+                        
+                        <div class="item">
+                            <div class="item-marker pros-marker">
+                                <i class="fas fa-plus"></i>
+                            </div>
+                            <div>تخصيص غير محدود لكل عميل</div>
+                        </div>
+                        
+                        <div class="item">
+                            <div class="item-marker pros-marker">
+                                <i class="fas fa-plus"></i>
+                            </div>
+                            <div>أداء مضمون - لا تأثير من عملاء آخرين</div>
+                        </div>
+                        
+                        <div class="item">
+                            <div class="item-marker pros-marker">
+                                <i class="fas fa-plus"></i>
+                            </div>
+                            <div>سهولة الامتثال للمتطلبات التنظيمية</div>
+                        </div>
+                        
+                        <div class="item">
+                            <div class="item-marker pros-marker">
+                                <i class="fas fa-plus"></i>
+                            </div>
+                            <div>إمكانية النسخ الاحتياطي المستقل</div>
+                        </div>
+                    </div>
+                    
+                    <div class="cons-section">
+                        <div class="section-header">
+                            <div class="section-icon cons-icon">
+                                <i class="fas fa-times"></i>
+                            </div>
+                            <div class="section-title cons-title">العيوب</div>
+                        </div>
+                        
+                        <div class="item">
+                            <div class="item-marker cons-marker">
+                                <i class="fas fa-minus"></i>
+                            </div>
+                            <div>تكلفة تشغيل عالية جداً</div>
+                        </div>
+                        
+                        <div class="item">
+                            <div class="item-marker cons-marker">
+                                <i class="fas fa-minus"></i>
+                            </div>
+                            <div>صعوبة إدارة مئات النسخ</div>
+                        </div>
+                        
+                        <div class="item">
+                            <div class="item-marker cons-marker">
+                                <i class="fas fa-minus"></i>
+                            </div>
+                            <div>تحديثات معقدة - يجب تطبيقها على كل نسخة</div>
+                        </div>
+                        
+                        <div class="item">
+                            <div class="item-marker cons-marker">
+                                <i class="fas fa-minus"></i>
+                            </div>
+                            <div>استخدام غير فعال للموارد</div>
+                        </div>
+                        
+                        <div class="item">
+                            <div class="item-marker cons-marker">
+                                <i class="fas fa-minus"></i>
+                            </div>
+                            <div>وقت طويل لإضافة عملاء جدد</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS trigger_execution_logs (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  triggerId INT NOT NULL,\n  executedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,\n  executedBy INT,\n  status VARCHAR(50) DEFAULT 'success',\n  affectedApplicationsCount INT DEFAULT 0,\n  affectedApplicationIds TEXT,\n  executionDetails TEXT,\n  errorMessage TEXT,\n  executionDurationMs INT DEFAULT 0,\n  INDEX idx_triggerId (triggerId),\n  INDEX idx_executedAt (executedAt),\n  INDEX idx_status (status)\n)",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS trigger_execution_logs (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  triggerId INT NOT NULL,\n  executedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,\n  executedBy INT,\n  status VARCHAR(50) DEFAULT 'success',\n  affectedApplicationsCount INT DEFAULT 0,\n  affectedApplicationIds TEXT,\n  executionDetails TEXT,\n  errorMessage TEXT,\n  executionDurationMs INT DEFAULT 0,\n  INDEX idx_triggerId (triggerId),\n  INDEX idx_executedAt (executedAt),\n  INDEX idx_status (status)\n)",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1755
+}

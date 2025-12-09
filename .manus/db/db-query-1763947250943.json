@@ -1,0 +1,9 @@
+{
+  "query": "SET FOREIGN_KEY_CHECKS = 0;\nDROP TABLE IF EXISTS interviews;\nDROP TABLE IF EXISTS offers;\nDROP TABLE IF EXISTS applications;\nDROP TABLE IF EXISTS jobs;\nDROP TABLE IF EXISTS compliance_tasks;\nDROP TABLE IF EXISTS compliance_tickets;\nSET FOREIGN_KEY_CHECKS = 1;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute SET FOREIGN_KEY_CHECKS = 0;\nDROP TABLE IF EXISTS interviews;\nDROP TABLE IF EXISTS offers;\nDROP TABLE IF EXISTS applications;\nDROP TABLE IF EXISTS jobs;\nDROP TABLE IF EXISTS compliance_tasks;\nDROP TABLE IF EXISTS compliance_tickets;\nSET FOREIGN_KEY_CHECKS = 1;",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 4220
+}

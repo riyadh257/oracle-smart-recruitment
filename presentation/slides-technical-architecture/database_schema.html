@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: linear-gradient(135deg, #0A1628 0%, #1A2332 100%);
+        font-family: 'Inter', sans-serif;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .grid-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.05;
+        background-image: 
+          linear-gradient(#00D9FF 1px, transparent 1px),
+          linear-gradient(90deg, #00D9FF 1px, transparent 1px);
+        background-size: 40px 40px;
+      }
+      
+      .content-wrapper {
+        position: relative;
+        z-index: 2;
+        padding-top: 60px;
+        padding-left: 80px;
+        padding-right: 80px;
+        min-height: 720px;
+      }
+      
+      .header {
+        margin-bottom: 28px;
+      }
+      
+      .page-title {
+        font-size: 40px;
+        font-weight: 700;
+        color: #00D9FF;
+        margin-bottom: 8px;
+      }
+      
+      .page-subtitle {
+        font-size: 20px;
+        color: #E8EDF2;
+        font-weight: 400;
+      }
+      
+      .schema-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        margin-bottom: 20px;
+      }
+      
+      .schema-category {
+        background: rgba(0, 217, 255, 0.03);
+        padding-top: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        min-height: 320px;
+      }
+      
+      .category-header {
+        margin-bottom: 16px;
+        padding-bottom: 12px;
+        border-bottom: 2px solid;
+      }
+      
+      .category-core .category-header { border-bottom-color: #00D9FF; }
+      .category-workflow .category-header { border-bottom-color: #0066FF; }
+      .category-advanced .category-header { border-bottom-color: #00CCA3; }
+      
+      .category-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: #E8EDF2;
+        margin-bottom: 4px;
+      }
+      
+      .category-count {
+        font-size: 13px;
+        color: #00CCA3;
+        font-weight: 600;
+      }
+      
+      .table-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      
+      .table-item {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      
+      .table-name {
+        font-size: 15px;
+        font-weight: 600;
+        color: #00D9FF;
+      }
+      
+      .table-desc {
+        font-size: 13px;
+        color: #E8EDF2;
+        opacity: 0.85;
+        line-height: 1.4;
+      }
+      
+      .integrity-section {
+        background: rgba(0, 204, 163, 0.05);
+        border-top: 2px solid rgba(0, 204, 163, 0.3);
+        padding-top: 16px;
+        padding-left: 30px;
+        padding-right: 30px;
+        min-height: 80px;
+      }
+      
+      .integrity-title {
+        font-size: 16px;
+        color: #00CCA3;
+        font-weight: 700;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      
+      .integrity-features {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+      }
+      
+      .integrity-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      
+      .integrity-icon {
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        color: #00CCA3;
+      }
+      
+      .integrity-text {
+        font-size: 14px;
+        color: #E8EDF2;
+        font-weight: 500;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="grid-background"></div>
+        
+        <div class="content-wrapper">
+            <div class="header">
+                <h1 class="page-title">Database Schema Architecture</h1>
+                <p class="page-subtitle">Comprehensive data model supports complex recruitment workflows with 70+ interconnected tables</p>
+            </div>
+            
+            <div class="schema-grid">
+                <div class="schema-category category-core">
+                    <div class="category-header">
+                        <h2 class="category-title">Core Entities</h2>
+                        <p class="category-count">Foundation Tables</p>
+                    </div>
+                    <div class="table-list">
+                        <div class="table-item">
+                            <span class="table-name">Users & Authentication</span>
+                            <span class="table-desc">Multi-role support with Manus OAuth integration</span>
+                        </div>
+                        <div class="table-item">
+                            <span class="table-name">Candidates</span>
+                            <span class="table-desc">Detailed profiles with skills, experience, AI-inferred attributes</span>
+                        </div>
+                        <div class="table-item">
+                            <span class="table-name">Employers</span>
+                            <span class="table-desc">Company profiles with culture attributes and billing models</span>
+                        </div>
+                        <div class="table-item">
+                            <span class="table-name">Jobs</span>
+                            <span class="table-desc">Rich descriptions with AI-enriched requirements</span>
+                        </div>
+                        <div class="table-item">
+                            <span class="table-name">Applications</span>
+                            <span class="table-desc">Candidate-job relationships with multi-dimensional match scores</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="schema-category category-workflow">
+                    <div class="category-header">
+                        <h2 class="category-title">Workflow Tables</h2>
+                        <p class="category-count">Process Management</p>
+                    </div>
+                    <div class="table-list">
+                        <div class="table-item">
+                            <span class="table-name">Interviews</span>
+                            <span class="table-desc">Scheduling with calendar integration and conflict detection</span>
+                        </div>
+                        <div class="table-item">
+                            <span class="table-name">Interview Feedback</span>
+                            <span class="table-desc">Structured feedback with rating scales and recommendations</span>
+                        </div>
+                        <div class="table-item">
+                            <span class="table-name">Feedback Templates</span>
+                            <span class="table-desc">Reusable evaluation forms for different interview types</span>
+                        </div>
+                        <div class="table-item">
+                            <span class="table-name">Video Interviews</span>
+                            <span class="table-desc">Meeting URLs and reminder automation</span>
+                        </div>
+                        <div class="table-item">
+                            <span class="table-name">Communication History</span>
+                            <span class="table-desc">Email and message tracking with engagement metrics</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="schema-category category-advanced">
+                    <div class="category-header">
+                        <h2 class="category-title">Advanced Features</h2>
+                        <p class="category-count">Analytics & Automation</p>
+                    </div>
+                    <div class="table-list">
+                        <div class="table-item">
+                            <span class="table-name">Email Campaigns</span>
+                            <span class="table-desc">Template management and A/B testing variants</span>
+                        </div>
+                        <div class="table-item">
+                            <span class="table-name">Engagement Tracking</span>
+                            <span class="table-desc">Candidate interaction scoring with threshold alerts</span>
+                        </div>
+                        <div class="table-item">
+                            <span class="table-name">Compliance Monitoring</span>
+                            <span class="table-desc">Labor law tracking and audit trails</span>
+                        </div>
+                        <div class="table-item">
+                            <span class="table-name">Performance Alerts</span>
+                            <span class="table-desc">Automated monitoring with configurable thresholds</span>
+                        </div>
+                        <div class="table-item">
+                            <span class="table-name">Analytics Metrics</span>
+                            <span class="table-desc">Historical data for reporting and insights</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="integrity-section">
+                <div class="integrity-title">Data Integrity</div>
+                <div class="integrity-features">
+                    <div class="integrity-item">
+                        <div class="integrity-icon"><i class="fas fa-link"></i></div>
+                        <span class="integrity-text">Indexed foreign keys</span>
+                    </div>
+                    <div class="integrity-item">
+                        <div class="integrity-icon"><i class="fas fa-shield-alt"></i></div>
+                        <span class="integrity-text">Cascade delete rules</span>
+                    </div>
+                    <div class="integrity-item">
+                        <div class="integrity-icon"><i class="fas fa-clock"></i></div>
+                        <span class="integrity-text">Timestamp tracking</span>
+                    </div>
+                    <div class="integrity-item">
+                        <div class="integrity-icon"><i class="fas fa-code"></i></div>
+                        <span class="integrity-text">JSON columns</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

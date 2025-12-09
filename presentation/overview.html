@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #0A1628 0%, #1a2942 100%);
+            font-family: 'Tajawal', sans-serif;
+            color: #E8F1F5;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .geometric-accent {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border: 2px solid rgba(0, 217, 255, 0.2);
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            top: -50px;
+            left: -50px;
+        }
+        
+        .content-wrapper {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 60px;
+            align-items: center;
+            padding-right: 80px;
+            padding-left: 80px;
+            padding-top: 80px;
+            min-height: 720px;
+        }
+        
+        .text-section {
+            text-align: right;
+        }
+        
+        .page-title {
+            font-size: 48px;
+            font-weight: 900;
+            color: #00D9FF;
+            margin-bottom: 25px;
+            line-height: 1.3;
+        }
+        
+        .description {
+            font-size: 20px;
+            color: #E8F1F5;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            flex-direction: row-reverse;
+            text-align: right;
+        }
+        
+        .feature-icon {
+            width: 50px;
+            min-width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.2), rgba(78, 205, 196, 0.1));
+            border: 2px solid #00D9FF;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            color: #00D9FF;
+        }
+        
+        .feature-content h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #E8F1F5;
+            margin-bottom: 5px;
+        }
+        
+        .feature-content p {
+            font-size: 14px;
+            color: rgba(232, 241, 245, 0.8);
+            line-height: 1.5;
+        }
+        
+        .visual-section {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .dashboard-image {
+            width: 500px;
+            height: auto;
+            border-radius: 12px;
+            border: 3px solid rgba(0, 217, 255, 0.3);
+            box-shadow: 0 20px 60px rgba(0, 217, 255, 0.2);
+            object-fit: contain;
+        }
+        
+        .accent-circle {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.3), transparent);
+            border-radius: 50%;
+            bottom: -30px;
+            right: -30px;
+            filter: blur(40px);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="geometric-accent"></div>
+        
+        <div class="content-wrapper">
+            <div class="text-section">
+                <h2 class="page-title">نظرة عامة على النظام</h2>
+                <p class="description">
+                    منصة Oracle للتوظيف الذكي هي حل متكامل يجمع بين قوة الذكاء الاصطناعي والتقنيات الحديثة لتحويل عملية التوظيف من البداية إلى النهاية، مع التركيز على متطلبات سوق العمل الخليجي.
+                </p>
+                
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>مطابقة ذكية بالـ AI</h3>
+                            <p>خوارزميات متقدمة لمطابقة المرشحين مع الوظائف المناسبة</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>تكامل متعدد المنصات</h3>
+                            <p>نشر تلقائي على 25+ منصة توظيف عالمية وإقليمية</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>تحليلات ذكية</h3>
+                            <p>رؤى عميقة لأداء التوظيف ومعدلات التحويل</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>امتثال كامل</h3>
+                            <p>تكامل مع أنظمة التوطين الخليجية والقوانين المحلية</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="visual-section">
+                <img src="/home/ubuntu/oracle-smart-recruitment/presentation/assets/dashboard.webp" alt="Oracle Recruitment Dashboard" class="dashboard-image">
+                <div class="accent-circle"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

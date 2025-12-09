@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS mobile_devices (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  user_id INT NOT NULL,\n  device_id VARCHAR(255) UNIQUE NOT NULL,\n  platform ENUM('ios', 'android') NOT NULL,\n  push_token VARCHAR(500),\n  app_version VARCHAR(50),\n  os_version VARCHAR(50),\n  last_active_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,\n  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,\n  INDEX idx_user_id (user_id),\n  INDEX idx_device_id (device_id)\n)",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS mobile_devices (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  user_id INT NOT NULL,\n  device_id VARCHAR(255) UNIQUE NOT NULL,\n  platform ENUM('ios', 'android') NOT NULL,\n  push_token VARCHAR(500),\n  app_version VARCHAR(50),\n  os_version VARCHAR(50),\n  last_active_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,\n  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,\n  INDEX idx_user_id (user_id),\n  INDEX idx_device_id (device_id)\n)",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1633
+}

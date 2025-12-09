@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS ab_test_events (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  user_id INT NOT NULL,\n  variant_id VARCHAR(50) NOT NULL,\n  job_id INT NOT NULL,\n  event_type ENUM('view', 'click', 'apply') NOT NULL,\n  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,\n  INDEX idx_variant (variant_id),\n  INDEX idx_user (user_id),\n  INDEX idx_job (job_id),\n  INDEX idx_event_type (event_type),\n  INDEX idx_created_at (created_at)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS ab_test_events (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  user_id INT NOT NULL,\n  variant_id VARCHAR(50) NOT NULL,\n  job_id INT NOT NULL,\n  event_type ENUM('view', 'click', 'apply') NOT NULL,\n  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,\n  INDEX idx_variant (variant_id),\n  INDEX idx_user (user_id),\n  INDEX idx_job (job_id),\n  INDEX idx_event_type (event_type),\n  INDEX idx_created_at (created_at)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 2700
+}

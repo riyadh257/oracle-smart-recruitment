@@ -1,0 +1,8 @@
+{
+  "query": "ALTER TABLE interviews ADD COLUMN templateId INT NULL, ADD CONSTRAINT interviews_templateId_fk FOREIGN KEY (templateId) REFERENCES feedbackTemplates(id) ON DELETE SET NULL;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute ALTER TABLE interviews ADD COLUMN templateId INT NULL, ADD CONSTRAINT interviews_templateId_fk FOREIGN KEY (templateId) REFERENCES feedbackTemplates(id) ON DELETE SET NULL;",
+  "returncode": 1,
+  "logs": [
+    "ERROR 1072 (42000) at line 1: Key column 'templateId' doesn't exist in table"
+  ]
+}

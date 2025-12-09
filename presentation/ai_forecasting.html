@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #0A1628 0%, #1a2942 100%);
+            font-family: 'Tajawal', sans-serif;
+            color: #E8F1F5;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .diagonal-overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent 45%, rgba(255, 107, 53, 0.08) 45%);
+            z-index: 1;
+        }
+        
+        .geometric-accent {
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            border: 3px solid rgba(0, 217, 255, 0.2);
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            bottom: -80px;
+            left: -80px;
+            transform: rotate(25deg);
+            z-index: 1;
+        }
+        
+        .content-wrapper {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 60px;
+            align-items: center;
+            padding-right: 80px;
+            padding-left: 80px;
+            padding-top: 80px; /* keep title top padding consistent */
+            min-height: 720px;
+        }
+        
+        .text-section {
+            text-align: right;
+        }
+        
+        .feature-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, rgba(255, 107, 53, 0.3), rgba(0, 217, 255, 0.3));
+            border: 2px solid #FF6B35;
+            padding-top: 8px;
+            padding-right: 20px;
+            padding-left: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            color: #FF6B35;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .page-title {
+            font-size: 46px;
+            font-weight: 900;
+            color: #00D9FF;
+            margin-bottom: 25px;
+            line-height: 1.3;
+        }
+        
+        .description {
+            font-size: 18px;
+            color: #E8F1F5;
+            line-height: 1.8;
+            margin-bottom: 30px; /* was 35px: reduced to lower total height by 5px */
+        }
+        
+        .capabilities-list {
+            list-style: none;
+        }
+        
+        .capability-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            flex-direction: row-reverse;
+            text-align: right;
+            margin-bottom: 20px; /* was 22px: reduced gaps across 3 items by 6px total */
+        }
+        
+        .capability-icon {
+            width: 45px;
+            min-width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.25), rgba(78, 205, 196, 0.15));
+            border: 2px solid #4ECDC4;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: #4ECDC4;
+        }
+        
+        .capability-text {
+            font-size: 17px;
+            color: #E8F1F5;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+        
+        .capability-text strong {
+            color: #00D9FF;
+            font-weight: 700;
+        }
+        
+        .visual-section {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .ai-image {
+            width: 500px;
+            height: auto;
+            border: 4px solid rgba(0, 217, 255, 0.4);
+            box-shadow: 0 30px 80px rgba(0, 217, 255, 0.3);
+            object-fit: contain;
+        }
+        
+        .glow-effect {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255, 107, 53, 0.4), transparent);
+            border-radius: 50%;
+            top: -50px;
+            right: -50px;
+            filter: blur(60px);
+        }
+        
+        .corner-frame {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border: 3px solid;
+            border-color: transparent #FF6B35 #FF6B35 transparent;
+            bottom: 20px;
+            left: 20px;
+        }
+        
+        /* Reduced spacing to fit within 720px height without changing font sizes */
+        .stats-highlight {
+            margin-top: 10px; /* keep minimal spacing */
+            padding-top: 10px; /* visual separation while respecting height */
+            border-top: 2px solid rgba(0, 217, 255, 0.3);
+            display: flex;
+            gap: 40px;
+            justify-content: flex-end;
+        }
+        
+        .stat-item {
+            text-align: right;
+        }
+        
+        .stat-number {
+            font-size: 32px;
+            font-weight: 900;
+            color: #FF6B35;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: rgba(232, 241, 245, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="diagonal-overlay"></div>
+        <div class="geometric-accent"></div>
+        
+        <div class="content-wrapper">
+            <div class="text-section">
+                <div class="feature-badge">AI Career Forecasting Engine</div>
+                <h2 class="page-title">التنبؤ بالمهن المستقبلية</h2>
+                <p class="description">
+                    محرك ذكاء اصطناعي متقدم يحلل اتجاهات سوق العمل العالمية والمحلية لتحديد المهن الناشئة والمتراجعة، مع تقديم توجيه مهني ذكي للباحثين عن عمل وأصحاب العمل.
+                </p>
+                
+                <ul class="capabilities-list">
+                    <li class="capability-item">
+                        <div class="capability-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="capability-text">
+                            <strong>تحليل اتجاهات السوق:</strong> رصد وتحليل بيانات سوق العمل من مصادر متعددة بالذكاء الاصطناعي
+                        </div>
+                    </li>
+                    
+                    <li class="capability-item">
+                        <div class="capability-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="capability-text">
+                            <strong>المهن الناشئة:</strong> تحديد الوظائف والمهارات المطلوبة في المستقبل القريب
+                        </div>
+                    </li>
+                    
+                    <li class="capability-item">
+                        <div class="capability-icon">
+                            <i class="fas fa-compass"></i>
+                        </div>
+                        <div class="capability-text">
+                            <strong>توجيه مهني ذكي:</strong> توصيات مخصصة للباحثين عن عمل بناءً على مهاراتهم وتوجهات السوق
+                        </div>
+                    </li>
+                    
+                    <li class="capability-item">
+                        <div class="capability-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="capability-text">
+                            <strong>توقعات المهارات:</strong> تحديد المهارات التي ستكون مطلوبة في السنوات القادمة
+                        </div>
+                    </li>
+                </ul>
+                
+                <div class="stats-highlight">
+                    <div class="stat-item">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">مهنة مُحللة</div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-number">95%</div>
+                        <div class="stat-label">دقة التنبؤات</div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-number">12</div>
+                        <div class="stat-label">شهر توقع مسبق</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="visual-section">
+                <div class="glow-effect"></div>
+                <div class="corner-frame"></div>
+                <img src="/home/ubuntu/oracle-smart-recruitment/presentation/assets/ai-recruitment.webp" alt="AI Career Forecasting" class="ai-image">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

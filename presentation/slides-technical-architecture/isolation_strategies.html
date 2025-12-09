@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            font-family: 'Cairo', sans-serif;
+            color: #E2E8F0;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .header {
+            padding-top: 50px;
+            padding-right: 60px;
+            padding-left: 60px;
+            margin-bottom: 35px;
+        }
+        
+        .page-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #60A5FA;
+            margin-bottom: 10px;
+        }
+        
+        .title-underline {
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(90deg, #10B981 0%, #60A5FA 100%);
+            border-radius: 2px;
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding-right: 60px;
+            padding-left: 60px;
+        }
+        
+        .visual-section {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .diagram-container {
+            width: 550px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(96, 165, 250, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .diagram-container img {
+            width: 530px;
+            height: 380px;
+            object-fit: contain;
+        }
+        
+        .diagram-caption {
+            font-size: 14px;
+            color: #94A3B8;
+            text-align: center;
+        }
+        
+        .models-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .model-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-right: 4px solid;
+            padding-top: 18px;
+            padding-right: 20px;
+            padding-left: 20px;
+            min-height: 120px;
+        }
+        
+        .pool-card {
+            border-color: #10B981;
+        }
+        
+        .silo-card {
+            border-color: #60A5FA;
+        }
+        
+        .bridge-card {
+            border-color: #F59E0B;
+        }
+        
+        .model-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        
+        .model-icon {
+            width: 36px;
+            height: 36px;
+            min-width: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 16px;
+        }
+        
+        .pool-icon {
+            background: rgba(16, 185, 129, 0.2);
+            color: #10B981;
+        }
+        
+        .silo-icon {
+            background: rgba(96, 165, 250, 0.2);
+            color: #60A5FA;
+        }
+        
+        .bridge-icon {
+            background: rgba(245, 158, 11, 0.2);
+            color: #F59E0B;
+        }
+        
+        .model-name {
+            font-size: 20px;
+            font-weight: 700;
+        }
+        
+        .pool-name {
+            color: #10B981;
+        }
+        
+        .silo-name {
+            color: #60A5FA;
+        }
+        
+        .bridge-name {
+            color: #F59E0B;
+        }
+        
+        .model-description {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #E2E8F0;
+            margin-bottom: 10px;
+        }
+        
+        .model-attributes {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .attribute-tag {
+            font-size: 13px;
+            padding-top: 4px;
+            padding-right: 10px;
+            padding-left: 10px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        
+        .comparison-note {
+            background: rgba(96, 165, 250, 0.08);
+            border-right: 3px solid #60A5FA;
+            padding-top: 15px;
+            padding-right: 20px;
+            padding-left: 20px;
+            margin-top: 5px;
+        }
+        
+        .note-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #60A5FA;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .note-text {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #E2E8F0;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <div class="page-title">استراتيجيات العزل</div>
+            <div class="title-underline"></div>
+        </div>
+        
+        <div class="main-content">
+            <div class="visual-section">
+                <div class="diagram-container">
+                    <img src="/home/ubuntu/oracle-smart-recruitment/presentation/slides-technical-architecture/assets/isolation-models.jpg" alt="Isolation Models">
+                </div>
+                <div class="diagram-caption">
+                    نماذج العزل الثلاثة: Pool, Silo, Bridge
+                </div>
+            </div>
+            
+            <div class="models-section">
+                <div class="model-card pool-card">
+                    <div class="model-header">
+                        <div class="model-icon pool-icon">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <div class="model-name pool-name">Pool Model - نموذج التجميع</div>
+                    </div>
+                    <div class="model-description">
+                        موارد مشتركة بين جميع المستأجرين. قاعدة بيانات واحدة، خوادم مشتركة، فصل منطقي فقط عبر tenant_id.
+                    </div>
+                    <div class="model-attributes">
+                        <div class="attribute-tag">💰 أقل تكلفة</div>
+                        <div class="attribute-tag">⚡ عزل منخفض</div>
+                        <div class="attribute-tag">📊 كفاءة موارد عالية</div>
+                    </div>
+                </div>
+                
+                <div class="model-card silo-card">
+                    <div class="model-header">
+                        <div class="model-icon silo-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="model-name silo-name">Silo Model - نموذج العزل التام</div>
+                    </div>
+                    <div class="model-description">
+                        موارد منفصلة تماماً لكل مستأجر. قاعدة بيانات مخصصة، خوادم منفصلة، عزل فيزيائي كامل.
+                    </div>
+                    <div class="model-attributes">
+                        <div class="attribute-tag">💰 أعلى تكلفة</div>
+                        <div class="attribute-tag">🔒 عزل قوي جداً</div>
+                        <div class="attribute-tag">⚙️ تخصيص كامل</div>
+                    </div>
+                </div>
+                
+                <div class="model-card bridge-card">
+                    <div class="model-header">
+                        <div class="model-icon bridge-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <div class="model-name bridge-name">Bridge Model - النموذج الهجين</div>
+                    </div>
+                    <div class="model-description">
+                        مزيج من النموذجين. عملاء مميزون يحصلون على موارد مخصصة، والباقي يتشاركون الموارد.
+                    </div>
+                    <div class="model-attributes">
+                        <div class="attribute-tag">💰 تكلفة متوسطة</div>
+                        <div class="attribute-tag">⚖️ عزل مرن</div>
+                        <div class="attribute-tag">🎯 حل متوازن</div>
+                    </div>
+                </div>
+                
+                <div class="comparison-note">
+                    <div class="note-title">
+                        <i class="fas fa-lightbulb"></i>
+                        <span>متى تستخدم كل نموذج؟</span>
+                    </div>
+                    <div class="note-text">
+                        <strong>Pool:</strong> للشركات الصغيرة والمتوسطة | 
+                        <strong>Silo:</strong> للعملاء المؤسسيين والامتثال التنظيمي | 
+                        <strong>Bridge:</strong> لنموذج أعمال متدرج (Tiered Pricing)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

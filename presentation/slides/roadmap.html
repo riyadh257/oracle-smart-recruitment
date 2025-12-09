@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Future Enhancements</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .slide-container {
+      width: 1280px;
+      min-height: 720px;
+      background: #1F233E;
+      font-family: 'Space Grotesk', sans-serif;
+      color: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      padding-top: 60px;
+      padding-left: 80px;
+      padding-right: 80px;
+      margin-bottom: 40px;
+    }
+
+    .page-title {
+      font-size: 48px;
+      font-weight: 700;
+      color: #FFFFFF;
+      position: relative;
+      display: inline-block;
+    }
+
+    .page-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 120px;
+      height: 4px;
+      background: linear-gradient(90deg, #04DBFA, #00E3B5);
+    }
+
+    .subtitle {
+      font-size: 18px;
+      font-weight: 300;
+      color: #8EC5FC;
+      margin-top: 25px;
+    }
+
+    .roadmap-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      padding-left: 80px;
+      padding-right: 80px;
+      padding-top: 20px;
+    }
+
+    .feature-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 2px solid rgba(4, 219, 250, 0.2);
+      min-height: 140px;
+      display: grid;
+      grid-template-columns: 70px 1fr;
+      align-items: center;
+      gap: 20px;
+      position: relative;
+    }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(180deg, #04DBFA, #00E3B5);
+    }
+
+    .feature-card:nth-child(2)::before {
+      background: linear-gradient(180deg, #00E3B5, #04DBFA);
+    }
+
+    .feature-card:nth-child(3)::before {
+      background: linear-gradient(180deg, #8EC5FC, #04DBFA);
+    }
+
+    .feature-card:nth-child(4)::before {
+      background: linear-gradient(180deg, #04DBFA, #8EC5FC);
+    }
+
+    .feature-card:nth-child(5)::before {
+      background: linear-gradient(180deg, #00E3B5, #8EC5FC);
+    }
+
+    .feature-card:last-child {
+      grid-column: 1 / -1;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .feature-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      margin-left: 20px;
+    }
+
+    .feature-icon i {
+      font-size: 32px;
+      color: #04DBFA;
+    }
+
+    .feature-card:nth-child(2) .feature-icon i {
+      color: #00E3B5;
+    }
+
+    .feature-card:nth-child(3) .feature-icon i {
+      color: #8EC5FC;
+    }
+
+    .feature-card:nth-child(4) .feature-icon i {
+      color: #04DBFA;
+    }
+
+    .feature-card:nth-child(5) .feature-icon i {
+      color: #00E3B5;
+    }
+
+    .feature-content {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding-right: 25px;
+    }
+
+    .feature-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: #FFFFFF;
+      line-height: 1.3;
+    }
+
+    .feature-description {
+      font-size: 14px;
+      font-weight: 300;
+      color: #8EC5FC;
+      line-height: 1.5;
+    }
+
+    .accent-line {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #04DBFA 0%, #00E3B5 50%, #1F233E 100%);
+    }
+
+    .background-pattern {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 400px;
+      height: 400px;
+      opacity: 0.04;
+      background-image: 
+        repeating-linear-gradient(45deg, transparent, transparent 20px, #04DBFA 20px, #04DBFA 21px),
+        repeating-linear-gradient(-45deg, transparent, transparent 20px, #00E3B5 20px, #00E3B5 21px);
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="background-pattern"></div>
+    
+    <div class="header">
+      <h1 class="page-title">Future Enhancements</h1>
+      <p class="subtitle">Continuous innovation pipeline to advance recruitment intelligence</p>
+    </div>
+
+    <div class="roadmap-container">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-robot"></i>
+        </div>
+        <div class="feature-content">
+          <div class="feature-title">Advanced ML Models</div>
+          <div class="feature-description">Enhanced candidate fit scoring with deep learning algorithms for improved prediction accuracy</div>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-video"></i>
+        </div>
+        <div class="feature-content">
+          <div class="feature-title">Video Interview Integration</div>
+          <div class="feature-description">AI-powered sentiment analysis and behavioral assessment during video interviews</div>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-user-check"></i>
+        </div>
+        <div class="feature-content">
+          <div class="feature-title">Automated Reference Checking</div>
+          <div class="feature-description">Streamlined reference verification process with intelligent questionnaire generation</div>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-chart-pie"></i>
+        </div>
+        <div class="feature-content">
+          <div class="feature-title">Diversity Analytics Dashboard</div>
+          <div class="feature-description">Comprehensive DEI metrics and insights to support equitable hiring practices</div>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-share-alt"></i>
+        </div>
+        <div class="feature-content">
+          <div class="feature-title">Job Board & LinkedIn Integration</div>
+          <div class="feature-description">Seamless connectivity with major job platforms for expanded candidate reach and automated posting</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accent-line"></div>
+  </div>
+</body>
+</html>

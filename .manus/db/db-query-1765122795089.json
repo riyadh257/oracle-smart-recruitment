@@ -1,0 +1,9 @@
+{
+  "query": "ALTER TABLE notificationAnalytics \n  ADD COLUMN channel enum('push','email','sms') NOT NULL DEFAULT 'push' AFTER userId,\n  ADD COLUMN bouncedAt timestamp NULL,\n  ADD COLUMN bounceReason text NULL,\n  ADD COLUMN carrier varchar(100) NULL,\n  ADD COLUMN countryCode varchar(10) NULL,\n  MODIFY COLUMN deliveryStatus enum('pending','sent','delivered','failed','expired','bounced','undelivered') DEFAULT 'pending'",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute ALTER TABLE notificationAnalytics \n  ADD COLUMN channel enum('push','email','sms') NOT NULL DEFAULT 'push' AFTER userId,\n  ADD COLUMN bouncedAt timestamp NULL,\n  ADD COLUMN bounceReason text NULL,\n  ADD COLUMN carrier varchar(100) NULL,\n  ADD COLUMN countryCode varchar(10) NULL,\n  MODIFY COLUMN deliveryStatus enum('pending','sent','delivered','failed','expired','bounced','undelivered') DEFAULT 'pending'",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 3317
+}

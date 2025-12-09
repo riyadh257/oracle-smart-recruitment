@@ -1,0 +1,108 @@
+{
+  "project_info": {
+    "title": "نظام Oracle للتوظيف الذكي",
+    "created": 1764491160.2205741,
+    "last_updated": 1764491571.6775687,
+    "total_slides": 12
+  },
+  "slides": {
+    "title": "edited",
+    "overview": "edited",
+    "video_profile": "edited",
+    "multi_platform": "edited",
+    "competitions_auctions": "edited",
+    "eor_service": "edited",
+    "hiring_funnel": "edited",
+    "nationalization": "edited",
+    "ai_forecasting": "edited",
+    "training_programs": "edited",
+    "additional_features": "edited",
+    "closing": "edited"
+  },
+  "outline": [
+    {
+      "id": "title",
+      "title": "نظام Oracle للتوظيف الذكي",
+      "summary": "الشريحة الافتتاحية تعرض عنوان النظام والشعار مع تصميم احترافي يعكس الابتكار في مجال التوظيف الذكي",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "overview",
+      "title": "نظرة عامة على النظام",
+      "summary": "مقدمة شاملة عن نظام Oracle للتوظيف الذكي، تسلط الضوء على كونه منصة متكاملة تجمع بين الذكاء الاصطناعي والتقنيات الحديثة لتحويل عملية التوظيف في منطقة الخليج",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "video_profile",
+      "title": "ملف الفيديو الشخصي للمرشح",
+      "summary": "شرح ميزة Video Profile Engine التي تتيح للمرشحين إنشاء فيديو تعريفي قصير (30-60 ثانية) مع تحليل AI لمهارات التواصل ولغة الجسد ومستوى الثقة",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "multi_platform",
+      "title": "النشر التلقائي متعدد المنصات",
+      "summary": "عرض ميزة Multi-Platform Auto-Posting Engine التي تنشر الوظائف تلقائياً على أكثر من 25 منصة (LinkedIn, Indeed, Bayt, GulfTalent) مع تتبع أداء كل منصة",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "competitions_auctions",
+      "title": "المسابقات والمزادات الرقمية",
+      "summary": "شرح نظام المسابقات الإبداعية Creative Competition Engine ومزادات المنتجات الرقمية Digital Product Auction Engine للتصميم والشعارات والمحتوى الإبداعي",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "eor_service",
+      "title": "خدمة صاحب العمل الرسمي (EoR)",
+      "summary": "تفصيل خدمة Employer of Record التي تتيح توظيف المستقلين بشكل رسمي بدون تأسيس كيان قانوني، مع إدارة الرواتب والتأمينات والامتثال الكامل",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "hiring_funnel",
+      "title": "نظام قمع التوظيف الذكي",
+      "summary": "عرض Smart Hiring Funnel System مع Kanban Board لإدارة مراحل التوظيف وتحليلات Conversion Rate لكل مرحلة من مراحل Pipeline",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "nationalization",
+      "title": "تتبع التوطين والتكامل الحكومي",
+      "summary": "شرح التكامل مع أنظمة التوطين الخليجية (نطاقات السعودية، تطوين الإمارات، توطين) مع لوحة تحكم لنسب التوطين والتنبيهات",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "ai_forecasting",
+      "title": "التنبؤ بالمهن المستقبلية",
+      "summary": "تفصيل AI Career Forecasting Engine الذي يحلل اتجاهات سوق العمل ويحدد المهن الناشئة والمتراجعة مع توجيه مهني ذكي",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "training_programs",
+      "title": "برامج التدريب المتكاملة",
+      "summary": "عرض برامج التدريب التعاوني والمنتهي بالتوظيف، مع حقيبة المهارات المجانية وسوق العمل التطوعي لبناء الخبرة",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "additional_features",
+      "title": "الميزات الإضافية للتميز",
+      "summary": "استعراض الميزات الإضافية مثل الرواتب المفتوحة، الربط مع المسؤولين، الإدخال الصوتي، تحسين LinkedIn، مولد خطاب الاستقالة، وخريطة المسار المهني",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "closing",
+      "title": "شكراً لكم",
+      "summary": "شريحة ختامية تشكر الحضور وتدعوهم للتواصل والاستفسار عن نظام Oracle للتوظيف الذكي",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "query": "SHOW TABLES LIKE '%industry%'",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute SHOW TABLES LIKE '%industry%'",
+  "rows": [
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH (%industry%)": "industry_benchmarks"
+    }
+  ],
+  "messages": [],
+  "stdout": "Tables_in_hjcHA4SjAwhM6aP28vcAkH (%industry%)\nindustry_benchmarks\n",
+  "stderr": "",
+  "execution_time_ms": 1528
+}

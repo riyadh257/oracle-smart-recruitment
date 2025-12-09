@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS `alert_history` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `rule_id` int NOT NULL,\n  `alert_type` varchar(100) NOT NULL,\n  `message` text NOT NULL,\n  `severity` enum('info','warning','critical') NOT NULL,\n  `acknowledged` boolean DEFAULT false,\n  `acknowledged_by` int,\n  `acknowledged_at` timestamp,\n  `triggered_at` timestamp NOT NULL DEFAULT (now()),\n  CONSTRAINT `alert_history_id` PRIMARY KEY(`id`)\n);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS `alert_history` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `rule_id` int NOT NULL,\n  `alert_type` varchar(100) NOT NULL,\n  `message` text NOT NULL,\n  `severity` enum('info','warning','critical') NOT NULL,\n  `acknowledged` boolean DEFAULT false,\n  `acknowledged_by` int,\n  `acknowledged_at` timestamp,\n  `triggered_at` timestamp NOT NULL DEFAULT (now()),\n  CONSTRAINT `alert_history_id` PRIMARY KEY(`id`)\n);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1795
+}

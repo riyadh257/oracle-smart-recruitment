@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #0A1628 0%, #0D1F38 100%);
+            position: relative;
+            font-family: 'Cairo', sans-serif;
+            color: #E8F1F5;
+        }
+        
+        /* Grid background */
+        .grid-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.05;
+            background-image: 
+                linear-gradient(rgba(0, 217, 255, 0.3) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 217, 255, 0.3) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        
+        /* Accent line */
+        .accent-line {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #00D9FF 0%, #7C3AED 100%);
+        }
+        
+        /* Content wrapper */
+        .content {
+            position: relative;
+            z-index: 10;
+            min-height: 720px;
+        }
+        
+        /* Header */
+        .header {
+            padding-top: 50px;
+            padding-right: 80px;
+            padding-left: 80px;
+            margin-bottom: 35px;
+        }
+        
+        .title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #00D9FF;
+        }
+        
+        /* Main grid */
+        .performance-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            padding-right: 80px;
+            padding-left: 80px;
+        }
+        
+        /* Column */
+        .performance-column {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .column-header {
+            background: rgba(0, 217, 255, 0.1);
+            border: 1px solid rgba(0, 217, 255, 0.3);
+            border-bottom: 3px solid;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .performance-column:nth-child(1) .column-header { border-bottom-color: #00D9FF; }
+        .performance-column:nth-child(2) .column-header { border-bottom-color: #10B981; }
+        .performance-column:nth-child(3) .column-header { border-bottom-color: #7C3AED; }
+        
+        .column-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        .performance-column:nth-child(1) .column-icon { color: #00D9FF; }
+        .performance-column:nth-child(2) .column-icon { color: #10B981; }
+        .performance-column:nth-child(3) .column-icon { color: #7C3AED; }
+        
+        .column-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #E8F1F5;
+            margin-bottom: 4px;
+        }
+        
+        .column-subtitle {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 11px;
+            color: #00D9FF;
+            opacity: 0.7;
+            letter-spacing: 1px;
+        }
+        
+        /* Strategy items */
+        .strategy-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .strategy-item {
+            background: rgba(0, 217, 255, 0.03);
+            border: 1px solid rgba(0, 217, 255, 0.12);
+            border-right: 2px solid;
+            min-height: 95px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-top: 15px;
+            padding-right: 18px;
+            padding-left: 18px;
+        }
+        
+        .performance-column:nth-child(1) .strategy-item:nth-child(1) { border-right-color: #00D9FF; }
+        .performance-column:nth-child(1) .strategy-item:nth-child(2) { border-right-color: #06B6D4; }
+        .performance-column:nth-child(1) .strategy-item:nth-child(3) { border-right-color: #0EA5E9; }
+        .performance-column:nth-child(1) .strategy-item:nth-child(4) { border-right-color: #0284C7; }
+        
+        .performance-column:nth-child(2) .strategy-item:nth-child(1) { border-right-color: #10B981; }
+        .performance-column:nth-child(2) .strategy-item:nth-child(2) { border-right-color: #059669; }
+        .performance-column:nth-child(2) .strategy-item:nth-child(3) { border-right-color: #047857; }
+        .performance-column:nth-child(2) .strategy-item:nth-child(4) { border-right-color: #065F46; }
+        
+        .performance-column:nth-child(3) .strategy-item:nth-child(1) { border-right-color: #7C3AED; }
+        .performance-column:nth-child(3) .strategy-item:nth-child(2) { border-right-color: #6D28D9; }
+        .performance-column:nth-child(3) .strategy-item:nth-child(3) { border-right-color: #5B21B6; }
+        .performance-column:nth-child(3) .strategy-item:nth-child(4) { border-right-color: #4C1D95; }
+        
+        .strategy-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 6px;
+        }
+        
+        .strategy-icon {
+            font-size: 18px;
+            width: 24px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+        
+        .performance-column:nth-child(1) .strategy-icon { color: #00D9FF; }
+        .performance-column:nth-child(2) .strategy-icon { color: #10B981; }
+        .performance-column:nth-child(3) .strategy-icon { color: #7C3AED; }
+        
+        .strategy-name {
+            font-size: 16px;
+            font-weight: 700;
+            color: #E8F1F5;
+        }
+        
+        .strategy-tech {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 11px;
+            color: #00D9FF;
+            opacity: 0.7;
+            margin-bottom: 5px;
+        }
+        
+        .strategy-description {
+            font-size: 13px;
+            color: #E8F1F5;
+            opacity: 0.75;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <!-- Grid background -->
+        <div class="grid-background"></div>
+        
+        <!-- Accent line -->
+        <div class="accent-line"></div>
+        
+        <!-- Content -->
+        <div class="content">
+            <!-- Header -->
+            <div class="header">
+                <h1 class="title">تحسين الأداء وقابلية التوسع</h1>
+            </div>
+            
+            <!-- Performance grid -->
+            <div class="performance-grid">
+                <!-- Frontend Performance -->
+                <div class="performance-column">
+                    <div class="column-header">
+                        <div class="column-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        <div class="column-title">أداء الواجهة الأمامية</div>
+                        <div class="column-subtitle">FRONTEND PERFORMANCE</div>
+                    </div>
+                    
+                    <div class="strategy-list">
+                        <div class="strategy-item">
+                            <div class="strategy-header">
+                                <i class="fas fa-cut strategy-icon"></i>
+                                <div class="strategy-name">تقسيم الكود</div>
+                            </div>
+                            <div class="strategy-tech">Code Splitting</div>
+                            <div class="strategy-description">تحميل كسول للمكونات يقلل وقت التحميل الأولي بنسبة 40%</div>
+                        </div>
+                        
+                        <div class="strategy-item">
+                            <div class="strategy-header">
+                                <i class="fas fa-image strategy-icon"></i>
+                                <div class="strategy-name">تحسين الصور</div>
+                            </div>
+                            <div class="strategy-tech">Image Optimization</div>
+                            <div class="strategy-description">تنسيق WebP مع التحميل الكسول لتقليل حجم الصفحة</div>
+                        </div>
+                        
+                        <div class="strategy-item">
+                            <div class="strategy-header">
+                                <i class="fas fa-hdd strategy-icon"></i>
+                                <div class="strategy-name">استراتيجية التخزين المؤقت</div>
+                            </div>
+                            <div class="strategy-tech">Caching Strategy</div>
+                            <div class="strategy-description">Service Worker للدعم دون اتصال والوصول السريع</div>
+                        </div>
+                        
+                        <div class="strategy-item">
+                            <div class="strategy-header">
+                                <i class="fas fa-list strategy-icon"></i>
+                                <div class="strategy-name">التمرير الافتراضي</div>
+                            </div>
+                            <div class="strategy-tech">Virtual Scrolling</div>
+                            <div class="strategy-description">عرض فعّال للقوائم الكبيرة بآلاف العناصر</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Backend Performance -->
+                <div class="performance-column">
+                    <div class="column-header">
+                        <div class="column-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <div class="column-title">أداء الخادم الخلفي</div>
+                        <div class="column-subtitle">BACKEND PERFORMANCE</div>
+                    </div>
+                    
+                    <div class="strategy-list">
+                        <div class="strategy-item">
+                            <div class="strategy-header">
+                                <i class="fas fa-sort-amount-down strategy-icon"></i>
+                                <div class="strategy-name">فهرسة قاعدة البيانات</div>
+                            </div>
+                            <div class="strategy-tech">Database Indexing</div>
+                            <div class="strategy-description">فهارس محسّنة لتنفيذ استعلامات أسرع بـ 10x</div>
+                        </div>
+                        
+                        <div class="strategy-item">
+                            <div class="strategy-header">
+                                <i class="fas fa-search strategy-icon"></i>
+                                <div class="strategy-name">تحسين الاستعلامات</div>
+                            </div>
+                            <div class="strategy-tech">Query Optimization</div>
+                            <div class="strategy-description">منع مشكلة N+1 وتحسين الاستعلامات المعقدة</div>
+                        </div>
+                        
+                        <div class="strategy-item">
+                            <div class="strategy-header">
+                                <i class="fas fa-database strategy-icon"></i>
+                                <div class="strategy-name">طبقة التخزين المؤقت</div>
+                            </div>
+                            <div class="strategy-tech">Caching Layer (Redis)</div>
+                            <div class="strategy-description">Redis للبيانات المتكررة الوصول بسرعة فائقة</div>
+                        </div>
+                        
+                        <div class="strategy-item">
+                            <div class="strategy-header">
+                                <i class="fas fa-tasks strategy-icon"></i>
+                                <div class="strategy-name">المعالجة غير المتزامنة</div>
+                            </div>
+                            <div class="strategy-tech">Async Processing</div>
+                            <div class="strategy-description">مهام خلفية للعمليات الثقيلة دون تأخير المستخدم</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Scalability -->
+                <div class="performance-column">
+                    <div class="column-header">
+                        <div class="column-icon">
+                            <i class="fas fa-expand-arrows-alt"></i>
+                        </div>
+                        <div class="column-title">قابلية التوسع</div>
+                        <div class="column-subtitle">SCALABILITY</div>
+                    </div>
+                    
+                    <div class="strategy-list">
+                        <div class="strategy-item">
+                            <div class="strategy-header">
+                                <i class="fas fa-arrows-alt-h strategy-icon"></i>
+                                <div class="strategy-name">التوسع الأفقي</div>
+                            </div>
+                            <div class="strategy-tech">Horizontal Scaling</div>
+                            <div class="strategy-description">إضافة خوادم حسب الحاجة لتوزيع الحمل</div>
+                        </div>
+                        
+                        <div class="strategy-item">
+                            <div class="strategy-header">
+                                <i class="fas fa-balance-scale strategy-icon"></i>
+                                <div class="strategy-name">موازنة الحمل</div>
+                            </div>
+                            <div class="strategy-tech">Load Balancing</div>
+                            <div class="strategy-description">توزيع الطلبات بالتساوي عبر الخوادم المتعددة</div>
+                        </div>
+                        
+                        <div class="strategy-item">
+                            <div class="strategy-header">
+                                <i class="fas fa-globe strategy-icon"></i>
+                                <div class="strategy-name">شبكة توزيع المحتوى</div>
+                            </div>
+                            <div class="strategy-tech">CDN Integration</div>
+                            <div class="strategy-description">توزيع المحتوى عالمياً للوصول السريع</div>
+                        </div>
+                        
+                        <div class="strategy-item">
+                            <div class="strategy-header">
+                                <i class="fas fa-chart-line strategy-icon"></i>
+                                <div class="strategy-name">التوسع التلقائي</div>
+                            </div>
+                            <div class="strategy-tech">Auto-Scaling</div>
+                            <div class="strategy-description">تخصيص ديناميكي للموارد حسب الطلب</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

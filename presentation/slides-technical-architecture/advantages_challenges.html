@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            font-family: 'Cairo', sans-serif;
+            color: #E2E8F0;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .header {
+            padding-top: 50px;
+            padding-right: 60px;
+            padding-left: 60px;
+            margin-bottom: 35px;
+        }
+        
+        .page-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #60A5FA;
+            margin-bottom: 10px;
+        }
+        
+        .title-underline {
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(90deg, #10B981 0%, #60A5FA 100%);
+            border-radius: 2px;
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding-right: 60px;
+            padding-left: 60px;
+        }
+        
+        .section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+        
+        .section-icon-large {
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 24px;
+        }
+        
+        .advantages-icon {
+            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+            color: #0F172A;
+        }
+        
+        .challenges-icon {
+            background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+            color: #0F172A;
+        }
+        
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+        }
+        
+        .advantages-title {
+            color: #10B981;
+        }
+        
+        .challenges-title {
+            color: #F59E0B;
+        }
+        
+        .items-container {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+        
+        .item-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-right: 3px solid;
+            padding-top: 15px;
+            padding-right: 20px;
+            padding-left: 20px;
+            min-height: 85px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .advantages-card {
+            border-color: #10B981;
+        }
+        
+        .challenges-card {
+            border-color: #F59E0B;
+        }
+        
+        .item-icon {
+            width: 38px;
+            height: 38px;
+            min-width: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 16px;
+            margin-top: 2px;
+        }
+        
+        .advantages-item-icon {
+            background: rgba(16, 185, 129, 0.2);
+            color: #10B981;
+        }
+        
+        .challenges-item-icon {
+            background: rgba(245, 158, 11, 0.2);
+            color: #F59E0B;
+        }
+        
+        .item-content {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        
+        .item-title {
+            font-size: 18px;
+            font-weight: 700;
+        }
+        
+        .advantages-item-title {
+            color: #10B981;
+        }
+        
+        .challenges-item-title {
+            color: #F59E0B;
+        }
+        
+        .item-description {
+            font-size: 15px;
+            line-height: 1.5;
+            color: #CBD5E1;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <div class="page-title">المزايا والتحديات</div>
+            <div class="title-underline"></div>
+        </div>
+        
+        <div class="main-content">
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-icon-large advantages-icon">
+                        <i class="fas fa-thumbs-up"></i>
+                    </div>
+                    <div class="section-title advantages-title">المزايا الرئيسية</div>
+                </div>
+                
+                <div class="items-container">
+                    <div class="item-card advantages-card">
+                        <div class="item-icon advantages-item-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title advantages-item-title">كفاءة التكلفة</div>
+                            <div class="item-description">
+                                مشاركة البنية التحتية تقلل التكاليف بنسبة 60-80% مقارنة بـ Single-Tenant
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="item-card advantages-card">
+                        <div class="item-icon advantages-item-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title advantages-item-title">صيانة مركزية سهلة</div>
+                            <div class="item-description">
+                                تحديث واحد يطبق على جميع المستأجرين - لا حاجة لتحديث مئات النسخ
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="item-card advantages-card">
+                        <div class="item-icon advantages-item-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title advantages-item-title">نشر أسرع</div>
+                            <div class="item-description">
+                                إضافة عملاء جدد في دقائق بدلاً من أيام أو أسابيع
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="item-card advantages-card">
+                        <div class="item-icon advantages-item-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title advantages-item-title">قابلية توسع ممتازة</div>
+                            <div class="item-description">
+                                إضافة آلاف المستأجرين دون إعادة هيكلة البنية التحتية
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="item-card advantages-card">
+                        <div class="item-icon advantages-item-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title advantages-item-title">استخدام أمثل للموارد</div>
+                            <div class="item-description">
+                                توزيع الحمل عبر المستأجرين يحسن كفاءة استخدام الخوادم
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-icon-large challenges-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="section-title challenges-title">التحديات الرئيسية</div>
+                </div>
+                
+                <div class="items-container">
+                    <div class="item-card challenges-card">
+                        <div class="item-icon challenges-item-icon">
+                            <i class="fas fa-volume-up"></i>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title challenges-item-title">مشكلة Noisy Neighbor</div>
+                            <div class="item-description">
+                                مستأجر واحد يستهلك موارد كثيرة قد يؤثر على أداء الآخرين
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="item-card challenges-card">
+                        <div class="item-icon challenges-item-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title challenges-item-title">تعقيد الأمان</div>
+                            <div class="item-description">
+                                ضمان عزل البيانات بشكل صحيح يتطلب اهتماماً دقيقاً في كل طبقة
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="item-card challenges-card">
+                        <div class="item-icon challenges-item-icon">
+                            <i class="fas fa-sliders-h"></i>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title challenges-item-title">حدود التخصيص</div>
+                            <div class="item-description">
+                                صعوبة تلبية احتياجات تخصيص فريدة لكل مستأجر
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="item-card challenges-card">
+                        <div class="item-icon challenges-item-icon">
+                            <i class="fas fa-file-contract"></i>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title challenges-item-title">متطلبات الامتثال</div>
+                            <div class="item-description">
+                                بعض الصناعات تتطلب عزلاً فيزيائياً كاملاً للبيانات
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="item-card challenges-card">
+                        <div class="item-icon challenges-item-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title challenges-item-title">تعقيد الترحيل</div>
+                            <div class="item-description">
+                                الانتقال من نموذج لآخر يتطلب تخطيطاً دقيقاً ووقتاً طويلاً
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

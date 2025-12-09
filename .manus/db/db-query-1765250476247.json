@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS `messageTemplateUsage` (\n  `id` int AUTO_INCREMENT PRIMARY KEY,\n  `templateId` int NOT NULL,\n  `userId` int NOT NULL,\n  `channel` enum('email', 'sms') NOT NULL,\n  `recipientCount` int NOT NULL,\n  `bulkActionId` int,\n  `campaignId` int,\n  `successCount` int DEFAULT 0 NOT NULL,\n  `failureCount` int DEFAULT 0 NOT NULL,\n  `createdAt` timestamp DEFAULT CURRENT_TIMESTAMP NOT NULL,\n  FOREIGN KEY (`templateId`) REFERENCES `messageTemplates`(`id`) ON DELETE CASCADE,\n  FOREIGN KEY (`userId`) REFERENCES `users`(`id`) ON DELETE CASCADE,\n  INDEX `templateId_idx` (`templateId`),\n  INDEX `userId_idx` (`userId`),\n  INDEX `channel_idx` (`channel`),\n  INDEX `createdAt_idx` (`createdAt`)\n)",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS `messageTemplateUsage` (\n  `id` int AUTO_INCREMENT PRIMARY KEY,\n  `templateId` int NOT NULL,\n  `userId` int NOT NULL,\n  `channel` enum('email', 'sms') NOT NULL,\n  `recipientCount` int NOT NULL,\n  `bulkActionId` int,\n  `campaignId` int,\n  `successCount` int DEFAULT 0 NOT NULL,\n  `failureCount` int DEFAULT 0 NOT NULL,\n  `createdAt` timestamp DEFAULT CURRENT_TIMESTAMP NOT NULL,\n  FOREIGN KEY (`templateId`) REFERENCES `messageTemplates`(`id`) ON DELETE CASCADE,\n  FOREIGN KEY (`userId`) REFERENCES `users`(`id`) ON DELETE CASCADE,\n  INDEX `templateId_idx` (`templateId`),\n  INDEX `userId_idx` (`userId`),\n  INDEX `channel_idx` (`channel`),\n  INDEX `createdAt_idx` (`createdAt`)\n)",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1758
+}

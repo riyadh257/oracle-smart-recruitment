@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font-family: 'Cairo', sans-serif; direction: rtl; }
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: #ffffff;
+        padding-top: 50px;
+      }
+      .header {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      .title {
+        font-size: 32px;
+        font-weight: 700;
+        color: #1e3a8a;
+        margin-bottom: 10px;
+      }
+      .subtitle {
+        font-size: 18px;
+        color: #4b5563;
+      }
+      .roles-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 60px;
+      }
+      .role-card {
+        background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+        padding-top: 25px;
+        min-height: 200px;
+        border: 2px solid #e5e7eb;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .role-icon-wrapper {
+        width: 70px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 15px;
+      }
+      .role-icon {
+        font-size: 36px;
+      }
+      .icon-admin { color: #7c3aed; }
+      .icon-hr { color: #1e3a8a; }
+      .icon-recruiter { color: #3b82f6; }
+      .icon-hiring { color: #10b981; }
+      .icon-interviewer { color: #f59e0b; }
+      .icon-candidate { color: #ef4444; }
+      
+      .role-title {
+        font-size: 20px;
+        font-weight: 700;
+        color: #1f2937;
+        margin-bottom: 10px;
+      }
+      .role-description {
+        font-size: 16px;
+        color: #4b5563;
+        line-height: 1.5;
+        padding: 0 15px;
+      }
+      .highlight {
+        font-weight: 600;
+      }
+      .admin-highlight { color: #7c3aed; }
+      .hr-highlight { color: #1e3a8a; }
+      .recruiter-highlight { color: #3b82f6; }
+      .hiring-highlight { color: #10b981; }
+      .interviewer-highlight { color: #f59e0b; }
+      .candidate-highlight { color: #ef4444; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1 class="title">أصحاب المصلحة والأدوار</h1>
+            <p class="subtitle">ستة أدوار رئيسية متكاملة لإدارة دورة التوظيف الكاملة</p>
+        </div>
+        
+        <div class="roles-grid">
+            <div class="role-card">
+                <div class="role-icon-wrapper">
+                    <i class="fas fa-user-shield role-icon icon-admin"></i>
+                </div>
+                <h3 class="role-title">مدير النظام</h3>
+                <p class="role-description">
+                    <span class="highlight admin-highlight">إدارة كاملة</span> للنظام والمستخدمين والإعدادات والأمان مع صلاحيات غير محدودة
+                </p>
+            </div>
+            
+            <div class="role-card">
+                <div class="role-icon-wrapper">
+                    <i class="fas fa-users-cog role-icon icon-hr"></i>
+                </div>
+                <h3 class="role-title">مدير الموارد البشرية</h3>
+                <p class="role-description">
+                    <span class="highlight hr-highlight">الإشراف الاستراتيجي</span> على جميع عمليات التوظيف والامتثال والتحليلات الشاملة
+                </p>
+            </div>
+            
+            <div class="role-card">
+                <div class="role-icon-wrapper">
+                    <i class="fas fa-user-tie role-icon icon-recruiter"></i>
+                </div>
+                <h3 class="role-title">المُوظِّف</h3>
+                <p class="role-description">
+                    <span class="highlight recruiter-highlight">العمليات اليومية</span> من نشر الوظائف وإدارة المرشحين إلى جدولة المقابلات
+                </p>
+            </div>
+            
+            <div class="role-card">
+                <div class="role-icon-wrapper">
+                    <i class="fas fa-clipboard-check role-icon icon-hiring"></i>
+                </div>
+                <h3 class="role-title">مدير التوظيف</h3>
+                <p class="role-description">
+                    <span class="highlight hiring-highlight">مراجعة المرشحين</span> وإجراء المقابلات واتخاذ قرارات التوظيف النهائية
+                </p>
+            </div>
+            
+            <div class="role-card">
+                <div class="role-icon-wrapper">
+                    <i class="fas fa-comments role-icon icon-interviewer"></i>
+                </div>
+                <h3 class="role-title">المُقابِل</h3>
+                <p class="role-description">
+                    <span class="highlight interviewer-highlight">إجراء المقابلات</span> وتقييم المرشحين وتقديم التوصيات المبنية على معايير محددة
+                </p>
+            </div>
+            
+            <div class="role-card">
+                <div class="role-icon-wrapper">
+                    <i class="fas fa-user role-icon icon-candidate"></i>
+                </div>
+                <h3 class="role-title">المرشح</h3>
+                <p class="role-description">
+                    <span class="highlight candidate-highlight">التقديم والتتبع</span> للوظائف مع إدارة الملف الشخصي والتواصل مع الموظفين
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

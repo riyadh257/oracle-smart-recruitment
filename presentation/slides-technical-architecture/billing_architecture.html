@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: linear-gradient(135deg, #0A1628 0%, #1a2942 100%);
+        font-family: 'Inter', sans-serif;
+        color: #E2E8F0;
+        position: relative;
+      }
+      
+      .content-wrapper {
+        padding-top: 50px;
+        padding-left: 60px;
+        padding-right: 60px;
+        min-height: 720px;
+      }
+      
+      .page-title {
+        font-size: 36px;
+        font-weight: 700;
+        color: #60A5FA;
+        margin-bottom: 45px;
+        line-height: 1.2;
+      }
+      
+      .main-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+      }
+      
+      .left-section {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      
+      .billing-feature {
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+      }
+      
+      .feature-number {
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        background: linear-gradient(135deg, #10B981 0%, #34D399 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        font-weight: 700;
+        color: #ffffff;
+      }
+      
+      .feature-content h3 {
+        font-size: 18px;
+        font-weight: 600;
+        color: #E2E8F0;
+        margin-bottom: 6px;
+      }
+      
+      .feature-content p {
+        font-size: 14px;
+        font-weight: 400;
+        color: #94A3B8;
+        line-height: 1.5;
+      }
+      
+      .right-section {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+      }
+      
+      .pricing-models {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      .section-label {
+        font-size: 16px;
+        font-weight: 600;
+        color: #60A5FA;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      
+      .model-card {
+        background: rgba(59, 130, 246, 0.08);
+        border: 1px solid rgba(59, 130, 246, 0.3);
+        padding-top: 18px;
+        padding-left: 20px;
+        padding-right: 20px;
+        min-height: 85px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+      
+      .model-icon {
+        width: 48px;
+        height: 48px;
+        min-width: 48px;
+        background: linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        color: #ffffff;
+      }
+      
+      .model-info {
+        flex: 1;
+      }
+      
+      .model-name {
+        font-size: 17px;
+        font-weight: 600;
+        color: #E2E8F0;
+        margin-bottom: 4px;
+      }
+      
+      .model-desc {
+        font-size: 13px;
+        color: #94A3B8;
+        line-height: 1.4;
+      }
+      
+      .billing-flow {
+        background: rgba(16, 185, 129, 0.05);
+        border: 1px solid rgba(16, 185, 129, 0.3);
+        padding-top: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        min-height: 140px;
+      }
+      
+      .flow-title {
+        font-size: 16px;
+        font-weight: 600;
+        color: #10B981;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      
+      .flow-title i {
+        font-size: 18px;
+      }
+      
+      .flow-steps {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .flow-step {
+        text-align: center;
+        flex: 1;
+      }
+      
+      .step-icon {
+        width: 40px;
+        height: 40px;
+        background: rgba(16, 185, 129, 0.2);
+        border: 2px solid #10B981;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 8px;
+        font-size: 18px;
+        color: #10B981;
+      }
+      
+      .step-label {
+        font-size: 12px;
+        color: #94A3B8;
+        font-weight: 500;
+      }
+      
+      .flow-arrow {
+        font-size: 20px;
+        color: #10B981;
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+      
+      .roi-highlight {
+        position: absolute;
+        bottom: 40px;
+        left: 60px;
+        right: 60px;
+        padding-top: 20px;
+        padding-left: 30px;
+        padding-right: 30px;
+        min-height: 65px;
+        background: linear-gradient(90deg, rgba(59, 130, 246, 0.15) 0%, rgba(59, 130, 246, 0.05) 100%);
+        border-left: 4px solid #3B82F6;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      
+      .roi-text {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+      
+      .roi-text i {
+        font-size: 28px;
+        color: #60A5FA;
+      }
+      
+      .roi-text .text {
+        font-size: 16px;
+        font-weight: 600;
+        color: #60A5FA;
+      }
+      
+      .roi-metrics {
+        display: flex;
+        gap: 30px;
+      }
+      
+      .metric {
+        text-align: center;
+      }
+      
+      .metric-value {
+        font-size: 22px;
+        font-weight: 700;
+        color: #10B981;
+      }
+      
+      .metric-label {
+        font-size: 12px;
+        color: #94A3B8;
+        font-weight: 500;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="content-wrapper">
+            <h2 class="page-title">Pay-For-Performance Model Tracks Qualified Applications and Interview Conversions</h2>
+            
+            <div class="main-content">
+                <div class="left-section">
+                    <div class="billing-feature">
+                        <div class="feature-number">1</div>
+                        <div class="feature-content">
+                            <h3>Performance-Based Billing</h3>
+                            <p>Charges employers only for qualified applications (match score >70%) and scheduled interviews, aligning platform success with client outcomes</p>
+                        </div>
+                    </div>
+                    
+                    <div class="billing-feature">
+                        <div class="feature-number">2</div>
+                        <div class="feature-content">
+                            <h3>Automated Invoice Generation</h3>
+                            <p>Creates monthly billing records with detailed application breakdowns and pricing calculations automatically</p>
+                        </div>
+                    </div>
+                    
+                    <div class="billing-feature">
+                        <div class="feature-number">3</div>
+                        <div class="feature-content">
+                            <h3>Billing Record Tracking</h3>
+                            <p>Stores period-based charges with status (pending/paid) and complete audit trail for financial transparency</p>
+                        </div>
+                    </div>
+                    
+                    <div class="billing-feature">
+                        <div class="feature-number">4</div>
+                        <div class="feature-content">
+                            <h3>Flexible Pricing Models</h3>
+                            <p>Support subscription, performance-based, and hybrid billing strategies customized per employer requirements</p>
+                        </div>
+                    </div>
+                    
+                    <div class="billing-feature">
+                        <div class="feature-number">5</div>
+                        <div class="feature-content">
+                            <h3>ROI Analytics Dashboard</h3>
+                            <p>Demonstrate platform value by comparing hiring costs against traditional recruitment methods with measurable metrics</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="right-section">
+                    <div class="pricing-models">
+                        <div class="section-label">Pricing Model Options</div>
+                        
+                        <div class="model-card">
+                            <div class="model-icon">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <div class="model-info">
+                                <div class="model-name">Subscription Model</div>
+                                <div class="model-desc">Fixed monthly fee for unlimited access to platform features and candidate database</div>
+                            </div>
+                        </div>
+                        
+                        <div class="model-card">
+                            <div class="model-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="model-info">
+                                <div class="model-name">Performance Model</div>
+                                <div class="model-desc">Pay per qualified application and scheduled interview - zero risk, results-driven pricing</div>
+                            </div>
+                        </div>
+                        
+                        <div class="model-card">
+                            <div class="model-icon">
+                                <i class="fas fa-balance-scale"></i>
+                            </div>
+                            <div class="model-info">
+                                <div class="model-name">Hybrid Model</div>
+                                <div class="model-desc">Combination of base subscription plus performance incentives for optimal flexibility</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="billing-flow">
+                        <div class="flow-title">
+                            <i class="fas fa-sync-alt"></i>
+                            Billing Trigger Workflow
+                        </div>
+                        <div class="flow-steps">
+                            <div class="flow-step">
+                                <div class="step-icon">
+                                    <i class="fas fa-user-check"></i>
+                                </div>
+                                <div class="step-label">Application<br>Submitted</div>
+                            </div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step">
+                                <div class="step-icon">
+                                    <i class="fas fa-calculator"></i>
+                                </div>
+                                <div class="step-label">Match Score<br>Calculated</div>
+                            </div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step">
+                                <div class="step-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div class="step-label">Qualification<br>Verified</div>
+                            </div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step">
+                                <div class="step-icon">
+                                    <i class="fas fa-file-invoice-dollar"></i>
+                                </div>
+                                <div class="step-label">Billing<br>Recorded</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="roi-highlight">
+                <div class="roi-text">
+                    <i class="fas fa-trophy"></i>
+                    <div class="text">ROI Impact: Platform demonstrates measurable value</div>
+                </div>
+                <div class="roi-metrics">
+                    <div class="metric">
+                        <div class="metric-value">60%</div>
+                        <div class="metric-label">Cost Reduction</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">40%</div>
+                        <div class="metric-label">Faster Hiring</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">85%</div>
+                        <div class="metric-label">Match Quality</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

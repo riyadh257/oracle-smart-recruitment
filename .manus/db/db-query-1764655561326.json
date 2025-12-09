@@ -1,0 +1,9 @@
+{
+  "query": "SELECT TABLE_NAME FROM information_schema.TABLES WHERE TABLE_SCHEMA = 'hjcha4sjawhm6ap28vcakh' AND TABLE_NAME LIKE '%career%'",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute SELECT TABLE_NAME FROM information_schema.TABLES WHERE TABLE_SCHEMA = 'hjcha4sjawhm6ap28vcakh' AND TABLE_NAME LIKE '%career%'",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1536
+}

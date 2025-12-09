@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      .slide-container {
+        width: 1280px;
+        min-height: 720px;
+        background: #0A0E27;
+        font-family: 'Inter', sans-serif;
+        color: #E2E8F0;
+        position: relative;
+        padding-top: 60px;
+      }
+      
+      .grid-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: 
+          linear-gradient(rgba(96, 165, 250, 0.02) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(96, 165, 250, 0.02) 1px, transparent 1px);
+        background-size: 40px 40px;
+        pointer-events: none;
+      }
+      
+      .content {
+        position: relative;
+        z-index: 1;
+        padding-left: 80px;
+        padding-right: 80px;
+      }
+      
+      .page-title {
+        font-size: 36px;
+        font-weight: 700;
+        color: #60A5FA;
+        margin-bottom: 45px;
+        letter-spacing: -0.5px;
+      }
+      
+      .workflow-section {
+        margin-bottom: 40px;
+      }
+      
+      .workflow-flow {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+      }
+      
+      .workflow-step {
+        flex: 1;
+        background: rgba(15, 23, 42, 0.8);
+        border: 2px solid;
+        padding-top: 18px;
+        padding-left: 18px;
+        padding-right: 18px;
+        min-height: 110px;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .step-1 { border-color: #60A5FA; }
+      .step-2 { border-color: #34D399; }
+      .step-3 { border-color: #F59E0B; }
+      .step-4 { border-color: #8B5CF6; }
+      .step-5 { border-color: #10B981; }
+      
+      .step-number {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 12px;
+        font-weight: 600;
+        margin-bottom: 8px;
+        opacity: 0.6;
+      }
+      
+      .step-title {
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
+      
+      .step-1 .step-title { color: #60A5FA; }
+      .step-2 .step-title { color: #34D399; }
+      .step-3 .step-title { color: #F59E0B; }
+      .step-4 .step-title { color: #8B5CF6; }
+      .step-5 .step-title { color: #10B981; }
+      
+      .step-desc {
+        font-size: 12px;
+        color: #94A3B8;
+        line-height: 1.5;
+      }
+      
+      .arrow-icon {
+        font-size: 20px;
+        color: rgba(96, 165, 250, 0.4);
+        flex-shrink: 0;
+      }
+      
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+      
+      .feature-box {
+        background: rgba(15, 23, 42, 0.6);
+        border-top: 3px solid;
+        padding-top: 20px;
+        padding-left: 24px;
+        padding-right: 24px;
+        min-height: 160px;
+      }
+      
+      .box-1 { border-color: #60A5FA; }
+      .box-2 { border-color: #34D399; }
+      .box-3 { border-color: #F59E0B; }
+      .box-4 { border-color: #8B5CF6; }
+      
+      .feature-title {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 14px;
+      }
+      
+      .box-1 .feature-title { color: #60A5FA; }
+      .box-2 .feature-title { color: #34D399; }
+      .box-3 .feature-title { color: #F59E0B; }
+      .box-4 .feature-title { color: #8B5CF6; }
+      
+      .feature-items {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .feature-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 13px;
+      }
+      
+      .item-bullet {
+        color: #34D399;
+        margin-top: 2px;
+        flex-shrink: 0;
+      }
+      
+      .item-text {
+        color: #CBD5E1;
+        line-height: 1.5;
+      }
+      
+      .tech-spec {
+        font-family: 'JetBrains Mono', monospace;
+        color: #34D399;
+        font-weight: 600;
+      }
+      
+      .status-badge {
+        display: inline-block;
+        background: rgba(52, 211, 153, 0.15);
+        color: #34D399;
+        padding-top: 3px;
+        padding-left: 8px;
+        padding-right: 8px;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 11px;
+        font-weight: 600;
+        margin-left: 6px;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="grid-overlay"></div>
+        
+        <div class="content">
+            <h1 class="page-title">Video Interview Scheduling System</h1>
+            
+            <div class="workflow-section">
+                <div class="workflow-flow">
+                    <div class="workflow-step step-1">
+                        <div class="step-number">STEP 1</div>
+                        <div class="step-title">Request</div>
+                        <div class="step-desc">Employer initiates interview request for qualified application</div>
+                    </div>
+                    
+                    <div class="arrow-icon">→</div>
+                    
+                    <div class="workflow-step step-2">
+                        <div class="step-number">STEP 2</div>
+                        <div class="step-title">Schedule</div>
+                        <div class="step-desc">Calendly API creates event with available time slots</div>
+                    </div>
+                    
+                    <div class="arrow-icon">→</div>
+                    
+                    <div class="workflow-step step-3">
+                        <div class="step-number">STEP 3</div>
+                        <div class="step-title">Confirm</div>
+                        <div class="step-desc">Meeting URL generated and stored in videoInterviews table</div>
+                    </div>
+                    
+                    <div class="arrow-icon">→</div>
+                    
+                    <div class="workflow-step step-4">
+                        <div class="step-number">STEP 4</div>
+                        <div class="step-title">Remind</div>
+                        <div class="step-desc">Automated reminders sent 24h and 1h before interview</div>
+                    </div>
+                    
+                    <div class="arrow-icon">→</div>
+                    
+                    <div class="workflow-step step-5">
+                        <div class="step-number">STEP 5</div>
+                        <div class="step-title">Complete</div>
+                        <div class="step-desc">Status updated, notes captured, billing triggered</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-box box-1">
+                    <div class="feature-title">Calendly Integration</div>
+                    <div class="feature-items">
+                        <div class="feature-item">
+                            <span class="item-bullet">•</span>
+                            <span class="item-text">Store <span class="tech-spec">calendlyEventId</span> for bidirectional sync</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="item-bullet">•</span>
+                            <span class="item-text">Automatic <span class="tech-spec">meetingUrl</span> generation with unique links</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="item-bullet">•</span>
+                            <span class="item-text">Webhook support for real-time cancellation handling</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="item-bullet">•</span>
+                            <span class="item-text">Configurable <span class="tech-spec">duration</span> (default 30 minutes)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feature-box box-2">
+                    <div class="feature-title">Status Tracking</div>
+                    <div class="feature-items">
+                        <div class="feature-item">
+                            <span class="item-bullet">•</span>
+                            <span class="item-text">
+                                <span class="tech-spec">pending</span>
+                                <span class="status-badge">initial</span>
+                            </span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="item-bullet">•</span>
+                            <span class="item-text">
+                                <span class="tech-spec">scheduled</span>
+                                <span class="status-badge">confirmed</span>
+                            </span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="item-bullet">•</span>
+                            <span class="item-text">
+                                <span class="tech-spec">completed</span>
+                                <span class="status-badge">finished</span>
+                            </span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="item-bullet">•</span>
+                            <span class="item-text">
+                                <span class="tech-spec">cancelled</span>
+                                <span class="status-badge">aborted</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feature-box box-3">
+                    <div class="feature-title">Reminder System</div>
+                    <div class="feature-items">
+                        <div class="feature-item">
+                            <span class="item-bullet">•</span>
+                            <span class="item-text">Scheduled job checks <span class="tech-spec">scheduledTime</span> daily</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="item-bullet">•</span>
+                            <span class="item-text">Email notifications with meeting URL and calendar invite</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="item-bullet">•</span>
+                            <span class="item-text">Flag <span class="tech-spec">reminderSent</span> prevents duplicate sends</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="item-bullet">•</span>
+                            <span class="item-text">Customizable reminder timing per employer preferences</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feature-box box-4">
+                    <div class="feature-title">Data Management</div>
+                    <div class="feature-items">
+                        <div class="feature-item">
+                            <span class="item-bullet">•</span>
+                            <span class="item-text">Links to <span class="tech-spec">applicationId</span>, <span class="tech-spec">candidateId</span>, <span class="tech-spec">employerId</span>, <span class="tech-spec">jobId</span></span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="item-bullet">•</span>
+                            <span class="item-text">Cascade delete on application removal for data integrity</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="item-bullet">•</span>
+                            <span class="item-text">Interview <span class="tech-spec">notes</span> field for post-interview feedback</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="item-bullet">•</span>
+                            <span class="item-text">Indexed queries for performance on high-volume scheduling</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

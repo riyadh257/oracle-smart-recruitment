@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: #0A1628;
+        font-family: 'Inter', sans-serif;
+        color: #E2E8F0;
+        position: relative;
+      }
+      
+      .blueprint-grid {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: 
+          linear-gradient(rgba(59, 130, 246, 0.02) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(59, 130, 246, 0.02) 1px, transparent 1px);
+        background-size: 40px 40px;
+      }
+      
+      .content-wrapper {
+        position: relative;
+        padding-top: 60px; /* keep title upper padding */
+        padding-left: 80px;
+        padding-right: 80px;
+      }
+      
+      .page-title {
+        font-size: 40px;
+        font-weight: 700;
+        color: #FFFFFF;
+        margin-bottom: 40px;
+        border-left: 4px solid #3B82F6;
+        padding-left: 20px;
+      }
+      
+      .main-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 40px; /* reduce column gap to widen content and avoid wraps */
+      }
+      
+      .flow-section {
+        display: flex;
+        flex-direction: column;
+        gap: 4px; /* tightened vertical spacing */
+      }
+      
+      .flow-step {
+        display: grid;
+        grid-template-columns: 44px 1fr;
+        gap: 16px;
+        align-items: start;
+      }
+      
+      .step-number {
+        width: 40px; /* reduced box size without changing font */
+        height: 40px;
+        background: rgba(59, 130, 246, 0.15);
+        border: 2px solid #3B82F6;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        font-weight: 700;
+        color: #3B82F6;
+      }
+      
+      .step-content {
+        padding-top: 4px; /* reduced inner padding */
+      }
+      
+      .step-title {
+        font-size: 17px;
+        font-weight: 700;
+        color: #FFFFFF;
+        margin-bottom: 2px; /* reduced spacing under title */
+      }
+      
+      .step-desc {
+        font-size: 14px;
+        line-height: 1.5;
+        color: #E2E8F0;
+      }
+      
+      .optimization-section {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+      
+      .optimization-header {
+        font-size: 24px;
+        font-weight: 700;
+        color: #10B981;
+        border-left: 4px solid #10B981;
+        padding-left: 16px;
+      }
+      
+      .optimization-card {
+        background: rgba(16, 185, 129, 0.05);
+        border: 1px solid rgba(16, 185, 129, 0.2);
+        padding-top: 16px;
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+      
+      .opt-title {
+        font-size: 16px;
+        font-weight: 700;
+        color: #FFFFFF;
+        margin-bottom: 6px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      
+      .opt-icon {
+        width: 24px;
+        height: 24px;
+        background: rgba(16, 185, 129, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        color: #10B981;
+      }
+      
+      .opt-desc {
+        font-size: 14px;
+        line-height: 1.5;
+        color: #E2E8F0;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="blueprint-grid"></div>
+        
+        <div class="content-wrapper">
+            <h1 class="page-title">Application Submission Journey</h1>
+            
+            <div class="main-grid">
+                <div class="flow-section">
+                    <div class="flow-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <div class="step-title">Candidate Initiates</div>
+                            <div class="step-desc">User clicks "Apply" on job listing, triggering application.submit tRPC mutation</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flow-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <div class="step-title">Authentication Check</div>
+                            <div class="step-desc">Protected procedure validates JWT session and retrieves candidate profile</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flow-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <div class="step-title">Profile Validation</div>
+                            <div class="step-desc">System verifies candidate has complete profile with resume uploaded</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flow-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <div class="step-title">Job Retrieval</div>
+                            <div class="step-desc">Fetch job details incl. AI-enriched requirements & ideal profile</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flow-step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <div class="step-title">AI Matching Execution</div>
+                            <div class="step-desc">Compute 8D match scores across 10k+ attributes (2–3s inference)</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flow-step">
+                        <div class="step-number">6</div>
+                        <div class="step-content">
+                            <div class="step-title">Application Record Creation</div>
+                            <div class="step-desc">Create application with match breakdown, billing flag, and initial status</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flow-step">
+                        <div class="step-number">7</div>
+                        <div class="step-content">
+                            <div class="step-title">Employer Notification</div>
+                            <div class="step-desc">Send async email to hiring manager with summary & match highlights</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flow-step">
+                        <div class="step-number">8</div>
+                        <div class="step-content">
+                            <div class="step-title">Candidate Confirmation</div>
+                            <div class="step-desc">Email sent to candidate with application tracking link and next steps</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flow-step">
+                        <div class="step-number">9</div>
+                        <div class="step-content">
+                            <div class="step-title">Similar Job Recommendations</div>
+                            <div class="step-desc">Background job identifies other relevant positions and notifies candidate</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flow-step">
+                        <div class="step-number">10</div>
+                        <div class="step-content">
+                            <div class="step-title">ATS Synchronization</div>
+                            <div class="step-desc">Sync to employer ATS if integration is enabled</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="optimization-section">
+                    <h3 class="optimization-header">Performance Optimizations</h3>
+                    
+                    <div class="optimization-card">
+                        <div class="opt-title">
+                            <div class="opt-icon"><i class="fas fa-bolt"></i></div>
+                            Async Processing
+                        </div>
+                        <div class="opt-desc">Email delivery and job recommendations happen in background workers</div>
+                    </div>
+                    
+                    <div class="optimization-card">
+                        <div class="opt-title">
+                            <div class="opt-icon"><i class="fas fa-database"></i></div>
+                            Database Indexing
+                        </div>
+                        <div class="opt-desc">Composite indexes on (candidateId, jobId) and (employerId, status) for fast queries</div>
+                    </div>
+                    
+                    <div class="optimization-card">
+                        <div class="opt-title">
+                            <div class="opt-icon"><i class="fas fa-layer-group"></i></div>
+                            Caching Strategy
+                        </div>
+                        <div class="opt-desc">Job listings cached for 5 minutes, candidate profiles cached until mutation</div>
+                    </div>
+                    
+                    <div class="optimization-card">
+                        <div class="opt-title">
+                            <div class="opt-icon"><i class="fas fa-rocket"></i></div>
+                            Optimistic UI Updates
+                        </div>
+                        <div class="opt-desc">Application appears in candidate dashboard immediately with "pending" indicator</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

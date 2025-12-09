@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #0A1628 0%, #1a2942 100%);
+            font-family: 'Tajawal', sans-serif;
+            color: #E8F1F5;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .geometric-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+        }
+        
+        .geometric-bg::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(45deg, #4ECDC4, #00D9FF);
+            border-radius: 50%;
+            top: -100px;
+            right: -100px;
+            filter: blur(80px);
+        }
+        
+        .geometric-bg::after {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: linear-gradient(225deg, #00D9FF, #FF6B35);
+            border-radius: 50%;
+            bottom: -150px;
+            left: -150px;
+            filter: blur(100px);
+        }
+        
+        .content-wrapper {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+        }
+        
+        .thank-you-message {
+            font-size: 72px;
+            font-weight: 900;
+            color: #00D9FF;
+            margin-bottom: 30px;
+            text-shadow: 0 0 40px rgba(0, 217, 255, 0.4);
+        }
+        
+        .closing-statement {
+            font-size: 24px;
+            color: #E8F1F5;
+            line-height: 1.7;
+            margin-bottom: 50px;
+        }
+        
+        .highlight-text {
+            color: #FF6B35;
+            font-weight: 700;
+        }
+        
+        .divider-line {
+            width: 200px;
+            height: 4px;
+            background: linear-gradient(90deg, #00D9FF, #FF6B35, #4ECDC4);
+            margin: 0 auto 40px;
+        }
+        
+        .contact-section {
+            margin-bottom: 50px;
+        }
+        
+        .contact-title {
+            font-size: 20px;
+            color: #4ECDC4;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+        
+        .contact-methods {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-direction: row-reverse;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.3), rgba(78, 205, 196, 0.2));
+            border: 2px solid #00D9FF;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            color: #00D9FF;
+        }
+        
+        .contact-text {
+            font-size: 16px;
+            color: #E8F1F5;
+            direction: ltr;
+        }
+        
+        .oracle-badge {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #0A1628, #1a2942);
+            border: 4px solid #00D9FF;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin: 0 auto;
+            box-shadow: 0 0 50px rgba(0, 217, 255, 0.5);
+        }
+        
+        .badge-icon {
+            font-size: 42px;
+            color: #00D9FF;
+            margin-bottom: 8px;
+        }
+        
+        .badge-text {
+            font-size: 16px;
+            font-weight: 700;
+            color: #E8F1F5;
+        }
+        
+        .decorative-hexagon {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border: 3px solid;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            opacity: 0.3;
+        }
+        
+        .hex-top-right {
+            border-color: #FF6B35;
+            top: 50px;
+            left: 50px;
+        }
+        
+        .hex-top-left {
+            border-color: #4ECDC4;
+            top: 50px;
+            right: 50px;
+        }
+        
+        .hex-bottom-right {
+            border-color: #00D9FF;
+            bottom: 50px;
+            left: 50px;
+        }
+        
+        .hex-bottom-left {
+            border-color: #FF6B35;
+            bottom: 50px;
+            right: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="geometric-bg"></div>
+        
+        <div class="decorative-hexagon hex-top-right"></div>
+        <div class="decorative-hexagon hex-top-left"></div>
+        <div class="decorative-hexagon hex-bottom-right"></div>
+        <div class="decorative-hexagon hex-bottom-left"></div>
+        
+        <div class="content-wrapper">
+            <h1 class="thank-you-message">شكراً لكم</h1>
+            
+            <p class="closing-statement">
+                نتطلع للعمل معكم لتحويل عملية التوظيف في مؤسستكم من خلال<br>
+                <span class="highlight-text">نظام Oracle للتوظيف الذكي</span>
+            </p>
+            
+            <div class="divider-line"></div>
+            
+            <div class="contact-section">
+                <h3 class="contact-title">للاستفسار والتواصل</h3>
+                
+                <div class="contact-methods">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">info@oracle-recruit.com</div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="contact-text">www.oracle-recruit.com</div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">+966 50 123 4567</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="oracle-badge">
+                <i class="fas fa-bolt badge-icon"></i>
+                <div class="badge-text">Oracle</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

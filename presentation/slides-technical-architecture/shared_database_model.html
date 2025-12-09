@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            font-family: 'Cairo', sans-serif;
+            color: #E2E8F0;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .header {
+            padding-top: 50px;
+            padding-right: 60px;
+            padding-left: 60px;
+            margin-bottom: 35px;
+        }
+        
+        .page-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #60A5FA;
+            margin-bottom: 10px;
+        }
+        
+        .title-underline {
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(90deg, #10B981 0%, #60A5FA 100%);
+            border-radius: 2px;
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 500px 1fr;
+            gap: 45px;
+            padding-right: 60px;
+            padding-left: 60px;
+        }
+        
+        .visual-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .diagram-container {
+            width: 500px;
+            height: 320px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(96, 165, 250, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .diagram-container img {
+            width: 480px;
+            height: 300px;
+            object-fit: contain;
+        }
+        
+        .concept-label {
+            background: rgba(96, 165, 250, 0.1);
+            border-right: 3px solid #60A5FA;
+            padding-top: 15px;
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+        
+        .concept-label-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #60A5FA;
+            margin-bottom: 8px;
+        }
+        
+        .concept-label-text {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #E2E8F0;
+        }
+        
+        .info-section {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .info-block {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .info-block-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #10B981;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .info-block-title i {
+            font-size: 18px;
+        }
+        
+        .info-items {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        
+        .info-icon {
+            width: 24px;
+            height: 24px;
+            min-width: 24px;
+            background: rgba(16, 185, 129, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2px;
+        }
+        
+        .info-icon i {
+            font-size: 11px;
+            color: #10B981;
+        }
+        
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .comparison-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid;
+            min-height: 140px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .advantage-box {
+            border-color: rgba(16, 185, 129, 0.3);
+        }
+        
+        .challenge-box {
+            border-color: rgba(245, 158, 11, 0.3);
+        }
+        
+        .comparison-header {
+            padding-top: 15px;
+            padding-right: 20px;
+            padding-left: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        .comparison-icon {
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        
+        .advantage-icon {
+            background: rgba(16, 185, 129, 0.2);
+            color: #10B981;
+        }
+        
+        .challenge-icon {
+            background: rgba(245, 158, 11, 0.2);
+            color: #F59E0B;
+        }
+        
+        .comparison-title {
+            font-size: 18px;
+            font-weight: 700;
+        }
+        
+        .advantage-title {
+            color: #10B981;
+        }
+        
+        .challenge-title {
+            color: #F59E0B;
+        }
+        
+        .comparison-content {
+            padding-top: 15px;
+            padding-right: 20px;
+            padding-left: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .comparison-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .comparison-bullet {
+            width: 5px;
+            height: 5px;
+            min-width: 5px;
+            border-radius: 50%;
+            margin-top: 6px;
+        }
+        
+        .advantage-bullet {
+            background: #10B981;
+        }
+        
+        .challenge-bullet {
+            background: #F59E0B;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <div class="page-title">نموذج Shared Database</div>
+            <div class="title-underline"></div>
+        </div>
+        
+        <div class="main-content">
+            <div class="visual-section">
+                <div class="diagram-container">
+                    <img src="/home/ubuntu/oracle-smart-recruitment/presentation/slides-technical-architecture/assets/database-patterns.jpeg" alt="Shared Database Pattern">
+                </div>
+                
+                <div class="concept-label">
+                    <div class="concept-label-title">المفهوم الأساسي</div>
+                    <div class="concept-label-text">
+                        قاعدة بيانات واحدة تحتوي على جداول مشتركة لجميع المستأجرين، مع استخدام عمود <strong style="color: #60A5FA;">tenant_id</strong> في كل جدول لفصل بيانات كل مستأجر عن الآخر.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="info-section">
+                <div class="info-block">
+                    <div class="info-block-title">
+                        <i class="fas fa-cogs"></i>
+                        <span>آلية العمل</span>
+                    </div>
+                    <div class="info-items">
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>كل استعلام SQL يجب أن يتضمن شرط <strong style="color: #60A5FA;">WHERE tenant_id = ?</strong></div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>التطبيق مسؤول عن ضمان عزل البيانات في كل عملية</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>استخدام Row-Level Security لحماية إضافية على مستوى قاعدة البيانات</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="comparison-grid">
+                    <div class="comparison-box advantage-box">
+                        <div class="comparison-header">
+                            <div class="comparison-icon advantage-icon">
+                                <i class="fas fa-thumbs-up"></i>
+                            </div>
+                            <div class="comparison-title advantage-title">المزايا</div>
+                        </div>
+                        <div class="comparison-content">
+                            <div class="comparison-item">
+                                <div class="comparison-bullet advantage-bullet"></div>
+                                <div><strong>الأكثر كفاءة</strong> من حيث التكلفة</div>
+                            </div>
+                            <div class="comparison-item">
+                                <div class="comparison-bullet advantage-bullet"></div>
+                                <div>سهولة إضافة مستأجرين جدد</div>
+                            </div>
+                            <div class="comparison-item">
+                                <div class="comparison-bullet advantage-bullet"></div>
+                                <div>صيانة وإدارة مبسطة</div>
+                            </div>
+                            <div class="comparison-item">
+                                <div class="comparison-bullet advantage-bullet"></div>
+                                <div>استعلامات عبر المستأجرين سهلة</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-box challenge-box">
+                        <div class="comparison-header">
+                            <div class="comparison-icon challenge-icon">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div class="comparison-title challenge-title">التحديات</div>
+                        </div>
+                        <div class="comparison-content">
+                            <div class="comparison-item">
+                                <div class="comparison-bullet challenge-bullet"></div>
+                                <div>خطر <strong>تسرب البيانات</strong> بين المستأجرين</div>
+                            </div>
+                            <div class="comparison-item">
+                                <div class="comparison-bullet challenge-bullet"></div>
+                                <div>صعوبة التخصيص لكل مستأجر</div>
+                            </div>
+                            <div class="comparison-item">
+                                <div class="comparison-bullet challenge-bullet"></div>
+                                <div>مشكلة Noisy Neighbor</div>
+                            </div>
+                            <div class="comparison-item">
+                                <div class="comparison-bullet challenge-bullet"></div>
+                                <div>تعقيد في الاستعلامات والفهرسة</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="info-block">
+                    <div class="info-block-title" style="color: #F59E0B;">
+                        <i class="fas fa-lightbulb"></i>
+                        <span>الأنسب لـ</span>
+                    </div>
+                    <div class="info-items">
+                        <div class="info-item">
+                            <div class="info-icon" style="background: rgba(245, 158, 11, 0.2);">
+                                <i class="fas fa-check" style="color: #F59E0B;"></i>
+                            </div>
+                            <div>تطبيقات SaaS للشركات الصغيرة والمتوسطة</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon" style="background: rgba(245, 158, 11, 0.2);">
+                                <i class="fas fa-check" style="color: #F59E0B;"></i>
+                            </div>
+                            <div>المشاريع ذات الميزانية المحدودة والنمو السريع</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

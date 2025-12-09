@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .slide-container {
+      width: 1280px;
+      min-height: 720px;
+      background: #0A1628;
+      position: relative;
+    }
+    
+    .header {
+      padding-top: 60px;
+      padding-left: 80px;
+      padding-right: 80px;
+      margin-bottom: 50px;
+    }
+    
+    .page-title {
+      font-size: 40px;
+      font-weight: 700;
+      color: #FFFFFF;
+      line-height: 1.2;
+    }
+    
+    .content-grid {
+      display: grid;
+      grid-template-columns: 480px 1fr;
+      gap: 60px;
+      padding-left: 80px;
+      padding-right: 80px;
+      align-items: center;
+    }
+    
+    .metrics-column {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+    
+    .metric-card {
+      background: rgba(59, 130, 246, 0.1);
+      border-left: 4px solid #3B82F6;
+      padding-left: 30px;
+      padding-top: 20px;
+      min-height: 120px;
+    }
+    
+    .metric-number {
+      font-size: 56px;
+      font-weight: 800;
+      background: linear-gradient(90deg, #3B82F6 0%, #06B6D4 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    
+    .metric-label {
+      font-size: 18px;
+      font-weight: 600;
+      color: #E2E8F0;
+      line-height: 1.4;
+    }
+    
+    .value-column {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+    
+    .value-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: #06B6D4;
+      margin-bottom: 5px;
+    }
+    
+    .value-text {
+      font-size: 18px;
+      font-weight: 400;
+      color: #E2E8F0;
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+    
+    .feature-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 16px;
+      color: #E2E8F0;
+    }
+    
+    .feature-bullet {
+      width: 8px;
+      height: 8px;
+      background: linear-gradient(135deg, #3B82F6 0%, #06B6D4 100%);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="header">
+      <div class="page-title">Transforming Recruitment with AI-Powered Intelligence</div>
+    </div>
+    
+    <div class="content-grid">
+      <div class="metrics-column">
+        <div class="metric-card">
+          <div class="metric-number">60%</div>
+          <div class="metric-label">Reduction in<br>Time-to-Hire</div>
+        </div>
+        
+        <div class="metric-card">
+          <div class="metric-number">80%</div>
+          <div class="metric-label">Administrative Tasks<br>Automated</div>
+        </div>
+        
+        <div class="metric-card">
+          <div class="metric-number">45%</div>
+          <div class="metric-label">Improvement in<br>Candidate Quality</div>
+        </div>
+      </div>
+      
+      <div class="value-column">
+        <div class="value-title">Comprehensive Recruitment Platform</div>
+        <div class="value-text">
+          Oracle Smart Recruitment System leverages advanced AI and automation to streamline every stage of the hiring process. From intelligent resume screening to predictive analytics, our platform eliminates bottlenecks, reduces bias, and delivers exceptional candidate experiences.
+        </div>
+        
+        <div class="feature-list">
+          <div class="feature-item">
+            <div class="feature-bullet"></div>
+            <span>AI-powered resume analysis with natural language processing</span>
+          </div>
+          <div class="feature-item">
+            <div class="feature-bullet"></div>
+            <span>Automated interview scheduling with multi-provider video integration</span>
+          </div>
+          <div class="feature-item">
+            <div class="feature-bullet"></div>
+            <span>Real-time analytics dashboard with predictive hiring insights</span>
+          </div>
+          <div class="feature-item">
+            <div class="feature-bullet"></div>
+            <span>Enhanced candidate portal with self-service capabilities</span>
+          </div>
+          <div class="feature-item">
+            <div class="feature-bullet"></div>
+            <span>Customizable workflow automation and notification system</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

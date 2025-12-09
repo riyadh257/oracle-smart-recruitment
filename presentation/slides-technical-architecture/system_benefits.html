@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: #0a1628;
+        font-family: 'IBM Plex Sans', sans-serif;
+        position: relative;
+        overflow: hidden;
+      }
+      .grid-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: 
+          linear-gradient(rgba(0, 217, 255, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 217, 255, 0.03) 1px, transparent 1px);
+        background-size: 40px 40px;
+        pointer-events: none;
+      }
+      .border-frame {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+        border: 2px solid rgba(0, 217, 255, 0.3);
+        pointer-events: none;
+      }
+      .content-wrapper {
+        position: relative;
+        z-index: 1;
+        padding-top: 50px; /* keep title upper padding consistent */
+        padding-left: 50px;
+        padding-right: 50px;
+      }
+      .title {
+        font-size: 40px;
+        font-weight: 700;
+        color: #00d9ff;
+        text-align: center;
+        margin-bottom: 24px; /* reduced to save vertical space */
+      }
+      .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px; /* reduced row gap */
+        margin-bottom: 12px; /* reduced spacing below grid */
+      }
+      .benefit-card {
+        background: rgba(0, 217, 255, 0.03);
+        border: 1px solid rgba(0, 217, 255, 0.3);
+        border-top: 4px solid;
+        padding-top: 12px; /* reduced inner top padding */
+        padding-left: 25px;
+        padding-right: 25px;
+        min-height: 150px; /* reduced to fit compact content */
+      }
+      .benefit-type-safety { border-top-color: #00d9ff; }
+      .benefit-frontend { border-top-color: #4ecdc4; }
+      .benefit-modular { border-top-color: #ff6b35; }
+      .benefit-scalability { border-top-color: #ffd93d; }
+      .benefit-header {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 8px; /* tighter spacing */
+      }
+      .benefit-icon {
+        width: 55px;
+        height: 55px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+        border: 2px solid;
+      }
+      .benefit-type-safety .benefit-icon {
+        color: #00d9ff;
+        border-color: #00d9ff;
+        background: rgba(0, 217, 255, 0.1);
+      }
+      .benefit-frontend .benefit-icon {
+        color: #4ecdc4;
+        border-color: #4ecdc4;
+        background: rgba(78, 205, 196, 0.1);
+      }
+      .benefit-modular .benefit-icon {
+        color: #ff6b35;
+        border-color: #ff6b35;
+        background: rgba(255, 107, 53, 0.1);
+      }
+      .benefit-scalability .benefit-icon {
+        color: #ffd93d;
+        border-color: #ffd93d;
+        background: rgba(255, 217, 61, 0.1);
+      }
+      .benefit-title {
+        font-size: 22px;
+        font-weight: 700;
+        color: #e0e6ed;
+      }
+      .benefit-description {
+        font-size: 14px;
+        color: rgba(224, 230, 237, 0.85);
+        line-height: 1.45; /* tighter line-height without changing font size */
+        margin-bottom: 8px; /* reduced spacing */
+      }
+      .benefit-metrics {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px; /* tighter tag gap */
+      }
+      .metric-tag {
+        font-size: 12px;
+        color: #4ecdc4;
+        background: rgba(78, 205, 196, 0.1);
+        border: 1px solid rgba(78, 205, 196, 0.3);
+        padding-top: 2px; /* reduced vertical padding */
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+      .security-section {
+        background: rgba(167, 139, 250, 0.03);
+        border: 1px solid rgba(167, 139, 250, 0.3);
+        border-left: 5px solid #a78bfa;
+        padding-top: 14px; /* reduced inner top padding */
+        padding-left: 25px;
+        padding-right: 25px;
+        /* keep min-height implicit; content will control height */
+      }
+      .security-header {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 8px; /* tighter spacing */
+      }
+      .security-icon {
+        width: 55px;
+        height: 55px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+        color: #a78bfa;
+        border: 2px solid #a78bfa;
+        background: rgba(167, 139, 250, 0.1);
+      }
+      .security-title {
+        font-size: 22px;
+        font-weight: 700;
+        color: #e0e6ed;
+      }
+      .security-description {
+        font-size: 14px;
+        color: rgba(224, 230, 237, 0.85);
+        line-height: 1.45; /* tighter line-height */
+        margin-bottom: 8px; /* reduced spacing */
+      }
+      .security-layers {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 8px; /* slightly tighter gap */
+      }
+      .security-layer {
+        background: rgba(167, 139, 250, 0.1);
+        border: 1px solid rgba(167, 139, 250, 0.3);
+        padding-top: 6px; /* reduced inner top padding */
+        padding-left: 12px;
+        padding-right: 12px;
+        text-align: center;
+        min-height: 56px; /* reduced to fit compact content */
+      }
+      .layer-icon {
+        font-size: 20px;
+        color: #a78bfa;
+        margin-bottom: 6px;
+      }
+      .layer-name {
+        font-size: 12px;
+        color: #e0e6ed;
+        font-weight: 600;
+        line-height: 1.3;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="grid-overlay"></div>
+        <div class="border-frame"></div>
+        
+        <div class="content-wrapper">
+            <div class="title">فوائد ومزايا النظام<br>System Benefits & Advantages</div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card benefit-type-safety">
+                    <div class="benefit-header">
+                        <div class="benefit-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="benefit-title">Type Safety with tRPC</div>
+                    </div>
+                    <div class="benefit-description">
+                        End-to-end type safety ensures consistent API contracts across the stack with compile-time validation and autocomplete support.
+                    </div>
+                    <div class="benefit-metrics">
+                        <span class="metric-tag">Zero API Mismatches</span>
+                        <span class="metric-tag">Compile-Time Validation</span>
+                        <span class="metric-tag">Fewer Runtime Errors</span>
+                    </div>
+                </div>
+                
+                <div class="benefit-card benefit-frontend">
+                    <div class="benefit-header">
+                        <div class="benefit-icon">
+                            <i class="fas fa-cubes"></i>
+                        </div>
+                        <div class="benefit-title">Component-Based Frontend</div>
+                    </div>
+                    <div class="benefit-description">
+                        React 19 with shadcn/ui enables fast development using reusable UI components and a consistent design system.
+                    </div>
+                    <div class="benefit-metrics">
+                        <span class="metric-tag">Faster Development</span>
+                        <span class="metric-tag">Reusable Components</span>
+                        <span class="metric-tag">Consistent UX</span>
+                    </div>
+                </div>
+                
+                <div class="benefit-card benefit-modular">
+                    <div class="benefit-header">
+                        <div class="benefit-icon">
+                            <i class="fas fa-puzzle-piece"></i>
+                        </div>
+                        <div class="benefit-title">Modular Service Architecture</div>
+                    </div>
+                    <div class="benefit-description">
+                        Independent modules (Auth, Recruitment, Communication, Analytics) enable isolated development, testing, and scaling.
+                    </div>
+                    <div class="benefit-metrics">
+                        <span class="metric-tag">Independent Testing</span>
+                        <span class="metric-tag">Isolated Deployment</span>
+                        <span class="metric-tag">Service-Level Scaling</span>
+                    </div>
+                </div>
+                
+                <div class="benefit-card benefit-scalability">
+                    <div class="benefit-header">
+                        <div class="benefit-icon">
+                            <i class="fas fa-expand-arrows-alt"></i>
+                        </div>
+                        <div class="benefit-title">Enterprise Scalability</div>
+                    </div>
+                    <div class="benefit-description">
+                        Stateless, horizontally scalable design supports thousands of concurrent users with auto-scaling for peak performance.
+                    </div>
+                    <div class="benefit-metrics">
+                        <span class="metric-tag">10,000+ Concurrent Users</span>
+                        <span class="metric-tag">Millions of Records</span>
+                        <span class="metric-tag">Auto-Scaling</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="security-section">
+                <div class="security-header">
+                    <div class="security-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="security-title">Multi-Layer Security Architecture</div>
+                </div>
+                <div class="security-description">
+                    Defense-in-depth with OAuth 2.0, JWT sessions, RBAC, input validation, SQL injection prevention, and audit logging for data protection and compliance.
+                </div>
+                <div class="security-layers">
+                    <div class="security-layer">
+                        <div class="layer-icon">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <div class="layer-name">OAuth 2.0 Authentication</div>
+                    </div>
+                    <div class="security-layer">
+                        <div class="layer-icon">
+                            <i class="fas fa-key"></i>
+                        </div>
+                        <div class="layer-name">JWT Session Management</div>
+                    </div>
+                    <div class="security-layer">
+                        <div class="layer-icon">
+                            <i class="fas fa-user-lock"></i>
+                        </div>
+                        <div class="layer-name">Role-Based Access Control</div>
+                    </div>
+                    <div class="security-layer">
+                        <div class="layer-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="layer-name">SQL Injection Prevention</div>
+                    </div>
+                    <div class="security-layer">
+                        <div class="layer-icon">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <div class="layer-name">Comprehensive Audit Logging</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

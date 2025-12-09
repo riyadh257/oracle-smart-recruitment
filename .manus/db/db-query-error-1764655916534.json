@@ -1,0 +1,8 @@
+{
+  "query": "ALTER TABLE `career_pages` \nADD COLUMN IF NOT EXISTS `og_title` varchar(255) AFTER `og_image_url`,\nADD COLUMN IF NOT EXISTS `og_description` text AFTER `og_title`,\nADD COLUMN IF NOT EXISTS `twitter_card` varchar(50) DEFAULT 'summary_large_image' AFTER `og_description`,\nADD COLUMN IF NOT EXISTS `twitter_title` varchar(255) AFTER `twitter_card`,\nADD COLUMN IF NOT EXISTS `twitter_description` text AFTER `twitter_title`,\nADD COLUMN IF NOT EXISTS `twitter_image` text AFTER `twitter_description`,\nADD COLUMN IF NOT EXISTS `canonical_url` text AFTER `twitter_image`;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute ALTER TABLE `career_pages` \nADD COLUMN IF NOT EXISTS `og_title` varchar(255) AFTER `og_image_url`,\nADD COLUMN IF NOT EXISTS `og_description` text AFTER `og_title`,\nADD COLUMN IF NOT EXISTS `twitter_card` varchar(50) DEFAULT 'summary_large_image' AFTER `og_description`,\nADD COLUMN IF NOT EXISTS `twitter_title` varchar(255) AFTER `twitter_card`,\nADD COLUMN IF NOT EXISTS `twitter_description` text AFTER `twitter_title`,\nADD COLUMN IF NOT EXISTS `twitter_image` text AFTER `twitter_description`,\nADD COLUMN IF NOT EXISTS `canonical_url` text AFTER `twitter_image`;",
+  "returncode": 1,
+  "logs": [
+    "ERROR 1146 (42S02) at line 1: Table 'hjcha4sjawhm6ap28vcakh.career_pages' doesn't exist"
+  ]
+}

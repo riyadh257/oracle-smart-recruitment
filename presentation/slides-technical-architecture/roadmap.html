@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: #0A1628;
+        font-family: 'Inter', sans-serif;
+        color: #E2E8F0;
+        position: relative;
+      }
+      
+      .blueprint-grid {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: 
+          linear-gradient(rgba(59, 130, 246, 0.02) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(59, 130, 246, 0.02) 1px, transparent 1px);
+        background-size: 40px 40px;
+      }
+      
+      .content-wrapper {
+        position: relative;
+        padding-top: 60px; /* keep upper title padding consistent */
+        padding-left: 80px;
+        padding-right: 80px;
+      }
+      
+      .page-title {
+        font-size: 40px;
+        font-weight: 700;
+        color: #FFFFFF;
+        margin-bottom: 36px;
+        border-left: 4px solid #3B82F6;
+        padding-left: 20px;
+      }
+      
+      /* Two-column timeline; tightened spacing to reduce vertical height */
+      .roadmap-timeline {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 24px;
+        row-gap: 10px; /* tighter row gap */
+      }
+      
+      .roadmap-item {
+        display: grid;
+        grid-template-columns: 120px 1fr; /* narrower label to widen content */
+        gap: 20px; /* tighter internal gap */
+        background: rgba(59, 130, 246, 0.03);
+        border-left: 4px solid;
+        padding-top: 12px; /* reduced vertical padding */
+        padding-left: 20px;
+        padding-right: 20px;
+        min-height: 100px;
+      }
+      
+      .roadmap-item.q1 { border-left-color: #3B82F6; }
+      .roadmap-item.q2 { border-left-color: #10B981; }
+      .roadmap-item.q3 { border-left-color: #8B5CF6; }
+      .roadmap-item.q4 { border-left-color: #F59E0B; }
+      .roadmap-item.y2026 { border-left-color: #EF4444; }
+      
+      .period-label { display: flex; align-items: center; gap: 12px; }
+      .period-icon { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-size: 18px; }
+      .roadmap-item.q1 .period-icon { background: rgba(59, 130, 246, 0.15); color: #3B82F6; }
+      .roadmap-item.q2 .period-icon { background: rgba(16, 185, 129, 0.15); color: #10B981; }
+      .roadmap-item.q3 .period-icon { background: rgba(139, 92, 246, 0.15); color: #8B5CF6; }
+      .roadmap-item.q4 .period-icon { background: rgba(245, 158, 11, 0.15); color: #F59E0B; }
+      .roadmap-item.y2026 .period-icon { background: rgba(239, 68, 68, 0.15); color: #EF4444; }
+      
+      .period-time { font-size: 20px; font-weight: 700; color: #FFFFFF; }
+      
+      .period-content { display: flex; flex-direction: column; gap: 2px; }
+      .period-title { font-size: 20px; font-weight: 700; color: #FFFFFF; margin-bottom: 4px; }
+      
+      .initiative-list { display: flex; flex-direction: column; gap: 4px; }
+      .initiative-item { font-size: 15px; line-height: 1.45; color: #E2E8F0; padding-left: 18px; position: relative; }
+      .initiative-item::before { content: "▸"; position: absolute; left: 0; font-weight: 700; }
+      
+      .roadmap-item.q1 .initiative-item::before { color: #3B82F6; }
+      .roadmap-item.q2 .initiative-item::before { color: #10B981; }
+      .roadmap-item.q3 .initiative-item::before { color: #8B5CF6; }
+      .roadmap-item.q4 .initiative-item::before { color: #F59E0B; }
+      .roadmap-item.y2026 .initiative-item::before { color: #EF4444; }
+      
+      .initiative-highlight { font-weight: 600; color: #FFFFFF; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="blueprint-grid"></div>
+        
+        <div class="content-wrapper">
+            <h1 class="page-title">Strategic Platform Evolution</h1>
+            
+            <div class="roadmap-timeline">
+                <div class="roadmap-item q1">
+                    <div class="period-label">
+                        <div class="period-icon"><i class="fas fa-plug"></i></div>
+                        <div class="period-time">Q1 2025</div>
+                    </div>
+                    <div class="period-content">
+                        <h3 class="period-title">API Integration & Global Data</h3>
+                        <div class="initiative-list">
+                            <div class="initiative-item"><span class="initiative-highlight">Indeed API:</span> Real-time aggregation from Indeed's job board</div>
+                            <div class="initiative-item"><span class="initiative-highlight">Glassdoor API:</span> Company reviews, culture, and salary insights</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="roadmap-item q2">
+                    <div class="period-label">
+                        <div class="period-icon"><i class="fas fa-heart-pulse"></i></div>
+                        <div class="period-time">Q2 2025</div>
+                    </div>
+                    <div class="period-content">
+                        <h3 class="period-title">Employer Wellbeing Dashboard</h3>
+                        <div class="initiative-list">
+                            <div class="initiative-item"><span class="initiative-highlight">Retention Risk UI:</span> Visual dashboard for at-risk employees</div>
+                            <div class="initiative-item"><span class="initiative-highlight">Burnout Monitoring:</span> Wellbeing scores with trends and alerts</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="roadmap-item q3">
+                    <div class="period-label">
+                        <div class="period-icon"><i class="fas fa-language"></i></div>
+                        <div class="period-time">Q3 2025</div>
+                    </div>
+                    <div class="period-content">
+                        <h3 class="period-title">Arabic Localization for KSA Market</h3>
+                        <div class="initiative-list">
+                            <div class="initiative-item"><span class="initiative-highlight">RTL Layout Support:</span> Right-to-left UI for Arabic users</div>
+                            <div class="initiative-item"><span class="initiative-highlight">Arabic CV Generation:</span> AI resume translation for KSA</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="roadmap-item q4">
+                    <div class="period-label">
+                        <div class="period-icon"><i class="fas fa-brain"></i></div>
+                        <div class="period-time">Q4 2025</div>
+                    </div>
+                    <div class="period-content">
+                        <h3 class="period-title">Advanced AI Features</h3>
+                        <div class="initiative-list">
+                            <div class="initiative-item"><span class="initiative-highlight">Interview Question Generation:</span> AI-generated technical and behavioral questions</div>
+                            <div class="initiative-item"><span class="initiative-highlight">Video Interview Analysis:</span> Sentiment and speech analysis on recordings</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="roadmap-item y2026">
+                    <div class="period-label">
+                        <div class="period-icon"><i class="fas fa-rocket"></i></div>
+                        <div class="period-time">2026</div>
+                    </div>
+                    <div class="period-content">
+                        <h3 class="period-title">Platform Expansion & Enterprise Features</h3>
+                        <div class="initiative-list">
+                            <div class="initiative-item"><span class="initiative-highlight">Mobile Applications:</span> Native iOS and Android apps</div>
+                            <div class="initiative-item"><span class="initiative-highlight">API Marketplace:</span> Public API for integrations and automation</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

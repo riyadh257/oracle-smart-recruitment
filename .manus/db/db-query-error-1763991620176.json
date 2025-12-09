@@ -1,0 +1,8 @@
+{
+  "query": "-- Check if index exists first, if error occurs it means index doesn't exist\nCREATE FULLTEXT INDEX `idx_candidates_fulltext` ON candidates (fullName, email, skills, education);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute -- Check if index exists first, if error occurs it means index doesn't exist\nCREATE FULLTEXT INDEX `idx_candidates_fulltext` ON candidates (fullName, email, skills, education);",
+  "returncode": 1,
+  "logs": [
+    "ERROR 8200 (HY000) at line 2: Unsupported FULLTEXT index"
+  ]
+}

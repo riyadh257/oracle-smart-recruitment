@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: linear-gradient(135deg, #0A1628 0%, #1A2332 100%);
+        font-family: 'Inter', sans-serif;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .grid-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.05;
+        background-image: 
+          linear-gradient(#00D9FF 1px, transparent 1px),
+          linear-gradient(90deg, #00D9FF 1px, transparent 1px);
+        background-size: 40px 40px;
+      }
+      
+      .content-wrapper {
+        position: relative;
+        z-index: 2;
+        padding-top: 60px;
+        padding-left: 80px;
+        padding-right: 80px;
+        min-height: 720px;
+      }
+      
+      .header {
+        margin-bottom: 40px;
+      }
+      
+      .page-title {
+        font-size: 40px;
+        font-weight: 700;
+        color: #00D9FF;
+        margin-bottom: 8px;
+      }
+      
+      .page-subtitle {
+        font-size: 20px;
+        color: #E8EDF2;
+        font-weight: 400;
+      }
+      
+      .tech-columns {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+      }
+      
+      .tech-column {
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .column-header {
+        margin-bottom: 24px;
+        padding-bottom: 16px;
+        border-bottom: 2px solid rgba(0, 217, 255, 0.2);
+      }
+      
+      .column-icon {
+        width: 48px;
+        height: 48px;
+        background: rgba(0, 217, 255, 0.1);
+        border: 2px solid #00D9FF;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        color: #00D9FF;
+        margin-bottom: 12px;
+      }
+      
+      .column-title {
+        font-size: 22px;
+        font-weight: 700;
+        color: #E8EDF2;
+      }
+      
+      .tech-list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      
+      .tech-item {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      
+      .tech-name {
+        font-size: 18px;
+        font-weight: 600;
+        color: #00D9FF;
+      }
+      
+      .tech-description {
+        font-size: 14px;
+        color: #E8EDF2;
+        line-height: 1.5;
+        opacity: 0.85;
+      }
+      
+      .accent-line {
+        position: absolute;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #00CCA3, transparent);
+        width: 100%;
+        bottom: 100px;
+        left: 0;
+        opacity: 0.3;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="grid-background"></div>
+        <div class="accent-line"></div>
+        
+        <div class="content-wrapper">
+            <div class="header">
+                <h1 class="page-title">Core Technology Stack</h1>
+                <p class="page-subtitle">Enterprise-proven technologies deliver reliability, type safety, and developer productivity</p>
+            </div>
+            
+            <div class="tech-columns">
+                <div class="tech-column">
+                    <div class="column-header">
+                        <div class="column-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h2 class="column-title">Frontend Technologies</h2>
+                    </div>
+                    
+                    <div class="tech-list">
+                        <div class="tech-item">
+                            <div class="tech-name">React 19</div>
+                            <div class="tech-description">Latest features including concurrent rendering and automatic batching</div>
+                        </div>
+                        
+                        <div class="tech-item">
+                            <div class="tech-name">Tailwind CSS 4</div>
+                            <div class="tech-description">Utility-first styling with custom design system</div>
+                        </div>
+                        
+                        <div class="tech-item">
+                            <div class="tech-name">tRPC React Query</div>
+                            <div class="tech-description">Type-safe data fetching with automatic cache management</div>
+                        </div>
+                        
+                        <div class="tech-item">
+                            <div class="tech-name">Wouter</div>
+                            <div class="tech-description">Lightweight routing with hook-based navigation</div>
+                        </div>
+                        
+                        <div class="tech-item">
+                            <div class="tech-name">shadcn/ui</div>
+                            <div class="tech-description">Accessible component library built on Radix UI primitives</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tech-column">
+                    <div class="column-header">
+                        <div class="column-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h2 class="column-title">Backend Technologies</h2>
+                    </div>
+                    
+                    <div class="tech-list">
+                        <div class="tech-item">
+                            <div class="tech-name">Express 4</div>
+                            <div class="tech-description">Battle-tested Node.js web framework</div>
+                        </div>
+                        
+                        <div class="tech-item">
+                            <div class="tech-name">tRPC 11</div>
+                            <div class="tech-description">End-to-end type safety without code generation</div>
+                        </div>
+                        
+                        <div class="tech-item">
+                            <div class="tech-name">Drizzle ORM</div>
+                            <div class="tech-description">Type-safe SQL query builder with MySQL support</div>
+                        </div>
+                        
+                        <div class="tech-item">
+                            <div class="tech-name">Socket.IO</div>
+                            <div class="tech-description">Real-time bidirectional event-based communication</div>
+                        </div>
+                        
+                        <div class="tech-item">
+                            <div class="tech-name">node-cron</div>
+                            <div class="tech-description">Scheduled task execution for automated workflows</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tech-column">
+                    <div class="column-header">
+                        <div class="column-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h2 class="column-title">Development Tools</h2>
+                    </div>
+                    
+                    <div class="tech-list">
+                        <div class="tech-item">
+                            <div class="tech-name">TypeScript</div>
+                            <div class="tech-description">Static typing across entire codebase</div>
+                        </div>
+                        
+                        <div class="tech-item">
+                            <div class="tech-name">Vitest</div>
+                            <div class="tech-description">Fast unit testing with native ESM support</div>
+                        </div>
+                        
+                        <div class="tech-item">
+                            <div class="tech-name">Vite 7</div>
+                            <div class="tech-description">Next-generation frontend build tool</div>
+                        </div>
+                        
+                        <div class="tech-item">
+                            <div class="tech-name">pnpm</div>
+                            <div class="tech-description">Efficient package management with workspace support</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

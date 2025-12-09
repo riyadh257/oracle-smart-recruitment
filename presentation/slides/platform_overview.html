@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #0A0E27 0%, #1a1f3a 100%);
+            font-family: 'Inter', sans-serif;
+            position: relative;
+        }
+        
+        .header {
+            padding-top: 60px;
+            padding-left: 80px;
+            padding-right: 80px;
+            margin-bottom: 0;
+        }
+        
+        .page-title {
+            font-size: 40px;
+            font-weight: 700;
+            color: #00D4FF;
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+        
+        .page-subtitle {
+            font-size: 20px;
+            font-weight: 400;
+            color: #E8EAED;
+            opacity: 0.7;
+            margin-top: 0;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 45% 55%;
+            gap: 40px;
+            padding-left: 80px;
+            padding-right: 80px;
+            padding-top: 50px;
+            align-items: center;
+        }
+        
+        .features-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+        
+        .feature-icon {
+            font-size: 28px;
+            min-width: 40px;
+            margin-top: 4px;
+        }
+        
+        .icon-1 { color: #7B61FF; }
+        .icon-2 { color: #00D4FF; }
+        .icon-3 { color: #00FFA3; }
+        .icon-4 { color: #7B61FF; }
+        .icon-5 { color: #00D4FF; }
+        .icon-6 { color: #00FFA3; }
+        
+        .feature-content {
+            flex: 1;
+        }
+        
+        .feature-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: #E8EAED;
+            margin-top: 0;
+            margin-bottom: 6px;
+        }
+        
+        .feature-description {
+            font-size: 16px;
+            font-weight: 400;
+            color: #E8EAED;
+            opacity: 0.7;
+            margin-top: 0;
+            line-height: 1.5;
+        }
+        
+        .dashboard-preview {
+            position: relative;
+            height: 520px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .dashboard-image {
+            width: 600px;
+            height: 450px;
+            object-fit: contain;
+            border: 2px solid #7B61FF;
+        }
+        
+        .accent-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, #7B61FF 0%, #00D4FF 50%, #00FFA3 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h2 class="page-title">Comprehensive AI-Powered Platform</h2>
+            <p class="page-subtitle">End-to-end recruitment solution with intelligent automation</p>
+        </div>
+        
+        <div class="content-grid">
+            <div class="features-list">
+                <div class="feature-item">
+                    <div class="feature-icon icon-1">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="feature-content">
+                        <div class="feature-title">Skills Intelligence Engine</div>
+                        <div class="feature-description">500+ skills taxonomy with career path prediction</div>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon icon-2">
+                        <i class="fas fa-users-gear"></i>
+                    </div>
+                    <div class="feature-content">
+                        <div class="feature-title">Advanced Candidate Matching</div>
+                        <div class="feature-description">Multi-factor algorithm with detailed scoring</div>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon icon-3">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <div class="feature-content">
+                        <div class="feature-title">Video Interview Intelligence</div>
+                        <div class="feature-description">Psychometric assessment and behavior analysis</div>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon icon-4">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="feature-content">
+                        <div class="feature-title">Autonomous AI Agents</div>
+                        <div class="feature-description">Automated screening, scheduling, and follow-up</div>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon icon-5">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="feature-content">
+                        <div class="feature-title">Technical Assessment Platform</div>
+                        <div class="feature-description">Integrated coding evaluation with auto-grading</div>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon icon-6">
+                        <i class="fas fa-shield-halved"></i>
+                    </div>
+                    <div class="feature-content">
+                        <div class="feature-title">Compliance Automation</div>
+                        <div class="feature-description">GOSI/Nitaqat integration for Saudi market</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="dashboard-preview">
+                <img src="/home/ubuntu/oracle-smart-recruitment/presentation/slides/recruitment-dashboard.png" alt="Recruitment Dashboard" class="dashboard-image">
+            </div>
+        </div>
+        
+        <div class="accent-bar"></div>
+    </div>
+</body>
+</html>

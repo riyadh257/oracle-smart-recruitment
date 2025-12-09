@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min-css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: #0A1628;
+        font-family: 'Inter', sans-serif;
+        color: #E2E8F0;
+        position: relative;
+      }
+      
+      .blueprint-grid {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: 
+          linear-gradient(rgba(59, 130, 246, 0.02) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(59, 130, 246, 0.02) 1px, transparent 1px);
+        background-size: 40px 40px;
+      }
+      
+      .content-wrapper {
+        position: relative;
+        padding-top: 50px;
+        padding-left: 70px;
+        padding-right: 70px;
+      }
+      
+      .page-title {
+        font-size: 40px;
+        font-weight: 700;
+        color: #FFFFFF;
+        margin-bottom: 32px;
+        border-left: 4px solid #3B82F6;
+        padding-left: 20px;
+      }
+      
+      .benefits-section {
+        margin-bottom: 28px;
+      }
+      
+      .section-header {
+        font-size: 22px;
+        font-weight: 700;
+        color: #3B82F6;
+        margin-bottom: 16px;
+      }
+      
+      .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 16px;
+      }
+      
+      .benefit-card {
+        background: rgba(59, 130, 246, 0.08);
+        border-top: 3px solid #3B82F6;
+        padding-top: 16px;
+        padding-left: 16px;
+        padding-right: 16px;
+        min-height: 100px;
+      }
+      
+      .benefit-title {
+        font-size: 16px;
+        font-weight: 700;
+        color: #FFFFFF;
+        margin-bottom: 6px;
+      }
+      
+      .benefit-desc {
+        font-size: 13px;
+        line-height: 1.5;
+        color: #E2E8F0;
+      }
+      
+      .router-section {
+        margin-bottom: 28px;
+      }
+      
+      .router-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+      }
+      
+      .router-item {
+        background: rgba(16, 185, 129, 0.08);
+        border-left: 3px solid #10B981;
+        padding-top: 12px;
+        padding-left: 14px;
+        padding-right: 14px;
+        min-height: 80px;
+      }
+      
+      .router-name {
+        font-size: 16px;
+        font-weight: 700;
+        color: #10B981;
+        margin-bottom: 6px;
+      }
+      
+      .router-desc {
+        font-size: 12px;
+        line-height: 1.4;
+        color: #E2E8F0;
+      }
+      
+      .bottom-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+      }
+      
+      .procedure-section {
+        background: rgba(139, 92, 246, 0.08);
+        border-top: 3px solid #8B5CF6;
+        padding-top: 20px;
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+      
+      .procedure-section .section-header {
+        color: #8B5CF6;
+        font-size: 20px;
+        margin-bottom: 12px;
+      }
+      
+      .procedure-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .procedure-item {
+        font-size: 14px;
+        line-height: 1.5;
+        color: #E2E8F0;
+        padding-left: 18px;
+        position: relative;
+      }
+      
+      .procedure-item::before {
+        content: "▸";
+        position: absolute;
+        left: 0;
+        color: #8B5CF6;
+        font-weight: 700;
+      }
+      
+      .context-section {
+        background: rgba(245, 158, 11, 0.08);
+        border-top: 3px solid #F59E0B;
+        padding-top: 20px;
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+      
+      .context-section .section-header {
+        color: #F59E0B;
+        font-size: 20px;
+        margin-bottom: 12px;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="blueprint-grid"></div>
+        
+        <div class="content-wrapper">
+            <h1 class="page-title">Type-Safe API Contract Design</h1>
+            
+            <div class="benefits-section">
+                <h2 class="section-header">tRPC Benefits: End-to-End Type Safety</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-title">Shared Types</div>
+                        <div class="benefit-desc">Single source of truth for request/response schemas</div>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-title">Auto-completion</div>
+                        <div class="benefit-desc">Full IDE support with parameter hints and return types</div>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-title">Compile-Time Validation</div>
+                        <div class="benefit-desc">Catch API contract violations before deployment</div>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-title">No Code Generation</div>
+                        <div class="benefit-desc">Direct TypeScript type inference without build-time codegen</div>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-title">Optimistic Updates</div>
+                        <div class="benefit-desc">Built-in support for instant UI feedback with rollback</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="router-section">
+                <h2 class="section-header">Router Organization: Modular API Structure</h2>
+                <div class="router-grid">
+                    <div class="router-item">
+                        <div class="router-name">auth</div>
+                        <div class="router-desc">Authentication, session management, logout</div>
+                    </div>
+                    <div class="router-item">
+                        <div class="router-name">candidate</div>
+                        <div class="router-desc">Profile CRUD, resume upload, skill management</div>
+                    </div>
+                    <div class="router-item">
+                        <div class="router-name">employer</div>
+                        <div class="router-desc">Company profile, job listing, talent pool</div>
+                    </div>
+                    <div class="router-item">
+                        <div class="router-name">job</div>
+                        <div class="router-desc">Job posting with AI enrichment, search, tracking</div>
+                    </div>
+                    <div class="router-item">
+                        <div class="router-name">application</div>
+                        <div class="router-desc">Submit with AI matching, status, interviews</div>
+                    </div>
+                    <div class="router-item">
+                        <div class="router-name">coaching</div>
+                        <div class="router-desc">AI career guidance chatbot, conversation history</div>
+                    </div>
+                    <div class="router-item">
+                        <div class="router-name">billing</div>
+                        <div class="router-desc">Invoice generation, payment tracking, calculations</div>
+                    </div>
+                    <div class="router-item">
+                        <div class="router-name">strategic</div>
+                        <div class="router-desc">Workforce analytics, retention, skill gap analysis</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bottom-grid">
+                <div class="procedure-section">
+                    <h2 class="section-header">Procedure Types</h2>
+                    <div class="procedure-list">
+                        <div class="procedure-item"><strong>publicProcedure:</strong> Unauthenticated access for job listings and public search</div>
+                        <div class="procedure-item"><strong>protectedProcedure:</strong> Authenticated users with role-based access control</div>
+                        <div class="procedure-item"><strong>adminProcedure:</strong> System administrators only for user management and billing</div>
+                    </div>
+                </div>
+                
+                <div class="context-section">
+                    <h2 class="section-header">Context Injection</h2>
+                    <div class="procedure-list">
+                        <div class="procedure-item">Every procedure receives ctx.user with authenticated user details</div>
+                        <div class="procedure-item">Database connection pooling managed at context level</div>
+                        <div class="procedure-item">Request/response objects available for cookie and header manipulation</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

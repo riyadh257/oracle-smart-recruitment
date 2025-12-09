@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font-family: 'Cairo', sans-serif; direction: rtl; }
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: #ffffff;
+        padding-top: 50px;
+      }
+      .header {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      .title {
+        font-size: 32px;
+        font-weight: 700;
+        color: #1e3a8a;
+        margin-bottom: 10px;
+      }
+      .subtitle {
+        font-size: 18px;
+        color: #4b5563;
+      }
+      .roadmap-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 60px;
+      }
+      .phase-card {
+        background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+        border: 2px solid #e5e7eb;
+        padding-top: 25px;
+        min-height: 240px;
+        display: flex;
+        flex-direction: column;
+      }
+      .phase-header {
+        text-align: center;
+        margin-bottom: 15px;
+      }
+      .phase-number {
+        font-size: 28px;
+        font-weight: 800;
+        margin-bottom: 5px;
+      }
+      .phase-5 { color: #3b82f6; }
+      .phase-6 { color: #10b981; }
+      .phase-7 { color: #8b5cf6; }
+      .phase-8 { color: #f59e0b; }
+      
+      .phase-period {
+        font-size: 16px;
+        font-weight: 600;
+        color: #4b5563;
+        margin-bottom: 15px;
+      }
+      .phase-features {
+        padding: 0 25px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .feature-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      .feature-icon {
+        font-size: 16px;
+        margin-top: 3px;
+        min-width: 16px;
+      }
+      .icon-5 { color: #3b82f6; }
+      .icon-6 { color: #10b981; }
+      .icon-7 { color: #8b5cf6; }
+      .icon-8 { color: #f59e0b; }
+      
+      .feature-text {
+        font-size: 16px;
+        color: #1f2937;
+        line-height: 1.5;
+      }
+      .highlight {
+        font-weight: 600;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1 class="title">خارطة الطريق المستقبلية</h1>
+            <p class="subtitle">خطة تطوير شاملة على مدى 18-24 شهر</p>
+        </div>
+        
+        <div class="roadmap-grid">
+            <div class="phase-card">
+                <div class="phase-header">
+                    <div class="phase-number phase-5">المرحلة 5</div>
+                    <div class="phase-period">الربع الرابع 2025</div>
+                </div>
+                <div class="phase-features">
+                    <div class="feature-item">
+                        <i class="fas fa-video feature-icon icon-5"></i>
+                        <div class="feature-text">
+                            <span class="highlight">تحليل الفيديو بالذكاء الاصطناعي</span> لتقييم المقابلات المرئية
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-brain feature-icon icon-5"></i>
+                        <div class="feature-text">
+                            <span class="highlight">التقييمات النفسية</span> المتقدمة لقياس الشخصية والتوافق
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-chart-line feature-icon icon-5"></i>
+                        <div class="feature-text">
+                            تحليل لغة الجسد والتعبيرات في المقابلات
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="phase-card">
+                <div class="phase-header">
+                    <div class="phase-number phase-6">المرحلة 6</div>
+                    <div class="phase-period">الربع الأول - الثاني 2026</div>
+                </div>
+                <div class="phase-features">
+                    <div class="feature-item">
+                        <i class="fas fa-robot feature-icon icon-6"></i>
+                        <div class="feature-text">
+                            <span class="highlight">وكلاء ذكاء اصطناعي مستقلون</span> للفرز والجدولة التلقائية
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-database feature-icon icon-6"></i>
+                        <div class="feature-text">
+                            <span class="highlight">قاعدة بيانات المواهب الإقليمية</span> للشرق الأوسط
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-link feature-icon icon-6"></i>
+                        <div class="feature-text">
+                            تكامل عميق مع قوى والتأمينات الاجتماعية
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="phase-card">
+                <div class="phase-header">
+                    <div class="phase-number phase-7">المرحلة 7</div>
+                    <div class="phase-period">الربع الثالث - الرابع 2026</div>
+                </div>
+                <div class="phase-features">
+                    <div class="feature-item">
+                        <i class="fas fa-tag feature-icon icon-7"></i>
+                        <div class="feature-text">
+                            <span class="highlight">حلول العلامة البيضاء</span> للشركات الكبرى
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-building feature-icon icon-7"></i>
+                        <div class="feature-text">
+                            <span class="highlight">دعم متعدد المستأجرين</span> للمؤسسات الكبيرة
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-mobile-alt feature-icon icon-7"></i>
+                        <div class="feature-text">
+                            تطبيقات الجوال الأصلية لنظامي iOS وAndroid
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="phase-card">
+                <div class="phase-header">
+                    <div class="phase-number phase-8">المرحلة 8+</div>
+                    <div class="phase-period">2027 وما بعد</div>
+                </div>
+                <div class="phase-features">
+                    <div class="feature-item">
+                        <i class="fas fa-cube feature-icon icon-8"></i>
+                        <div class="feature-text">
+                            <span class="highlight">تقنية البلوكشين</span> للتحقق من الشهادات والخبرات
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-vr-cardboard feature-icon icon-8"></i>
+                        <div class="feature-text">
+                            <span class="highlight">الواقع المعزز</span> لتجارب توظيف تفاعلية
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-globe feature-icon icon-8"></i>
+                        <div class="feature-text">
+                            التوسع العالمي ودعم أسواق جديدة
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

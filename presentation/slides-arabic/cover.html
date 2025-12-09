@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font-family: 'Cairo', sans-serif; direction: rtl; }
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .decorative-circle-1 {
+        position: absolute;
+        top: -100px;
+        right: -100px;
+        width: 400px;
+        height: 400px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #3b82f6 0%, #1e3a8a 100%);
+        opacity: 0.1;
+      }
+      .decorative-circle-2 {
+        position: absolute;
+        bottom: -80px;
+        left: -80px;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        opacity: 0.1;
+      }
+      .decorative-line {
+        position: absolute;
+        top: 50%;
+        right: 100px;
+        width: 4px;
+        height: 200px;
+        background: linear-gradient(180deg, #3b82f6 0%, #10b981 100%);
+        transform: translateY(-50%);
+        border-radius: 2px;
+      }
+      .content-wrapper {
+        text-align: center;
+        z-index: 10;
+        max-width: 900px;
+      }
+      .icon-container {
+        margin-bottom: 30px;
+      }
+      .main-icon {
+        font-size: 80px;
+        background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .main-title {
+        font-size: 64px;
+        font-weight: 700;
+        color: #1e3a8a;
+        margin-bottom: 20px;
+        line-height: 1.2;
+      }
+      .subtitle {
+        font-size: 32px;
+        font-weight: 600;
+        color: #1f2937;
+        margin-bottom: 30px;
+        line-height: 1.4;
+      }
+      .description {
+        font-size: 20px;
+        color: #4b5563;
+        line-height: 1.6;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+      .highlight {
+        color: #3b82f6;
+        font-weight: 600;
+      }
+      .features-row {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        margin-top: 40px;
+      }
+      .feature-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 18px;
+        color: #1f2937;
+      }
+      .feature-icon {
+        font-size: 24px;
+        color: #10b981;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="decorative-circle-1"></div>
+        <div class="decorative-circle-2"></div>
+        <div class="decorative-line"></div>
+        
+        <div class="content-wrapper">
+            <div class="icon-container">
+                <i class="fas fa-brain main-icon"></i>
+            </div>
+            
+            <h1 class="main-title">نظام Oracle للتوظيف الذكي</h1>
+            
+            <h2 class="subtitle">Oracle Smart Recruitment System</h2>
+            
+            <p class="description">
+                منصة شاملة مدعومة بـ<span class="highlight">الذكاء الاصطناعي</span> لتحويل عمليات التوظيف في منطقة الشرق الأوسط
+            </p>
+            
+            <div class="features-row">
+                <div class="feature-item">
+                    <i class="fas fa-check-circle feature-icon"></i>
+                    <span>ذكاء اصطناعي متقدم</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle feature-icon"></i>
+                    <span>امتثال تلقائي</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle feature-icon"></i>
+                    <span>تحليلات شاملة</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

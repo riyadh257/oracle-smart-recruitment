@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS `interview_feedback` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `interview_id` int NOT NULL,\n  `candidate_id` int NOT NULL,\n  `overall_rating` int NOT NULL,\n  `interviewer_rating` int,\n  `process_rating` int,\n  `experience_rating` int,\n  `communication_rating` int,\n  `organization_rating` int,\n  `comments` text,\n  `suggestions` text,\n  `would_recommend` int DEFAULT 0,\n  `submitted_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,\n  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,\n  CONSTRAINT `interview_feedback_id` PRIMARY KEY(`id`)\n);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS `interview_feedback` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `interview_id` int NOT NULL,\n  `candidate_id` int NOT NULL,\n  `overall_rating` int NOT NULL,\n  `interviewer_rating` int,\n  `process_rating` int,\n  `experience_rating` int,\n  `communication_rating` int,\n  `organization_rating` int,\n  `comments` text,\n  `suggestions` text,\n  `would_recommend` int DEFAULT 0,\n  `submitted_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,\n  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,\n  CONSTRAINT `interview_feedback_id` PRIMARY KEY(`id`)\n);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1590
+}

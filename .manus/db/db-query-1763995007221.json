@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS `video_meetings` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `interview_id` int NOT NULL,\n  `platform` varchar(50) NOT NULL,\n  `meeting_id` varchar(255),\n  `meeting_url` varchar(500),\n  `passcode` varchar(100),\n  `host_email` varchar(320),\n  `duration` int,\n  `start_time` timestamp,\n  `recording_url` varchar(500),\n  `status` enum('scheduled', 'started', 'ended', 'cancelled') NOT NULL DEFAULT 'scheduled',\n  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,\n  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,\n  CONSTRAINT `video_meetings_id` PRIMARY KEY(`id`),\n  UNIQUE KEY `unique_interview` (`interview_id`)\n);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS `video_meetings` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `interview_id` int NOT NULL,\n  `platform` varchar(50) NOT NULL,\n  `meeting_id` varchar(255),\n  `meeting_url` varchar(500),\n  `passcode` varchar(100),\n  `host_email` varchar(320),\n  `duration` int,\n  `start_time` timestamp,\n  `recording_url` varchar(500),\n  `status` enum('scheduled', 'started', 'ended', 'cancelled') NOT NULL DEFAULT 'scheduled',\n  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,\n  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,\n  CONSTRAINT `video_meetings_id` PRIMARY KEY(`id`),\n  UNIQUE KEY `unique_interview` (`interview_id`)\n);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1746
+}

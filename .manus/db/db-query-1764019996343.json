@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS analytics_metrics (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  metric_type VARCHAR(100) NOT NULL,\n  metric_name VARCHAR(255) NOT NULL,\n  metric_value DECIMAL(10,2) NOT NULL,\n  dimension VARCHAR(255),\n  period_start DATE NOT NULL,\n  period_end DATE NOT NULL,\n  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,\n  INDEX idx_metric_type (metric_type),\n  INDEX idx_period (period_start, period_end)\n)",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS analytics_metrics (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  metric_type VARCHAR(100) NOT NULL,\n  metric_name VARCHAR(255) NOT NULL,\n  metric_value DECIMAL(10,2) NOT NULL,\n  dimension VARCHAR(255),\n  period_start DATE NOT NULL,\n  period_end DATE NOT NULL,\n  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,\n  INDEX idx_metric_type (metric_type),\n  INDEX idx_period (period_start, period_end)\n)",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1689
+}

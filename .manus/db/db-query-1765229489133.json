@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS whatsapp_settings (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  user_id INT NOT NULL,\n  phone_number VARCHAR(20) NOT NULL,\n  country_code VARCHAR(5) DEFAULT '+966',\n  enable_daily_summary TINYINT DEFAULT 1,\n  enable_critical_alerts TINYINT DEFAULT 1,\n  enable_weekly_reports TINYINT DEFAULT 0,\n  daily_summary_time VARCHAR(5) DEFAULT '09:00',\n  weekly_report_day ENUM('monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday') DEFAULT 'monday',\n  is_active TINYINT DEFAULT 1,\n  last_test_message_sent TIMESTAMP NULL,\n  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,\n  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL,\n  INDEX user_id_idx (user_id),\n  FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE\n)",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS whatsapp_settings (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  user_id INT NOT NULL,\n  phone_number VARCHAR(20) NOT NULL,\n  country_code VARCHAR(5) DEFAULT '+966',\n  enable_daily_summary TINYINT DEFAULT 1,\n  enable_critical_alerts TINYINT DEFAULT 1,\n  enable_weekly_reports TINYINT DEFAULT 0,\n  daily_summary_time VARCHAR(5) DEFAULT '09:00',\n  weekly_report_day ENUM('monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday') DEFAULT 'monday',\n  is_active TINYINT DEFAULT 1,\n  last_test_message_sent TIMESTAMP NULL,\n  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,\n  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL,\n  INDEX user_id_idx (user_id),\n  FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE\n)",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1951
+}

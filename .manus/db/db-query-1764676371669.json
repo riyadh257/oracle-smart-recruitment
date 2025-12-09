@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS `email_notification_preferences` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `applicant_email` varchar(320) NOT NULL UNIQUE,\n  `status_updates` boolean NOT NULL DEFAULT true,\n  `interview_scheduling` boolean NOT NULL DEFAULT true,\n  `document_uploads` boolean NOT NULL DEFAULT true,\n  `general_updates` boolean NOT NULL DEFAULT true,\n  `marketing_emails` boolean NOT NULL DEFAULT false,\n  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,\n  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,\n  CONSTRAINT `email_notification_preferences_id` PRIMARY KEY(`id`)\n);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS `email_notification_preferences` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `applicant_email` varchar(320) NOT NULL UNIQUE,\n  `status_updates` boolean NOT NULL DEFAULT true,\n  `interview_scheduling` boolean NOT NULL DEFAULT true,\n  `document_uploads` boolean NOT NULL DEFAULT true,\n  `general_updates` boolean NOT NULL DEFAULT true,\n  `marketing_emails` boolean NOT NULL DEFAULT false,\n  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,\n  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,\n  CONSTRAINT `email_notification_preferences_id` PRIMARY KEY(`id`)\n);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1881
+}

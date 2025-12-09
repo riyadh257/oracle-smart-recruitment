@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS `activity_logs` (\n  `id` INT AUTO_INCREMENT PRIMARY KEY,\n  `activity_type` ENUM(\n    'application_submitted',\n    'application_reviewed',\n    'application_shortlisted',\n    'application_rejected',\n    'interview_scheduled',\n    'interview_completed',\n    'interview_cancelled',\n    'status_changed',\n    'candidate_added',\n    'job_posted',\n    'job_updated',\n    'job_closed',\n    'assessment_completed',\n    'offer_sent',\n    'offer_accepted',\n    'offer_rejected',\n    'resume_uploaded',\n    'profile_updated'\n  ) NOT NULL,\n  `user_id` INT NOT NULL,\n  `candidate_id` INT,\n  `job_id` INT,\n  `application_id` INT,\n  `title` VARCHAR(255) NOT NULL,\n  `description` TEXT,\n  `metadata` JSON,\n  `createdAt` TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL\n);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS `activity_logs` (\n  `id` INT AUTO_INCREMENT PRIMARY KEY,\n  `activity_type` ENUM(\n    'application_submitted',\n    'application_reviewed',\n    'application_shortlisted',\n    'application_rejected',\n    'interview_scheduled',\n    'interview_completed',\n    'interview_cancelled',\n    'status_changed',\n    'candidate_added',\n    'job_posted',\n    'job_updated',\n    'job_closed',\n    'assessment_completed',\n    'offer_sent',\n    'offer_accepted',\n    'offer_rejected',\n    'resume_uploaded',\n    'profile_updated'\n  ) NOT NULL,\n  `user_id` INT NOT NULL,\n  `candidate_id` INT,\n  `job_id` INT,\n  `application_id` INT,\n  `title` VARCHAR(255) NOT NULL,\n  `description` TEXT,\n  `metadata` JSON,\n  `createdAt` TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL\n);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1759
+}

@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS email_campaigns (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  name VARCHAR(255) NOT NULL,\n  type ENUM('follow_up', 'reminder', 're_engagement', 'welcome', 'interview_invitation', 'offer_notification', 'rejection') NOT NULL,\n  trigger_condition VARCHAR(500),\n  subject VARCHAR(500) NOT NULL,\n  body TEXT NOT NULL,\n  status ENUM('active', 'paused', 'draft', 'archived') DEFAULT 'draft',\n  send_delay_hours INT DEFAULT 0,\n  target_status VARCHAR(100),\n  created_by INT,\n  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,\n  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL\n)",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS email_campaigns (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  name VARCHAR(255) NOT NULL,\n  type ENUM('follow_up', 'reminder', 're_engagement', 'welcome', 'interview_invitation', 'offer_notification', 'rejection') NOT NULL,\n  trigger_condition VARCHAR(500),\n  subject VARCHAR(500) NOT NULL,\n  body TEXT NOT NULL,\n  status ENUM('active', 'paused', 'draft', 'archived') DEFAULT 'draft',\n  send_delay_hours INT DEFAULT 0,\n  target_status VARCHAR(100),\n  created_by INT,\n  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,\n  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL\n)",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1733
+}

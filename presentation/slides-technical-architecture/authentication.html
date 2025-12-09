@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: #0a1628;
+        font-family: 'IBM Plex Sans', sans-serif;
+        position: relative;
+        overflow: hidden;
+      }
+      .grid-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: 
+          linear-gradient(rgba(0, 217, 255, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 217, 255, 0.03) 1px, transparent 1px);
+        background-size: 40px 40px;
+        pointer-events: none;
+      }
+      .border-frame {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+        border: 2px solid rgba(0, 217, 255, 0.3);
+        pointer-events: none;
+      }
+      .content-wrapper {
+        position: relative;
+        z-index: 1;
+        padding-top: 50px;
+        padding-left: 50px;
+        padding-right: 50px;
+      }
+      .title {
+        font-size: 40px;
+        font-weight: 700;
+        color: #00d9ff;
+        text-align: center;
+        margin-bottom: 35px;
+      }
+      .main-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        margin-top: 20px;
+      }
+      .left-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .diagram-container {
+        width: 550px;
+        height: 480px;
+        border: 2px solid rgba(0, 217, 255, 0.4);
+        background: rgba(255, 255, 255, 0.95);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .diagram-container img {
+        width: 530px;
+        height: 460px;
+        object-fit: contain;
+      }
+      .diagram-label {
+        margin-top: 15px;
+        font-size: 16px;
+        color: #4ecdc4;
+        text-align: center;
+      }
+      .right-section {
+        padding-top: 20px;
+      }
+      .feature-item {
+        margin-bottom: 25px;
+        padding-top: 15px;
+        padding-left: 15px;
+        border-left: 3px solid;
+      }
+      .feature-item:nth-child(1) { border-left-color: #00d9ff; }
+      .feature-item:nth-child(2) { border-left-color: #4ecdc4; }
+      .feature-item:nth-child(3) { border-left-color: #ff6b35; }
+      .feature-item:nth-child(4) { border-left-color: #ffd93d; }
+      .feature-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 8px;
+      }
+      .feature-icon {
+        font-size: 24px;
+        color: #00d9ff;
+      }
+      .feature-item:nth-child(2) .feature-icon { color: #4ecdc4; }
+      .feature-item:nth-child(3) .feature-icon { color: #ff6b35; }
+      .feature-item:nth-child(4) .feature-icon { color: #ffd93d; }
+      .feature-title {
+        font-size: 20px;
+        font-weight: 700;
+        color: #e0e6ed;
+      }
+      .feature-desc {
+        font-size: 16px;
+        color: rgba(224, 230, 237, 0.85);
+        line-height: 1.5;
+        padding-left: 36px;
+      }
+      .feature-detail {
+        font-size: 14px;
+        color: #4ecdc4;
+        padding-left: 36px;
+        margin-top: 5px;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="grid-overlay"></div>
+        <div class="border-frame"></div>
+        
+        <div class="content-wrapper">
+            <div class="title">هيكل المصادقة والتفويض | Authentication & Authorization</div>
+            
+            <div class="main-content">
+                <div class="left-section">
+                    <div class="diagram-container">
+                        <img src="/home/ubuntu/oracle-smart-recruitment/presentation/slides-technical-architecture/assets/45tQiEBcAATw.png" alt="OAuth 2.0 Flow">
+                    </div>
+                    <div class="diagram-label">
+                        OAuth 2.0 Authentication Flow with Manus Identity Provider
+                    </div>
+                </div>
+                
+                <div class="right-section">
+                    <div class="feature-item">
+                        <div class="feature-header">
+                            <div class="feature-icon">
+                                <i class="fas fa-key"></i>
+                            </div>
+                            <div class="feature-title">OAuth 2.0 + JWT Tokens</div>
+                        </div>
+                        <div class="feature-desc">
+                            Manus OAuth 2.0 authentication with session-based authorization
+                        </div>
+                        <div class="feature-detail">
+                            ✓ JWT tokens with 1-hour expiration<br>
+                            ✓ Automatic token refresh mechanism
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-header">
+                            <div class="feature-icon">
+                                <i class="fas fa-cookie"></i>
+                            </div>
+                            <div class="feature-title">Secure Cookie Management</div>
+                        </div>
+                        <div class="feature-desc">
+                            HTTP-only secure cookies with cross-origin support
+                        </div>
+                        <div class="feature-detail">
+                            ✓ SameSite=None for cross-origin requests<br>
+                            ✓ Secure flag enabled in production
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-header">
+                            <div class="feature-icon">
+                                <i class="fas fa-user-shield"></i>
+                            </div>
+                            <div class="feature-title">Role-Based Access Control</div>
+                        </div>
+                        <div class="feature-desc">
+                            RBAC at procedure level with fine-grained permissions
+                        </div>
+                        <div class="feature-detail">
+                            ✓ Roles: Admin, HR Manager, Recruiter, Interviewer, Candidate<br>
+                            ✓ Procedure-level authorization checks
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-header">
+                            <div class="feature-icon">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                            <div class="feature-title">Account Protection</div>
+                        </div>
+                        <div class="feature-desc">
+                            Automated security measures against brute-force attacks
+                        </div>
+                        <div class="feature-detail">
+                            ✓ Account lockout after 5 failed login attempts<br>
+                            ✓ Suspicious activity monitoring and alerts
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

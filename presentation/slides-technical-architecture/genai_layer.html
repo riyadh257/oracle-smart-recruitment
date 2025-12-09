@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: linear-gradient(135deg, #0A0E27 0%, #1a1f3a 100%);
+        position: relative;
+        font-family: 'Inter', sans-serif;
+      }
+      
+      .header {
+        padding-top: 60px;
+        padding-left: 80px;
+        padding-right: 80px;
+        margin-bottom: 30px;
+      }
+      
+      .page-title {
+        font-size: 40px;
+        font-weight: 700;
+        color: #E0E7FF;
+        margin-bottom: 15px;
+      }
+      
+      .title-accent {
+        width: 120px;
+        height: 4px;
+        background: linear-gradient(90deg, #3B82F6 0%, #8B5CF6 100%);
+      }
+      
+      .diagram-container {
+        position: relative;
+        width: 1120px;
+        height: 500px;
+        margin-left: 80px;
+        margin-top: 20px;
+      }
+      
+      .central-hub {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 200px;
+        height: 200px;
+        background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+      }
+      
+      .hub-icon {
+        font-size: 48px;
+        color: #E0E7FF;
+        margin-bottom: 10px;
+      }
+      
+      .hub-title {
+        font-size: 20px;
+        font-weight: 700;
+        color: #E0E7FF;
+        text-align: center;
+        line-height: 1.3;
+      }
+      
+      .hub-subtitle {
+        font-size: 14px;
+        color: rgba(224, 231, 255, 0.8);
+        margin-top: 5px;
+      }
+      
+      .connector-line {
+        position: absolute;
+        background: rgba(59, 130, 246, 0.3);
+        z-index: 1;
+      }
+      
+      .line-tl {
+        width: 2px;
+        height: 120px;
+        top: 90px;
+        left: 460px;
+        transform: rotate(-45deg);
+        transform-origin: bottom;
+      }
+      
+      .line-tr {
+        width: 2px;
+        height: 120px;
+        top: 90px;
+        right: 460px;
+        transform: rotate(45deg);
+        transform-origin: bottom;
+      }
+      
+      .line-bl {
+        width: 2px;
+        height: 120px;
+        bottom: 90px;
+        left: 460px;
+        transform: rotate(45deg);
+        transform-origin: top;
+      }
+      
+      .line-br {
+        width: 2px;
+        height: 120px;
+        bottom: 90px;
+        right: 460px;
+        transform: rotate(-45deg);
+        transform-origin: top;
+      }
+      
+      .feature-box {
+        position: absolute;
+        width: 260px;
+        background: rgba(59, 130, 246, 0.08);
+        border: 2px solid rgba(59, 130, 246, 0.3);
+        padding-top: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        z-index: 5;
+      }
+      
+      .feature-box h3 {
+        font-size: 18px;
+        font-weight: 700;
+        color: #3B82F6;
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      
+      .feature-box h3 i {
+        font-size: 20px;
+      }
+      
+      .feature-list {
+        list-style: none;
+        padding-bottom: 20px;
+      }
+      
+      .feature-list li {
+        font-size: 15px;
+        color: #94A3B8;
+        line-height: 1.6;
+        margin-bottom: 8px;
+        padding-left: 18px;
+        position: relative;
+      }
+      
+      .feature-list li:before {
+        content: "▸";
+        position: absolute;
+        left: 0;
+        color: #8B5CF6;
+        font-weight: bold;
+      }
+      
+      .box-tl {
+        top: 0;
+        left: 0;
+      }
+      
+      .box-tr {
+        top: 0;
+        right: 0;
+      }
+      
+      .box-bl {
+        bottom: 0;
+        left: 0;
+      }
+      
+      .box-br {
+        bottom: 0;
+        right: 0;
+      }
+      
+      .ksa-badge {
+        display: inline-block;
+        background: rgba(139, 92, 246, 0.2);
+        color: #8B5CF6;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 12px;
+        font-weight: 600;
+        margin-top: 8px;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <div class="page-title">GenAI Inference Layer</div>
+            <div class="title-accent"></div>
+        </div>
+        
+        <div class="diagram-container">
+            <!-- Connector Lines -->
+            <div class="connector-line line-tl"></div>
+            <div class="connector-line line-tr"></div>
+            <div class="connector-line line-bl"></div>
+            <div class="connector-line line-br"></div>
+            
+            <!-- Central Hub -->
+            <div class="central-hub">
+                <i class="fas fa-brain hub-icon"></i>
+                <div class="hub-title">GenAI<br>Inference<br>Layer</div>
+                <div class="hub-subtitle">OpenAI GPT-4</div>
+            </div>
+            
+            <!-- Feature Boxes -->
+            <div class="feature-box box-tl">
+                <h3><i class="fas fa-file-alt"></i> Job Enrichment</h3>
+                <ul class="feature-list">
+                    <li>Infers missing requirements from vague descriptions</li>
+                    <li>Clarity scoring (0-100)</li>
+                    <li>Completeness analysis</li>
+                    <li>Improvement suggestions</li>
+                </ul>
+            </div>
+            
+            <div class="feature-box box-tr">
+                <h3><i class="fas fa-comments"></i> Career Coaching</h3>
+                <ul class="feature-list">
+                    <li>KSA market-specific guidance</li>
+                    <li>Vision 2030 alignment</li>
+                    <li>Saudization compliance</li>
+                    <li>Industry career paths</li>
+                </ul>
+            </div>
+            
+            <div class="feature-box box-bl">
+                <h3><i class="fas fa-file-pdf"></i> Resume Parsing</h3>
+                <ul class="feature-list">
+                    <li>Extracts 100+ attributes</li>
+                    <li>Education & certifications</li>
+                    <li>Skills & experience</li>
+                    <li>Language proficiency</li>
+                </ul>
+            </div>
+            
+            <div class="feature-box box-br">
+                <h3><i class="fas fa-globe-asia"></i> KSA Alignment</h3>
+                <ul class="feature-list">
+                    <li>Nitaqat program guidance</li>
+                    <li>Saudi labor market data</li>
+                    <li>Arabic CV optimization</li>
+                    <li>Cultural fit assessment</li>
+                </ul>
+                <span class="ksa-badge">🇸🇦 Saudi Arabia Focus</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS `email_template_variants` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `base_template_id` int NOT NULL,\n  `variant_name` varchar(100) NOT NULL,\n  `subject` varchar(500) NOT NULL,\n  `content` text NOT NULL,\n  `is_active` boolean NOT NULL DEFAULT true,\n  `traffic_percentage` int NOT NULL DEFAULT 50,\n  `created_by` int NOT NULL,\n  `created_at` timestamp NOT NULL DEFAULT (now()),\n  `updated_at` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,\n  CONSTRAINT `email_template_variants_id` PRIMARY KEY(`id`)\n);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS `email_template_variants` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `base_template_id` int NOT NULL,\n  `variant_name` varchar(100) NOT NULL,\n  `subject` varchar(500) NOT NULL,\n  `content` text NOT NULL,\n  `is_active` boolean NOT NULL DEFAULT true,\n  `traffic_percentage` int NOT NULL DEFAULT 50,\n  `created_by` int NOT NULL,\n  `created_at` timestamp NOT NULL DEFAULT (now()),\n  `updated_at` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,\n  CONSTRAINT `email_template_variants_id` PRIMARY KEY(`id`)\n);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1858
+}

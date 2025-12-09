@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: linear-gradient(135deg, #0A1628 0%, #1A2332 100%);
+        font-family: 'Inter', sans-serif;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .grid-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.05;
+        background-image: 
+          linear-gradient(#00D9FF 1px, transparent 1px),
+          linear-gradient(90deg, #00D9FF 1px, transparent 1px);
+        background-size: 40px 40px;
+      }
+      
+      .content-wrapper {
+        position: relative;
+        z-index: 2;
+        padding-top: 60px;
+        padding-left: 80px;
+        padding-right: 80px;
+        min-height: 720px;
+      }
+      
+      .header {
+        margin-bottom: 32px;
+      }
+      
+      .page-title {
+        font-size: 40px;
+        font-weight: 700;
+        color: #00D9FF;
+        margin-bottom: 8px;
+      }
+      
+      .page-subtitle {
+        font-size: 20px;
+        color: #E8EDF2;
+        font-weight: 400;
+      }
+      
+      .timeline-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+      }
+      
+      .timeline-phase {
+        background: rgba(0, 217, 255, 0.03);
+        padding-top: 20px;
+        padding-left: 24px;
+        padding-right: 24px;
+        min-height: 480px;
+        position: relative;
+      }
+      
+      .phase-marker {
+        width: 50px;
+        height: 50px;
+        background: rgba(0, 217, 255, 0.1);
+        border: 3px solid;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 14px;
+      }
+      
+      .timeline-phase-1 .phase-marker { border-color: #00D9FF; }
+      .timeline-phase-2 .phase-marker { border-color: #0066FF; }
+      .timeline-phase-3 .phase-marker { border-color: #00CCA3; }
+      
+      .marker-icon {
+        font-size: 20px;
+        color: #00D9FF;
+      }
+      
+      .phase-header {
+        margin-bottom: 16px;
+        padding-bottom: 12px;
+        border-bottom: 2px solid rgba(0, 217, 255, 0.2);
+      }
+      
+      .phase-timeframe {
+        font-size: 14px;
+        color: #00CCA3;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 6px;
+      }
+      
+      .phase-title {
+        font-size: 22px;
+        font-weight: 700;
+        color: #E8EDF2;
+      }
+      
+      .feature-list {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+      
+      .feature-item {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+      }
+      
+      .feature-icon {
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        color: #00D9FF;
+        background: rgba(0, 217, 255, 0.1);
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+      
+      .feature-content {
+        flex: 1;
+      }
+      
+      .feature-name {
+        font-size: 16px;
+        font-weight: 600;
+        color: #E8EDF2;
+        margin-bottom: 4px;
+      }
+      
+      .feature-desc {
+        font-size: 14px;
+        color: #E8EDF2;
+        opacity: 0.85;
+        line-height: 1.4;
+      }
+      
+      .timeline-line {
+        position: absolute;
+        height: 2px;
+        background: linear-gradient(90deg, #00D9FF, #0066FF, #00CCA3);
+        width: 100%;
+        bottom: 120px;
+        left: 0;
+        opacity: 0.3;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="grid-background"></div>
+        <div class="timeline-line"></div>
+        
+        <div class="content-wrapper">
+            <div class="header">
+                <h1 class="page-title">Future Enhancements & Roadmap</h1>
+                <p class="page-subtitle">Strategic development plan to expand capabilities and market reach through 2026</p>
+            </div>
+            
+            <div class="timeline-container">
+                <div class="timeline-phase timeline-phase-1">
+                    <div class="phase-marker">
+                        <i class="fas fa-rocket marker-icon"></i>
+                    </div>
+                    <div class="phase-header">
+                        <div class="phase-timeframe">Q1-Q2 2025</div>
+                        <h2 class="phase-title">Near-Term Features</h2>
+                    </div>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-chart-pie"></i></div>
+                            <div class="feature-content">
+                                <div class="feature-name">Advanced Analytics Dashboard</div>
+                                <div class="feature-desc">Customizable reports with drill-down capabilities and export options</div>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-video"></i></div>
+                            <div class="feature-content">
+                                <div class="feature-name">Video Interview Platform</div>
+                                <div class="feature-desc">Integrated video conferencing with recording and AI transcription</div>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-robot"></i></div>
+                            <div class="feature-content">
+                                <div class="feature-name">AI Interview Assistant</div>
+                                <div class="feature-desc">Real-time question suggestions and candidate response analysis</div>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
+                            <div class="feature-content">
+                                <div class="feature-name">Native Mobile Apps</div>
+                                <div class="feature-desc">iOS and Android applications for candidates and recruiters</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-phase timeline-phase-2">
+                    <div class="phase-marker">
+                        <i class="fas fa-chart-line marker-icon"></i>
+                    </div>
+                    <div class="phase-header">
+                        <div class="phase-timeframe">Q3-Q4 2025</div>
+                        <h2 class="phase-title">Mid-Term Expansion</h2>
+                    </div>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-brain"></i></div>
+                            <div class="feature-content">
+                                <div class="feature-name">Predictive Analytics</div>
+                                <div class="feature-desc">Machine learning models predict candidate success and retention</div>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-plug"></i></div>
+                            <div class="feature-content">
+                                <div class="feature-name">Integration Marketplace</div>
+                                <div class="feature-desc">Connect with ATS, HRIS, and background check providers</div>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-tag"></i></div>
+                            <div class="feature-content">
+                                <div class="feature-name">White-Label Solution</div>
+                                <div class="feature-desc">Customizable branding for enterprise clients</div>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-file-alt"></i></div>
+                            <div class="feature-content">
+                                <div class="feature-name">Advanced Reporting</div>
+                                <div class="feature-desc">Compliance reports, diversity metrics, and hiring funnel analysis</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-phase timeline-phase-3">
+                    <div class="phase-marker">
+                        <i class="fas fa-globe marker-icon"></i>
+                    </div>
+                    <div class="phase-header">
+                        <div class="phase-timeframe">2026+</div>
+                        <h2 class="phase-title">Long-Term Vision</h2>
+                    </div>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-map-marked-alt"></i></div>
+                            <div class="feature-content">
+                                <div class="feature-name">Global Expansion</div>
+                                <div class="feature-desc">Multi-language support and regional compliance frameworks</div>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-graduation-cap"></i></div>
+                            <div class="feature-content">
+                                <div class="feature-name">AI Career Coaching</div>
+                                <div class="feature-desc">Personalized career development recommendations for candidates</div>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-certificate"></i></div>
+                            <div class="feature-content">
+                                <div class="feature-name">Blockchain Credentials</div>
+                                <div class="feature-desc">Verifiable skill certifications and employment history</div>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-vr-cardboard"></i></div>
+                            <div class="feature-content">
+                                <div class="feature-name">VR Interview Spaces</div>
+                                <div class="feature-desc">Immersive virtual environments for remote interviews</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #0A0E27 0%, #1a1f3a 100%);
+            font-family: 'Inter', sans-serif;
+            position: relative;
+        }
+        
+        .header {
+            padding-top: 60px;
+            padding-left: 80px;
+            padding-right: 80px;
+            margin-bottom: 0;
+        }
+        
+        .page-title {
+            font-size: 40px;
+            font-weight: 700;
+            color: #00D4FF;
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+        
+        .page-subtitle {
+            font-size: 20px;
+            font-weight: 400;
+            color: #E8EAED;
+            opacity: 0.7;
+            margin-top: 0;
+        }
+        
+        .process-flow {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-left: 80px;
+            padding-right: 80px;
+            padding-top: 50px;
+            margin-bottom: 0;
+        }
+        
+        .process-step {
+            text-align: center;
+            flex: 1;
+            max-width: 180px;
+        }
+        
+        .step-icon {
+            width: 80px;
+            height: 80px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 0;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            border: 3px solid;
+        }
+        
+        .step-1 .step-icon { 
+            border-color: #7B61FF;
+            color: #7B61FF;
+        }
+        
+        .step-2 .step-icon { 
+            border-color: #00D4FF;
+            color: #00D4FF;
+        }
+        
+        .step-3 .step-icon { 
+            border-color: #00FFA3;
+            color: #00FFA3;
+        }
+        
+        .step-4 .step-icon { 
+            border-color: #7B61FF;
+            color: #7B61FF;
+        }
+        
+        .step-5 .step-icon { 
+            border-color: #00D4FF;
+            color: #00D4FF;
+        }
+        
+        .step-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #E8EAED;
+            margin-top: 0;
+            margin-bottom: 6px;
+        }
+        
+        .step-description {
+            font-size: 14px;
+            font-weight: 400;
+            color: #E8EAED;
+            opacity: 0.6;
+            margin-top: 0;
+            line-height: 1.4;
+        }
+        
+        .arrow {
+            font-size: 24px;
+            color: #7B61FF;
+            opacity: 0.4;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        
+        .capabilities-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            padding-left: 80px;
+            padding-right: 80px;
+            padding-top: 50px;
+        }
+        
+        .capability-card {
+            text-align: center;
+        }
+        
+        .capability-icon {
+            font-size: 32px;
+            margin-top: 0;
+            margin-bottom: 12px;
+        }
+        
+        .icon-purple { color: #7B61FF; }
+        .icon-cyan { color: #00D4FF; }
+        .icon-green { color: #00FFA3; }
+        
+        .capability-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #E8EAED;
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+        
+        .capability-detail {
+            font-size: 15px;
+            font-weight: 400;
+            color: #E8EAED;
+            opacity: 0.7;
+            margin-top: 0;
+            line-height: 1.5;
+        }
+        
+        .accent-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, #7B61FF 0%, #00D4FF 50%, #00FFA3 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h2 class="page-title">AI-Powered Resume Analysis</h2>
+            <p class="page-subtitle">Intelligent parsing, extraction, and authenticity verification</p>
+        </div>
+        
+        <div class="process-flow">
+            <div class="process-step step-1">
+                <div class="step-icon">
+                    <i class="fas fa-file-upload"></i>
+                </div>
+                <div class="step-title">Upload</div>
+                <div class="step-description">PDF, DOCX support</div>
+            </div>
+            
+            <div class="arrow">
+                <i class="fas fa-arrow-right"></i>
+            </div>
+            
+            <div class="process-step step-2">
+                <div class="step-icon">
+                    <i class="fas fa-file-lines"></i>
+                </div>
+                <div class="step-title">Parse</div>
+                <div class="step-description">Text extraction</div>
+            </div>
+            
+            <div class="arrow">
+                <i class="fas fa-arrow-right"></i>
+            </div>
+            
+            <div class="process-step step-3">
+                <div class="step-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <div class="step-title">Extract</div>
+                <div class="step-description">LLM analysis</div>
+            </div>
+            
+            <div class="arrow">
+                <i class="fas fa-arrow-right"></i>
+            </div>
+            
+            <div class="process-step step-4">
+                <div class="step-icon">
+                    <i class="fas fa-shield-halved"></i>
+                </div>
+                <div class="step-title">Detect</div>
+                <div class="step-description">AI content check</div>
+            </div>
+            
+            <div class="arrow">
+                <i class="fas fa-arrow-right"></i>
+            </div>
+            
+            <div class="process-step step-5">
+                <div class="step-icon">
+                    <i class="fas fa-circle-check"></i>
+                </div>
+                <div class="step-title">Validate</div>
+                <div class="step-description">Credentials verify</div>
+            </div>
+        </div>
+        
+        <div class="capabilities-grid">
+            <div class="capability-card">
+                <div class="capability-icon icon-purple">
+                    <i class="fas fa-wand-magic-sparkles"></i>
+                </div>
+                <div class="capability-title">Smart Extraction</div>
+                <div class="capability-detail">Auto-populate skills, experience, and education using advanced LLM</div>
+            </div>
+            
+            <div class="capability-card">
+                <div class="capability-icon icon-cyan">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="capability-title">AI Detection</div>
+                <div class="capability-detail">Identify AI-generated content with confidence scoring</div>
+            </div>
+            
+            <div class="capability-card">
+                <div class="capability-icon icon-green">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                <div class="capability-title">Credential Verification</div>
+                <div class="capability-detail">Detect fabricated credentials and inconsistencies</div>
+            </div>
+        </div>
+        
+        <div class="accent-bar"></div>
+    </div>
+</body>
+</html>

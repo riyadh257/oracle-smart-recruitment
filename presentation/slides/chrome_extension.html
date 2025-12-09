@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chrome Extension - Profile Import</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #0A1929 0%, #1A2332 100%);
+            font-family: 'Inter', sans-serif;
+            color: #E8EEF2;
+            position: relative;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 55% 45%;
+            min-height: 720px;
+            align-items: center;
+        }
+        
+        .left-content {
+            padding-top: 80px;
+            padding-left: 80px;
+            padding-right: 40px;
+        }
+        
+        .page-heading {
+            font-size: 44px;
+            font-weight: 700;
+            color: #00D4FF;
+            line-height: 1.2;
+            margin-bottom: 28px;
+            max-width: 580px;
+        }
+        
+        .platforms-section {
+            margin-bottom: 28px;
+        }
+        
+        .section-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: rgba(232, 238, 242, 0.9);
+            margin-bottom: 14px;
+        }
+        
+        .platforms-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+        
+        .platform-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 16px;
+            font-weight: 500;
+            color: #E8EEF2;
+        }
+        
+        .platform-icon {
+            font-size: 18px;
+            color: #00D4FF;
+            min-width: 18px;
+        }
+        
+        .workflow-section {
+            margin-bottom: 20px;
+        }
+        
+        .workflow-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .workflow-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .step-number {
+            width: 28px;
+            height: 28px;
+            background: #0066FF;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 700;
+            color: #E8EEF2;
+            min-width: 28px;
+        }
+        
+        .step-text {
+            font-size: 15px;
+            font-weight: 400;
+            color: rgba(232, 238, 242, 0.85);
+            line-height: 1.5;
+            padding-top: 4px;
+        }
+        
+        .right-content {
+            padding-top: 80px;
+            padding-right: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .metrics-container {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+        
+        .metric-item {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .metric-number {
+            font-size: 64px;
+            font-weight: 700;
+            color: #00D4FF;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+        
+        .metric-label {
+            font-size: 18px;
+            font-weight: 500;
+            color: rgba(232, 238, 242, 0.85);
+            line-height: 1.4;
+        }
+        
+        .compliance-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding-top: 20px;
+            margin-top: 20px;
+            border-top: 1px solid rgba(0, 212, 255, 0.2);
+        }
+        
+        .badge-icon {
+            font-size: 24px;
+            color: #7B61FF;
+        }
+        
+        .badge-text {
+            font-size: 16px;
+            font-weight: 600;
+            color: #E8EEF2;
+        }
+        
+        .accent-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #00D4FF 0%, #0066FF 50%, #7B61FF 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="content-grid">
+            <div class="left-content">
+                <h1 class="page-heading">One-Click Profile Import from Major Platforms</h1>
+                
+                <div class="platforms-section">
+                    <div class="section-title">Supported Platforms</div>
+                    <div class="platforms-grid">
+                        <div class="platform-item">
+                            <i class="fab fa-linkedin platform-icon"></i>
+                            <span>LinkedIn</span>
+                        </div>
+                        <div class="platform-item">
+                            <i class="fas fa-briefcase platform-icon"></i>
+                            <span>Bayt.com</span>
+                        </div>
+                        <div class="platform-item">
+                            <i class="fas fa-search platform-icon"></i>
+                            <span>Indeed</span>
+                        </div>
+                        <div class="platform-item">
+                            <i class="fas fa-globe platform-icon"></i>
+                            <span>GulfTalent</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="workflow-section">
+                    <div class="section-title">Import Workflow</div>
+                    <div class="workflow-steps">
+                        <div class="workflow-step">
+                            <div class="step-number">1</div>
+                            <div class="step-text">Browse candidate profiles on supported platforms</div>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="step-number">2</div>
+                            <div class="step-text">Click extension icon to capture profile data</div>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="step-number">3</div>
+                            <div class="step-text">Review and confirm data mapping</div>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="step-number">4</div>
+                            <div class="step-text">Import directly to Oracle recruitment database</div>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="step-number">5</div>
+                            <div class="step-text">System auto-generates skill profile and match scores</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="right-content">
+                <div class="metrics-container">
+                    <div class="metric-item">
+                        <div class="metric-number">90%</div>
+                        <div class="metric-label">Reduction in manual profile data entry</div>
+                    </div>
+                    
+                    <div class="metric-item">
+                        <div class="metric-number">5x</div>
+                        <div class="metric-label">Increase in sourcing efficiency</div>
+                    </div>
+                    
+                    <div class="metric-item">
+                        <div class="metric-number">100%</div>
+                        <div class="metric-label">Direct API integration with Oracle platform</div>
+                    </div>
+                </div>
+                
+                <div class="compliance-badge">
+                    <i class="fas fa-shield-check badge-icon"></i>
+                    <div class="badge-text">Compliance-First Design</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="accent-bar"></div>
+    </div>
+</body>
+</html>

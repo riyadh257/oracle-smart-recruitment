@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS `external_economic_factors` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `month` int NOT NULL,\n  `year` int NOT NULL,\n  `unemployment_rate` int,\n  `economic_growth_rate` int,\n  `inflation_rate` int,\n  `labor_force_participation_rate` int,\n  `average_wage_growth` int,\n  `industry_growth_index` int,\n  `job_openings_index` int,\n  `consumer_confidence_index` int,\n  `notes` text,\n  `data_source` varchar(255),\n  `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,\n  `updatedAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,\n  CONSTRAINT `external_economic_factors_id` PRIMARY KEY(`id`)\n)",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS `external_economic_factors` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `month` int NOT NULL,\n  `year` int NOT NULL,\n  `unemployment_rate` int,\n  `economic_growth_rate` int,\n  `inflation_rate` int,\n  `labor_force_participation_rate` int,\n  `average_wage_growth` int,\n  `industry_growth_index` int,\n  `job_openings_index` int,\n  `consumer_confidence_index` int,\n  `notes` text,\n  `data_source` varchar(255),\n  `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,\n  `updatedAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,\n  CONSTRAINT `external_economic_factors_id` PRIMARY KEY(`id`)\n)",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1753
+}

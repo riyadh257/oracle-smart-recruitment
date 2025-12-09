@@ -1,0 +1,332 @@
+{
+  "query": "SELECT \n  TABLE_NAME,\n  COLUMN_NAME,\n  CONSTRAINT_NAME,\n  REFERENCED_TABLE_NAME,\n  REFERENCED_COLUMN_NAME\nFROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE\nWHERE TABLE_SCHEMA = DATABASE()\n  AND REFERENCED_TABLE_NAME IS NOT NULL\nORDER BY TABLE_NAME, COLUMN_NAME\nLIMIT 50;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute SELECT \n  TABLE_NAME,\n  COLUMN_NAME,\n  CONSTRAINT_NAME,\n  REFERENCED_TABLE_NAME,\n  REFERENCED_COLUMN_NAME\nFROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE\nWHERE TABLE_SCHEMA = DATABASE()\n  AND REFERENCED_TABLE_NAME IS NOT NULL\nORDER BY TABLE_NAME, COLUMN_NAME\nLIMIT 50;",
+  "rows": [
+    {
+      "TABLE_NAME": "alertHistory",
+      "COLUMN_NAME": "acknowledgedBy",
+      "CONSTRAINT_NAME": "alertHistory_acknowledgedBy_users_id_fk",
+      "REFERENCED_TABLE_NAME": "users",
+      "REFERENCED_COLUMN_NAME": "id"
+    },
+    {
+      "TABLE_NAME": "alertHistory",
+      "COLUMN_NAME": "alertId",
+      "CONSTRAINT_NAME": "alertHistory_alertId_performanceAlerts_id_fk",
+      "REFERENCED_TABLE_NAME": "performanceAlerts",
+      "REFERENCED_COLUMN_NAME": "id"
+    },
+    {
+      "TABLE_NAME": "alertHistory",
+      "COLUMN_NAME": "templateId",
+      "CONSTRAINT_NAME": "alertHistory_templateId_emailTemplates_id_fk",
+      "REFERENCED_TABLE_NAME": "emailTemplates",
+      "REFERENCED_COLUMN_NAME": "id"
+    },
+    {
+      "TABLE_NAME": "applications",
+      "COLUMN_NAME": "candidateId",
+      "CONSTRAINT_NAME": "applications_candidateId_candidates_id_fk",
+      "REFERENCED_TABLE_NAME": "candidates",
+      "REFERENCED_COLUMN_NAME": "id"
+    },
+    {
+      "TABLE_NAME": "applications",
+      "COLUMN_NAME": "jobId",
+      "CONSTRAINT_NAME": "applications_jobId_jobs_id_fk",
+      "REFERENCED_TABLE_NAME": "jobs",
+      "REFERENCED_COLUMN_NAME": "id"
+    },
+    {
+      "TABLE_NAME": "atsIntegrations",
+      "COLUMN_NAME": "employerId",
+      "CONSTRAINT_NAME": "atsIntegrations_employerId_employers_id_fk",
+      "REFERENCED_TABLE_NAME": "employers",
+      "REFERENCED_COLUMN_NAME": "id"
+    },
+    {
+      "TABLE_NAME": "billingRecords",
+      "COLUMN_NAME": "employerId",
+      "CONSTRAINT_NAME": "billingRecords_employerId_employers_id_fk",
+      "REFERENCED_TABLE_NAME": "employers",
+      "REFERENCED_COLUMN_NAME": "id"
+    },
+    {
+      "TABLE_NAME": "candidateAttributes",
+      "COLUMN_NAME": "candidateId",
+      "CONSTRAINT_NAME": "candidateAttributes_candidateId_candidates_id_fk",
+      "REFERENCED_TABLE_NAME": "candidates",
+      "REFERENCED_COLUMN_NAME": "id"
+    },
+    {
+      "TABLE_NAME": "candidateLists",
+      "COLUMN_NAME": "employerId",
+      "CONSTRAINT_NAME": "candidateLists_employerId_employers_id_fk",
+      "REFERENCED_TABLE_NAME": "employers",
+      "REFERENCED_COLUMN_NAME": "id"
+    },
+    {
+      "TABLE_NAME": "candidates",
+      "COLUMN_NAME": "userId",
+      "CONSTRAINT_NAME": "candidates_userId_users_id_fk",
+      "REFERENCED_TABLE_NAME": "users",
+      "REFERENCED_COLUMN_NAME": "id"
+    },
+    {
+      "TABLE_NAME": "coachingSessions",
+      "COLUMN_NAME": "candidateId",
+      "CONSTRAINT_NAME": "coachingSessions_candidateId_candidates_id_fk",
+      "REFERENCED_TABLE_NAME": "candidates",
+      "REFERENCED_COLUMN_NAME": "id"
+    },
+    {
+      "TABLE_NAME": "emailAbTests",
+      "COLUMN_NAME": "employerId",
+      "CONSTRAINT_NAME": "emailAbTests_employerId_employers_id_fk",
+      "REFERENCED_TABLE_NAME": "employers",
+      "REFERENCED_COLUMN_NAME": "id"
+    },
+    {
+      "TABLE_NAME": "emailAbVariants",
+      "COLUMN_NAME": "templateId",
+      "CONSTRAINT_NAME": "emailAbVariants_templateId_emailTemplates_id_fk",
+      "REFERENCED_TABLE_NAME": "emailTemplates",
+      "REFERENCED_COLUMN_NAME": "id"
+    },
+    {
+      "TABLE_NAME": "emailAbVariants",
+      "COLUMN_NAME": "testId",
+      "CONSTRAINT_NAME": "emailAbVariants_testId_emailAbTests_id_fk",
+      "REFERENCED_TABLE_NAME": "emailAbTests",
+      "REFERENCED_COLUMN_NAME": "id"
+    },
+    {
+      "TABLE_NAME": "emailAnalytics",
+      "COLUMN_NAME": "employerId",
+      "CONSTRAINT_NAME": "emailAnalytics_employerId_employers_id_fk",
+      "REFERENCED_TABLE_NAME": "employers",
+      "REFERENCED_COLUMN_NAME": "id"
+    },
+    {
+      "TABLE_NAME": "emailBranding",
+      "COLUMN_NAME": "employerId",
+      "CONSTRAINT_NAME": "emailBranding_employerId_employers_id_fk",
+      "REFERENCED_TABLE_NAME": "employers",
+      "REFERENCED_COLUMN_NAME": "id"
+    },
+    {
+      "TABLE_NAME": "emailTemplates",
+      "COLUMN_NAME": "employerId",
+      "CONSTRAINT_NAME": "emailTemplates_employerId_employers_id_fk",
+      "REFERENCED_TABLE_NAME": "employers",
+      "REFERENCED_COLUMN_NAME": "id"
+    },
+    {
+      "TABLE_NAME": "employeeSkills",
+      "COLUMN_NAME": "employerId",
+      "CONSTRAINT_NAME": "employeeSkills_employerId_employers_id_fk",
+      "REFERENCED_TABLE_NAME": "employers",
+      "REFERENCED_COLUMN_NAME": "id"
+    },
+    {
+      "TABLE_NAME": "employeeSurveys",
+      "COLUMN_NAME": "employerId",
+      "CONSTRAINT_NAME": "employeeSurveys_employerId_employers_id_fk",
+      "REFERENCED_TABLE_NAME": "employers",
+      "REFERENCED_COLUMN_NAME": "id"
+    },
+    {
+      "TABLE_NAME": "employers",
+      "COLUMN_NAME": "userId",
+      "CONSTRAINT_NAME": "employers_userId_users_id_fk",
+      "REFERENCED_TABLE_NAME": "users",
+      "REFERENCED_COLUMN_NAME": "id"
+    },
+    {
+      "TABLE_NAME": "jobAttributes",
+      "COLUMN_NAME": "jobId",
+      "CONSTRAINT_NAME": "jobAttributes_jobId_jobs_id_fk",
+      "REFERENCED_TABLE_NAME": "jobs",
+      "REFERENCED_COLUMN_NAME": "id"
+    },
+    {
+      "TABLE_NAME": "jobs",
+      "COLUMN_NAME": "employerId",
+      "CONSTRAINT_NAME": "jobs_employerId_employers_id_fk",
+      "REFERENCED_TABLE_NAME": "employers",
+      "REFERENCED_COLUMN_NAME": "id"
+    },
+    {
+      "TABLE_NAME": "ksaCoachingSessions",
+      "COLUMN_NAME": "candidateId",
+      "CONSTRAINT_NAME": "ksaCoachingSessions_candidateId_candidates_id_fk",
+      "REFERENCED_TABLE_NAME": "candidates",
+      "REFERENCED_COLUMN_NAME": "id"
+    },
+    {
+      "TABLE_NAME": "listMembers",
+      "COLUMN_NAME": "candidateId",
+      "CONSTRAINT_NAME": "listMembers_candidateId_candidates_id_fk",
+      "REFERENCED_TABLE_NAME": "candidates",
+      "REFERENCED_COLUMN_NAME": "id"
+    },
+    {
+      "TABLE_NAME": "listMembers",
+      "COLUMN_NAME": "listId",
+      "CONSTRAINT_NAME": "listMembers_listId_candidateLists_id_fk",
+      "REFERENCED_TABLE_NAME": "candidateLists",
+      "REFERENCED_COLUMN_NAME": "id"
+    },
+    {
+      "TABLE_NAME": "notificationPreferences",
+      "COLUMN_NAME": "employerId",
+      "CONSTRAINT_NAME": "notificationPreferences_employerId_employers_id_fk",
+      "REFERENCED_TABLE_NAME": "employers",
+      "REFERENCED_COLUMN_NAME": "id"
+    },
+    {
+      "TABLE_NAME": "performanceAlerts",
+      "COLUMN_NAME": "employerId",
+      "CONSTRAINT_NAME": "performanceAlerts_employerId_employers_id_fk",
+      "REFERENCED_TABLE_NAME": "employers",
+      "REFERENCED_COLUMN_NAME": "id"
+    },
+    {
+      "TABLE_NAME": "predictiveInsights",
+      "COLUMN_NAME": "employerId",
+      "CONSTRAINT_NAME": "predictiveInsights_employerId_employers_id_fk",
+      "REFERENCED_TABLE_NAME": "employers",
+      "REFERENCED_COLUMN_NAME": "id"
+    },
+    {
+      "TABLE_NAME": "retentionMetrics",
+      "COLUMN_NAME": "applicationId",
+      "CONSTRAINT_NAME": "retentionMetrics_applicationId_applications_id_fk",
+      "REFERENCED_TABLE_NAME": "applications",
+      "REFERENCED_COLUMN_NAME": "id"
+    },
+    {
+      "TABLE_NAME": "retentionMetrics",
+      "COLUMN_NAME": "candidateId",
+      "CONSTRAINT_NAME": "retentionMetrics_candidateId_candidates_id_fk",
+      "REFERENCED_TABLE_NAME": "candidates",
+      "REFERENCED_COLUMN_NAME": "id"
+    },
+    {
+      "TABLE_NAME": "retentionMetrics",
+      "COLUMN_NAME": "employerId",
+      "CONSTRAINT_NAME": "retentionMetrics_employerId_employers_id_fk",
+      "REFERENCED_TABLE_NAME": "employers",
+      "REFERENCED_COLUMN_NAME": "id"
+    },
+    {
+      "TABLE_NAME": "savedJobs",
+      "COLUMN_NAME": "candidateId",
+      "CONSTRAINT_NAME": "savedJobs_candidateId_candidates_id_fk",
+      "REFERENCED_TABLE_NAME": "candidates",
+      "REFERENCED_COLUMN_NAME": "id"
+    },
+    {
+      "TABLE_NAME": "savedJobs",
+      "COLUMN_NAME": "jobId",
+      "CONSTRAINT_NAME": "savedJobs_jobId_jobs_id_fk",
+      "REFERENCED_TABLE_NAME": "jobs",
+      "REFERENCED_COLUMN_NAME": "id"
+    },
+    {
+      "TABLE_NAME": "shifts",
+      "COLUMN_NAME": "employerId",
+      "CONSTRAINT_NAME": "shifts_employerId_employers_id_fk",
+      "REFERENCED_TABLE_NAME": "employers",
+      "REFERENCED_COLUMN_NAME": "id"
+    },
+    {
+      "TABLE_NAME": "skillGapAnalysis",
+      "COLUMN_NAME": "employerId",
+      "CONSTRAINT_NAME": "skillGapAnalysis_employerId_employers_id_fk",
+      "REFERENCED_TABLE_NAME": "employers",
+      "REFERENCED_COLUMN_NAME": "id"
+    },
+    {
+      "TABLE_NAME": "strategicRoi",
+      "COLUMN_NAME": "candidateId",
+      "CONSTRAINT_NAME": "strategicRoi_candidateId_candidates_id_fk",
+      "REFERENCED_TABLE_NAME": "candidates",
+      "REFERENCED_COLUMN_NAME": "id"
+    },
+    {
+      "TABLE_NAME": "strategicRoi",
+      "COLUMN_NAME": "employerId",
+      "CONSTRAINT_NAME": "strategicRoi_employerId_employers_id_fk",
+      "REFERENCED_TABLE_NAME": "employers",
+      "REFERENCED_COLUMN_NAME": "id"
+    },
+    {
+      "TABLE_NAME": "strategicRoi",
+      "COLUMN_NAME": "jobId",
+      "CONSTRAINT_NAME": "strategicRoi_jobId_jobs_id_fk",
+      "REFERENCED_TABLE_NAME": "jobs",
+      "REFERENCED_COLUMN_NAME": "id"
+    },
+    {
+      "TABLE_NAME": "talentPool",
+      "COLUMN_NAME": "addedFromJobId",
+      "CONSTRAINT_NAME": "talentPool_addedFromJobId_jobs_id_fk",
+      "REFERENCED_TABLE_NAME": "jobs",
+      "REFERENCED_COLUMN_NAME": "id"
+    },
+    {
+      "TABLE_NAME": "talentPool",
+      "COLUMN_NAME": "candidateId",
+      "CONSTRAINT_NAME": "talentPool_candidateId_candidates_id_fk",
+      "REFERENCED_TABLE_NAME": "candidates",
+      "REFERENCED_COLUMN_NAME": "id"
+    },
+    {
+      "TABLE_NAME": "talentPool",
+      "COLUMN_NAME": "employerId",
+      "CONSTRAINT_NAME": "talentPool_employerId_employers_id_fk",
+      "REFERENCED_TABLE_NAME": "employers",
+      "REFERENCED_COLUMN_NAME": "id"
+    },
+    {
+      "TABLE_NAME": "teamMetrics",
+      "COLUMN_NAME": "employerId",
+      "CONSTRAINT_NAME": "teamMetrics_employerId_employers_id_fk",
+      "REFERENCED_TABLE_NAME": "employers",
+      "REFERENCED_COLUMN_NAME": "id"
+    },
+    {
+      "TABLE_NAME": "videoInterviews",
+      "COLUMN_NAME": "applicationId",
+      "CONSTRAINT_NAME": "videoInterviews_applicationId_applications_id_fk",
+      "REFERENCED_TABLE_NAME": "applications",
+      "REFERENCED_COLUMN_NAME": "id"
+    },
+    {
+      "TABLE_NAME": "videoInterviews",
+      "COLUMN_NAME": "candidateId",
+      "CONSTRAINT_NAME": "videoInterviews_candidateId_candidates_id_fk",
+      "REFERENCED_TABLE_NAME": "candidates",
+      "REFERENCED_COLUMN_NAME": "id"
+    },
+    {
+      "TABLE_NAME": "videoInterviews",
+      "COLUMN_NAME": "employerId",
+      "CONSTRAINT_NAME": "videoInterviews_employerId_employers_id_fk",
+      "REFERENCED_TABLE_NAME": "employers",
+      "REFERENCED_COLUMN_NAME": "id"
+    },
+    {
+      "TABLE_NAME": "videoInterviews",
+      "COLUMN_NAME": "jobId",
+      "CONSTRAINT_NAME": "videoInterviews_jobId_jobs_id_fk",
+      "REFERENCED_TABLE_NAME": "jobs",
+      "REFERENCED_COLUMN_NAME": "id"
+    }
+  ],
+  "messages": [],
+  "stdout": "TABLE_NAME\tCOLUMN_NAME\tCONSTRAINT_NAME\tREFERENCED_TABLE_NAME\tREFERENCED_COLUMN_NAME\nalertHistory\tacknowledgedBy\talertHistory_acknowledgedBy_users_id_fk\tusers\tid\nalertHistory\talertId\talertHistory_alertId_performanceAlerts_id_fk\tperformanceAlerts\tid\nalertHistory\ttemplateId\talertHistory_templateId_emailTemplates_id_fk\temailTemplates\tid\napplications\tcandidateId\tapplications_candidateId_candidates_id_fk\tcandidates\tid\napplications\tjobId\tapplications_jobId_jobs_id_fk\tjobs\tid\natsIntegrations\temployerId\tatsIntegrations_employerId_employers_id_fk\temployers\tid\nbillingRecords\temployerId\tbillingRecords_employerId_employers_id_fk\temployers\tid\ncandidateAttributes\tcandidateId\tcandidateAttributes_candidateId_candidates_id_fk\tcandidates\tid\ncandidateLists\temployerId\tcandidateLists_employerId_employers_id_fk\temployers\tid\ncandidates\tuserId\tcandidates_userId_users_id_fk\tusers\tid\ncoachingSessions\tcandidateId\tcoachingSessions_candidateId_candidates_id_fk\tcandidates\tid\nemailAbTests\temployerId\temailAbTests_employerId_employers_id_fk\temployers\tid\nemailAbVariants\ttemplateId\temailAbVariants_templateId_emailTemplates_id_fk\temailTemplates\tid\nemailAbVariants\ttestId\temailAbVariants_testId_emailAbTests_id_fk\temailAbTests\tid\nemailAnalytics\temployerId\temailAnalytics_employerId_employers_id_fk\temployers\tid\nemailBranding\temployerId\temailBranding_employerId_employers_id_fk\temployers\tid\nemailTemplates\temployerId\temailTemplates_employerId_employers_id_fk\temployers\tid\nemployeeSkills\temployerId\temployeeSkills_employerId_employers_id_fk\temployers\tid\nemployeeSurveys\temployerId\temployeeSurveys_employerId_employers_id_fk\temployers\tid\nemployers\tuserId\temployers_userId_users_id_fk\tusers\tid\njobAttributes\tjobId\tjobAttributes_jobId_jobs_id_fk\tjobs\tid\njobs\temployerId\tjobs_employerId_employers_id_fk\temployers\tid\nksaCoachingSessions\tcandidateId\tksaCoachingSessions_candidateId_candidates_id_fk\tcandidates\tid\nlistMembers\tcandidateId\tlistMembers_candidateId_candidates_id_fk\tcandidates\tid\nlistMembers\tlistId\tlistMembers_listId_candidateLists_id_fk\tcandidateLists\tid\nnotificationPreferences\temployerId\tnotificationPreferences_employerId_employers_id_fk\temployers\tid\nperformanceAlerts\temployerId\tperformanceAlerts_employerId_employers_id_fk\temployers\tid\npredictiveInsights\temployerId\tpredictiveInsights_employerId_employers_id_fk\temployers\tid\nretentionMetrics\tapplicationId\tretentionMetrics_applicationId_applications_id_fk\tapplications\tid\nretentionMetrics\tcandidateId\tretentionMetrics_candidateId_candidates_id_fk\tcandidates\tid\nretentionMetrics\temployerId\tretentionMetrics_employerId_employers_id_fk\temployers\tid\nsavedJobs\tcandidateId\tsavedJobs_candidateId_candidates_id_fk\tcandidates\tid\nsavedJobs\tjobId\tsavedJobs_jobId_jobs_id_fk\tjobs\tid\nshifts\temployerId\tshifts_employerId_employers_id_fk\temployers\tid\nskillGapAnalysis\temployerId\tskillGapAnalysis_employerId_employers_id_fk\temployers\tid\nstrategicRoi\tcandidateId\tstrategicRoi_candidateId_candidates_id_fk\tcandidates\tid\nstrategicRoi\temployerId\tstrategicRoi_employerId_employers_id_fk\temployers\tid\nstrategicRoi\tjobId\tstrategicRoi_jobId_jobs_id_fk\tjobs\tid\ntalentPool\taddedFromJobId\ttalentPool_addedFromJobId_jobs_id_fk\tjobs\tid\ntalentPool\tcandidateId\ttalentPool_candidateId_candidates_id_fk\tcandidates\tid\ntalentPool\temployerId\ttalentPool_employerId_employers_id_fk\temployers\tid\nteamMetrics\temployerId\tteamMetrics_employerId_employers_id_fk\temployers\tid\nvideoInterviews\tapplicationId\tvideoInterviews_applicationId_applications_id_fk\tapplications\tid\nvideoInterviews\tcandidateId\tvideoInterviews_candidateId_candidates_id_fk\tcandidates\tid\nvideoInterviews\temployerId\tvideoInterviews_employerId_employers_id_fk\temployers\tid\nvideoInterviews\tjobId\tvideoInterviews_jobId_jobs_id_fk\tjobs\tid\n",
+  "stderr": "",
+  "execution_time_ms": 1533
+}

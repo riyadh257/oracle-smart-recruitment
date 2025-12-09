@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: linear-gradient(135deg, #0A1628 0%, #1a2942 100%);
+        font-family: 'Inter', sans-serif;
+        color: #E2E8F0;
+        position: relative;
+      }
+      
+      .content-wrapper {
+        padding-top: 60px;
+        padding-left: 60px;
+        padding-right: 60px;
+        min-height: 720px;
+      }
+      
+      .page-title {
+        font-size: 36px;
+        font-weight: 700;
+        color: #60A5FA;
+        margin-bottom: 45px;
+        line-height: 1.2;
+      }
+      
+      .achievements-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+      }
+      
+      .achievement-card {
+        background: rgba(59, 130, 246, 0.05);
+        border: 1px solid rgba(59, 130, 246, 0.2);
+        padding-top: 24px;
+        padding-left: 24px;
+        padding-right: 24px;
+        min-height: 160px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      
+      .card-header {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+      
+      .achievement-icon {
+        width: 52px;
+        height: 52px;
+        min-width: 52px;
+        background: linear-gradient(135deg, #10B981 0%, #34D399 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        color: #ffffff;
+      }
+      
+      .achievement-title {
+        font-size: 19px;
+        font-weight: 600;
+        color: #E2E8F0;
+      }
+      
+      .achievement-description {
+        font-size: 14px;
+        font-weight: 400;
+        color: #94A3B8;
+        line-height: 1.5;
+      }
+      
+      .achievement-metric {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 8px;
+      }
+      
+      .metric-icon {
+        font-size: 18px;
+        color: #10B981;
+      }
+      
+      .metric-value {
+        font-size: 20px;
+        font-weight: 700;
+        color: #10B981;
+      }
+      
+      .metric-label {
+        font-size: 13px;
+        color: #94A3B8;
+        font-weight: 500;
+      }
+      
+      .featured-achievement {
+        grid-column: 1 / -1;
+        background: linear-gradient(90deg, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%);
+        border: 2px solid rgba(16, 185, 129, 0.4);
+        padding-top: 28px;
+        padding-left: 28px;
+        padding-right: 28px;
+        min-height: 140px;
+        display: flex;
+        align-items: center;
+        gap: 24px;
+      }
+      
+      .featured-icon {
+        width: 80px;
+        height: 80px;
+        min-width: 80px;
+        background: linear-gradient(135deg, #10B981 0%, #34D399 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 36px;
+        color: #ffffff;
+      }
+      
+      .featured-content {
+        flex: 1;
+      }
+      
+      .featured-title {
+        font-size: 22px;
+        font-weight: 700;
+        color: #10B981;
+        margin-bottom: 8px;
+      }
+      
+      .featured-description {
+        font-size: 15px;
+        color: #94A3B8;
+        line-height: 1.5;
+        margin-bottom: 12px;
+      }
+      
+      .featured-metrics {
+        display: flex;
+        gap: 30px;
+      }
+      
+      .featured-metric {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      
+      .featured-metric-value {
+        font-size: 24px;
+        font-weight: 800;
+        color: #10B981;
+      }
+      
+      .featured-metric-label {
+        font-size: 13px;
+        color: #94A3B8;
+        font-weight: 500;
+      }
+      
+      .impact-summary {
+        position: absolute;
+        bottom: 40px;
+        left: 60px;
+        right: 60px;
+        padding-top: 20px;
+        padding-left: 30px;
+        padding-right: 30px;
+        min-height: 70px;
+        background: linear-gradient(90deg, rgba(59, 130, 246, 0.15) 0%, rgba(59, 130, 246, 0.05) 100%);
+        border-left: 4px solid #3B82F6;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      
+      .impact-text {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+      
+      .impact-text i {
+        font-size: 28px;
+        color: #60A5FA;
+      }
+      
+      .impact-text .text {
+        font-size: 17px;
+        font-weight: 600;
+        color: #60A5FA;
+      }
+      
+      .impact-stats {
+        display: flex;
+        gap: 35px;
+      }
+      
+      .stat-item {
+        text-align: center;
+      }
+      
+      .stat-value {
+        font-size: 22px;
+        font-weight: 700;
+        color: #E2E8F0;
+      }
+      
+      .stat-label {
+        font-size: 12px;
+        color: #94A3B8;
+        font-weight: 500;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="content-wrapper">
+            <h2 class="page-title">Platform Delivers Measurable Technical Excellence and Business Impact</h2>
+            
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="card-header">
+                        <div class="achievement-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="achievement-title">Zero API Boilerplate</div>
+                    </div>
+                    <div class="achievement-description">
+                        tRPC eliminates REST endpoint definitions, request/response validation, and client SDK generation with end-to-end type safety from database to UI
+                    </div>
+                    <div class="achievement-metric">
+                        <i class="fas fa-check-circle metric-icon"></i>
+                        <div>
+                            <span class="metric-value">0ms</span>
+                            <span class="metric-label">API overhead</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="card-header">
+                        <div class="achievement-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="achievement-title">Type-Safe Database Queries</div>
+                    </div>
+                    <div class="achievement-description">
+                        Drizzle ORM with TypeScript inference prevents runtime errors by catching schema mismatches, null handling issues, and type coercion bugs at compile time
+                    </div>
+                    <div class="achievement-metric">
+                        <i class="fas fa-bug metric-icon"></i>
+                        <div>
+                            <span class="metric-value">100%</span>
+                            <span class="metric-label">type coverage</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="card-header">
+                        <div class="achievement-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        <div class="achievement-title">High-Performance Matching</div>
+                    </div>
+                    <div class="achievement-description">
+                        AI-powered matching engine processes 10,000+ candidate attributes against job requirements with optimized algorithms delivering results in under 200ms
+                    </div>
+                    <div class="achievement-metric">
+                        <i class="fas fa-clock metric-icon"></i>
+                        <div>
+                            <span class="metric-value">&lt;200ms</span>
+                            <span class="metric-label">match calculation</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="card-header">
+                        <div class="achievement-icon">
+                            <i class="fas fa-clipboard-check"></i>
+                        </div>
+                        <div class="achievement-title">Real-Time Compliance Tracking</div>
+                    </div>
+                    <div class="achievement-description">
+                        Automated monitoring of Saudization quotas, Nitaqat status, and GOSI compliance with instant alerts for violations and proactive recommendations
+                    </div>
+                    <div class="achievement-metric">
+                        <i class="fas fa-sync-alt metric-icon"></i>
+                        <div>
+                            <span class="metric-value">24/7</span>
+                            <span class="metric-label">monitoring</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="featured-achievement">
+                    <div class="featured-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="featured-content">
+                        <div class="featured-title">Automated Government Reporting</div>
+                        <div class="featured-description">
+                            One-click generation of HRDF, GOSI, and Ministry of Labor reports with automatic data validation and formatting compliance, reducing manual effort from 8 hours to 5 minutes per reporting cycle
+                        </div>
+                        <div class="featured-metrics">
+                            <div class="featured-metric">
+                                <div>
+                                    <div class="featured-metric-value">96%</div>
+                                    <div class="featured-metric-label">Time Reduction</div>
+                                </div>
+                            </div>
+                            <div class="featured-metric">
+                                <i class="fas fa-arrow-right" style="font-size: 20px; color: #10B981;"></i>
+                            </div>
+                            <div class="featured-metric">
+                                <div>
+                                    <div class="featured-metric-value">8 hrs → 5 min</div>
+                                    <div class="featured-metric-label">Manual to Automated</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="impact-summary">
+                <div class="impact-text">
+                    <i class="fas fa-chart-line"></i>
+                    <div class="text">Business Impact Metrics</div>
+                </div>
+                <div class="impact-stats">
+                    <div class="stat-item">
+                        <div class="stat-value">10,000+</div>
+                        <div class="stat-label">Attributes Processed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">99.9%</div>
+                        <div class="stat-label">System Uptime</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">85%</div>
+                        <div class="stat-label">Match Accuracy</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">60%</div>
+                        <div class="stat-label">Cost Reduction</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

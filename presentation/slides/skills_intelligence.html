@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #0A0E27 0%, #1a1f3a 100%);
+            font-family: 'Inter', sans-serif;
+            position: relative;
+        }
+        
+        .header {
+            padding-top: 60px;
+            padding-left: 80px;
+            padding-right: 80px;
+            margin-bottom: 0;
+        }
+        
+        .page-title {
+            font-size: 40px;
+            font-weight: 700;
+            color: #00D4FF;
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+        
+        .page-subtitle {
+            font-size: 20px;
+            font-weight: 400;
+            color: #E8EAED;
+            opacity: 0.7;
+            margin-top: 0;
+        }
+        
+        .content-area {
+            display: grid;
+            grid-template-columns: 40% 60%;
+            gap: 50px;
+            padding-left: 80px;
+            padding-right: 80px;
+            padding-top: 50px;
+        }
+        
+        .capabilities-section {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+        
+        .capability-block {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+        
+        .capability-number {
+            font-size: 48px;
+            font-weight: 800;
+            color: #7B61FF;
+            min-width: 80px;
+            line-height: 1;
+            margin-top: 0;
+        }
+        
+        .capability-content {
+            flex: 1;
+        }
+        
+        .capability-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: #00D4FF;
+            margin-top: 0;
+            margin-bottom: 6px;
+        }
+        
+        .capability-description {
+            font-size: 16px;
+            font-weight: 400;
+            color: #E8EAED;
+            opacity: 0.8;
+            margin-top: 0;
+            line-height: 1.5;
+        }
+        
+        .visualization-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .viz-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #00FFA3;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        
+        .skills-network {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding-top: 20px;
+        }
+        
+        .skill-node {
+            background: linear-gradient(135deg, rgba(123, 97, 255, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%);
+            border: 2px solid #7B61FF;
+            padding-top: 20px;
+            padding-left: 16px;
+            padding-right: 16px;
+            min-height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .node-icon {
+            font-size: 32px;
+            margin-top: 0;
+            margin-bottom: 12px;
+        }
+        
+        .node-icon-1 { color: #7B61FF; }
+        .node-icon-2 { color: #00D4FF; }
+        .node-icon-3 { color: #00FFA3; }
+        
+        .node-label {
+            font-size: 16px;
+            font-weight: 600;
+            color: #E8EAED;
+            margin-top: 0;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            padding-top: 20px;
+        }
+        
+        .feature-tag {
+            background: rgba(0, 255, 163, 0.1);
+            border: 1px solid #00FFA3;
+            padding-top: 12px;
+            padding-left: 16px;
+            padding-right: 16px;
+            min-height: 50px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .tag-icon {
+            font-size: 20px;
+            color: #00FFA3;
+        }
+        
+        .tag-text {
+            font-size: 16px;
+            font-weight: 500;
+            color: #E8EAED;
+            margin-top: 0;
+        }
+        
+        .accent-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, #7B61FF 0%, #00D4FF 50%, #00FFA3 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h2 class="page-title">Skills Intelligence Engine</h2>
+            <p class="page-subtitle">Comprehensive taxonomy powering intelligent workforce development</p>
+        </div>
+        
+        <div class="content-area">
+            <div class="capabilities-section">
+                <div class="capability-block">
+                    <div class="capability-number">500+</div>
+                    <div class="capability-content">
+                        <div class="capability-title">Skills Taxonomy</div>
+                        <div class="capability-description">Industry-specific categories with hierarchical relationships and market trends</div>
+                    </div>
+                </div>
+                
+                <div class="capability-block">
+                    <div class="capability-number">AI</div>
+                    <div class="capability-content">
+                        <div class="capability-title">Career Path Prediction</div>
+                        <div class="capability-description">ML-based algorithms predict natural progression and growth trajectories</div>
+                    </div>
+                </div>
+                
+                <div class="capability-block">
+                    <div class="capability-number">360°</div>
+                    <div class="capability-content">
+                        <div class="capability-title">Skills Gap Analysis</div>
+                        <div class="capability-description">Identify missing competencies and development opportunities</div>
+                    </div>
+                </div>
+                
+                <div class="capability-block">
+                    <div class="capability-number">∞</div>
+                    <div class="capability-content">
+                        <div class="capability-title">Learning Resources</div>
+                        <div class="capability-description">Personalized recommendations mapped to each skill</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="visualization-section">
+                <div class="viz-title">Core Intelligence Capabilities</div>
+                
+                <div class="skills-network">
+                    <div class="skill-node">
+                        <div class="node-icon node-icon-1">
+                            <i class="fas fa-sitemap"></i>
+                        </div>
+                        <div class="node-label">Taxonomy Mapping</div>
+                    </div>
+                    
+                    <div class="skill-node">
+                        <div class="node-icon node-icon-2">
+                            <i class="fas fa-chart-network"></i>
+                        </div>
+                        <div class="node-label">Skill Relationships</div>
+                    </div>
+                    
+                    <div class="skill-node">
+                        <div class="node-icon node-icon-3">
+                            <i class="fas fa-route"></i>
+                        </div>
+                        <div class="node-label">Career Paths</div>
+                    </div>
+                    
+                    <div class="skill-node">
+                        <div class="node-icon node-icon-1">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="node-label">Learning Maps</div>
+                    </div>
+                    
+                    <div class="skill-node">
+                        <div class="node-icon node-icon-2">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="node-label">Market Trends</div>
+                    </div>
+                    
+                    <div class="skill-node">
+                        <div class="node-icon node-icon-3">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <div class="node-label">Gap Detection</div>
+                    </div>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature-tag">
+                        <div class="tag-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="tag-text">Technical Skills</div>
+                    </div>
+                    
+                    <div class="feature-tag">
+                        <div class="tag-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="tag-text">Soft Skills</div>
+                    </div>
+                    
+                    <div class="feature-tag">
+                        <div class="tag-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="tag-text">Industry Certifications</div>
+                    </div>
+                    
+                    <div class="feature-tag">
+                        <div class="tag-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="tag-text">Language Proficiency</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="accent-bar"></div>
+    </div>
+</body>
+</html>

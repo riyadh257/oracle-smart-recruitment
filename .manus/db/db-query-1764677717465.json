@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS `workflow_triggers` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `trigger_name` varchar(255) NOT NULL,\n  `description` text,\n  `template_id` int NOT NULL,\n  `trigger_type` enum('job_type','department','volume_threshold','time_based') NOT NULL,\n  `trigger_conditions` text NOT NULL,\n  `is_active` boolean NOT NULL DEFAULT true,\n  `execution_count` int NOT NULL DEFAULT 0,\n  `last_executed_at` timestamp,\n  `created_by` int NOT NULL,\n  `created_at` timestamp NOT NULL DEFAULT (now()),\n  `updated_at` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,\n  CONSTRAINT `workflow_triggers_id` PRIMARY KEY(`id`)\n);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS `workflow_triggers` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `trigger_name` varchar(255) NOT NULL,\n  `description` text,\n  `template_id` int NOT NULL,\n  `trigger_type` enum('job_type','department','volume_threshold','time_based') NOT NULL,\n  `trigger_conditions` text NOT NULL,\n  `is_active` boolean NOT NULL DEFAULT true,\n  `execution_count` int NOT NULL DEFAULT 0,\n  `last_executed_at` timestamp,\n  `created_by` int NOT NULL,\n  `created_at` timestamp NOT NULL DEFAULT (now()),\n  `updated_at` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,\n  CONSTRAINT `workflow_triggers_id` PRIMARY KEY(`id`)\n);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1706
+}

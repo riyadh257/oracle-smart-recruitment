@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: linear-gradient(135deg, #0A1628 0%, #1a2942 100%);
+        font-family: 'Inter', sans-serif;
+        color: #E2E8F0;
+        position: relative;
+      }
+      
+      .content-wrapper {
+        padding-top: 50px;
+        padding-left: 60px;
+        padding-right: 60px;
+        min-height: 720px;
+      }
+      
+      .page-title {
+        font-size: 36px;
+        font-weight: 700;
+        color: #60A5FA;
+        margin-bottom: 40px;
+        line-height: 1.2;
+      }
+      
+      .main-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+      }
+      
+      .section {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+      
+      .section-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 10px;
+      }
+      
+      .section-icon {
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+      }
+      
+      .current-icon {
+        background: linear-gradient(135deg, #10B981 0%, #34D399 100%);
+        color: #ffffff;
+      }
+      
+      .future-icon {
+        background: linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%);
+        color: #ffffff;
+      }
+      
+      .section-title {
+        font-size: 20px;
+        font-weight: 600;
+      }
+      
+      .current-title { color: #10B981; }
+      .future-title { color: #60A5FA; }
+      
+      .feature-box {
+        padding-top: 16px;
+        padding-right: 18px;
+        padding-left: 18px;
+        min-height: 90px;
+        display: flex;
+        gap: 14px;
+        align-items: flex-start;
+      }
+      
+      .current-box {
+        background: rgba(16, 185, 129, 0.08);
+        border-left: 3px solid #10B981;
+      }
+      
+      .future-box {
+        background: rgba(59, 130, 246, 0.08);
+        border-left: 3px solid #3B82F6;
+      }
+      
+      .feature-icon-small {
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+      }
+      
+      .current-feature-icon {
+        background: rgba(16, 185, 129, 0.2);
+        color: #10B981;
+      }
+      
+      .future-feature-icon {
+        background: rgba(59, 130, 246, 0.2);
+        color: #60A5FA;
+      }
+      
+      .feature-content h4 {
+        font-size: 16px;
+        font-weight: 600;
+        color: #E2E8F0;
+        margin-bottom: 4px;
+      }
+      
+      .feature-content p {
+        font-size: 13px;
+        font-weight: 400;
+        color: #94A3B8;
+        line-height: 1.5;
+      }
+      
+      .metrics-footer {
+        position: absolute;
+        bottom: 40px;
+        left: 60px;
+        right: 60px;
+        padding-top: 20px;
+        padding-right: 30px;
+        padding-left: 30px;
+        min-height: 75px;
+        background: rgba(139, 92, 246, 0.1);
+        border: 1px solid rgba(139, 92, 246, 0.3);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .metrics-label {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      
+      .metrics-label i {
+        font-size: 24px;
+        color: #A78BFA;
+      }
+      
+      .metrics-label .text {
+        font-size: 16px;
+        font-weight: 600;
+        color: #A78BFA;
+      }
+      
+      .metrics-grid {
+        display: flex;
+        gap: 35px;
+      }
+      
+      .metric-item {
+        text-align: center;
+      }
+      
+      .metric-value {
+        font-size: 20px;
+        font-weight: 700;
+        color: #E2E8F0;
+        margin-bottom: 4px;
+      }
+      
+      .metric-label {
+        font-size: 12px;
+        color: #94A3B8;
+        font-weight: 500;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="content-wrapper">
+            <h2 class="page-title">Architecture Designed for High-Volume Operations and Future Growth</h2>
+            
+            <div class="main-content">
+                <div class="section">
+                    <div class="section-header">
+                        <div class="section-icon current-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="section-title current-title">Current Performance Optimizations</div>
+                    </div>
+                    
+                    <div class="feature-box current-box">
+                        <div class="feature-icon-small current-feature-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Database Indexing Strategy</h4>
+                            <p>Composite indexes on foreign keys optimize frequent queries (candidate search, job matching, analytics aggregation) with sub-100ms response times</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-box current-box">
+                        <div class="feature-icon-small current-feature-icon">
+                            <i class="fas fa-memory"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Caching Layer</h4>
+                            <p>In-memory caching reduces database load for read-heavy operations (job listings, candidate profiles, analytics dashboards) by 70%</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-box current-box">
+                        <div class="feature-icon-small current-feature-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Async Job Processing</h4>
+                            <p>Long-running tasks (resume parsing, AI matching, email campaigns) execute asynchronously without blocking user requests</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-box current-box">
+                        <div class="feature-icon-small current-feature-icon">
+                            <i class="fas fa-expand-arrows-alt"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Horizontal Scaling Support</h4>
+                            <p>Stateless server architecture enables multiple instances behind load balancer for high availability and traffic distribution</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-box current-box">
+                        <div class="feature-icon-small current-feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Monitoring & Observability</h4>
+                            <p>Track API response times, error rates, and resource utilization for proactive optimization and incident detection</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <div class="section-header">
+                        <div class="section-icon future-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="section-title future-title">Future Scalability Enhancements</div>
+                    </div>
+                    
+                    <div class="feature-box future-box">
+                        <div class="feature-icon-small future-feature-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Redis Caching</h4>
+                            <p>Distributed caching layer with TTL management, cache invalidation strategies, and session storage for multi-server deployments</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-box future-box">
+                        <div class="feature-icon-small future-feature-icon">
+                            <i class="fas fa-stream"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Message Queue (Bull/BullMQ)</h4>
+                            <p>Job queue system for background processing with priority scheduling, retry logic, and job status tracking at scale</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-box future-box">
+                        <div class="feature-icon-small future-feature-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>CDN for Static Assets</h4>
+                            <p>Content delivery network reduces latency for global users by serving images, CSS, and JavaScript from edge locations</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-box future-box">
+                        <div class="feature-icon-small future-feature-icon">
+                            <i class="fas fa-copy"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Database Read Replicas</h4>
+                            <p>Separate read and write operations across multiple database instances to handle 10x traffic growth without performance degradation</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-box future-box">
+                        <div class="feature-icon-small future-feature-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Elasticsearch Integration</h4>
+                            <p>Full-text search engine for advanced candidate/job search with fuzzy matching, filters, and sub-second query response times</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="metrics-footer">
+                <div class="metrics-label">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <div class="text">Performance Targets</div>
+                </div>
+                <div class="metrics-grid">
+                    <div class="metric-item">
+                        <div class="metric-value">&lt; 200ms</div>
+                        <div class="metric-label">API Response Time</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">99.9%</div>
+                        <div class="metric-label">Uptime SLA</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">10,000+</div>
+                        <div class="metric-label">Concurrent Users</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">1M+</div>
+                        <div class="metric-label">Daily Operations</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

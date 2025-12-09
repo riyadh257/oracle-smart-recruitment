@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #0A0E27 0%, #1a1f3a 100%);
+            font-family: 'Inter', sans-serif;
+            position: relative;
+        }
+        
+        .header {
+            padding-top: 60px;
+            padding-left: 80px;
+            padding-right: 80px;
+            margin-bottom: 0;
+        }
+        
+        .page-title {
+            font-size: 40px;
+            font-weight: 700;
+            color: #00D4FF;
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+        
+        .page-subtitle {
+            font-size: 20px;
+            font-weight: 400;
+            color: #E8EAED;
+            opacity: 0.7;
+            margin-top: 0;
+        }
+        
+        .agents-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding-left: 80px;
+            padding-right: 80px;
+            padding-top: 50px;
+        }
+        
+        .agent-card {
+            background: rgba(123, 97, 255, 0.08);
+            border: 2px solid;
+            min-height: 240px;
+            padding-top: 32px;
+            padding-left: 32px;
+            padding-right: 32px;
+        }
+        
+        .agent-card-1 {
+            border-color: #7B61FF;
+        }
+        
+        .agent-card-2 {
+            border-color: #00D4FF;
+        }
+        
+        .agent-card-3 {
+            border-color: #00FFA3;
+        }
+        
+        .agent-card-4 {
+            border-color: #FF6B9D;
+        }
+        
+        .agent-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 0;
+            margin-top: 0;
+        }
+        
+        .agent-icon {
+            font-size: 48px;
+            min-width: 60px;
+        }
+        
+        .icon-purple { color: #7B61FF; }
+        .icon-cyan { color: #00D4FF; }
+        .icon-green { color: #00FFA3; }
+        .icon-pink { color: #FF6B9D; }
+        
+        .agent-info {
+            flex: 1;
+        }
+        
+        .agent-name {
+            font-size: 26px;
+            font-weight: 700;
+            color: #E8EAED;
+            margin-top: 0;
+            margin-bottom: 4px;
+        }
+        
+        .agent-function {
+            font-size: 16px;
+            font-weight: 500;
+            margin-top: 0;
+        }
+        
+        .function-purple { color: #7B61FF; }
+        .function-cyan { color: #00D4FF; }
+        .function-green { color: #00FFA3; }
+        .function-pink { color: #FF6B9D; }
+        
+        .agent-features {
+            margin-top: 20px;
+            padding-top: 0;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .feature-bullet {
+            font-size: 8px;
+            margin-top: 8px;
+        }
+        
+        .bullet-purple { color: #7B61FF; }
+        .bullet-cyan { color: #00D4FF; }
+        .bullet-green { color: #00FFA3; }
+        .bullet-pink { color: #FF6B9D; }
+        
+        .feature-text {
+            font-size: 16px;
+            font-weight: 400;
+            color: #E8EAED;
+            opacity: 0.85;
+            line-height: 1.5;
+        }
+        
+        .accent-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, #7B61FF 0%, #00D4FF 33%, #00FFA3 66%, #FF6B9D 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h2 class="page-title">Autonomous AI Agents</h2>
+            <p class="page-subtitle">Intelligent automation across the recruitment lifecycle</p>
+        </div>
+        
+        <div class="agents-grid">
+            <div class="agent-card agent-card-1">
+                <div class="agent-header">
+                    <div class="agent-icon icon-purple">
+                        <i class="fas fa-filter"></i>
+                    </div>
+                    <div class="agent-info">
+                        <div class="agent-name">Screening Agent</div>
+                        <div class="agent-function function-purple">Auto-Grading A-F</div>
+                    </div>
+                </div>
+                <div class="agent-features">
+                    <div class="feature-item">
+                        <div class="feature-bullet bullet-purple"><i class="fas fa-circle"></i></div>
+                        <div class="feature-text">Automatic candidate classification and scoring</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-bullet bullet-purple"><i class="fas fa-circle"></i></div>
+                        <div class="feature-text">Red flags detection and risk assessment</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-bullet bullet-purple"><i class="fas fa-circle"></i></div>
+                        <div class="feature-text">Auto-rejection for scores below 40%</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="agent-card agent-card-2">
+                <div class="agent-header">
+                    <div class="agent-icon icon-cyan">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="agent-info">
+                        <div class="agent-name">Scheduling Agent</div>
+                        <div class="agent-function function-cyan">Calendar Integration</div>
+                    </div>
+                </div>
+                <div class="agent-features">
+                    <div class="feature-item">
+                        <div class="feature-bullet bullet-cyan"><i class="fas fa-circle"></i></div>
+                        <div class="feature-text">Google, Outlook, Oracle Calendar sync</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-bullet bullet-cyan"><i class="fas fa-circle"></i></div>
+                        <div class="feature-text">Automatic conflict resolution</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-bullet bullet-cyan"><i class="fas fa-circle"></i></div>
+                        <div class="feature-text">Timezone management and reminders</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="agent-card agent-card-3">
+                <div class="agent-header">
+                    <div class="agent-icon icon-green">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <div class="agent-info">
+                        <div class="agent-name">Follow-up Agent</div>
+                        <div class="agent-function function-green">Multi-Channel Communication</div>
+                    </div>
+                </div>
+                <div class="agent-features">
+                    <div class="feature-item">
+                        <div class="feature-bullet bullet-green"><i class="fas fa-circle"></i></div>
+                        <div class="feature-text">Email, SMS, WhatsApp integration</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-bullet bullet-green"><i class="fas fa-circle"></i></div>
+                        <div class="feature-text">Personalized message templates</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-bullet bullet-green"><i class="fas fa-circle"></i></div>
+                        <div class="feature-text">Engagement tracking and sentiment analysis</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="agent-card agent-card-4">
+                <div class="agent-header">
+                    <div class="agent-icon icon-pink">
+                        <i class="fas fa-magnifying-glass-chart"></i>
+                    </div>
+                    <div class="agent-info">
+                        <div class="agent-name">Research Agent</div>
+                        <div class="agent-function function-pink">Profile Enrichment</div>
+                    </div>
+                </div>
+                <div class="agent-features">
+                    <div class="feature-item">
+                        <div class="feature-bullet bullet-pink"><i class="fas fa-circle"></i></div>
+                        <div class="feature-text">Automatic profile data enrichment</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-bullet bullet-pink"><i class="fas fa-circle"></i></div>
+                        <div class="feature-text">Employment and education verification</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-bullet bullet-pink"><i class="fas fa-circle"></i></div>
+                        <div class="feature-text">Market salary data and competitive intelligence</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="accent-bar"></div>
+    </div>
+</body>
+</html>

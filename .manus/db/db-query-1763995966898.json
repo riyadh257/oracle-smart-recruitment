@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS `whatsapp_messages` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `recipient_phone` varchar(20) NOT NULL,\n  `recipient_name` varchar(255),\n  `message_type` varchar(50) NOT NULL,\n  `message_body` text NOT NULL,\n  `status` enum('pending', 'sent', 'delivered', 'read', 'failed') NOT NULL DEFAULT 'pending',\n  `whatsapp_message_id` varchar(255),\n  `error_message` text,\n  `sent_at` timestamp,\n  `delivered_at` timestamp,\n  `read_at` timestamp,\n  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,\n  CONSTRAINT `whatsapp_messages_id` PRIMARY KEY(`id`)\n);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS `whatsapp_messages` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `recipient_phone` varchar(20) NOT NULL,\n  `recipient_name` varchar(255),\n  `message_type` varchar(50) NOT NULL,\n  `message_body` text NOT NULL,\n  `status` enum('pending', 'sent', 'delivered', 'read', 'failed') NOT NULL DEFAULT 'pending',\n  `whatsapp_message_id` varchar(255),\n  `error_message` text,\n  `sent_at` timestamp,\n  `delivered_at` timestamp,\n  `read_at` timestamp,\n  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,\n  CONSTRAINT `whatsapp_messages_id` PRIMARY KEY(`id`)\n);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1753
+}

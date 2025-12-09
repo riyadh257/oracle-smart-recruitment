@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS `ai_resume_analysis` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `candidate_id` int NOT NULL,\n  `job_id` int,\n  `resume_text` text NOT NULL,\n  `extracted_skills` text,\n  `extracted_experience` text,\n  `extracted_education` text,\n  `match_score` int,\n  `ai_recommendation` text,\n  `strengths` text,\n  `weaknesses` text,\n  `overall_assessment` text,\n  `analyzed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,\n  CONSTRAINT `ai_resume_analysis_id` PRIMARY KEY(`id`)\n);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS `ai_resume_analysis` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `candidate_id` int NOT NULL,\n  `job_id` int,\n  `resume_text` text NOT NULL,\n  `extracted_skills` text,\n  `extracted_experience` text,\n  `extracted_education` text,\n  `match_score` int,\n  `ai_recommendation` text,\n  `strengths` text,\n  `weaknesses` text,\n  `overall_assessment` text,\n  `analyzed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,\n  CONSTRAINT `ai_resume_analysis_id` PRIMARY KEY(`id`)\n);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1728
+}

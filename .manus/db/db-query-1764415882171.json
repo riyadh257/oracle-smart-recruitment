@@ -1,0 +1,310 @@
+{
+  "query": "SHOW TABLES;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute SHOW TABLES;",
+  "rows": [
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "__drizzle_migrations"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "ai_interview_analyses"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "ai_interview_feedback"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "ai_resume_analysis"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "analytics_reports"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "application_forms"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "availability_slots"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "background_checks"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "bulk_operations"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "calendar_integrations"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "candidateNotes"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "candidate_availability"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "candidate_documents"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "candidate_mobile_tokens"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "candidate_portal_access"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "candidate_portal_sessions"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "candidate_preferences"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "candidate_progress"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "candidate_skills"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "candidate_skills_detailed"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "candidate_tags"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "candidate_timeline"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "candidates"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "career_pages"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "career_path_skills"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "career_paths"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "chat_messages"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "chat_rooms"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "complianceTickets"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "crm_campaigns"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "crm_interactions"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "crm_segments"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "crm_touchpoints"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "email_delivery_log"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "email_notifications"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "email_templates"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "employee_documents"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "evaluations"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "feedback_analysis"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "feedback_templates"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "form_fields"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "generated_reports"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "integration_logs"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "interview_analyses"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "interview_bookings"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "interview_email_templates"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "interview_feedback"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "interview_notes"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "interviewer_availability"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "interviews"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "job_applications"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "job_matches"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "job_posting_skills"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "job_postings"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "job_skills"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "language_preferences"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "linkedin_profiles"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "matching_history"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "mobile_api_tokens"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "notifications"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "offer_letters"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "offer_signatures"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "offer_templates"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "onboarding_schedules"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "onboarding_tasks"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "page_sections"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "pool_campaigns"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "pool_engagement"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "pool_members"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "pool_tags"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "referral_rewards"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "referral_settings"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "referrals"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "report_schedules"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "report_templates"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "reports"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "scheduled_reminders"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "scheduled_reports"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "search_history"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "skills_match_results"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "skills_taxonomy"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "sms_delivery_log"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "sms_messages"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "sms_templates"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "talent_pools"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "training_recommendations"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "transcriptions"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "translations"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "users"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "video_interviews"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "video_meetings"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "whatsapp_messages"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "workflow_analytics"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "workflow_analytics_detailed"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "workflow_history"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "workflow_integrations"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "workflow_metrics"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "workflow_rules"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "workflow_schedule_executions"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "workflow_schedules"
+    }
+  ],
+  "messages": [],
+  "stdout": "Tables_in_hjcHA4SjAwhM6aP28vcAkH\n__drizzle_migrations\nai_interview_analyses\nai_interview_feedback\nai_resume_analysis\nanalytics_reports\napplication_forms\navailability_slots\nbackground_checks\nbulk_operations\ncalendar_integrations\ncandidateNotes\ncandidate_availability\ncandidate_documents\ncandidate_mobile_tokens\ncandidate_portal_access\ncandidate_portal_sessions\ncandidate_preferences\ncandidate_progress\ncandidate_skills\ncandidate_skills_detailed\ncandidate_tags\ncandidate_timeline\ncandidates\ncareer_pages\ncareer_path_skills\ncareer_paths\nchat_messages\nchat_rooms\ncomplianceTickets\ncrm_campaigns\ncrm_interactions\ncrm_segments\ncrm_touchpoints\nemail_delivery_log\nemail_notifications\nemail_templates\nemployee_documents\nevaluations\nfeedback_analysis\nfeedback_templates\nform_fields\ngenerated_reports\nintegration_logs\ninterview_analyses\ninterview_bookings\ninterview_email_templates\ninterview_feedback\ninterview_notes\ninterviewer_availability\ninterviews\njob_applications\njob_matches\njob_posting_skills\njob_postings\njob_skills\nlanguage_preferences\nlinkedin_profiles\nmatching_history\nmobile_api_tokens\nnotifications\noffer_letters\noffer_signatures\noffer_templates\nonboarding_schedules\nonboarding_tasks\npage_sections\npool_campaigns\npool_engagement\npool_members\npool_tags\nreferral_rewards\nreferral_settings\nreferrals\nreport_schedules\nreport_templates\nreports\nscheduled_reminders\nscheduled_reports\nsearch_history\nskills_match_results\nskills_taxonomy\nsms_delivery_log\nsms_messages\nsms_templates\ntalent_pools\ntraining_recommendations\ntranscriptions\ntranslations\nusers\nvideo_interviews\nvideo_meetings\nwhatsapp_messages\nworkflow_analytics\nworkflow_analytics_detailed\nworkflow_history\nworkflow_integrations\nworkflow_metrics\nworkflow_rules\nworkflow_schedule_executions\nworkflow_schedules\n",
+  "stderr": "",
+  "execution_time_ms": 2466
+}

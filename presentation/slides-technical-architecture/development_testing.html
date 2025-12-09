@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: linear-gradient(135deg, #0A1628 0%, #1a2942 100%);
+        font-family: 'Inter', sans-serif;
+        color: #E2E8F0;
+        position: relative;
+      }
+      
+      .content-wrapper {
+        padding-top: 60px;
+        padding-left: 60px;
+        padding-right: 60px;
+        min-height: 720px;
+      }
+      
+      .page-title {
+        font-size: 36px;
+        font-weight: 700;
+        color: #60A5FA;
+        margin-bottom: 45px;
+        line-height: 1.2;
+      }
+      
+      .workflow-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        margin-bottom: 30px;
+      }
+      
+      .workflow-card {
+        background: rgba(59, 130, 246, 0.05);
+        border: 1px solid rgba(59, 130, 246, 0.2);
+        padding-top: 22px;
+        padding-left: 22px;
+        padding-right: 22px;
+        min-height: 140px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      
+      .card-header {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      
+      .card-icon {
+        width: 46px;
+        height: 46px;
+        min-width: 46px;
+        background: linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        color: #ffffff;
+      }
+      
+      .card-title {
+        font-size: 19px;
+        font-weight: 600;
+        color: #E2E8F0;
+      }
+      
+      .card-description {
+        font-size: 14px;
+        font-weight: 400;
+        color: #94A3B8;
+        line-height: 1.5;
+      }
+      
+      .testing-section {
+        padding-top: 25px;
+        border-top: 1px solid rgba(96, 165, 250, 0.2);
+      }
+      
+      .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      
+      .section-title {
+        font-size: 16px;
+        font-weight: 600;
+        color: #94A3B8;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      
+      .testing-strategy {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+      
+      .strategy-item {
+        background: rgba(16, 185, 129, 0.08);
+        border: 1px solid rgba(16, 185, 129, 0.3);
+        padding-top: 18px;
+        padding-left: 18px;
+        padding-right: 18px;
+        min-height: 110px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+      }
+      
+      .strategy-icon {
+        width: 48px;
+        height: 48px;
+        background: linear-gradient(135deg, #10B981 0%, #34D399 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        color: #ffffff;
+      }
+      
+      .strategy-name {
+        font-size: 16px;
+        font-weight: 600;
+        color: #E2E8F0;
+      }
+      
+      .strategy-desc {
+        font-size: 13px;
+        color: #94A3B8;
+        line-height: 1.4;
+      }
+      
+      .quality-footer {
+        position: absolute;
+        bottom: 40px;
+        left: 60px;
+        right: 60px;
+        padding-top: 18px;
+        padding-left: 25px;
+        padding-right: 25px;
+        min-height: 65px;
+        background: linear-gradient(90deg, rgba(139, 92, 246, 0.15) 0%, rgba(139, 92, 246, 0.05) 100%);
+        border-left: 4px solid #8B5CF6;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      
+      .quality-text {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      
+      .quality-text i {
+        font-size: 26px;
+        color: #A78BFA;
+      }
+      
+      .quality-text .text {
+        font-size: 16px;
+        font-weight: 600;
+        color: #A78BFA;
+      }
+      
+      .quality-tools {
+        display: flex;
+        gap: 12px;
+      }
+      
+      .tool-badge {
+        padding: 6px 14px;
+        background: rgba(139, 92, 246, 0.2);
+        border: 1px solid rgba(139, 92, 246, 0.4);
+        font-size: 13px;
+        color: #C4B5FD;
+        font-weight: 500;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="content-wrapper">
+            <h2 class="page-title">Type-Safe Development with Automated Testing and CI/CD Pipeline</h2>
+            
+            <div class="workflow-grid">
+                <div class="workflow-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fab fa-js"></i>
+                        </div>
+                        <div class="card-title">End-to-End Type Safety</div>
+                    </div>
+                    <div class="card-description">
+                        TypeScript inference eliminates entire classes of bugs across client, server, and database layers with compile-time validation
+                    </div>
+                </div>
+                
+                <div class="workflow-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-vial"></i>
+                        </div>
+                        <div class="card-title">Vitest Test Suite</div>
+                    </div>
+                    <div class="card-description">
+                        Validates tRPC procedures, authentication flows, and business logic with isolated test contexts and mock data
+                    </div>
+                </div>
+                
+                <div class="workflow-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="card-title">Drizzle Migrations</div>
+                    </div>
+                    <div class="card-description">
+                        Manage database schema changes with version control and rollback capabilities ensuring data integrity
+                    </div>
+                </div>
+                
+                <div class="workflow-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <div class="card-title">Hot Module Reload</div>
+                    </div>
+                    <div class="card-description">
+                        tsx watch mode for instant server reload and Vite HMR for client-side changes accelerating development velocity
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testing-section">
+                <div class="section-header">
+                    <div class="section-title">Testing Strategy</div>
+                </div>
+                
+                <div class="testing-strategy">
+                    <div class="strategy-item">
+                        <div class="strategy-icon">
+                            <i class="fas fa-cube"></i>
+                        </div>
+                        <div class="strategy-name">Unit Tests</div>
+                        <div class="strategy-desc">Business logic validation with isolated test cases</div>
+                    </div>
+                    
+                    <div class="strategy-item">
+                        <div class="strategy-icon">
+                            <i class="fas fa-link"></i>
+                        </div>
+                        <div class="strategy-name">Integration Tests</div>
+                        <div class="strategy-desc">Database operations and API endpoint verification</div>
+                    </div>
+                    
+                    <div class="strategy-item">
+                        <div class="strategy-icon">
+                            <i class="fas fa-user-check"></i>
+                        </div>
+                        <div class="strategy-name">Mock Contexts</div>
+                        <div class="strategy-desc">Authentication and authorization flow testing</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quality-footer">
+                <div class="quality-text">
+                    <i class="fas fa-award"></i>
+                    <div class="text">Code Quality Enforcement</div>
+                </div>
+                <div class="quality-tools">
+                    <span class="tool-badge">Prettier</span>
+                    <span class="tool-badge">TypeScript Strict</span>
+                    <span class="tool-badge">ESLint</span>
+                    <span class="tool-badge">Vitest</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

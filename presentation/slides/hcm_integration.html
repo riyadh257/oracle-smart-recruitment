@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التكامل مع Oracle Cloud HCM</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: transparent;
+        }
+
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: white;
+            position: relative;
+        }
+
+        .header-bar {
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, #1E3A8A 0%, #3B82F6 100%);
+        }
+
+        .content-wrapper {
+            text-align: center;
+        }
+
+        .page-title {
+            font-size: 42px;
+            font-weight: 700;
+            color: #1E3A8A;
+            margin-bottom: 20px; /* was 25px */
+            line-height: 1.4;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            font-weight: 600;
+            color: #3B82F6;
+            margin-bottom: 14px; /* was 20px */
+        }
+
+        .intro-text {
+            font-size: 17px;
+            font-weight: 400;
+            color: #1F2937;
+            line-height: 1.7;
+            max-width: 950px;
+            margin: 0 auto 28px; /* was 45px */
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* was repeat(2, 1fr) */
+            gap: 16px; /* was 30px */
+            max-width: 1100px;
+            margin: 0 auto 20px; /* was 35px */
+        }
+
+        .benefit-box {
+            background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
+            border-top: 4px solid #3B82F6; /* was 5px */
+            text-align: center;
+            min-height: 0; /* allow natural height; was 160px */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .benefit-icon {
+            font-size: 48px;
+            margin-bottom: 10px; /* was 15px */
+        }
+
+        .benefit-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1E3A8A;
+            margin-bottom: 8px; /* was 10px */
+            line-height: 1.3;
+        }
+
+        .benefit-desc {
+            font-size: 15px;
+            font-weight: 400;
+            color: #4B5563;
+            line-height: 1.6;
+            max-width: 260px; /* tighter to fit 4 columns without excessive wrap */
+        }
+
+        .highlight-banner {
+            background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%);
+            color: white;
+            text-align: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .highlight-text {
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header-bar"></div>
+
+        <div class="content-wrapper" style="padding: 55px 80px 18px;"> <!-- keep top padding 55px; reduce bottom to 18px -->
+            <h2 class="page-title">التكامل مع Oracle Cloud HCM</h2>
+
+            <p class="subtitle">حل موحد يبسط النظام التقني للموارد البشرية</p>
+
+            <p class="intro-text">
+                كجزء من Oracle Cloud HCM، يوفر Oracle Recruiting تكاملاً سلساً مع جميع عمليات الموارد البشرية من التوظيف إلى التقاعد، مما يخلق نظاماً بيئياً متكاملاً وفعالاً.
+            </p>
+
+            <div class="benefits-grid">
+                <div class="benefit-box" style="padding: 18px 22px;"> <!-- was 30px 35px -->
+                    <div class="benefit-icon">🔧</div>
+                    <div class="benefit-title">نظام بيئي تقني مبسط</div>
+                    <div class="benefit-desc">
+                        تقليل التعقيدات والتكاليف التقنية من خلال منصة موحدة
+                    </div>
+                </div>
+
+                <div class="benefit-box" style="padding: 18px 22px;">
+                    <div class="benefit-icon">📊</div>
+                    <div class="benefit-title">بيانات موحدة</div>
+                    <div class="benefit-desc">
+                        رؤية شاملة لأنشطة التوظيف والموارد البشرية في مكان واحد
+                    </div>
+                </div>
+
+                <div class="benefit-box" style="padding: 18px 22px;">
+                    <div class="benefit-icon">💡</div>
+                    <div class="benefit-title">رؤى جديدة</div>
+                    <div class="benefit-desc">
+                        تحليلات متقدمة عبر دورة حياة الموظف الكاملة
+                    </div>
+                </div>
+
+                <div class="benefit-box" style="padding: 18px 22px;">
+                    <div class="benefit-icon">👥</div>
+                    <div class="benefit-title">تجربة مستخدم متسقة</div>
+                    <div class="benefit-desc">
+                        واجهة موحدة لجميع عمليات الموارد البشرية
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight-banner" style="padding: 16px 40px;"> <!-- was 25px 40px -->
+                <p class="highlight-text">
+                    تحديثات تلقائية وميزات جديدة بدون تعقيدات الترقية - استفد من الابتكار المستمر دون انقطاع العمل
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

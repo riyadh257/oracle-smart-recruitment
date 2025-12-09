@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      .slide-container {
+        width: 1280px;
+        min-height: 720px;
+        background: #0A0E27;
+        font-family: 'Inter', sans-serif;
+        color: #E2E8F0;
+        position: relative;
+        padding-top: 60px;
+      }
+      
+      .grid-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: 
+          linear-gradient(rgba(96, 165, 250, 0.02) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(96, 165, 250, 0.02) 1px, transparent 1px);
+        background-size: 40px 40px;
+        pointer-events: none;
+      }
+      
+      .content {
+        position: relative;
+        z-index: 1;
+        padding-left: 80px;
+        padding-right: 80px;
+      }
+      
+      .page-title {
+        font-size: 36px;
+        font-weight: 700;
+        color: #60A5FA;
+        margin-bottom: 40px;
+        letter-spacing: -0.5px;
+      }
+      
+      .diagram-container {
+        position: relative;
+        width: 1120px;
+        height: 520px;
+        margin-top: 20px;
+      }
+      
+      .entity-box {
+        position: absolute;
+        background: rgba(15, 23, 42, 0.8);
+        border: 2px solid;
+        width: 240px;
+        padding-top: 16px;
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+      
+      .entity-name {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 12px;
+        padding-left: 8px;
+        border-left: 3px solid;
+      }
+      
+      .entity-field {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 12px;
+        color: #94A3B8;
+        margin-bottom: 6px;
+        display: flex;
+        justify-content: space-between;
+      }
+      
+      .field-name {
+        color: #CBD5E1;
+      }
+      
+      .field-type {
+        color: #64748B;
+        font-style: italic;
+      }
+      
+      .users-entity {
+        top: 0;
+        left: 440px;
+        border-color: #60A5FA;
+      }
+      
+      .users-entity .entity-name {
+        color: #60A5FA;
+        border-color: #60A5FA;
+      }
+      
+      .candidates-entity {
+        top: 160px;
+        left: 80px;
+        border-color: #34D399;
+      }
+      
+      .candidates-entity .entity-name {
+        color: #34D399;
+        border-color: #34D399;
+      }
+      
+      .employers-entity {
+        top: 160px;
+        left: 800px;
+        border-color: #34D399;
+      }
+      
+      .employers-entity .entity-name {
+        color: #34D399;
+        border-color: #34D399;
+      }
+      
+      .jobs-entity {
+        top: 340px;
+        left: 680px;
+        border-color: #F59E0B;
+      }
+      
+      .jobs-entity .entity-name {
+        color: #F59E0B;
+        border-color: #F59E0B;
+      }
+      
+      .applications-entity {
+        top: 340px;
+        left: 320px;
+        border-color: #F59E0B;
+      }
+      
+      .applications-entity .entity-name {
+        color: #F59E0B;
+        border-color: #F59E0B;
+      }
+      
+      .connection-line {
+        position: absolute;
+        height: 2px;
+        background: rgba(96, 165, 250, 0.3);
+        transform-origin: left center;
+      }
+      
+      .line-1 {
+        width: 180px;
+        top: 90px;
+        left: 440px;
+        transform: rotate(-35deg);
+      }
+      
+      .line-2 {
+        width: 180px;
+        top: 90px;
+        left: 680px;
+        transform: rotate(35deg);
+      }
+      
+      .line-3 {
+        width: 140px;
+        top: 310px;
+        left: 200px;
+      }
+      
+      .line-4 {
+        width: 140px;
+        top: 310px;
+        left: 800px;
+        transform: rotate(180deg);
+      }
+      
+      .line-5 {
+        width: 120px;
+        top: 360px;
+        left: 440px;
+      }
+      
+      .legend {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        display: flex;
+        gap: 40px;
+        font-size: 13px;
+        color: #94A3B8;
+      }
+      
+      .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      
+      .legend-color {
+        width: 20px;
+        height: 3px;
+      }
+      
+      .color-blue { background: #60A5FA; }
+      .color-green { background: #34D399; }
+      .color-amber { background: #F59E0B; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="grid-overlay"></div>
+        
+        <div class="content">
+            <h1 class="page-title">Core Data Model & Entities</h1>
+            
+            <div class="diagram-container">
+                <div class="connection-line line-1"></div>
+                <div class="connection-line line-2"></div>
+                <div class="connection-line line-3"></div>
+                <div class="connection-line line-4"></div>
+                <div class="connection-line line-5"></div>
+                
+                <div class="entity-box users-entity">
+                    <div class="entity-name">Users</div>
+                    <div class="entity-field">
+                        <span class="field-name">id</span>
+                        <span class="field-type">int PK</span>
+                    </div>
+                    <div class="entity-field">
+                        <span class="field-name">openId</span>
+                        <span class="field-type">varchar(64)</span>
+                    </div>
+                    <div class="entity-field">
+                        <span class="field-name">email</span>
+                        <span class="field-type">varchar(320)</span>
+                    </div>
+                    <div class="entity-field">
+                        <span class="field-name">role</span>
+                        <span class="field-type">enum</span>
+                    </div>
+                </div>
+                
+                <div class="entity-box candidates-entity">
+                    <div class="entity-name">Candidates</div>
+                    <div class="entity-field">
+                        <span class="field-name">id</span>
+                        <span class="field-type">int PK</span>
+                    </div>
+                    <div class="entity-field">
+                        <span class="field-name">userId</span>
+                        <span class="field-type">int FK</span>
+                    </div>
+                    <div class="entity-field">
+                        <span class="field-name">technicalSkills</span>
+                        <span class="field-type">json</span>
+                    </div>
+                    <div class="entity-field">
+                        <span class="field-name">aiProfileScore</span>
+                        <span class="field-type">int</span>
+                    </div>
+                    <div class="entity-field">
+                        <span class="field-name">aiInferredAttributes</span>
+                        <span class="field-type">json</span>
+                    </div>
+                </div>
+                
+                <div class="entity-box employers-entity">
+                    <div class="entity-name">Employers</div>
+                    <div class="entity-field">
+                        <span class="field-name">id</span>
+                        <span class="field-type">int PK</span>
+                    </div>
+                    <div class="entity-field">
+                        <span class="field-name">userId</span>
+                        <span class="field-type">int FK</span>
+                    </div>
+                    <div class="entity-field">
+                        <span class="field-name">companyName</span>
+                        <span class="field-type">varchar(255)</span>
+                    </div>
+                    <div class="entity-field">
+                        <span class="field-name">cultureAttributes</span>
+                        <span class="field-type">json</span>
+                    </div>
+                    <div class="entity-field">
+                        <span class="field-name">billingModel</span>
+                        <span class="field-type">enum</span>
+                    </div>
+                </div>
+                
+                <div class="entity-box jobs-entity">
+                    <div class="entity-name">Jobs</div>
+                    <div class="entity-field">
+                        <span class="field-name">id</span>
+                        <span class="field-type">int PK</span>
+                    </div>
+                    <div class="entity-field">
+                        <span class="field-name">employerId</span>
+                        <span class="field-type">int FK</span>
+                    </div>
+                    <div class="entity-field">
+                        <span class="field-name">requiredSkills</span>
+                        <span class="field-type">json</span>
+                    </div>
+                    <div class="entity-field">
+                        <span class="field-name">aiInferredRequirements</span>
+                        <span class="field-type">json</span>
+                    </div>
+                    <div class="entity-field">
+                        <span class="field-name">atsJobId</span>
+                        <span class="field-type">varchar(255)</span>
+                    </div>
+                </div>
+                
+                <div class="entity-box applications-entity">
+                    <div class="entity-name">Applications</div>
+                    <div class="entity-field">
+                        <span class="field-name">id</span>
+                        <span class="field-type">int PK</span>
+                    </div>
+                    <div class="entity-field">
+                        <span class="field-name">candidateId</span>
+                        <span class="field-type">int FK</span>
+                    </div>
+                    <div class="entity-field">
+                        <span class="field-name">jobId</span>
+                        <span class="field-type">int FK</span>
+                    </div>
+                    <div class="entity-field">
+                        <span class="field-name">overallMatchScore</span>
+                        <span class="field-type">int</span>
+                    </div>
+                    <div class="entity-field">
+                        <span class="field-name">matchBreakdown</span>
+                        <span class="field-type">json</span>
+                    </div>
+                </div>
+                
+                <div class="legend">
+                    <div class="legend-item">
+                        <div class="legend-color color-blue"></div>
+                        <span>Authentication Layer</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color color-green"></div>
+                        <span>Profile Entities</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color color-amber"></div>
+                        <span>Transactional Entities</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

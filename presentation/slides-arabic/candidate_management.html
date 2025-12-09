@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font-family: 'Cairo', sans-serif; direction: rtl; }
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: #ffffff;
+        padding-top: 50px;
+      }
+      .header {
+        text-align: center;
+        margin-bottom: 45px;
+      }
+      .title {
+        font-size: 32px;
+        font-weight: 700;
+        color: #1e3a8a;
+        margin-bottom: 10px;
+      }
+      .subtitle {
+        font-size: 18px;
+        color: #4b5563;
+      }
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 60px;
+      }
+      .feature-card {
+        background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%);
+        border: 2px solid #e5e7eb;
+        padding-top: 25px;
+        min-height: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .feature-icon {
+        font-size: 42px;
+        margin-bottom: 15px;
+      }
+      .icon-blue {
+        color: #3b82f6;
+      }
+      .icon-green {
+        color: #10b981;
+      }
+      .icon-indigo {
+        color: #6366f1;
+      }
+      .feature-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: #1e3a8a;
+        margin-bottom: 10px;
+        padding: 0 15px;
+      }
+      .feature-description {
+        font-size: 15px;
+        color: #4b5563;
+        line-height: 1.5;
+        padding: 0 15px;
+      }
+      .highlight {
+        color: #3b82f6;
+        font-weight: 600;
+      }
+      .success {
+        color: #10b981;
+        font-weight: 600;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1 class="title">إدارة المرشحين بالذكاء الاصطناعي</h1>
+            <p class="subtitle">ميزات متقدمة لإدارة فعالة وذكية للمرشحين</p>
+        </div>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon icon-blue">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3 class="feature-title">تحليل السير الذاتية بالذكاء الاصطناعي</h3>
+                <p class="feature-description">
+                    تحليل تلقائي للسير الذاتية باستخدام <span class="highlight">معالجة اللغة الطبيعية</span> لاستخراج المعلومات بدقة
+                </p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon icon-green">
+                    <i class="fas fa-magic"></i>
+                </div>
+                <h3 class="feature-title">استخراج تلقائي للمهارات</h3>
+                <p class="feature-description">
+                    استخراج <span class="success">تلقائي للمهارات والخبرات</span> من السير الذاتية وتصنيفها بشكل منظم
+                </p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon icon-indigo">
+                    <i class="fas fa-file-upload"></i>
+                </div>
+                <h3 class="feature-title">إضافة جماعية</h3>
+                <p class="feature-description">
+                    استيراد جماعي للمرشحين من ملفات <span class="highlight">CSV وExcel</span> لتوفير الوقت والجهد
+                </p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon icon-blue">
+                    <i class="fab fa-chrome"></i>
+                </div>
+                <h3 class="feature-title">امتداد Chrome متقدم</h3>
+                <p class="feature-description">
+                    التقاط الملفات الشخصية مباشرة من <span class="success">LinkedIn وBayt وIndeed وGulfTalent</span>
+                </p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon icon-green">
+                    <i class="fas fa-search"></i>
+                </div>
+                <h3 class="feature-title">بحث متقدم</h3>
+                <p class="feature-description">
+                    بحث قوي مع <span class="highlight">مرشحات ذكية</span> ومعاملات Boolean للعثور على المرشح المثالي
+                </p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon icon-indigo">
+                    <i class="fas fa-percentage"></i>
+                </div>
+                <h3 class="feature-title">مطابقة ذكية بنسب مئوية</h3>
+                <p class="feature-description">
+                    مطابقة المرشحين بالوظائف مع <span class="success">نسب مئوية دقيقة</span> بناءً على المهارات والخبرات
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

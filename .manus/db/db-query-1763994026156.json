@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS `report_schedules` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `name` varchar(255) NOT NULL,\n  `report_type` enum('weekly', 'monthly', 'quarterly', 'custom') NOT NULL,\n  `frequency` varchar(100) NOT NULL,\n  `recipients` text NOT NULL,\n  `include_kpis` text,\n  `filters` text,\n  `is_active` int NOT NULL DEFAULT 1,\n  `last_run_at` timestamp,\n  `next_run_at` timestamp,\n  `created_by` int,\n  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,\n  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,\n  CONSTRAINT `report_schedules_id` PRIMARY KEY(`id`)\n);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS `report_schedules` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `name` varchar(255) NOT NULL,\n  `report_type` enum('weekly', 'monthly', 'quarterly', 'custom') NOT NULL,\n  `frequency` varchar(100) NOT NULL,\n  `recipients` text NOT NULL,\n  `include_kpis` text,\n  `filters` text,\n  `is_active` int NOT NULL DEFAULT 1,\n  `last_run_at` timestamp,\n  `next_run_at` timestamp,\n  `created_by` int,\n  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,\n  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,\n  CONSTRAINT `report_schedules_id` PRIMARY KEY(`id`)\n);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1754
+}

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #0a1628;
+            font-family: 'Inter', sans-serif;
+            color: #e0e7ff;
+        }
+        
+        .header {
+            padding-left: 80px;
+            padding-top: 60px;
+            margin-bottom: 50px;
+        }
+        
+        .page-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #00d4ff;
+            margin-bottom: 12px;
+        }
+        
+        .page-subtitle {
+            font-size: 20px;
+            font-weight: 400;
+            color: #e0e7ff;
+            opacity: 0.8;
+        }
+        
+        .content-wrapper {
+            padding-left: 80px;
+            padding-right: 80px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+        
+        .integration-column {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .integration-group {
+            background: rgba(0, 212, 255, 0.03);
+            border: 2px solid #00d4ff;
+            border-left: 6px solid #7c3aed;
+            padding-top: 20px;
+            padding-left: 25px;
+            padding-right: 25px;
+            min-height: 140px;
+        }
+        
+        .group-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+        
+        .group-icon {
+            width: 32px;
+            height: 32px;
+            background: rgba(124, 58, 237, 0.2);
+            border: 2px solid #7c3aed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .group-icon i {
+            color: #7c3aed;
+            font-size: 14px;
+        }
+        
+        .group-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #00d4ff;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .integration-items {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .integration-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .item-bullet {
+            width: 6px;
+            height: 6px;
+            background: #10b981;
+            margin-top: 8px;
+            flex-shrink: 0;
+        }
+        
+        .item-content {
+            flex: 1;
+        }
+        
+        .item-name {
+            font-size: 16px;
+            font-weight: 700;
+            color: #10b981;
+            font-family: 'Roboto Mono', monospace;
+            margin-bottom: 4px;
+        }
+        
+        .item-description {
+            font-size: 14px;
+            color: #e0e7ff;
+            line-height: 1.5;
+            opacity: 0.85;
+        }
+        
+        .core-system {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+            background: rgba(0, 212, 255, 0.1);
+            border: 3px solid #00d4ff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            z-index: 5;
+        }
+        
+        .core-icon {
+            font-size: 48px;
+            color: #00d4ff;
+        }
+        
+        .core-label {
+            font-size: 18px;
+            font-weight: 700;
+            color: #00d4ff;
+            text-align: center;
+            line-height: 1.3;
+        }
+        
+        .connection-line {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(90deg, #7c3aed, transparent);
+            opacity: 0.3;
+        }
+        
+        .stats-footer {
+            position: absolute;
+            left: 80px;
+            right: 80px;
+            height: 60px;
+            background: rgba(16, 185, 129, 0.08);
+            border: 2px solid #10b981;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .stat-icon {
+            font-size: 24px;
+            color: #10b981;
+        }
+        
+        .stat-text {
+            font-size: 15px;
+            color: #e0e7ff;
+        }
+        
+        .stat-value {
+            font-weight: 700;
+            color: #00d4ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <div class="page-title">Integration Ecosystem</div>
+            <div class="page-subtitle">Seamless Connectivity with Enterprise Systems</div>
+        </div>
+        
+        <div class="content-wrapper">
+            <div class="integration-column">
+                <div class="integration-group">
+                    <div class="group-header">
+                        <div class="group-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="group-title">ATS Systems</div>
+                    </div>
+                    <div class="integration-items">
+                        <div class="integration-item">
+                            <div class="item-bullet"></div>
+                            <div class="item-content">
+                                <div class="item-name">Greenhouse</div>
+                                <div class="item-description">Bi-directional sync for candidates and job postings</div>
+                            </div>
+                        </div>
+                        <div class="integration-item">
+                            <div class="item-bullet"></div>
+                            <div class="item-content">
+                                <div class="item-name">Lever</div>
+                                <div class="item-description">Real-time application status updates and pipeline sync</div>
+                            </div>
+                        </div>
+                        <div class="integration-item">
+                            <div class="item-bullet"></div>
+                            <div class="item-content">
+                                <div class="item-name">Workday</div>
+                                <div class="item-description">Enterprise HRIS integration for employee data</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="integration-group">
+                    <div class="group-header">
+                        <div class="group-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="group-title">Email Delivery</div>
+                    </div>
+                    <div class="integration-items">
+                        <div class="integration-item">
+                            <div class="item-bullet"></div>
+                            <div class="item-content">
+                                <div class="item-name">SendGrid</div>
+                                <div class="item-description">Transactional emails with delivery tracking and analytics</div>
+                            </div>
+                        </div>
+                        <div class="integration-item">
+                            <div class="item-bullet"></div>
+                            <div class="item-content">
+                                <div class="item-name">Mailgun</div>
+                                <div class="item-description">Bulk email campaigns and template management</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="integration-group">
+                    <div class="group-header">
+                        <div class="group-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="group-title">Storage</div>
+                    </div>
+                    <div class="integration-items">
+                        <div class="integration-item">
+                            <div class="item-bullet"></div>
+                            <div class="item-content">
+                                <div class="item-name">AWS S3</div>
+                                <div class="item-description">Secure resume and document storage with CDN delivery</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="integration-column">
+                <div class="integration-group">
+                    <div class="group-header">
+                        <div class="group-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <div class="group-title">Scheduling</div>
+                    </div>
+                    <div class="integration-items">
+                        <div class="integration-item">
+                            <div class="item-bullet"></div>
+                            <div class="item-content">
+                                <div class="item-name">Calendly API</div>
+                                <div class="item-description">Automated interview scheduling with calendar sync</div>
+                            </div>
+                        </div>
+                        <div class="integration-item">
+                            <div class="item-bullet"></div>
+                            <div class="item-content">
+                                <div class="item-name">Google Calendar</div>
+                                <div class="item-description">Calendar invites and reminder notifications</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="integration-group">
+                    <div class="group-header">
+                        <div class="group-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <div class="group-title">Video Interviews</div>
+                    </div>
+                    <div class="integration-items">
+                        <div class="integration-item">
+                            <div class="item-bullet"></div>
+                            <div class="item-content">
+                                <div class="item-name">Zoom API</div>
+                                <div class="item-description">Instant meeting creation with recording capabilities</div>
+                            </div>
+                        </div>
+                        <div class="integration-item">
+                            <div class="item-bullet"></div>
+                            <div class="item-content">
+                                <div class="item-name">Google Meet</div>
+                                <div class="item-description">Seamless video conferencing for enterprise users</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="integration-group">
+                    <div class="group-header">
+                        <div class="group-icon">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <div class="group-title">Payments</div>
+                    </div>
+                    <div class="integration-items">
+                        <div class="integration-item">
+                            <div class="item-bullet"></div>
+                            <div class="item-content">
+                                <div class="item-name">Stripe</div>
+                                <div class="item-description">Performance-based billing and subscription management</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="stats-footer" style="bottom: 40px;">
+            <div class="stat-item">
+                <i class="fas fa-plug stat-icon"></i>
+                <div class="stat-text"><span class="stat-value">15+</span> Active Integrations</div>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-sync-alt stat-icon"></i>
+                <div class="stat-text"><span class="stat-value">Real-time</span> Data Synchronization</div>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-shield-alt stat-icon"></i>
+                <div class="stat-text"><span class="stat-value">OAuth 2.0</span> Secure Authentication</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

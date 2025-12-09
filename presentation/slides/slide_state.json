@@ -1,0 +1,108 @@
+{
+  "project_info": {
+    "title": "Oracle Smart Recruitment System",
+    "created": 1764777825.928643,
+    "last_updated": 1764778130.5813758,
+    "total_slides": 12
+  },
+  "slides": {
+    "title": "edited",
+    "overview": "edited",
+    "core_features": "edited",
+    "ai_screening": "edited",
+    "interview_management": "edited",
+    "analytics_insights": "edited",
+    "diversity_inclusion": "edited",
+    "candidate_experience": "edited",
+    "automation_efficiency": "edited",
+    "integration_ecosystem": "edited",
+    "roi_benefits": "edited",
+    "closing": "edited"
+  },
+  "outline": [
+    {
+      "id": "title",
+      "title": "Oracle Smart Recruitment System",
+      "summary": "Title slide introducing the Oracle Smart Recruitment System as a comprehensive AI-powered platform transforming the hiring process with intelligent automation and data-driven insights.",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "overview",
+      "title": "Transforming Recruitment with Intelligence",
+      "summary": "Overview of how Oracle Smart Recruitment System revolutionizes talent acquisition through AI-powered screening, automated workflows, and predictive analytics to reduce time-to-hire and improve candidate quality.",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "core_features",
+      "title": "Core Platform Capabilities",
+      "summary": "Comprehensive feature set including AI resume screening, intelligent candidate matching, automated interview scheduling, video interview platform, scorecard templates, and real-time collaboration tools.",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "ai_screening",
+      "title": "AI-Powered Candidate Screening",
+      "summary": "Deep dive into the AI screening engine that analyzes resumes against job requirements, evaluates skills match, experience alignment, and education fit, providing recommendation scores and detailed summaries to accelerate initial candidate evaluation.",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "interview_management",
+      "title": "Seamless Interview Experience",
+      "summary": "End-to-end interview management including automated scheduling with calendar integration, multi-format support (phone, video, onsite, technical), integrated video conferencing with Zoom/Teams/Google Meet, and structured feedback collection with customizable scorecards.",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "analytics_insights",
+      "title": "Data-Driven Hiring Decisions",
+      "summary": "Advanced analytics dashboard providing recruitment metrics, candidate pipeline visualization, time-to-hire tracking, source effectiveness analysis, and predictive analytics for success rates and candidate fit predictions.",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "diversity_inclusion",
+      "title": "Building Diverse Teams",
+      "summary": "Comprehensive diversity and inclusion features tracking demographic metrics across hiring stages, identifying bias patterns, ensuring equitable candidate evaluation, and providing actionable insights to improve workforce diversity.",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "candidate_experience",
+      "title": "Exceptional Candidate Journey",
+      "summary": "Candidate-centric features including self-service portal, application status tracking, automated notifications, interview reminders, mobile accessibility, and personalized communication to enhance candidate engagement and employer brand.",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "automation_efficiency",
+      "title": "Automation Driving Efficiency",
+      "summary": "Workflow automation capabilities including email template management, notification prioritization, quiet hours scheduling, digest reports, engagement tracking, and A/B testing to optimize recruiter productivity and reduce manual tasks.",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "integration_ecosystem",
+      "title": "Seamless Integration Ecosystem",
+      "summary": "Platform integration capabilities with calendar systems, video conferencing providers, email services, document storage, and extensible API architecture enabling seamless data flow and unified recruitment operations.",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "roi_benefits",
+      "title": "Measurable Business Impact",
+      "summary": "Quantifiable benefits including reduced time-to-hire, improved candidate quality scores, decreased cost-per-hire, enhanced recruiter productivity, better candidate experience ratings, and increased diversity metrics demonstrating clear ROI.",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "closing",
+      "title": "Transform Your Hiring Today",
+      "summary": "Closing slide with call-to-action encouraging organizations to modernize their recruitment process with Oracle Smart Recruitment System, emphasizing the competitive advantage of intelligent hiring technology.",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    }
+  ]
+}

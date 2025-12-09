@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font-family: 'Cairo', sans-serif; }
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+      
+      .header {
+        padding-top: 50px;
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      
+      .title {
+        font-size: 36px;
+        font-weight: 700;
+        color: #60A5FA;
+        margin-bottom: 12px;
+      }
+      
+      .subtitle {
+        font-size: 18px;
+        color: #94A3B8;
+      }
+      
+      .content-wrapper {
+        display: flex;
+        gap: 50px;
+        padding-left: 80px;
+        padding-right: 80px;
+        align-items: center;
+      }
+      
+      .chart-section {
+        width: 450px;
+        min-width: 450px;
+        display: flex;
+        justify-content: center;
+      }
+      
+      .chart-container {
+        width: 380px;
+        height: 380px;
+        position: relative;
+      }
+      
+      .criteria-section {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+      }
+      
+      .criterion-item {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+      }
+      
+      .criterion-icon-wrapper {
+        min-width: 50px;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(96, 165, 250, 0.15);
+      }
+      
+      .criterion-icon {
+        font-size: 24px;
+      }
+      
+      .icon-technical { color: #60A5FA; }
+      .icon-experience { color: #10B981; }
+      .icon-interview { color: #8B5CF6; }
+      .icon-soft { color: #F59E0B; }
+      
+      .criterion-content {
+        flex: 1;
+      }
+      
+      .criterion-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 6px;
+      }
+      
+      .criterion-name {
+        font-size: 20px;
+        font-weight: 700;
+        color: #E2E8F0;
+      }
+      
+      .criterion-percentage {
+        font-size: 22px;
+        font-weight: 700;
+      }
+      
+      .percentage-technical { color: #60A5FA; }
+      .percentage-experience { color: #10B981; }
+      .percentage-interview { color: #8B5CF6; }
+      .percentage-soft { color: #F59E0B; }
+      
+      .criterion-desc {
+        font-size: 14px;
+        color: #94A3B8;
+        line-height: 1.5;
+      }
+      
+      .total-badge {
+        margin-top: 15px;
+        text-align: center;
+        padding-top: 15px;
+        background: rgba(16, 185, 129, 0.1);
+        min-height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+      
+      .total-text {
+        font-size: 18px;
+        color: #10B981;
+        font-weight: 700;
+      }
+      
+      .total-score {
+        font-size: 28px;
+        color: #10B981;
+        font-weight: 800;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1 class="title">نظام التقييم الشامل</h1>
+            <p class="subtitle">معايير موضوعية ودقيقة لتقييم المرشحين</p>
+        </div>
+        
+        <div class="content-wrapper">
+            <div class="chart-section">
+                <div class="chart-container">
+                    <canvas id="scoringChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="criteria-section">
+                <div class="criterion-item">
+                    <div class="criterion-icon-wrapper">
+                        <i class="fas fa-code criterion-icon icon-technical"></i>
+                    </div>
+                    <div class="criterion-content">
+                        <div class="criterion-header">
+                            <span class="criterion-name">المهارات التقنية</span>
+                            <span class="criterion-percentage percentage-technical">35%</span>
+                        </div>
+                        <p class="criterion-desc">تقييم المهارات البرمجية والتقنية المطلوبة للوظيفة</p>
+                    </div>
+                </div>
+                
+                <div class="criterion-item">
+                    <div class="criterion-icon-wrapper">
+                        <i class="fas fa-briefcase criterion-icon icon-experience"></i>
+                    </div>
+                    <div class="criterion-content">
+                        <div class="criterion-header">
+                            <span class="criterion-name">الخبرة العملية</span>
+                            <span class="criterion-percentage percentage-experience">30%</span>
+                        </div>
+                        <p class="criterion-desc">سنوات الخبرة والمشاريع السابقة ذات الصلة</p>
+                    </div>
+                </div>
+                
+                <div class="criterion-item">
+                    <div class="criterion-icon-wrapper">
+                        <i class="fas fa-microphone criterion-icon icon-interview"></i>
+                    </div>
+                    <div class="criterion-content">
+                        <div class="criterion-header">
+                            <span class="criterion-name">أداء المقابلة</span>
+                            <span class="criterion-percentage percentage-interview">25%</span>
+                        </div>
+                        <p class="criterion-desc">جودة الإجابات والتفكير التحليلي أثناء المقابلة</p>
+                    </div>
+                </div>
+                
+                <div class="criterion-item">
+                    <div class="criterion-icon-wrapper">
+                        <i class="fas fa-users criterion-icon icon-soft"></i>
+                    </div>
+                    <div class="criterion-content">
+                        <div class="criterion-header">
+                            <span class="criterion-name">المهارات الشخصية</span>
+                            <span class="criterion-percentage percentage-soft">10%</span>
+                        </div>
+                        <p class="criterion-desc">التواصل، العمل الجماعي، والقدرة على التكيف</p>
+                    </div>
+                </div>
+                
+                <div class="total-badge">
+                    <i class="fas fa-calculator total-text"></i>
+                    <span class="total-text">الدرجة النهائية:</span>
+                    <span class="total-score">100%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const ctx = document.getElementById('scoringChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['المهارات التقنية', 'الخبرة العملية', 'أداء المقابلة', 'المهارات الشخصية'],
+                datasets: [{
+                    data: [35, 30, 25, 10],
+                    backgroundColor: [
+                        '#60A5FA',
+                        '#10B981',
+                        '#8B5CF6',
+                        '#F59E0B'
+                    ],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        rtl: true,
+                        textDirection: 'rtl',
+                        backgroundColor: 'rgba(15, 23, 42, 0.95)',
+                        titleFont: {
+                            family: 'Cairo',
+                            size: 16,
+                            weight: 'bold'
+                        },
+                        bodyFont: {
+                            family: 'Cairo',
+                            size: 14
+                        },
+                        padding: 12,
+                        callbacks: {
+                            label: function(context) {
+                                return context.label + ': ' + context.parsed + '%';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

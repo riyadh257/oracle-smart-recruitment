@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Recruitment Challenge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .slide-container {
+      width: 1280px;
+      min-height: 720px;
+      background: #1F233E;
+      font-family: 'Space Grotesk', sans-serif;
+      color: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      padding-top: 60px;
+      padding-left: 80px;
+      padding-right: 80px;
+      margin-bottom: 50px;
+    }
+
+    .page-title {
+      font-size: 48px;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .page-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 120px;
+      height: 4px;
+      background: linear-gradient(90deg, #04DBFA, #00E3B5);
+    }
+
+    .intro-text {
+      font-size: 20px;
+      font-weight: 300;
+      color: #8EC5FC;
+      line-height: 1.6;
+      max-width: 900px;
+      margin-top: 30px;
+    }
+
+    .stats-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      padding-left: 80px;
+      padding-right: 80px;
+      padding-top: 20px;
+    }
+
+    .stat-box {
+      background: rgba(255, 255, 255, 0.03);
+      border: 2px solid rgba(4, 219, 250, 0.2);
+      min-height: 280px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .stat-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #04DBFA, #00E3B5);
+    }
+
+    .stat-number {
+      font-size: 72px;
+      font-weight: 700;
+      color: #04DBFA;
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .stat-label {
+      font-size: 18px;
+      font-weight: 500;
+      color: #FFFFFF;
+      text-align: center;
+      line-height: 1.4;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .stat-description {
+      font-size: 14px;
+      font-weight: 300;
+      color: #8EC5FC;
+      text-align: center;
+      margin-top: 15px;
+      padding-left: 20px;
+      padding-right: 20px;
+      line-height: 1.5;
+    }
+
+    .accent-line {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #04DBFA 0%, #00E3B5 50%, #1F233E 100%);
+    }
+
+    .background-pattern {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 300px;
+      height: 300px;
+      opacity: 0.05;
+      background-image: 
+        linear-gradient(45deg, #04DBFA 25%, transparent 25%),
+        linear-gradient(-45deg, #04DBFA 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #04DBFA 75%),
+        linear-gradient(-45deg, transparent 75%, #04DBFA 75%);
+      background-size: 40px 40px;
+      background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="background-pattern"></div>
+    
+    <div class="header">
+      <h1 class="page-title">The Recruitment Challenge</h1>
+      <p class="intro-text">Traditional recruitment processes face critical inefficiencies that impact hiring quality, speed, and organizational success.</p>
+    </div>
+
+    <div class="stats-container">
+      <div class="stat-box">
+        <div class="stat-number">87%</div>
+        <div class="stat-label">Manual Screening Struggle</div>
+        <div class="stat-description">Companies report difficulties with time-consuming manual resume review processes</div>
+      </div>
+
+      <div class="stat-box">
+        <div class="stat-number">40+</div>
+        <div class="stat-label">Days to Hire</div>
+        <div class="stat-description">Average time-to-hire exceeds industry benchmarks, losing top talent to competitors</div>
+      </div>
+
+      <div class="stat-box">
+        <div class="stat-number">30%</div>
+        <div class="stat-label">Higher Turnover</div>
+        <div class="stat-description">Poor candidate matching leads to increased turnover rates within the first year</div>
+      </div>
+    </div>
+
+    <div class="accent-line"></div>
+  </div>
+</body>
+</html>

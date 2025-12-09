@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS campaign_recipients (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  campaign_id INT NOT NULL,\n  candidate_id INT NOT NULL,\n  email VARCHAR(320) NOT NULL,\n  status ENUM('pending', 'sent', 'delivered', 'opened', 'clicked', 'bounced', 'failed') NOT NULL DEFAULT 'pending',\n  sent_at TIMESTAMP NULL,\n  delivered_at TIMESTAMP NULL,\n  opened_at TIMESTAMP NULL,\n  clicked_at TIMESTAMP NULL,\n  error_message TEXT,\n  bounce_reason VARCHAR(500),\n  metadata JSON,\n  createdAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP\n)",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS campaign_recipients (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  campaign_id INT NOT NULL,\n  candidate_id INT NOT NULL,\n  email VARCHAR(320) NOT NULL,\n  status ENUM('pending', 'sent', 'delivered', 'opened', 'clicked', 'bounced', 'failed') NOT NULL DEFAULT 'pending',\n  sent_at TIMESTAMP NULL,\n  delivered_at TIMESTAMP NULL,\n  opened_at TIMESTAMP NULL,\n  clicked_at TIMESTAMP NULL,\n  error_message TEXT,\n  bounce_reason VARCHAR(500),\n  metadata JSON,\n  createdAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP\n)",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1758
+}

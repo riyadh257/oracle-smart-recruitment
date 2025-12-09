@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حالات الاستخدام والصناعات</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: transparent;
+        }
+
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: white;
+            position: relative;
+        }
+
+        .header-bar {
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, #1E3A8A 0%, #3B82F6 100%);
+        }
+
+        .content-wrapper {
+            text-align: center;
+        }
+
+        .page-title {
+            font-size: 42px;
+            font-weight: 700;
+            color: #1E3A8A;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        .intro-text {
+            font-size: 18px;
+            font-weight: 400;
+            color: #1F2937;
+            line-height: 1.7;
+            max-width: 950px;
+            margin: 0 auto 20px;
+        }
+
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .industry-box {
+            background: #F8FAFC;
+            border-right: 5px solid #3B82F6;
+            text-align: right;
+            min-height: 140px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .industry-box.healthcare { border-right-color: #3B82F6; }
+        .industry-box.technology { border-right-color: #10B981; }
+        .industry-box.manufacturing { border-right-color: #3B82F6; }
+        .industry-box.finance { border-right-color: #10B981; }
+
+        .industry-box.retail {
+            border-right-color: #3B82F6;
+            grid-column: 1 / -1;
+            max-width: 650px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .industry-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 10px;
+            justify-content: flex-end;
+        }
+
+        .industry-icon {
+            font-size: 36px;
+            line-height: 1;
+        }
+
+        .industry-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1E3A8A;
+            line-height: 1.3;
+        }
+
+        .industry-desc {
+            font-size: 16px;
+            font-weight: 400;
+            color: #4B5563;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header-bar"></div>
+
+        <div class="content-wrapper" style="padding: 55px 80px 30px;">
+            <h2 class="page-title">حالات الاستخدام والصناعات</h2>
+
+            <p class="intro-text">
+                يخدم Oracle Recruiting مجموعة واسعة من الصناعات وحالات الاستخدام، من التوظيف الجماعي إلى البحث عن المواهب المتخصصة، مع حلول مرنة تلبي احتياجات كل قطاع
+            </p>
+
+            <div class="industries-grid">
+                <div class="industry-box healthcare" style="padding: 20px 35px;">
+                    <div class="industry-header">
+                        <div class="industry-name">الرعاية الصحية</div>
+                        <div class="industry-icon">🏥</div>
+                    </div>
+                    <div class="industry-desc">
+                        توظيف الكوادر الطبية والإدارية المتخصصة مع ضمان الامتثال للمعايير الصحية والترخيص المهني
+                    </div>
+                </div>
+
+                <div class="industry-box technology" style="padding: 20px 35px;">
+                    <div class="industry-header">
+                        <div class="industry-name">التكنولوجيا</div>
+                        <div class="industry-icon">💻</div>
+                    </div>
+                    <div class="industry-desc">
+                        جذب المواهب التقنية المتخصصة والمطورين والمهندسين في سوق تنافسي للغاية
+                    </div>
+                </div>
+
+                <div class="industry-box manufacturing" style="padding: 20px 35px;">
+                    <div class="industry-header">
+                        <div class="industry-name">التصنيع</div>
+                        <div class="industry-icon">🏭</div>
+                    </div>
+                    <div class="industry-desc">
+                        توظيف جماعي ومتعدد المواقع للعمالة الماهرة والفنيين والمهندسين الصناعيين
+                    </div>
+                </div>
+
+                <div class="industry-box finance" style="padding: 20px 35px;">
+                    <div class="industry-header">
+                        <div class="industry-name">الخدمات المالية</div>
+                        <div class="industry-icon">🏦</div>
+                    </div>
+                    <div class="industry-desc">
+                        توظيف متوافق مع اللوائح التنظيمية للمحللين والمستشارين الماليين والمتخصصين المصرفيين
+                    </div>
+                </div>
+
+                <div class="industry-box retail" style="padding: 20px 35px;">
+                    <div class="industry-header">
+                        <div class="industry-name">التجزئة والضيافة</div>
+                        <div class="industry-icon">🛍️</div>
+                    </div>
+                    <div class="industry-desc">
+                        توظيف موسمي وعالي الحجم لموظفي المبيعات وخدمة العملاء عبر مواقع متعددة
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

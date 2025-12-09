@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: #FFFFFF;
+        font-family: 'Inter', sans-serif;
+        position: relative;
+      }
+      
+      .content-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        min-height: 720px;
+        padding-left: 80px;
+        padding-right: 80px;
+      }
+      
+      .left-column {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 60px;
+      }
+      
+      .accent-bar {
+        width: 80px;
+        height: 4px;
+        background: #0066CC;
+        margin-bottom: 32px;
+      }
+      
+      .page-title {
+        font-size: 40px;
+        font-weight: 700;
+        color: #1a1a1a;
+        line-height: 1.2;
+        margin-bottom: 40px;
+      }
+      
+      .highlight {
+        color: #0066CC;
+      }
+      
+      .transformation-points {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+      }
+      
+      .point-item {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+      }
+      
+      .icon-wrapper {
+        width: 48px;
+        height: 48px;
+        background: linear-gradient(135deg, #0066CC 0%, #0052A3 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      
+      .icon-wrapper i {
+        color: #FFFFFF;
+        font-size: 22px;
+      }
+      
+      .point-content {
+        flex: 1;
+      }
+      
+      .point-title {
+        font-size: 24px;
+        font-weight: 600;
+        color: #1a1a1a;
+        margin-bottom: 8px;
+      }
+      
+      .point-description {
+        font-size: 16px;
+        font-weight: 400;
+        color: #666666;
+        line-height: 1.6;
+      }
+      
+      .right-column {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+      
+      .image-container {
+        width: 500px;
+        height: 560px;
+        position: relative;
+      }
+      
+      .main-image {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+      
+      .accent-corner {
+        position: absolute;
+        bottom: -20px;
+        right: -20px;
+        width: 100px;
+        height: 100px;
+        border-right: 4px solid #FF6B35;
+        border-bottom: 4px solid #FF6B35;
+        z-index: -1;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="content-grid">
+            <div class="left-column">
+                <div class="accent-bar"></div>
+                <h2 class="page-title">
+                    Transforming Recruitment with <span class="highlight">Intelligence</span>
+                </h2>
+                
+                <div class="transformation-points">
+                    <div class="point-item">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="point-content">
+                            <h3 class="point-title">AI-Powered Screening</h3>
+                            <p class="point-description">Intelligent algorithms analyze resumes and match candidates to job requirements, reducing screening time by 75% while improving candidate quality.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="point-item">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="point-content">
+                            <h3 class="point-title">Automated Workflows</h3>
+                            <p class="point-description">Streamline scheduling, notifications, and follow-ups with intelligent automation that eliminates manual tasks and accelerates hiring cycles.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="point-item">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="point-content">
+                            <h3 class="point-title">Predictive Analytics</h3>
+                            <p class="point-description">Data-driven insights predict candidate success rates, time-to-hire, and optimal hiring decisions based on historical patterns and performance metrics.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="right-column">
+                <div class="image-container">
+                    <img src="/home/ubuntu/oracle-smart-recruitment/presentation/assets/ai-recruitment.webp" alt="AI-powered recruitment visualization" class="main-image">
+                    <div class="accent-corner"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

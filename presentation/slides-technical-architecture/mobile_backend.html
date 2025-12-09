@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: #0a1628;
+        font-family: 'IBM Plex Sans', sans-serif;
+        position: relative;
+        overflow: hidden;
+      }
+      .grid-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: 
+          linear-gradient(rgba(0, 217, 255, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 217, 255, 0.03) 1px, transparent 1px);
+        background-size: 40px 40px;
+        pointer-events: none;
+      }
+      .border-frame {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+        border: 2px solid rgba(0, 217, 255, 0.3);
+        pointer-events: none;
+      }
+      .content-wrapper {
+        position: relative;
+        z-index: 1;
+        padding-top: 50px;
+        padding-left: 50px;
+        padding-right: 50px;
+      }
+      .title {
+        font-size: 40px;
+        font-weight: 700;
+        color: #00d9ff;
+        text-align: center;
+        margin-bottom: 35px;
+      }
+      .services-container {
+        display: flex;
+        flex-direction: column;
+        gap: 8px; /* reduced from 15 to save vertical space */
+      }
+      .service-card {
+        background: rgba(0, 217, 255, 0.03);
+        border: 1px solid rgba(0, 217, 255, 0.3);
+        display: grid;
+        grid-template-columns: 320px 1fr; /* widen left column to reduce text wrapping */
+        min-height: 110px; /* reduced from 130 to fit within 720px total */
+      }
+      .service-left {
+        border-right: 1px solid rgba(0, 217, 255, 0.3);
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding-top: 14px; /* reduced from 20 */
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      .service-device { background: rgba(0, 217, 255, 0.02); }
+        .service-device .service-icon-box { color: #00d9ff; border-color: #00d9ff; background: rgba(0, 217, 255, 0.1); }
+      .service-notification { background: rgba(78, 205, 196, 0.02); }
+        .service-notification .service-icon-box { color: #4ecdc4; border-color: #4ecdc4; background: rgba(78, 205, 196, 0.1); }
+      .service-websocket { background: rgba(255, 107, 53, 0.02); }
+        .service-websocket .service-icon-box { color: #ff6b35; border-color: #ff6b35; background: rgba(255, 107, 53, 0.1); }
+      .service-api { background: rgba(255, 217, 61, 0.02); }
+        .service-api .service-icon-box { color: #ffd93d; border-color: #ffd93d; background: rgba(255, 217, 61, 0.1); }
+      .service-icon-box {
+        width: 65px;
+        height: 65px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        border: 2px solid;
+        flex-shrink: 0;
+      }
+      .service-name {
+        font-size: 22px;
+        font-weight: 700;
+        color: #e0e6ed;
+        line-height: 1.3;
+        white-space: nowrap; /* prevent multi-line names, keeps left column compact */
+      }
+      .service-right {
+        padding-top: 14px; /* reduced from 20 */
+        padding-left: 25px;
+        padding-right: 25px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px; /* reduced from 10 */
+      }
+      .service-description {
+        font-size: 14px;
+        color: rgba(224, 230, 237, 0.85);
+        line-height: 1.5; /* slightly tighter to reduce height without changing font-size */
+        white-space: nowrap; /* ensure single-line concise descriptions */
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .service-specs {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px; /* reduced from 10 */
+      }
+      .spec-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        white-space: nowrap; /* keep spec items on one line */
+        overflow: hidden;
+      }
+      .spec-bullet {
+        width: 6px;
+        height: 6px;
+        margin-top: 6px;
+        background: #4ecdc4;
+        transform: rotate(45deg);
+        flex-shrink: 0;
+      }
+      .spec-text {
+        font-size: 13px;
+        color: #e0e6ed;
+        line-height: 1.4; /* slightly tighter without font-size change */
+      }
+      .spec-highlight {
+        color: #4ecdc4;
+        font-weight: 600;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="grid-overlay"></div>
+        <div class="border-frame"></div>
+        
+        <div class="content-wrapper">
+            <div class="title">امتدادات الخادم للهاتف المحمول<br>Mobile Backend Extensions</div>
+            
+            <div class="services-container">
+                <div class="service-card service-device">
+                    <div class="service-left">
+                        <div class="service-icon-box">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="service-name">Device Registration Service</div>
+                    </div>
+                    <div class="service-right">
+                        <div class="service-description">Register and track devices with FCM tokens and auto refresh.</div>
+                        <div class="service-specs">
+                            <div class="spec-item">
+                                <div class="spec-bullet"></div>
+                                <div class="spec-text"><span class="spec-highlight">FCM Token Storage:</span> Secure DB persistence</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-bullet"></div>
+                                <div class="spec-text"><span class="spec-highlight">Platform Detection:</span> iOS/Android auto</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="service-card service-notification">
+                    <div class="service-left">
+                        <div class="service-icon-box">
+                            <i class="fas fa-history"></i>
+                        </div>
+                        <div class="service-name">Notification History System</div>
+                    </div>
+                    <div class="service-right">
+                        <div class="service-description">Track notifications with pagination and read/unread status.</div>
+                        <div class="service-specs">
+                            <div class="spec-item">
+                                <div class="spec-bullet"></div>
+                                <div class="spec-text"><span class="spec-highlight">Paginated API:</span> 20 per page</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-bullet"></div>
+                                <div class="spec-text"><span class="spec-highlight">Status Tracking:</span> read/unread timestamps</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="service-card service-websocket">
+                    <div class="service-left">
+                        <div class="service-icon-box">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="service-name">WebSocket Real-Time Updates</div>
+                    </div>
+                    <div class="service-right">
+                        <div class="service-description">Instant updates for status, interviews, and messages.</div>
+                        <div class="service-specs">
+                            <div class="spec-item">
+                                <div class="spec-bullet"></div>
+                                <div class="spec-text"><span class="spec-highlight">Status Updates:</span> real-time pipeline changes</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-bullet"></div>
+                                <div class="spec-text"><span class="spec-highlight">Connection Mgmt:</span> auto-reconnect</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="service-card service-api">
+                    <div class="service-left">
+                        <div class="service-icon-box">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        <div class="service-name">Mobile-Optimized APIs</div>
+                    </div>
+                    <div class="service-right">
+                        <div class="service-description">Mobile-tuned endpoints with smaller payloads and compression.</div>
+                        <div class="service-specs">
+                            <div class="spec-item">
+                                <div class="spec-bullet"></div>
+                                <div class="spec-text"><span class="spec-highlight">Field Selection:</span> pick only needed fields</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-bullet"></div>
+                                <div class="spec-text"><span class="spec-highlight">Image Optimization:</span> auto resize/compress</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

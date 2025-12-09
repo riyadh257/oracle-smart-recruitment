@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS `email_tracking` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `variant_id` int NOT NULL,\n  `recipient_email` varchar(320) NOT NULL,\n  `application_id` int,\n  `sent_at` timestamp NOT NULL DEFAULT (now()),\n  `opened_at` timestamp,\n  `clicked_at` timestamp,\n  `responded_at` timestamp,\n  `tracking_id` varchar(100) NOT NULL UNIQUE,\n  `created_at` timestamp NOT NULL DEFAULT (now()),\n  CONSTRAINT `email_tracking_id` PRIMARY KEY(`id`)\n);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS `email_tracking` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `variant_id` int NOT NULL,\n  `recipient_email` varchar(320) NOT NULL,\n  `application_id` int,\n  `sent_at` timestamp NOT NULL DEFAULT (now()),\n  `opened_at` timestamp,\n  `clicked_at` timestamp,\n  `responded_at` timestamp,\n  `tracking_id` varchar(100) NOT NULL UNIQUE,\n  `created_at` timestamp NOT NULL DEFAULT (now()),\n  CONSTRAINT `email_tracking_id` PRIMARY KEY(`id`)\n);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1729
+}

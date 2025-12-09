@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      
+      .slide-container {
+        width: 1280px;
+        min-height: 720px;
+        background: #0A0E27;
+        font-family: 'Space Grotesk', sans-serif;
+        color: #E0E6ED;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .content-wrapper {
+        padding-top: 60px;
+        padding-left: 80px;
+        padding-right: 80px;
+      }
+      
+      .headline {
+        font-size: 36px;
+        font-weight: 700;
+        color: #00D9FF;
+        line-height: 1.2;
+        margin-bottom: 35px;
+        max-width: 1100px;
+      }
+      
+      .main-grid {
+        display: grid;
+        grid-template-columns: 60% 40%;
+        gap: 50px;
+      }
+      
+      .entities-section {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+      
+      .entity {
+        display: flex;
+        align-items: start;
+        gap: 12px;
+      }
+      
+      .entity-indicator {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        margin-top: 6px;
+        flex-shrink: 0;
+      }
+      
+      .entity.auth .entity-indicator { background: #7B61FF; }
+      .entity.core .entity-indicator { background: #00D9FF; }
+      .entity.billing .entity-indicator { background: #00FF88; }
+      
+      .entity-content {
+        flex: 1;
+      }
+      
+      .entity-name {
+        font-size: 18px;
+        font-weight: 600;
+        color: #E0E6ED;
+        margin-bottom: 4px;
+      }
+      
+      .entity-fields {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 13px;
+        color: rgba(224, 230, 237, 0.7);
+        line-height: 1.5;
+      }
+      
+      .field-highlight {
+        color: #00FF88;
+      }
+      
+      .right-column {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+      }
+      
+      .feature-box {
+        background: rgba(123, 97, 255, 0.06);
+        border: 1px solid rgba(123, 97, 255, 0.25);
+        padding-top: 18px;
+        padding-left: 22px;
+        padding-right: 22px;
+      }
+      
+      .feature-title {
+        font-size: 20px;
+        font-weight: 600;
+        color: #7B61FF;
+        margin-bottom: 12px;
+      }
+      
+      .feature-list {
+        list-style: none;
+        padding-left: 0;
+      }
+      
+      .feature-list li {
+        font-size: 15px;
+        line-height: 1.6;
+        color: #E0E6ED;
+        margin-bottom: 8px;
+        padding-left: 16px;
+        position: relative;
+      }
+      
+      .feature-list li::before {
+        content: '▸';
+        position: absolute;
+        left: 0;
+        color: #00FF88;
+      }
+      
+      .scalability-box {
+        background: rgba(0, 217, 255, 0.06);
+        border: 1px solid rgba(0, 217, 255, 0.25);
+        padding-top: 18px;
+        padding-left: 22px;
+        padding-right: 22px;
+      }
+      
+      .scalability-title {
+        font-size: 20px;
+        font-weight: 600;
+        color: #00D9FF;
+        margin-bottom: 12px;
+      }
+      
+      .legend {
+        display: flex;
+        gap: 24px;
+        margin-top: 20px;
+        font-size: 13px;
+        color: rgba(224, 230, 237, 0.6);
+      }
+      
+      .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      
+      .legend-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+      }
+      
+      .legend-dot.auth { background: #7B61FF; }
+      .legend-dot.core { background: #00D9FF; }
+      .legend-dot.billing { background: #00FF88; }
+      
+      .accent-bar {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(90deg, #7B61FF, #00D9FF, #00FF88);
+      }
+      
+      .slide-container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: 
+          linear-gradient(rgba(0, 217, 255, 0.02) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 217, 255, 0.02) 1px, transparent 1px);
+        background-size: 80px 80px;
+        pointer-events: none;
+        z-index: 0;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="content-wrapper">
+            <h1 class="headline">Comprehensive Data Model Supports Multi-Tenant B2B Operations with 10,000+ Attributes</h1>
+            
+            <div class="main-grid">
+                <div class="entities-section">
+                    <div class="entity auth">
+                        <div class="entity-indicator"></div>
+                        <div class="entity-content">
+                            <div class="entity-name">Users</div>
+                            <div class="entity-fields">openId, email, role <span class="field-highlight">(admin|employer|candidate)</span></div>
+                        </div>
+                    </div>
+                    
+                    <div class="entity core">
+                        <div class="entity-indicator"></div>
+                        <div class="entity-content">
+                            <div class="entity-name">Candidates</div>
+                            <div class="entity-fields">profile, skills[], <span class="field-highlight">aiInferredAttributes{}</span>, resumeUrl</div>
+                        </div>
+                    </div>
+                    
+                    <div class="entity core">
+                        <div class="entity-indicator"></div>
+                        <div class="entity-content">
+                            <div class="entity-name">Employers</div>
+                            <div class="entity-fields">companyName, <span class="field-highlight">cultureAttributes{}</span>, billingModel</div>
+                        </div>
+                    </div>
+                    
+                    <div class="entity core">
+                        <div class="entity-indicator"></div>
+                        <div class="entity-content">
+                            <div class="entity-name">Jobs</div>
+                            <div class="entity-fields">title, requiredSkills[], <span class="field-highlight">idealCandidateProfile{}</span>, atsJobId</div>
+                        </div>
+                    </div>
+                    
+                    <div class="entity core">
+                        <div class="entity-indicator"></div>
+                        <div class="entity-content">
+                            <div class="entity-name">Applications</div>
+                            <div class="entity-fields">candidateId, jobId, <span class="field-highlight">matchBreakdown{}</span>, scores (skill, culture, wellbeing)</div>
+                        </div>
+                    </div>
+                    
+                    <div class="entity core">
+                        <div class="entity-indicator"></div>
+                        <div class="entity-content">
+                            <div class="entity-name">Interviews</div>
+                            <div class="entity-fields">scheduledTime, calendarEventId, videoLink, feedbackData{}</div>
+                        </div>
+                    </div>
+                    
+                    <div class="entity billing">
+                        <div class="entity-indicator"></div>
+                        <div class="entity-content">
+                            <div class="entity-name">Billing Records</div>
+                            <div class="entity-fields">employerId, periodStart/End, qualifiedApplications, totalAmount</div>
+                        </div>
+                    </div>
+                    
+                    <div class="legend">
+                        <div class="legend-item">
+                            <div class="legend-dot auth"></div>
+                            <span>Authentication</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-dot core"></div>
+                            <span>Core Entities</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-dot billing"></div>
+                            <span>Billing & Finance</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="right-column">
+                    <div class="feature-box">
+                        <div class="feature-title">Advanced Features</div>
+                        <ul class="feature-list">
+                            <li>JSON columns store 10,000+ attribute hierarchies</li>
+                            <li>Indexed foreign keys optimize join performance</li>
+                            <li>Unique constraints prevent duplicate applications</li>
+                            <li>Timestamp tracking for audit trails</li>
+                            <li>ATS integration tables enable bidirectional sync</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="scalability-box">
+                        <div class="scalability-title">Scalability</div>
+                        <ul class="feature-list">
+                            <li>TiDB compatibility for horizontal scaling</li>
+                            <li>Normalized schema reduces redundancy</li>
+                            <li>Drizzle ORM generates type-safe queries</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="accent-bar"></div>
+    </div>
+</body>
+</html>

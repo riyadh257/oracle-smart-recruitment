@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نظرة عامة على النظام</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: transparent;
+        }
+
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: white;
+            position: relative;
+        }
+
+        .header-bar {
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, #1E3A8A 0%, #3B82F6 100%);
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            min-height: 712px;
+        }
+
+        .image-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image-section img {
+            width: 560px;
+            height: 315px;
+            object-fit: contain;
+        }
+
+        .text-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .page-title {
+            font-size: 42px;
+            font-weight: 700;
+            color: #1E3A8A;
+            margin-bottom: 30px;
+            line-height: 1.4;
+        }
+
+        .intro-text {
+            font-size: 18px;
+            font-weight: 400;
+            color: #1F2937;
+            line-height: 1.8;
+            margin-bottom: 35px;
+        }
+
+        .key-points {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .point-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .point-icon {
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, #3B82F6 0%, #10B981 100%);
+            border-radius: 50%;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .point-text {
+            font-size: 17px;
+            font-weight: 600;
+            color: #1F2937;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header-bar"></div>
+
+        <div class="content-grid" style="padding: 60px 70px;">
+            <div class="text-section">
+                <h2 class="page-title">نظرة عامة على النظام</h2>
+
+                <p class="intro-text">
+                    Oracle Fusion Cloud Recruiting وRecruiting Booster هما حلان متكاملان يساعدان المؤسسات على جذب أفضل المواهب وتوظيفها بكفاءة عالية. يجمع النظام بين قوة الذكاء الاصطناعي والأتمتة لتقديم تجربة توظيف استثنائية.
+                </p>
+
+                <div class="key-points">
+                    <div class="point-item">
+                        <div class="point-icon">1</div>
+                        <div class="point-text">
+                            منصة سحابية متكاملة ضمن Oracle Cloud HCM
+                        </div>
+                    </div>
+
+                    <div class="point-item">
+                        <div class="point-icon">2</div>
+                        <div class="point-text">
+                            مدعومة بتقنيات الذكاء الاصطناعي والتعلم الآلي
+                        </div>
+                    </div>
+
+                    <div class="point-item">
+                        <div class="point-icon">3</div>
+                        <div class="point-text">
+                            تصميم يركز على تجربة المرشح أولاً
+                        </div>
+                    </div>
+
+                    <div class="point-item">
+                        <div class="point-icon">4</div>
+                        <div class="point-text">
+                            تكامل سلس مع أنظمة الموارد البشرية
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="image-section">
+                <img src="/home/ubuntu/oracle-smart-recruitment/presentation/assets/recruitment-tech.webp" alt="Recruitment Technology">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS `linkedin_profiles` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `candidate_id` int NOT NULL,\n  `linkedin_id` varchar(255),\n  `profile_url` varchar(500),\n  `headline` text,\n  `summary` text,\n  `location` varchar(255),\n  `industry` varchar(255),\n  `current_company` varchar(255),\n  `current_position` varchar(255),\n  `profile_picture_url` varchar(500),\n  `connections` int,\n  `experience` text,\n  `education` text,\n  `skills` text,\n  `certifications` text,\n  `languages` text,\n  `last_synced_at` timestamp,\n  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,\n  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,\n  CONSTRAINT `linkedin_profiles_id` PRIMARY KEY(`id`),\n  UNIQUE KEY `unique_candidate` (`candidate_id`)\n);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS `linkedin_profiles` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `candidate_id` int NOT NULL,\n  `linkedin_id` varchar(255),\n  `profile_url` varchar(500),\n  `headline` text,\n  `summary` text,\n  `location` varchar(255),\n  `industry` varchar(255),\n  `current_company` varchar(255),\n  `current_position` varchar(255),\n  `profile_picture_url` varchar(500),\n  `connections` int,\n  `experience` text,\n  `education` text,\n  `skills` text,\n  `certifications` text,\n  `languages` text,\n  `last_synced_at` timestamp,\n  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,\n  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,\n  CONSTRAINT `linkedin_profiles_id` PRIMARY KEY(`id`),\n  UNIQUE KEY `unique_candidate` (`candidate_id`)\n);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1677
+}

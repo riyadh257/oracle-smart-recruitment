@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS templatePreviewHistory (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  templateId INT NOT NULL,\n  previewHtml TEXT NOT NULL,\n  sampleData JSON,\n  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,\n  FOREIGN KEY (templateId) REFERENCES reportEmailTemplates(id) ON DELETE CASCADE,\n  INDEX templateId_idx (templateId)\n)",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS templatePreviewHistory (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  templateId INT NOT NULL,\n  previewHtml TEXT NOT NULL,\n  sampleData JSON,\n  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,\n  FOREIGN KEY (templateId) REFERENCES reportEmailTemplates(id) ON DELETE CASCADE,\n  INDEX templateId_idx (templateId)\n)",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1794
+}

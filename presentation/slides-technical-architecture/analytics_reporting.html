@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: linear-gradient(135deg, #0A1628 0%, #1a2942 100%);
+        font-family: 'Inter', sans-serif;
+        color: #E2E8F0;
+        position: relative;
+      }
+      
+      .content-wrapper {
+        padding-top: 60px;
+        padding-left: 60px;
+        padding-right: 60px;
+        min-height: 720px;
+      }
+      
+      .page-title {
+        font-size: 36px;
+        font-weight: 700;
+        color: #60A5FA;
+        margin-bottom: 45px;
+        line-height: 1.2;
+      }
+      
+      .analytics-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        margin-bottom: 30px;
+      }
+      
+      .analytics-card {
+        background: rgba(59, 130, 246, 0.05);
+        border: 1px solid rgba(59, 130, 246, 0.2);
+        padding-top: 22px;
+        padding-left: 22px;
+        padding-right: 22px;
+        min-height: 140px;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .card-header {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 12px;
+      }
+      
+      .card-icon {
+        width: 48px;
+        height: 48px;
+        min-width: 48px;
+        background: linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        color: #ffffff;
+      }
+      
+      .card-title {
+        font-size: 19px;
+        font-weight: 600;
+        color: #E2E8F0;
+      }
+      
+      .card-description {
+        font-size: 14px;
+        font-weight: 400;
+        color: #94A3B8;
+        line-height: 1.5;
+      }
+      
+      .featured-card {
+        grid-column: 1 / -1;
+        background: rgba(16, 185, 129, 0.05);
+        border: 1px solid rgba(16, 185, 129, 0.2);
+      }
+      
+      .featured-card .card-icon {
+        background: linear-gradient(135deg, #10B981 0%, #34D399 100%);
+      }
+      
+      .visualization-section {
+        padding-top: 25px;
+        border-top: 1px solid rgba(96, 165, 250, 0.2);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .viz-label {
+        font-size: 14px;
+        font-weight: 600;
+        color: #94A3B8;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      
+      .viz-technologies {
+        display: flex;
+        gap: 15px;
+      }
+      
+      .tech-badge {
+        padding-top: 10px;
+        padding-right: 18px;
+        padding-left: 18px;
+        min-height: 45px;
+        background: rgba(139, 92, 246, 0.15);
+        border: 1px solid rgba(139, 92, 246, 0.3);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      
+      .tech-badge i {
+        font-size: 18px;
+        color: #A78BFA;
+      }
+      
+      .tech-badge .name {
+        font-size: 14px;
+        font-weight: 600;
+        color: #A78BFA;
+      }
+      
+      .export-formats {
+        display: flex;
+        gap: 12px;
+      }
+      
+      .format-badge {
+        padding: 6px 12px;
+        background: rgba(16, 185, 129, 0.15);
+        border: 1px solid rgba(16, 185, 129, 0.3);
+        font-size: 13px;
+        color: #10B981;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      
+      .format-badge i {
+        font-size: 14px;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="content-wrapper">
+            <h2 class="page-title">Comprehensive Analytics Engine Provides Actionable Insights Across Platform</h2>
+            
+            <div class="analytics-grid">
+                <div class="analytics-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="card-title">Talent Pool Analytics</div>
+                    </div>
+                    <div class="card-description">
+                        Track candidate pipeline health, source effectiveness, and conversion funnels to optimize recruitment strategy and identify high-performing channels
+                    </div>
+                </div>
+                
+                <div class="analytics-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="card-title">Employer Dashboards</div>
+                    </div>
+                    <div class="card-description">
+                        Display application volumes, match quality trends, time-to-hire metrics, and cost-per-hire analytics with real-time data visualization
+                    </div>
+                </div>
+                
+                <div class="analytics-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="card-title">Competitive Intelligence</div>
+                    </div>
+                    <div class="card-description">
+                        Benchmark employer performance against industry averages and peer companies to identify improvement opportunities and competitive positioning
+                    </div>
+                </div>
+                
+                <div class="analytics-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-sliders-h"></i>
+                        </div>
+                        <div class="card-title">Custom Report Builder</div>
+                    </div>
+                    <div class="card-description">
+                        Create ad-hoc reports with flexible filters, groupings, and visualizations tailored to specific business questions and stakeholder needs
+                    </div>
+                </div>
+                
+                <div class="analytics-card featured-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-file-export"></i>
+                        </div>
+                        <div class="card-title">Export Capabilities</div>
+                    </div>
+                    <div class="card-description">
+                        Generate CSV and PDF reports for offline analysis and executive presentations using ExcelJS and jsPDF with customizable formatting and branding
+                    </div>
+                    <div class="export-formats" style="margin-top: 12px;">
+                        <div class="format-badge">
+                            <i class="fas fa-file-csv"></i>
+                            CSV Export
+                        </div>
+                        <div class="format-badge">
+                            <i class="fas fa-file-pdf"></i>
+                            PDF Export
+                        </div>
+                        <div class="format-badge">
+                            <i class="fas fa-file-excel"></i>
+                            Excel Export
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="visualization-section">
+                <div class="viz-label">Visualization Technologies</div>
+                <div class="viz-technologies">
+                    <div class="tech-badge">
+                        <i class="fas fa-chart-line"></i>
+                        <div class="name">Chart.js</div>
+                    </div>
+                    <div class="tech-badge">
+                        <i class="fas fa-chart-area"></i>
+                        <div class="name">Recharts</div>
+                    </div>
+                    <div class="tech-badge">
+                        <i class="fas fa-table"></i>
+                        <div class="name">ExcelJS</div>
+                    </div>
+                    <div class="tech-badge">
+                        <i class="fas fa-file-pdf"></i>
+                        <div class="name">jsPDF</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE `career_page_templates` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `name` varchar(255) NOT NULL,\n  `description` text,\n  `category` varchar(100) DEFAULT 'general',\n  `thumbnail_url` text,\n  `preview_url` text,\n  `config` json,\n  `is_active` boolean DEFAULT true,\n  `is_premium` boolean DEFAULT false,\n  `usage_count` int DEFAULT 0,\n  `createdAt` timestamp NOT NULL DEFAULT (now()),\n  `updatedAt` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,\n  CONSTRAINT `career_page_templates_id` PRIMARY KEY(`id`)\n)",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE `career_page_templates` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `name` varchar(255) NOT NULL,\n  `description` text,\n  `category` varchar(100) DEFAULT 'general',\n  `thumbnail_url` text,\n  `preview_url` text,\n  `config` json,\n  `is_active` boolean DEFAULT true,\n  `is_premium` boolean DEFAULT false,\n  `usage_count` int DEFAULT 0,\n  `createdAt` timestamp NOT NULL DEFAULT (now()),\n  `updatedAt` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,\n  CONSTRAINT `career_page_templates_id` PRIMARY KEY(`id`)\n)",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1747
+}

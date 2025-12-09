@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #0A1628 0%, #0D1F38 100%);
+            position: relative;
+            font-family: 'Cairo', sans-serif;
+            color: #E8F1F5;
+        }
+        
+        /* Grid background */
+        .grid-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.05;
+            background-image: 
+                linear-gradient(rgba(0, 217, 255, 0.3) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 217, 255, 0.3) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        
+        /* Accent line */
+        .accent-line {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #00D9FF 0%, #7C3AED 100%);
+        }
+        
+        /* Content wrapper */
+        .content {
+            position: relative;
+            z-index: 10;
+            min-height: 720px;
+        }
+        
+        /* Header */
+        .header {
+            padding-top: 50px;
+            padding-right: 80px;
+            padding-left: 80px;
+            margin-bottom: 35px;
+        }
+        
+        .title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #00D9FF;
+            margin-bottom: 8px;
+        }
+        
+        .subtitle {
+            font-size: 16px;
+            color: #E8F1F5;
+            opacity: 0.7;
+        }
+        
+        /* Benefits grid */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            padding-right: 80px;
+            padding-left: 80px;
+        }
+        
+        /* Benefit card */
+        .benefit-card {
+            background: rgba(0, 217, 255, 0.04);
+            border: 1px solid rgba(0, 217, 255, 0.15);
+            border-top: 3px solid;
+            min-height: 155px;
+            display: flex;
+            flex-direction: column;
+            padding-top: 25px;
+            padding-right: 25px;
+            padding-left: 25px;
+        }
+        
+        .benefit-card:nth-child(1) { border-top-color: #00D9FF; }
+        .benefit-card:nth-child(2) { border-top-color: #10B981; }
+        .benefit-card:nth-child(3) { border-top-color: #7C3AED; }
+        .benefit-card:nth-child(4) { border-top-color: #F59E0B; }
+        .benefit-card:nth-child(5) { border-top-color: #EF4444; }
+        .benefit-card:nth-child(6) { border-top-color: #06B6D4; }
+        .benefit-card:nth-child(7) { border-top-color: #8B5CF6; }
+        .benefit-card:nth-child(8) { border-top-color: #EC4899; }
+        
+        .benefit-icon {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+        
+        .benefit-card:nth-child(1) .benefit-icon { color: #00D9FF; }
+        .benefit-card:nth-child(2) .benefit-icon { color: #10B981; }
+        .benefit-card:nth-child(3) .benefit-icon { color: #7C3AED; }
+        .benefit-card:nth-child(4) .benefit-icon { color: #F59E0B; }
+        .benefit-card:nth-child(5) .benefit-icon { color: #EF4444; }
+        .benefit-card:nth-child(6) .benefit-icon { color: #06B6D4; }
+        .benefit-card:nth-child(7) .benefit-icon { color: #8B5CF6; }
+        .benefit-card:nth-child(8) .benefit-icon { color: #EC4899; }
+        
+        .benefit-title {
+            font-size: 19px;
+            font-weight: 700;
+            color: #E8F1F5;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+        
+        .benefit-description {
+            font-size: 14px;
+            color: #E8F1F5;
+            opacity: 0.75;
+            line-height: 1.5;
+        }
+        
+        /* Bottom banner */
+        .bottom-banner {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 217, 255, 0.08);
+            border-top: 2px solid rgba(0, 217, 255, 0.3);
+            padding-top: 15px;
+            padding-bottom: 15px;
+            text-align: center;
+        }
+        
+        .banner-text {
+            font-size: 16px;
+            font-weight: 600;
+            color: #00D9FF;
+        }
+        
+        .banner-subtext {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 12px;
+            color: #E8F1F5;
+            opacity: 0.7;
+            margin-top: 3px;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <!-- Grid background -->
+        <div class="grid-background"></div>
+        
+        <!-- Accent line -->
+        <div class="accent-line"></div>
+        
+        <!-- Content -->
+        <div class="content">
+            <!-- Header -->
+            <div class="header">
+                <h1 class="title">الفوائد التقنية والميزات التنافسية</h1>
+                <p class="subtitle">المزايا الرئيسية للبنية التقنية لنظام Oracle للتوظيف الذكي</p>
+            </div>
+            
+            <!-- Benefits grid -->
+            <div class="benefits-grid">
+                <!-- Benefit 1: Type Safety -->
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="benefit-title">الأمان النوعي الشامل</div>
+                    <div class="benefit-description">
+                        TypeScript من البداية للنهاية يمنع الأخطاء في وقت التطوير ويقلل الأخطاء البرمجية بنسبة 60%
+                    </div>
+                </div>
+                
+                <!-- Benefit 2: Developer Experience -->
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="benefit-title">تجربة تطويرية ممتازة</div>
+                    <div class="benefit-description">
+                        Hot reload، autocomplete، inline documentation تسرع التطوير وتحسن الإنتاجية
+                    </div>
+                </div>
+                
+                <!-- Benefit 3: Maintainability -->
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="benefit-title">قابلية الصيانة العالية</div>
+                    <div class="benefit-description">
+                        فصل واضح للمسؤوليات ومعمارية معيارية تسهل الصيانة والتطوير المستقبلي
+                    </div>
+                </div>
+                
+                <!-- Benefit 4: Testability -->
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-vial"></i>
+                    </div>
+                    <div class="benefit-title">قابلية الاختبار الشاملة</div>
+                    <div class="benefit-description">
+                        تغطية اختبارية شاملة مع Vitest للوحدات والتكامل والـ E2E
+                    </div>
+                </div>
+                
+                <!-- Benefit 5: Scalability -->
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <div class="benefit-title">قابلية التوسع السحابية</div>
+                    <div class="benefit-description">
+                        معمارية سحابية أصلية تدعم النمو مع التوسع الأفقي والتلقائي
+                    </div>
+                </div>
+                
+                <!-- Benefit 6: Security -->
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="benefit-title">أمان متعدد الطبقات</div>
+                    <div class="benefit-description">
+                        طبقات حماية متعددة من المصادقة إلى التشفير والتحقق من المدخلات
+                    </div>
+                </div>
+                
+                <!-- Benefit 7: Performance -->
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <div class="benefit-title">أداء محسّن</div>
+                    <div class="benefit-description">
+                        تحسينات شاملة من Code Splitting إلى Caching والفهرسة المحسّنة
+                    </div>
+                </div>
+                
+                <!-- Benefit 8: Reliability -->
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="benefit-title">موثوقية عالية</div>
+                    <div class="benefit-description">
+                        توافرية عالية مع تحمل الأخطاء والنسخ الاحتياطي التلقائي
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom banner -->
+            <div class="bottom-banner">
+                <div class="banner-text">
+                    <i class="fas fa-star"></i>
+                    بنية تقنية عالمية المستوى لنظام توظيف ذكي ومتطور
+                </div>
+                <div class="banner-subtext">ENTERPRISE-GRADE TECHNICAL ARCHITECTURE</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

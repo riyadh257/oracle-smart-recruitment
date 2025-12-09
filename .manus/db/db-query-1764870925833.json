@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS `emailAbVariants` (\n  `id` int AUTO_INCREMENT PRIMARY KEY,\n  `testId` int NOT NULL,\n  `variant` enum('A', 'B') NOT NULL,\n  `templateId` int NULL,\n  `subject` varchar(500) NOT NULL,\n  `bodyHtml` text NOT NULL,\n  `bodyText` text NULL,\n  `sentCount` int DEFAULT 0,\n  `deliveredCount` int DEFAULT 0,\n  `openCount` int DEFAULT 0,\n  `clickCount` int DEFAULT 0,\n  `openRate` int DEFAULT 0,\n  `clickRate` int DEFAULT 0,\n  `createdAt` timestamp DEFAULT CURRENT_TIMESTAMP NOT NULL,\n  `updatedAt` timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL\n)",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS `emailAbVariants` (\n  `id` int AUTO_INCREMENT PRIMARY KEY,\n  `testId` int NOT NULL,\n  `variant` enum('A', 'B') NOT NULL,\n  `templateId` int NULL,\n  `subject` varchar(500) NOT NULL,\n  `bodyHtml` text NOT NULL,\n  `bodyText` text NULL,\n  `sentCount` int DEFAULT 0,\n  `deliveredCount` int DEFAULT 0,\n  `openCount` int DEFAULT 0,\n  `clickCount` int DEFAULT 0,\n  `openRate` int DEFAULT 0,\n  `clickRate` int DEFAULT 0,\n  `createdAt` timestamp DEFAULT CURRENT_TIMESTAMP NOT NULL,\n  `updatedAt` timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL\n)",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1716
+}

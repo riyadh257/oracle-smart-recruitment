@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: #FFFFFF;
+        font-family: 'Inter', sans-serif;
+        position: relative;
+      }
+      
+      .content-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 60px;
+        min-height: 720px;
+        padding-left: 80px;
+        padding-right: 80px;
+      }
+      
+      .left-column {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 60px;
+      }
+      
+      .accent-bar {
+        width: 80px;
+        height: 4px;
+        background: #0066CC;
+        margin-bottom: 32px;
+      }
+      
+      .page-title {
+        font-size: 40px;
+        font-weight: 700;
+        color: #1a1a1a;
+        line-height: 1.2;
+        margin-bottom: 40px;
+      }
+      
+      .highlight {
+        color: #0066CC;
+      }
+      
+      .analytics-list {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+      
+      .analytics-item {
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+      }
+      
+      .metric-indicator {
+        width: 40px;
+        height: 40px;
+        background: #0066CC;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      
+      .metric-indicator i {
+        color: #FFFFFF;
+        font-size: 18px;
+      }
+      
+      .analytics-item:nth-child(2) .metric-indicator {
+        background: #FF6B35;
+      }
+      
+      .analytics-item:nth-child(4) .metric-indicator {
+        background: #FF6B35;
+      }
+      
+      .analytics-content {
+        flex: 1;
+      }
+      
+      .analytics-title {
+        font-size: 20px;
+        font-weight: 600;
+        color: #1a1a1a;
+        margin-bottom: 6px;
+      }
+      
+      .analytics-description {
+        font-size: 16px;
+        font-weight: 400;
+        color: #666666;
+        line-height: 1.5;
+      }
+      
+      .right-column {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+      
+      .dashboard-container {
+        width: 100%;
+        height: 560px;
+        position: relative;
+      }
+      
+      .dashboard-image {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+      
+      .accent-frame {
+        position: absolute;
+        top: -15px;
+        right: -15px;
+        width: 120px;
+        height: 120px;
+        border-top: 4px solid #0066CC;
+        border-right: 4px solid #0066CC;
+        z-index: -1;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="content-grid">
+            <div class="left-column">
+                <div class="accent-bar"></div>
+                <h2 class="page-title">
+                    <span class="highlight">Data-Driven</span><br>
+                    Hiring Decisions
+                </h2>
+                
+                <div class="analytics-list">
+                    <div class="analytics-item">
+                        <div class="metric-indicator">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="analytics-content">
+                            <h3 class="analytics-title">Recruitment Metrics</h3>
+                            <p class="analytics-description">Track applications, interviews, offers, and conversion rates across all hiring stages.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="analytics-item">
+                        <div class="metric-indicator">
+                            <i class="fas fa-filter"></i>
+                        </div>
+                        <div class="analytics-content">
+                            <h3 class="analytics-title">Pipeline Visualization</h3>
+                            <p class="analytics-description">Real-time candidate flow through screening, interview, and offer stages with bottleneck identification.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="analytics-item">
+                        <div class="metric-indicator">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="analytics-content">
+                            <h3 class="analytics-title">Time-to-Hire Tracking</h3>
+                            <p class="analytics-description">Measure hiring velocity by department, role, and seniority level to optimize process efficiency.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="analytics-item">
+                        <div class="metric-indicator">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <div class="analytics-content">
+                            <h3 class="analytics-title">Source Effectiveness</h3>
+                            <p class="analytics-description">Analyze which recruitment channels deliver the highest quality candidates and best ROI.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="analytics-item">
+                        <div class="metric-indicator">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="analytics-content">
+                            <h3 class="analytics-title">Predictive Analytics</h3>
+                            <p class="analytics-description">AI-powered predictions for candidate success rates and optimal hiring decisions based on historical data.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="right-column">
+                <div class="dashboard-container">
+                    <img src="/home/ubuntu/oracle-smart-recruitment/presentation/assets/dashboard.png" alt="Analytics dashboard visualization" class="dashboard-image">
+                    <div class="accent-frame"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

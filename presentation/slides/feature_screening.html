@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intelligent Candidate Screening</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .slide-container {
+      width: 1280px;
+      min-height: 720px;
+      background: #1F233E;
+      font-family: 'Space Grotesk', sans-serif;
+      color: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      padding-top: 60px;
+      padding-left: 80px;
+      padding-right: 80px;
+      margin-bottom: 40px;
+    }
+
+    .page-title {
+      font-size: 48px;
+      font-weight: 700;
+      color: #FFFFFF;
+      position: relative;
+      display: inline-block;
+    }
+
+    .page-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 120px;
+      height: 4px;
+      background: linear-gradient(90deg, #04DBFA, #00E3B5);
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 60px;
+      padding-left: 80px;
+      padding-right: 80px;
+      padding-top: 20px;
+    }
+
+    .left-column {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .feature-intro {
+      font-size: 18px;
+      font-weight: 300;
+      color: #8EC5FC;
+      line-height: 1.6;
+    }
+
+    .process-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .process-step {
+      display: grid;
+      grid-template-columns: 50px 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .step-number {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(4, 219, 250, 0.1);
+      border: 2px solid #04DBFA;
+      font-size: 24px;
+      font-weight: 700;
+      color: #04DBFA;
+    }
+
+    .step-content {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding-top: 5px;
+    }
+
+    .step-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: #FFFFFF;
+    }
+
+    .step-description {
+      font-size: 15px;
+      font-weight: 300;
+      color: #8EC5FC;
+      line-height: 1.5;
+    }
+
+    .right-column {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .metric-box {
+      background: rgba(255, 255, 255, 0.03);
+      border: 2px solid rgba(4, 219, 250, 0.2);
+      min-height: 140px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .metric-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #04DBFA, #00E3B5);
+    }
+
+    .metric-value {
+      font-size: 56px;
+      font-weight: 700;
+      color: #04DBFA;
+      line-height: 1;
+      margin-bottom: 15px;
+    }
+
+    .metric-label {
+      font-size: 18px;
+      font-weight: 500;
+      color: #FFFFFF;
+      text-align: center;
+    }
+
+    .metric-sublabel {
+      font-size: 14px;
+      font-weight: 300;
+      color: #8EC5FC;
+      text-align: center;
+      margin-top: 8px;
+    }
+
+    .benefits-list {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .benefit-item {
+      display: grid;
+      grid-template-columns: 30px 1fr;
+      gap: 15px;
+      align-items: start;
+    }
+
+    .benefit-icon {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .benefit-icon i {
+      font-size: 18px;
+      color: #00E3B5;
+    }
+
+    .benefit-text {
+      font-size: 15px;
+      font-weight: 400;
+      color: #FFFFFF;
+      line-height: 1.5;
+      padding-top: 5px;
+    }
+
+    .accent-line {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #04DBFA 0%, #00E3B5 50%, #1F233E 100%);
+    }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="header">
+      <h1 class="page-title">Intelligent Candidate Screening</h1>
+    </div>
+
+    <div class="content-grid">
+      <div class="left-column">
+        <p class="feature-intro">AI-powered screening engine transforms resume review from days of manual work into minutes of intelligent analysis.</p>
+        
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <div class="step-title">Resume Analysis</div>
+              <div class="step-description">Automatically extracts and structures candidate information from resumes</div>
+            </div>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <div class="step-title">Skill Match Scoring</div>
+              <div class="step-description">Compares candidate qualifications against job requirements with precision scoring</div>
+            </div>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <div class="step-title">Strength Identification</div>
+              <div class="step-description">Highlights candidate strengths and potential gaps for informed decision-making</div>
+            </div>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <div class="step-title">Actionable Recommendations</div>
+              <div class="step-description">Provides hiring recommendations based on comprehensive candidate assessment</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="right-column">
+        <div class="metric-box">
+          <div class="metric-value">100+</div>
+          <div class="metric-label">Applications Processed</div>
+          <div class="metric-sublabel">In minutes, not days</div>
+        </div>
+
+        <div class="metric-box">
+          <div class="metric-value">70%</div>
+          <div class="metric-label">Time Reduction</div>
+          <div class="metric-sublabel">Versus manual review</div>
+        </div>
+
+        <div class="benefits-list">
+          <div class="benefit-item">
+            <div class="benefit-icon"><i class="fas fa-check-circle"></i></div>
+            <div class="benefit-text">Eliminates unconscious bias in initial screening</div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon"><i class="fas fa-check-circle"></i></div>
+            <div class="benefit-text">Consistent evaluation criteria across all candidates</div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon"><i class="fas fa-check-circle"></i></div>
+            <div class="benefit-text">Scalable to handle high-volume recruitment</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accent-line"></div>
+  </div>
+</body>
+</html>

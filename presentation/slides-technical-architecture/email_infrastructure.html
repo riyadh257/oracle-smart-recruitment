@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: linear-gradient(135deg, #0A1628 0%, #1a2942 100%);
+        font-family: 'Inter', sans-serif;
+        color: #E2E8F0;
+        position: relative;
+      }
+      
+      .content-wrapper {
+        padding-top: 60px;
+        padding-left: 60px;
+        padding-right: 60px;
+        min-height: 720px;
+      }
+      
+      .page-title {
+        font-size: 36px;
+        font-weight: 700;
+        color: #60A5FA;
+        margin-bottom: 45px;
+        line-height: 1.2;
+      }
+      
+      .main-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+        margin-bottom: 30px;
+      }
+      
+      .feature-card {
+        background: rgba(59, 130, 246, 0.05);
+        border: 1px solid rgba(59, 130, 246, 0.2);
+        padding-top: 22px;
+        padding-left: 22px;
+        padding-right: 22px;
+        min-height: 160px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      
+      .feature-icon-wrapper {
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        color: #ffffff;
+      }
+      
+      .feature-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #E2E8F0;
+        margin-bottom: 6px;
+      }
+      
+      .feature-desc {
+        font-size: 14px;
+        font-weight: 400;
+        color: #94A3B8;
+        line-height: 1.5;
+      }
+      
+      .capabilities-section {
+        padding-top: 25px;
+        border-top: 1px solid rgba(96, 165, 250, 0.2);
+      }
+      
+      .capabilities-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      
+      .capabilities-title {
+        font-size: 16px;
+        font-weight: 600;
+        color: #94A3B8;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      
+      .capabilities-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+      }
+      
+      .capability-badge {
+        padding-top: 14px;
+        padding-left: 16px;
+        padding-right: 16px;
+        min-height: 60px;
+        background: rgba(16, 185, 129, 0.08);
+        border: 1px solid rgba(16, 185, 129, 0.3);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      
+      .capability-badge i {
+        font-size: 18px;
+        color: #10B981;
+      }
+      
+      .capability-text {
+        font-size: 14px;
+        font-weight: 500;
+        color: #E2E8F0;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="content-wrapper">
+            <h2 class="page-title">Multi-Channel Communication System with Template Management and Analytics</h2>
+            
+            <div class="main-grid">
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <i class="fas fa-paper-plane"></i>
+                    </div>
+                    <div class="feature-title">SendGrid Integration</div>
+                    <div class="feature-desc">
+                        Handles transactional emails including application confirmations, interview invitations, and status updates with reliable delivery infrastructure
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <i class="fas fa-file-code"></i>
+                    </div>
+                    <div class="feature-title">Template Management</div>
+                    <div class="feature-desc">
+                        Version control system with employer branding customization and merge field support for personalized communications
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="feature-title">Email Analytics</div>
+                    <div class="feature-desc">
+                        Track open rates, click-through rates, and reply detection for engagement optimization and campaign effectiveness measurement
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="feature-title">Scheduled Campaigns</div>
+                    <div class="feature-desc">
+                        Automate candidate nurturing sequences, employer follow-ups, and re-engagement workflows with intelligent timing
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="feature-title">Calendar Integration</div>
+                    <div class="feature-desc">
+                        Generate ICS files for interview invitations with automatic timezone conversion and calendar provider compatibility
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <div class="feature-title">A/B Testing</div>
+                    <div class="feature-desc">
+                        Test subject lines, content variations, and send times to optimize engagement rates and conversion performance
+                    </div>
+                </div>
+            </div>
+            
+            <div class="capabilities-section">
+                <div class="capabilities-header">
+                    <div class="capabilities-title">Advanced Capabilities</div>
+                </div>
+                
+                <div class="capabilities-grid">
+                    <div class="capability-badge">
+                        <i class="fas fa-shield-alt"></i>
+                        <div class="capability-text">Deliverability Monitoring</div>
+                    </div>
+                    
+                    <div class="capability-badge">
+                        <i class="fas fa-fire"></i>
+                        <div class="capability-text">Warmup Sequences</div>
+                    </div>
+                    
+                    <div class="capability-badge">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <div class="capability-text">Bounce Handling</div>
+                    </div>
+                    
+                    <div class="capability-badge">
+                        <i class="fas fa-reply"></i>
+                        <div class="capability-text">Reply Detection</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

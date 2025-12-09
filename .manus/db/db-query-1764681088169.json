@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS `hiring_outcomes` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `application_id` int NOT NULL,\n  `job_id` int NOT NULL,\n  `years_of_experience` int,\n  `ai_score` int,\n  `interview_count` int NOT NULL DEFAULT 0,\n  `avg_interview_rating` int,\n  `assessment_score` int,\n  `time_to_first_interview` int,\n  `time_to_offer` int,\n  `was_hired` boolean NOT NULL,\n  `performance_rating` int,\n  `retention_months` int,\n  `recorded_at` timestamp NOT NULL DEFAULT (now()),\n  `created_at` timestamp NOT NULL DEFAULT (now()),\n  CONSTRAINT `hiring_outcomes_id` PRIMARY KEY(`id`)\n)",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS `hiring_outcomes` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `application_id` int NOT NULL,\n  `job_id` int NOT NULL,\n  `years_of_experience` int,\n  `ai_score` int,\n  `interview_count` int NOT NULL DEFAULT 0,\n  `avg_interview_rating` int,\n  `assessment_score` int,\n  `time_to_first_interview` int,\n  `time_to_offer` int,\n  `was_hired` boolean NOT NULL,\n  `performance_rating` int,\n  `retention_months` int,\n  `recorded_at` timestamp NOT NULL DEFAULT (now()),\n  `created_at` timestamp NOT NULL DEFAULT (now()),\n  CONSTRAINT `hiring_outcomes_id` PRIMARY KEY(`id`)\n)",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1754
+}

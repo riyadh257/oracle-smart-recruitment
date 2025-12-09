@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprehensive Reports</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #0A1929 0%, #1A2332 100%);
+            font-family: 'Inter', sans-serif;
+            color: #E8EEF2;
+            position: relative;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 55% 45%;
+            min-height: 720px;
+            align-items: center;
+        }
+        
+        .left-content {
+            padding-top: 80px;
+            padding-left: 80px;
+            padding-right: 40px;
+        }
+        
+        .page-heading {
+            font-size: 44px;
+            font-weight: 700;
+            color: #00D4FF;
+            line-height: 1.2;
+            margin-bottom: 28px;
+            max-width: 580px;
+        }
+        
+        .features-section {
+            margin-bottom: 28px;
+        }
+        
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #E8EEF2;
+            margin-bottom: 16px;
+        }
+        
+        .features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .feature-icon {
+            font-size: 18px;
+            color: #00D4FF;
+            min-width: 24px;
+        }
+        
+        .feature-text {
+            font-size: 16px;
+            font-weight: 500;
+            color: rgba(232, 238, 242, 0.85);
+            line-height: 1.4;
+        }
+        
+        .report-types {
+            padding-top: 24px;
+            border-top: 1px solid rgba(0, 212, 255, 0.2);
+        }
+        
+        .report-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+        
+        .report-bullet {
+            width: 6px;
+            height: 6px;
+            background: #0066FF;
+            border-radius: 50%;
+            margin-right: 12px;
+            margin-top: 8px;
+            min-width: 6px;
+        }
+        
+        .report-text {
+            font-size: 16px;
+            font-weight: 400;
+            color: rgba(232, 238, 242, 0.8);
+            line-height: 1.5;
+        }
+        
+        .right-content {
+            padding-top: 80px;
+            padding-right: 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .export-formats {
+            display: flex;
+            gap: 32px;
+            margin-bottom: 32px;
+        }
+        
+        .format-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .icon-circle {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(0, 102, 255, 0.15) 100%);
+            border: 2px solid #00D4FF;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            color: #00D4FF;
+        }
+        
+        .format-label {
+            font-size: 16px;
+            font-weight: 600;
+            color: #E8EEF2;
+        }
+        
+        .report-preview {
+            width: 500px;
+            height: 340px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .report-preview img {
+            width: 500px;
+            height: 340px;
+            object-fit: contain;
+        }
+        
+        .accent-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #00D4FF 0%, #0066FF 50%, #7B61FF 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="content-grid">
+            <div class="left-content">
+                <h1 class="page-heading">Comprehensive Reports in Excel & PDF</h1>
+                
+                <div class="features-section">
+                    <h2 class="section-title">Key Features</h2>
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <i class="fas fa-file-export feature-icon"></i>
+                            <div class="feature-text">Flexible export to Excel (.xlsx) and PDF formats</div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <i class="fas fa-filter feature-icon"></i>
+                            <div class="feature-text">Advanced filtering by skills, experience, match score</div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <i class="fas fa-layer-group feature-icon"></i>
+                            <div class="feature-text">Custom templates for different stakeholders</div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <i class="fas fa-clock feature-icon"></i>
+                            <div class="feature-text">Automated scheduling with email delivery</div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <i class="fas fa-history feature-icon"></i>
+                            <div class="feature-text">Complete audit trail for compliance</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="report-types">
+                    <h2 class="section-title">Report Types</h2>
+                    
+                    <div class="report-item">
+                        <div class="report-bullet"></div>
+                        <div class="report-text">Candidate shortlists with match scores and skill breakdowns</div>
+                    </div>
+                    
+                    <div class="report-item">
+                        <div class="report-bullet"></div>
+                        <div class="report-text">Skills gap analysis reports for workforce planning</div>
+                    </div>
+                    
+                    <div class="report-item">
+                        <div class="report-bullet"></div>
+                        <div class="report-text">Recruitment funnel analytics with conversion metrics</div>
+                    </div>
+                    
+                    <div class="report-item">
+                        <div class="report-bullet"></div>
+                        <div class="report-text">Diversity and inclusion metrics for compliance</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="right-content">
+                <div class="export-formats">
+                    <div class="format-icon">
+                        <div class="icon-circle">
+                            <i class="fas fa-file-excel"></i>
+                        </div>
+                        <div class="format-label">Excel</div>
+                    </div>
+                    
+                    <div class="format-icon">
+                        <div class="icon-circle">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div class="format-label">PDF</div>
+                    </div>
+                </div>
+                
+                <div class="report-preview">
+                    <img src="/home/ubuntu/oracle-smart-recruitment/presentation/assets/skills-gap.png" alt="Skills gap analysis report sample">
+                </div>
+            </div>
+        </div>
+        
+        <div class="accent-bar"></div>
+    </div>
+</body>
+</html>

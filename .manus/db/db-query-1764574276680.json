@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS `campaign_conversion_events` (\n  `id` int AUTO_INCREMENT PRIMARY KEY,\n  `campaign_id` int NOT NULL,\n  `variant_id` int,\n  `recipient_id` int NOT NULL,\n  `candidate_id` int NOT NULL,\n  `conversion_type` enum('application_submitted', 'interview_scheduled', 'offer_accepted', 'hire_completed', 'custom') NOT NULL,\n  `conversion_value` int DEFAULT 0,\n  `attribution_model` enum('first_touch', 'last_touch', 'linear', 'time_decay') DEFAULT 'last_touch',\n  `metadata` json,\n  `converted_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,\n  `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP\n);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS `campaign_conversion_events` (\n  `id` int AUTO_INCREMENT PRIMARY KEY,\n  `campaign_id` int NOT NULL,\n  `variant_id` int,\n  `recipient_id` int NOT NULL,\n  `candidate_id` int NOT NULL,\n  `conversion_type` enum('application_submitted', 'interview_scheduled', 'offer_accepted', 'hire_completed', 'custom') NOT NULL,\n  `conversion_value` int DEFAULT 0,\n  `attribution_model` enum('first_touch', 'last_touch', 'linear', 'time_decay') DEFAULT 'last_touch',\n  `metadata` json,\n  `converted_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,\n  `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP\n);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1748
+}

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font-family: 'Inter', sans-serif; }
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: #0F172A;
+        padding-top: 60px;
+      }
+      .header {
+        padding-left: 80px;
+        padding-right: 80px;
+        margin-bottom: 40px;
+      }
+      .page-title {
+        font-size: 36px;
+        font-weight: 700;
+        color: #3B82F6;
+        margin-bottom: 10px;
+      }
+      .title-underline {
+        width: 80px;
+        height: 3px;
+        background: linear-gradient(90deg, #3B82F6, #10B981);
+      }
+      .content-wrapper {
+        display: grid;
+        grid-template-columns: 35% 65%;
+        gap: 50px;
+        padding-left: 80px;
+        padding-right: 80px;
+        min-height: 560px;
+      }
+      .channels-section {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .section-label {
+        font-size: 18px;
+        font-weight: 600;
+        color: #94A3B8;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .channel-item {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        background: linear-gradient(135deg, #1E293B, #0F172A);
+        border-left: 3px solid #3B82F6;
+        padding-top: 20px;
+        padding-left: 25px;
+        padding-right: 25px;
+        min-height: 80px;
+      }
+      .channel-icon {
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(135deg, #1E3A8A, #3B82F6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 50px;
+      }
+      .channel-icon i {
+        font-size: 24px;
+        color: #FFFFFF;
+      }
+      .channel-name {
+        font-size: 18px;
+        font-weight: 600;
+        color: #60A5FA;
+      }
+      .features-section {
+        display: flex;
+        flex-direction: column;
+        gap: 15px; /* reduced from 30px to save 30px total across two gaps */
+      }
+      .feature-group {
+        border-left: 3px solid #10B981;
+        padding-left: 25px;
+      }
+      .feature-group-title {
+        font-size: 20px;
+        font-weight: 600;
+        color: #60A5FA;
+        margin-bottom: 8px; /* reduced from 12px */
+      }
+      .feature-list {
+        list-style: none;
+      }
+      .feature-list li {
+        font-size: 15px;
+        color: #CBD5E1;
+        margin-bottom: 6px; /* reduced from 10px to tighten list spacing */
+        padding-left: 20px;
+        position: relative;
+        line-height: 1.5;
+      }
+      .feature-list li::before {
+        content: '▸';
+        position: absolute;
+        left: 0;
+        color: #10B981;
+        font-weight: 700;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+      <div class="header">
+        <h1 class="page-title">Notification & Communication</h1>
+        <div class="title-underline"></div>
+      </div>
+      
+      <div class="content-wrapper">
+        <div class="channels-section">
+          <div class="section-label">Communication Channels</div>
+          
+          <div class="channel-item">
+            <div class="channel-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="channel-name">Email Notifications</div>
+          </div>
+          
+          <div class="channel-item">
+            <div class="channel-icon">
+              <i class="fas fa-calendar-check"></i>
+            </div>
+            <div class="channel-name">Calendar Invites</div>
+          </div>
+          
+          <div class="channel-item">
+            <div class="channel-icon">
+              <i class="fas fa-bell"></i>
+            </div>
+            <div class="channel-name">Push Notifications</div>
+          </div>
+          
+          <div class="channel-item">
+            <div class="channel-icon">
+              <i class="fas fa-sms"></i>
+            </div>
+            <div class="channel-name">SMS Alerts</div>
+          </div>
+        </div>
+        
+        <div class="features-section">
+          <div class="feature-group">
+            <h3 class="feature-group-title">Email System</h3>
+            <ul class="feature-list">
+              <li>Customizable email templates for all communication types</li>
+              <li>Application status updates (submitted, screening, interviewing, offered, rejected)</li>
+              <li>Automated employer notifications for new applications</li>
+              <li>Rich HTML email support with branding consistency</li>
+              <li>Merge fields for personalized content</li>
+            </ul>
+          </div>
+          
+          <div class="feature-group">
+            <h3 class="feature-group-title">Calendar Integration</h3>
+            <ul class="feature-list">
+              <li>Calendly integration for interview scheduling</li>
+              <li>Automated calendar invite generation</li>
+              <li>Interview reminder notifications (24h, 1h before)</li>
+              <li>Rescheduling and cancellation notifications</li>
+              <li>Meeting URL distribution via email</li>
+            </ul>
+          </div>
+          
+          <div class="feature-group">
+            <h3 class="feature-group-title">Customization & Branding</h3>
+            <ul class="feature-list">
+              <li>Employer-specific email branding (logo, colors, fonts)</li>
+              <li>Custom template creation and management</li>
+              <li>Social media links in email footers</li>
+              <li>Company-specific messaging and tone</li>
+              <li>Multi-language support for global teams</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>

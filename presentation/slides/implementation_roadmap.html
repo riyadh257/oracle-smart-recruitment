@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implementation Roadmap</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #000;
+        }
+        
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #0B1A3E;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .content-wrapper {
+            padding-top: 60px; /* Keep title upper padding intact */
+            padding-left: 80px;
+            padding-right: 80px;
+        }
+        
+        .slide-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 20px; /* Reduced from 35 to save 15px */
+            line-height: 1.3;
+        }
+        
+        .timeline-header {
+            text-align: center;
+            margin-bottom: 22px; /* Reduced from 45 */
+        }
+        
+        .timeline-duration {
+            font-size: 56px;
+            font-weight: 800;
+            color: #3B82F6;
+            line-height: 1;
+            margin-bottom: 6px; /* Reduced from 10 */
+        }
+        
+        .timeline-subtitle {
+            font-size: 18px;
+            font-weight: 600;
+            color: #E8EDF5;
+            line-height: 1.3;
+        }
+        
+        .phases-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            gap: 30px;
+            margin-bottom: 16px; /* Reduced from 40 */
+            position: relative;
+        }
+        
+        .phase-card {
+            width: 340px;
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 4px solid #3B82F6;
+            padding-left: 25px;
+            padding-right: 25px;
+            padding-top: 18px; /* Reduced from 25 */
+            min-height: 300px; /* Reduced to avoid unnecessary extra height */
+            display: flex;
+            flex-direction: column;
+            gap: 10px; /* Use consistent internal spacing */
+            position: relative;
+        }
+        
+        .phase-card.phase-2 {
+            border-left-color: #10B981;
+        }
+        
+        .phase-card.phase-3 {
+            border-left-color: #3B82F6;
+        }
+        
+        .phase-number {
+            font-size: 14px;
+            font-weight: 700;
+            color: #3B82F6;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0; /* remove extra margin */
+        }
+        
+        .phase-card.phase-2 .phase-number {
+            color: #10B981;
+        }
+        
+        .phase-card.phase-3 .phase-number {
+            color: #3B82F6;
+        }
+        
+        .phase-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #FFFFFF;
+            line-height: 1.3;
+            margin-bottom: 0; /* remove extra margin */
+        }
+        
+        .phase-weeks {
+            font-size: 15px;
+            font-weight: 600;
+            color: #E8EDF5;
+            margin-bottom: 0; /* remove extra margin, controlled by gap */
+        }
+        
+        .phase-activities {
+            display: flex;
+            flex-direction: column;
+            gap: 8px; /* Reduced from 12 */
+        }
+        
+        .activity-item {
+            display: flex;
+            align-items: start;
+            gap: 10px;
+            font-size: 14px;
+            color: #E8EDF5;
+            line-height: 1.5;
+        }
+        
+        .activity-bullet {
+            width: 6px;
+            height: 6px;
+            background: #3B82F6;
+            flex-shrink: 0;
+            margin-top: 7px;
+        }
+        
+        .phase-card.phase-2 .activity-bullet {
+            background: #10B981;
+        }
+        
+        .phase-card.phase-3 .activity-bullet {
+            background: #3B82F6;
+        }
+        
+        .phase-icon {
+            position: absolute;
+            top: 18px; /* align with reduced top padding */
+            right: 25px;
+            font-size: 32px;
+            color: rgba(59, 130, 246, 0.2);
+        }
+        
+        .phase-card.phase-2 .phase-icon {
+            color: rgba(16, 185, 129, 0.2);
+        }
+        
+        .phase-card.phase-3 .phase-icon {
+            color: rgba(59, 130, 246, 0.2);
+        }
+        
+        .connector {
+            position: absolute;
+            top: 160px;
+            width: 30px;
+            height: 2px;
+            background: linear-gradient(90deg, #3B82F6, #10B981);
+        }
+        
+        .connector-1 {
+            left: 370px;
+        }
+        
+        .connector-2 {
+            left: 740px;
+        }
+        
+        .connector-arrow {
+            position: absolute;
+            right: -8px;
+            top: -4px;
+            font-size: 10px;
+            color: #10B981;
+        }
+        
+        .roi-banner {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(59, 130, 246, 0.15));
+            border-top: 3px solid #10B981;
+            border-left: 3px solid #10B981;
+            padding-left: 40px;
+            padding-right: 40px;
+            padding-top: 14px; /* Reduced from 25 */
+            min-height: 70px; /* Reduced from 100, content still controls final height */
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+        
+        .roi-icon {
+            font-size: 44px; /* Reduced from 48 */
+            color: #10B981;
+        }
+        
+        .roi-content {
+            flex: 1;
+        }
+        
+        .roi-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #10B981;
+            margin-bottom: 4px; /* Reduced from 8 */
+            line-height: 1.3;
+        }
+        
+        .roi-text {
+            font-size: 15px;
+            font-weight: 400;
+            color: #E8EDF5;
+            line-height: 1.4; /* Slightly tighter to reduce height without changing font size */
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="content-wrapper">
+            <h1 class="slide-title">Three-Phase Deployment Delivers Value Within Weeks, Not Months</h1>
+            
+            <div class="timeline-header">
+                <div class="timeline-duration">4 Weeks</div>
+                <div class="timeline-subtitle">From Setup to Full Automation</div>
+            </div>
+            
+            <div class="phases-container">
+                <div class="connector connector-1">
+                    <div class="connector-arrow"><i class="fas fa-caret-right"></i></div>
+                </div>
+                <div class="connector connector-2">
+                    <div class="connector-arrow"><i class="fas fa-caret-right"></i></div>
+                </div>
+                
+                <div class="phase-card phase-1">
+                    <div class="phase-icon"><i class="fas fa-plug"></i></div>
+                    <div class="phase-number">Phase 1</div>
+                    <div class="phase-title">Platform Connection</div>
+                    <div class="phase-weeks"><i class="fas fa-calendar-alt"></i> Week 1-2</div>
+                    
+                    <div class="phase-activities">
+                        <div class="activity-item">
+                            <div class="activity-bullet"></div>
+                            <span>Register developer accounts with LinkedIn Jobs API, Indeed Publisher API, Bayt API</span>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-bullet"></div>
+                            <span>Configure API credentials and authentication in Settings → Platforms</span>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-bullet"></div>
+                            <span>Test connectivity and verify job posting capabilities on each platform</span>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-bullet"></div>
+                            <span>Set up contract management for job board partnerships</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="phase-card phase-2">
+                    <div class="phase-icon"><i class="fas fa-bolt"></i></div>
+                    <div class="phase-number">Phase 2</div>
+                    <div class="phase-title">Webhook Configuration</div>
+                    <div class="phase-weeks"><i class="fas fa-calendar-alt"></i> Week 2-3</div>
+                    
+                    <div class="phase-activities">
+                        <div class="activity-item">
+                            <div class="activity-bullet"></div>
+                            <span>Implement webhook endpoints to receive real-time application notifications</span>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-bullet"></div>
+                            <span>Configure automatic candidate synchronization into unified recruitment funnel</span>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-bullet"></div>
+                            <span>Set up automated acknowledgment emails and status update workflows</span>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-bullet"></div>
+                            <span>Test end-to-end application flow from all platforms</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="phase-card phase-3">
+                    <div class="phase-icon"><i class="fas fa-robot"></i></div>
+                    <div class="phase-number">Phase 3</div>
+                    <div class="phase-title">Smart Automation</div>
+                    <div class="phase-weeks"><i class="fas fa-calendar-alt"></i> Week 3-4</div>
+                    
+                    <div class="phase-activities">
+                        <div class="activity-item">
+                            <div class="activity-bullet"></div>
+                            <span>Create intelligent posting rules based on job category, location, and historical data</span>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-bullet"></div>
+                            <span>Configure budget optimization and platform selection algorithms</span>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-bullet"></div>
+                            <span>Enable analytics dashboard and begin tracking platform performance metrics</span>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-bullet"></div>
+                            <span>Launch AI-powered candidate screening and matching</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="roi-banner">
+                <div class="roi-icon"><i class="fas fa-rocket"></i></div>
+                <div class="roi-content">
+                    <div class="roi-title">Immediate ROI: Manual Posting Time Eliminated from Day One</div>
+                    <div class="roi-text">Start seeing value immediately as one-click distribution replaces hours of manual posting across platforms. Full automation capabilities deliver measurable time and cost savings within the first month.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

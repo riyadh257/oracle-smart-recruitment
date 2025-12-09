@@ -1,0 +1,2 @@
+ALTER TABLE `emailAbTests` MODIFY COLUMN `emailType` enum('interview_invite','interview_reminder','application_received','application_update','job_match','rejection','follow_up','broadcast','offer','custom') NOT NULL;--> statement-breakpoint
+ALTER TABLE `emailAbTests` MODIFY COLUMN `status` enum('draft','active','completed','paused') DEFAULT 'draft';

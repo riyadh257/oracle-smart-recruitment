@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS `quietHoursSchedule` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `userId` int NOT NULL,\n  `dayOfWeek` enum('monday','tuesday','wednesday','thursday','friday','saturday','sunday') NOT NULL,\n  `startTime` varchar(5) NOT NULL,\n  `endTime` varchar(5) NOT NULL,\n  `timezone` varchar(100) DEFAULT 'UTC' NOT NULL,\n  `isActive` tinyint DEFAULT 1 NOT NULL,\n  `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,\n  `updatedAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,\n  CONSTRAINT `quietHoursSchedule_id` PRIMARY KEY(`id`),\n  KEY `userId_idx` (`userId`),\n  KEY `dayOfWeek_idx` (`dayOfWeek`),\n  KEY `isActive_idx` (`isActive`)\n)",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS `quietHoursSchedule` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `userId` int NOT NULL,\n  `dayOfWeek` enum('monday','tuesday','wednesday','thursday','friday','saturday','sunday') NOT NULL,\n  `startTime` varchar(5) NOT NULL,\n  `endTime` varchar(5) NOT NULL,\n  `timezone` varchar(100) DEFAULT 'UTC' NOT NULL,\n  `isActive` tinyint DEFAULT 1 NOT NULL,\n  `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,\n  `updatedAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,\n  CONSTRAINT `quietHoursSchedule_id` PRIMARY KEY(`id`),\n  KEY `userId_idx` (`userId`),\n  KEY `dayOfWeek_idx` (`dayOfWeek`),\n  KEY `isActive_idx` (`isActive`)\n)",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1734
+}

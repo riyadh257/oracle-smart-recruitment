@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      .slide-container {
+        width: 1280px;
+        min-height: 720px;
+        background: #0A0E27;
+        font-family: 'Inter', sans-serif;
+        color: #E2E8F0;
+        position: relative;
+        padding-top: 60px;
+      }
+      
+      .grid-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: 
+          linear-gradient(rgba(96, 165, 250, 0.02) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(96, 165, 250, 0.02) 1px, transparent 1px);
+        background-size: 40px 40px;
+        pointer-events: none;
+      }
+      
+      .content {
+        position: relative;
+        z-index: 1;
+        padding-left: 80px;
+        padding-right: 80px;
+      }
+      
+      .page-title {
+        font-size: 36px;
+        font-weight: 700;
+        color: #60A5FA;
+        margin-bottom: 45px;
+        letter-spacing: -0.5px;
+      }
+      
+      .modules-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        margin-bottom: 35px;
+      }
+      
+      .module-box {
+        background: rgba(15, 23, 42, 0.6);
+        border-top: 3px solid;
+        padding-top: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        min-height: 140px;
+      }
+      
+      .module-box-1 { border-color: #60A5FA; }
+      .module-box-2 { border-color: #34D399; }
+      .module-box-3 { border-color: #F59E0B; }
+      .module-box-4 { border-color: #8B5CF6; }
+      .module-box-5 { border-color: #EC4899; }
+      .module-box-6 { border-color: #10B981; }
+      
+      .module-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 12px;
+      }
+      
+      .module-icon {
+        font-size: 20px;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .icon-1 { color: #60A5FA; }
+      .icon-2 { color: #34D399; }
+      .icon-3 { color: #F59E0B; }
+      .icon-4 { color: #8B5CF6; }
+      .icon-5 { color: #EC4899; }
+      .icon-6 { color: #10B981; }
+      
+      .module-title {
+        font-size: 16px;
+        font-weight: 600;
+        color: #E2E8F0;
+      }
+      
+      .module-desc {
+        font-size: 13px;
+        color: #94A3B8;
+        line-height: 1.5;
+      }
+      
+      .integration-section {
+        background: rgba(96, 165, 250, 0.05);
+        border-left: 3px solid #60A5FA;
+        padding-top: 20px;
+        padding-left: 24px;
+        padding-right: 24px;
+        min-height: 100px;
+      }
+      
+      .integration-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #60A5FA;
+        margin-bottom: 16px;
+      }
+      
+      .integration-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+      }
+      
+      .integration-col {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .integration-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 13px;
+      }
+      
+      .integration-label {
+        font-family: 'JetBrains Mono', monospace;
+        color: #34D399;
+        font-weight: 600;
+        min-width: 140px;
+      }
+      
+      .integration-value {
+        color: #CBD5E1;
+      }
+      
+      .metric-badge {
+        display: inline-block;
+        background: rgba(52, 211, 153, 0.15);
+        color: #34D399;
+        padding-top: 4px;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 12px;
+        font-weight: 600;
+        margin-left: 8px;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="grid-overlay"></div>
+        
+        <div class="content">
+            <h1 class="page-title">Email Automation & Analytics Platform</h1>
+            
+            <div class="modules-grid">
+                <div class="module-box module-box-1">
+                    <div class="module-header">
+                        <div class="module-icon icon-1">
+                            <i class="fas fa-file-code"></i>
+                        </div>
+                        <div class="module-title">Template Management</div>
+                    </div>
+                    <div class="module-desc">
+                        Customizable HTML/text templates for interview invites, application updates, job matches, and rejections with variable substitution
+                    </div>
+                </div>
+                
+                <div class="module-box module-box-2">
+                    <div class="module-header">
+                        <div class="module-icon icon-2">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <div class="module-title">Brand Customization</div>
+                    </div>
+                    <div class="module-desc">
+                        Per-employer branding with custom logos, color schemes, fonts, footer text, and social links for consistent brand identity
+                    </div>
+                </div>
+                
+                <div class="module-box module-box-3">
+                    <div class="module-header">
+                        <div class="module-icon icon-3">
+                            <i class="fas fa-paper-plane"></i>
+                        </div>
+                        <div class="module-title">Delivery Tracking</div>
+                    </div>
+                    <div class="module-desc">
+                        Real-time delivery status monitoring with sent, delivered, bounced, and failed states using unique tracking IDs
+                    </div>
+                </div>
+                
+                <div class="module-box module-box-4">
+                    <div class="module-header">
+                        <div class="module-icon icon-4">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="module-title">Email Analytics</div>
+                    </div>
+                    <div class="module-desc">
+                        Comprehensive metrics including open rates, click rates, engagement timing, and recipient behavior with pixel tracking
+                    </div>
+                </div>
+                
+                <div class="module-box module-box-5">
+                    <div class="module-header">
+                        <div class="module-icon icon-5">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <div class="module-title">Campaign Workflows</div>
+                    </div>
+                    <div class="module-desc">
+                        Automated multi-step campaigns with conditional logic, time delays, A/B testing, and engagement-based triggers
+                    </div>
+                </div>
+                
+                <div class="module-box module-box-6">
+                    <div class="module-header">
+                        <div class="module-icon icon-6">
+                            <i class="fas fa-reply"></i>
+                        </div>
+                        <div class="module-title">Reply Detection</div>
+                    </div>
+                    <div class="module-desc">
+                        Automated reply parsing with sentiment analysis, interest detection, and automatic workflow adjustments
+                    </div>
+                </div>
+            </div>
+            
+            <div class="integration-section">
+                <div class="integration-title">System Integration & Capabilities</div>
+                <div class="integration-content">
+                    <div class="integration-col">
+                        <div class="integration-item">
+                            <span class="integration-label">Delivery Engine:</span>
+                            <span class="integration-value">SMTP/SendGrid with retry logic</span>
+                        </div>
+                        <div class="integration-item">
+                            <span class="integration-label">Scheduling:</span>
+                            <span class="integration-value">Cron-based with timezone support</span>
+                        </div>
+                        <div class="integration-item">
+                            <span class="integration-label">Personalization:</span>
+                            <span class="integration-value">Dynamic variable substitution</span>
+                        </div>
+                    </div>
+                    <div class="integration-col">
+                        <div class="integration-item">
+                            <span class="integration-label">Tracking:</span>
+                            <span class="integration-value">Pixel-based open tracking
+                                <span class="metric-badge">99.2% accuracy</span>
+                            </span>
+                        </div>
+                        <div class="integration-item">
+                            <span class="integration-label">Preferences:</span>
+                            <span class="integration-value">Per-employer notification settings</span>
+                        </div>
+                        <div class="integration-item">
+                            <span class="integration-label">Compliance:</span>
+                            <span class="integration-value">Unsubscribe & GDPR support</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

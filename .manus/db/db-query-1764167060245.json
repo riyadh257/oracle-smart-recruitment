@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS `security_alerts` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `alert_type` varchar(100) NOT NULL,\n  `severity` enum('critical', 'high', 'medium', 'low') NOT NULL,\n  `title` varchar(255) NOT NULL,\n  `description` text,\n  `source` varchar(100),\n  `metadata` json,\n  `status` enum('active', 'acknowledged', 'resolved', 'dismissed') NOT NULL DEFAULT 'active',\n  `acknowledged_by` int,\n  `acknowledged_at` timestamp,\n  `resolved_by` int,\n  `resolved_at` timestamp,\n  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,\n  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,\n  CONSTRAINT `security_alerts_id` PRIMARY KEY(`id`)\n);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS `security_alerts` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `alert_type` varchar(100) NOT NULL,\n  `severity` enum('critical', 'high', 'medium', 'low') NOT NULL,\n  `title` varchar(255) NOT NULL,\n  `description` text,\n  `source` varchar(100),\n  `metadata` json,\n  `status` enum('active', 'acknowledged', 'resolved', 'dismissed') NOT NULL DEFAULT 'active',\n  `acknowledged_by` int,\n  `acknowledged_at` timestamp,\n  `resolved_by` int,\n  `resolved_at` timestamp,\n  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,\n  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,\n  CONSTRAINT `security_alerts_id` PRIMARY KEY(`id`)\n);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1835
+}

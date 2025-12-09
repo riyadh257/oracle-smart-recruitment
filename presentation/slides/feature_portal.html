@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Candidate Self-Service Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .slide-container {
+      width: 1280px;
+      min-height: 720px;
+      background: #1F233E;
+      font-family: 'Space Grotesk', sans-serif;
+      color: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      padding-top: 60px;
+      padding-left: 80px;
+      padding-right: 80px;
+      margin-bottom: 50px;
+    }
+
+    .page-title {
+      font-size: 48px;
+      font-weight: 700;
+      color: #FFFFFF;
+      position: relative;
+      display: inline-block;
+    }
+
+    .page-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 120px;
+      height: 4px;
+      background: linear-gradient(90deg, #04DBFA, #00E3B5);
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 60px;
+      padding-left: 80px;
+      padding-right: 80px;
+      padding-top: 20px;
+    }
+
+    .left-column {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .description {
+      font-size: 20px;
+      font-weight: 300;
+      color: #FFFFFF;
+      line-height: 1.7;
+    }
+
+    .highlight-text {
+      color: #04DBFA;
+      font-weight: 500;
+    }
+
+    .metric-showcase {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      background: rgba(4, 219, 250, 0.08);
+      border-left: 4px solid #04DBFA;
+      min-height: 120px;
+    }
+
+    .metric-icon {
+      font-size: 48px;
+      color: #04DBFA;
+      margin-left: 30px;
+    }
+
+    .metric-content {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .metric-value {
+      font-size: 56px;
+      font-weight: 700;
+      color: #04DBFA;
+      line-height: 1;
+    }
+
+    .metric-label {
+      font-size: 18px;
+      font-weight: 400;
+      color: #FFFFFF;
+    }
+
+    .right-column {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      padding-top: 10px;
+    }
+
+    .capabilities-title {
+      font-size: 24px;
+      font-weight: 600;
+      color: #00E3B5;
+      margin-bottom: 10px;
+    }
+
+    .capability-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      min-height: 80px;
+    }
+
+    .capability-icon {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(4, 219, 250, 0.1);
+      border: 2px solid #04DBFA;
+      flex-shrink: 0;
+    }
+
+    .capability-icon i {
+      font-size: 24px;
+      color: #04DBFA;
+    }
+
+    .capability-item:nth-child(3) .capability-icon {
+      border-color: #00E3B5;
+      background: rgba(0, 227, 181, 0.1);
+    }
+
+    .capability-item:nth-child(3) .capability-icon i {
+      color: #00E3B5;
+    }
+
+    .capability-item:nth-child(4) .capability-icon {
+      border-color: #8EC5FC;
+      background: rgba(142, 197, 252, 0.1);
+    }
+
+    .capability-item:nth-child(4) .capability-icon i {
+      color: #8EC5FC;
+    }
+
+    .capability-text {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding-top: 5px;
+    }
+
+    .capability-name {
+      font-size: 20px;
+      font-weight: 600;
+      color: #FFFFFF;
+    }
+
+    .capability-detail {
+      font-size: 14px;
+      font-weight: 300;
+      color: #8EC5FC;
+      line-height: 1.5;
+    }
+
+    .accent-line {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #04DBFA 0%, #00E3B5 50%, #1F233E 100%);
+    }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="header">
+      <h1 class="page-title">Candidate Self-Service Portal</h1>
+    </div>
+
+    <div class="content-grid">
+      <div class="left-column">
+        <p class="description">
+          Empowers candidates with <span class="highlight-text">complete transparency</span> and control over their application journey. The self-service portal provides real-time status tracking, document management, and flexible scheduling options—all within defined organizational constraints.
+        </p>
+
+        <div class="metric-showcase">
+          <i class="fas fa-chart-line metric-icon"></i>
+          <div class="metric-content">
+            <div class="metric-value">40%</div>
+            <div class="metric-label">Reduction in Administrative Burden</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="right-column">
+        <div class="capabilities-title">Key Portal Capabilities</div>
+
+        <div class="capability-item">
+          <div class="capability-icon">
+            <i class="fas fa-clipboard-list"></i>
+          </div>
+          <div class="capability-text">
+            <div class="capability-name">Track Application Status</div>
+            <div class="capability-detail">Real-time visibility into application progress and interview stages</div>
+          </div>
+        </div>
+
+        <div class="capability-item">
+          <div class="capability-icon">
+            <i class="fas fa-cloud-upload-alt"></i>
+          </div>
+          <div class="capability-text">
+            <div class="capability-name">Upload Documents</div>
+            <div class="capability-detail">Submit additional certifications, portfolios, and supporting materials</div>
+          </div>
+        </div>
+
+        <div class="capability-item">
+          <div class="capability-icon">
+            <i class="fas fa-calendar-alt"></i>
+          </div>
+          <div class="capability-text">
+            <div class="capability-name">Request Rescheduling</div>
+            <div class="capability-detail">Flexible interview time adjustments within organizational policies</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accent-line"></div>
+  </div>
+</body>
+</html>

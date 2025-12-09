@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #0A0E27 0%, #1a1f3a 100%);
+            font-family: 'Inter', sans-serif;
+            position: relative;
+        }
+        
+        .header {
+            padding-top: 60px;
+            padding-left: 80px;
+            padding-right: 80px;
+            margin-bottom: 0;
+        }
+        
+        .page-title {
+            font-size: 40px;
+            font-weight: 700;
+            color: #00D4FF;
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+        
+        .page-subtitle {
+            font-size: 20px;
+            font-weight: 400;
+            color: #E8EAED;
+            opacity: 0.7;
+            margin-top: 0;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            gap: 50px;
+            padding-left: 80px;
+            padding-right: 80px;
+            padding-top: 50px;
+        }
+        
+        .features-section {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        
+        .feature-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+        
+        .feature-icon {
+            font-size: 28px;
+            min-width: 40px;
+            margin-top: 4px;
+        }
+        
+        .icon-purple { color: #7B61FF; }
+        .icon-cyan { color: #00D4FF; }
+        .icon-green { color: #00FFA3; }
+        .icon-pink { color: #FF6B9D; }
+        
+        .feature-content {
+            flex: 1;
+        }
+        
+        .feature-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: #E8EAED;
+            margin-top: 0;
+            margin-bottom: 6px;
+        }
+        
+        .feature-description {
+            font-size: 16px;
+            font-weight: 400;
+            color: #E8EAED;
+            opacity: 0.75;
+            margin-top: 0;
+            line-height: 1.5;
+        }
+        
+        .languages-section {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .section-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #00FFA3;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        
+        .languages-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        
+        .language-tag {
+            background: rgba(0, 212, 255, 0.1);
+            border: 2px solid #00D4FF;
+            padding-top: 16px;
+            padding-left: 20px;
+            padding-right: 20px;
+            min-height: 70px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .lang-icon {
+            font-size: 28px;
+            color: #00D4FF;
+        }
+        
+        .lang-name {
+            font-size: 20px;
+            font-weight: 600;
+            color: #E8EAED;
+            margin-top: 0;
+        }
+        
+        .metrics-section {
+            padding-top: 10px;
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            padding-top: 15px;
+        }
+        
+        .metric-item {
+            text-align: center;
+        }
+        
+        .metric-value {
+            font-size: 36px;
+            font-weight: 700;
+            color: #7B61FF;
+            margin-top: 0;
+            margin-bottom: 6px;
+            line-height: 1;
+        }
+        
+        .metric-label {
+            font-size: 14px;
+            font-weight: 500;
+            color: #E8EAED;
+            opacity: 0.7;
+            margin-top: 0;
+        }
+        
+        .accent-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, #7B61FF 0%, #00D4FF 50%, #00FFA3 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h2 class="page-title">Technical Skills Evaluation</h2>
+            <p class="page-subtitle">Integrated coding assessment with automated evaluation</p>
+        </div>
+        
+        <div class="content-grid">
+            <div class="features-section">
+                <div class="feature-item">
+                    <div class="feature-icon icon-purple">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="feature-content">
+                        <div class="feature-title">Monaco Editor Integration</div>
+                        <div class="feature-description">Professional code editor with syntax highlighting and IntelliSense</div>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon icon-cyan">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <div class="feature-content">
+                        <div class="feature-title">Automated Test Cases</div>
+                        <div class="feature-description">Real-time code execution with comprehensive test validation</div>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon icon-green">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="feature-content">
+                        <div class="feature-title">Auto-Grading System</div>
+                        <div class="feature-description">Instant scoring based on correctness, efficiency, and code quality</div>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon icon-pink">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <div class="feature-content">
+                        <div class="feature-title">Matching Algorithm Integration</div>
+                        <div class="feature-description">Technical scores contribute to overall candidate-job fit calculation</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="languages-section">
+                <div>
+                    <h3 class="section-title">Supported Languages</h3>
+                    <div class="languages-grid">
+                        <div class="language-tag">
+                            <div class="lang-icon">
+                                <i class="fab fa-js"></i>
+                            </div>
+                            <div class="lang-name">JavaScript</div>
+                        </div>
+                        
+                        <div class="language-tag">
+                            <div class="lang-icon">
+                                <i class="fab fa-python"></i>
+                            </div>
+                            <div class="lang-name">Python</div>
+                        </div>
+                        
+                        <div class="language-tag">
+                            <div class="lang-icon">
+                                <i class="fab fa-java"></i>
+                            </div>
+                            <div class="lang-name">Java</div>
+                        </div>
+                        
+                        <div class="language-tag">
+                            <div class="lang-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="lang-name">C++</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="metrics-section">
+                    <h3 class="section-title">Assessment Metrics</h3>
+                    <div class="metrics-grid">
+                        <div class="metric-item">
+                            <div class="metric-value">100%</div>
+                            <div class="metric-label">Automated Evaluation</div>
+                        </div>
+                        
+                        <div class="metric-item">
+                            <div class="metric-value">Real-Time</div>
+                            <div class="metric-label">Code Execution</div>
+                        </div>
+                        
+                        <div class="metric-item">
+                            <div class="metric-value">Multi-Test</div>
+                            <div class="metric-label">Case Validation</div>
+                        </div>
+                        
+                        <div class="metric-item">
+                            <div class="metric-value">Instant</div>
+                            <div class="metric-label">Feedback & Scoring</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="accent-bar"></div>
+    </div>
+</body>
+</html>

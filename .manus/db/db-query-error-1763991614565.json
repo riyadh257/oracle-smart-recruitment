@@ -1,0 +1,8 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS `search_history` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `user_id` int NOT NULL,\n  `query` varchar(500) NOT NULL,\n  `filters` text,\n  `result_count` int,\n  `created_at` timestamp NOT NULL DEFAULT (now()),\n  CONSTRAINT `search_history_id` PRIMARY KEY(`id`)\n);\n\n-- Add fulltext index for candidates table if not exists\nALTER TABLE candidates ADD FULLTEXT INDEX IF NOT EXISTS `idx_candidates_fulltext` (fullName, email, skills, education);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS `search_history` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `user_id` int NOT NULL,\n  `query` varchar(500) NOT NULL,\n  `filters` text,\n  `result_count` int,\n  `created_at` timestamp NOT NULL DEFAULT (now()),\n  CONSTRAINT `search_history_id` PRIMARY KEY(`id`)\n);\n\n-- Add fulltext index for candidates table if not exists\nALTER TABLE candidates ADD FULLTEXT INDEX IF NOT EXISTS `idx_candidates_fulltext` (fullName, email, skills, education);",
+  "returncode": 1,
+  "logs": [
+    "ERROR 1064 (42000) at line 12: You have an error in your SQL syntax; check the manual that corresponds to your TiDB version for the right syntax to use line 1 column 44 near \"IF NOT EXISTS `idx_candidates_fulltext` (fullName, email, skills, education)\""
+  ]
+}

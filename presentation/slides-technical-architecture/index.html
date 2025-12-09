@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oracle Smart Recruitment - Technical Architecture</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #0a1628;
+            color: #e2e8f0;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #60a5fa;
+            font-size: 48px;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+        .subtitle {
+            text-align: center;
+            color: #94a3b8;
+            font-size: 20px;
+            margin-bottom: 48px;
+        }
+        .slides-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+        .slide-card {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 24px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .slide-card:hover {
+            border-color: #3b82f6;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(59, 130, 246, 0.2);
+        }
+        .slide-number {
+            color: #3b82f6;
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+        .slide-title {
+            color: #e2e8f0;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .slide-summary {
+            color: #94a3b8;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .viewer {
+            background: #1e293b;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        iframe {
+            width: 100%;
+            height: 720px;
+            border: none;
+            border-radius: 8px;
+            background: white;
+        }
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 16px;
+        }
+        button {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        button:hover {
+            background: #2563eb;
+        }
+        button:disabled {
+            background: #334155;
+            cursor: not-allowed;
+        }
+        .slide-info {
+            color: #94a3b8;
+            font-size: 16px;
+        }
+        .back-link {
+            display: inline-block;
+            color: #60a5fa;
+            margin-bottom: 24px;
+            font-size: 16px;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Oracle Smart Recruitment System</h1>
+        <div class="subtitle">Technical Architecture Presentation</div>
+        
+        <div id="viewer-section" class="viewer" style="display: none;">
+            <a href="#" class="back-link" onclick="showGrid(); return false;">← Back to Slides</a>
+            <iframe id="slide-frame" src=""></iframe>
+            <div class="controls">
+                <button id="prev-btn" onclick="prevSlide()">← Previous</button>
+                <div class="slide-info">
+                    <span id="current-slide">1</span> / <span id="total-slides">12</span>
+                </div>
+                <button id="next-btn" onclick="nextSlide()">Next →</button>
+            </div>
+        </div>
+        
+        <div id="grid-section" class="slides-grid">
+            <a href="#" onclick="viewSlide(0); return false;">
+                <div class="slide-card">
+                    <div class="slide-number">Slide 1</div>
+                    <div class="slide-title">Title Slide</div>
+                    <div class="slide-summary">Oracle Smart Recruitment System - Technical Architecture presentation introduction</div>
+                </div>
+            </a>
+            
+            <a href="#" onclick="viewSlide(1); return false;">
+                <div class="slide-card">
+                    <div class="slide-number">Slide 2</div>
+                    <div class="slide-title">System Overview</div>
+                    <div class="slide-summary">High-level overview of the AI-powered B2B SaaS platform with 10,000+ attribute matching</div>
+                </div>
+            </a>
+            
+            <a href="#" onclick="viewSlide(2); return false;">
+                <div class="slide-card">
+                    <div class="slide-number">Slide 3</div>
+                    <div class="slide-title">Technology Stack</div>
+                    <div class="slide-summary">Comprehensive breakdown: React 19, Tailwind CSS 4, Express 4, tRPC 11, Drizzle ORM, MySQL/TiDB</div>
+                </div>
+            </a>
+            
+            <a href="#" onclick="viewSlide(3); return false;">
+                <div class="slide-card">
+                    <div class="slide-number">Slide 4</div>
+                    <div class="slide-title">Architecture Layers</div>
+                    <div class="slide-summary">Three-tier architecture: Frontend (React + Tailwind), Backend (Express + tRPC), Data (MySQL + S3)</div>
+                </div>
+            </a>
+            
+            <a href="#" onclick="viewSlide(4); return false;">
+                <div class="slide-card">
+                    <div class="slide-number">Slide 5</div>
+                    <div class="slide-title">Data Model & Schema</div>
+                    <div class="slide-summary">Core database entities, relationships, and flexible JSON attribute storage</div>
+                </div>
+            </a>
+            
+            <a href="#" onclick="viewSlide(5); return false;">
+                <div class="slide-card">
+                    <div class="slide-number">Slide 6</div>
+                    <div class="slide-title">AI Matching Engine</div>
+                    <div class="slide-summary">AI-powered matching with skill, culture fit, and wellbeing scores using 10,000+ attributes</div>
+                </div>
+            </a>
+            
+            <a href="#" onclick="viewSlide(6); return false;">
+                <div class="slide-card">
+                    <div class="slide-number">Slide 7</div>
+                    <div class="slide-title">tRPC API Architecture</div>
+                    <div class="slide-summary">Type-safe API design with end-to-end type safety and modular router organization</div>
+                </div>
+            </a>
+            
+            <a href="#" onclick="viewSlide(7); return false;">
+                <div class="slide-card">
+                    <div class="slide-number">Slide 8</div>
+                    <div class="slide-title">KSA Market Differentiation</div>
+                    <div class="slide-summary">Saudization compliance engine with Nitaqat calculation and MHRSD/Qiwa integration</div>
+                </div>
+            </a>
+            
+            <a href="#" onclick="viewSlide(8); return false;">
+                <div class="slide-card">
+                    <div class="slide-number">Slide 9</div>
+                    <div class="slide-title">B2B SaaS Capabilities</div>
+                    <div class="slide-summary">Enterprise features: pulse surveys, health tracking, skill gap analysis, performance analytics</div>
+                </div>
+            </a>
+            
+            <a href="#" onclick="viewSlide(9); return false;">
+                <div class="slide-card">
+                    <div class="slide-number">Slide 10</div>
+                    <div class="slide-title">Pay-for-Performance Billing</div>
+                    <div class="slide-summary">Automated billing supporting subscription, performance-based, and hybrid models</div>
+                </div>
+            </a>
+            
+            <a href="#" onclick="viewSlide(10); return false;">
+                <div class="slide-card">
+                    <div class="slide-number">Slide 11</div>
+                    <div class="slide-title">External Integrations</div>
+                    <div class="slide-summary">ATS integrations, email delivery, calendar sync, S3 storage, real-time notifications</div>
+                </div>
+            </a>
+            
+            <a href="#" onclick="viewSlide(11); return false;">
+                <div class="slide-card">
+                    <div class="slide-number">Slide 12</div>
+                    <div class="slide-title">Architecture Summary</div>
+                    <div class="slide-summary">Closing summary of the robust, scalable, AI-powered architecture</div>
+                </div>
+            </a>
+        </div>
+    </div>
+    
+    <script>
+        const slides = [
+            'title.html',
+            'system_overview.html',
+            'technology_stack.html',
+            'architecture_layers.html',
+            'data_model.html',
+            'ai_matching_engine.html',
+            'trpc_api_architecture.html',
+            'ksa_compliance.html',
+            'b2b_saas_features.html',
+            'billing_automation.html',
+            'integrations.html',
+            'closing.html'
+        ];
+        
+        let currentSlide = 0;
+        
+        function viewSlide(index) {
+            currentSlide = index;
+            document.getElementById('slide-frame').src = slides[index];
+            document.getElementById('current-slide').textContent = index + 1;
+            document.getElementById('total-slides').textContent = slides.length;
+            document.getElementById('viewer-section').style.display = 'block';
+            document.getElementById('grid-section').style.display = 'none';
+            updateButtons();
+        }
+        
+        function showGrid() {
+            document.getElementById('viewer-section').style.display = 'none';
+            document.getElementById('grid-section').style.display = 'grid';
+        }
+        
+        function nextSlide() {
+            if (currentSlide < slides.length - 1) {
+                viewSlide(currentSlide + 1);
+            }
+        }
+        
+        function prevSlide() {
+            if (currentSlide > 0) {
+                viewSlide(currentSlide - 1);
+            }
+        }
+        
+        function updateButtons() {
+            document.getElementById('prev-btn').disabled = currentSlide === 0;
+            document.getElementById('next-btn').disabled = currentSlide === slides.length - 1;
+        }
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (document.getElementById('viewer-section').style.display === 'block') {
+                if (e.key === 'ArrowLeft') prevSlide();
+                if (e.key === 'ArrowRight') nextSlide();
+                if (e.key === 'Escape') showGrid();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #0A0E27 0%, #1a1f3a 100%);
+            font-family: 'Inter', sans-serif;
+            position: relative;
+        }
+        
+        .header {
+            padding-top: 60px;
+            padding-left: 80px;
+            padding-right: 80px;
+            margin-bottom: 0;
+        }
+        
+        .page-title {
+            font-size: 40px;
+            font-weight: 700;
+            color: #00D4FF;
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+        
+        .page-subtitle {
+            font-size: 20px;
+            font-weight: 400;
+            color: #E8EAED;
+            opacity: 0.7;
+            margin-top: 0;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 48% 52%;
+            gap: 40px;
+            padding-left: 80px;
+            padding-right: 80px;
+            padding-top: 50px;
+        }
+        
+        .factors-section {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 28px;
+        }
+        
+        .factor-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .factor-icon-wrapper {
+            min-width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(123, 97, 255, 0.15);
+        }
+        
+        .factor-icon {
+            font-size: 32px;
+        }
+        
+        .icon-purple { color: #7B61FF; }
+        .icon-cyan { color: #00D4FF; }
+        .icon-green { color: #00FFA3; }
+        .icon-purple-alt { color: #9D7FFF; }
+        
+        .factor-content {
+            flex: 1;
+        }
+        
+        .factor-name {
+            font-size: 22px;
+            font-weight: 600;
+            color: #E8EAED;
+            margin-top: 0;
+            margin-bottom: 6px;
+        }
+        
+        .factor-description {
+            font-size: 15px;
+            font-weight: 400;
+            color: #E8EAED;
+            opacity: 0.7;
+            margin-top: 0;
+        }
+        
+        .factor-weight {
+            font-size: 18px;
+            font-weight: 700;
+            color: #00FFA3;
+            min-width: 60px;
+            text-align: right;
+        }
+        
+        .scoring-section {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .score-display {
+            text-align: center;
+            padding-top: 20px;
+        }
+        
+        .final-score {
+            font-size: 80px;
+            font-weight: 800;
+            color: #00FFA3;
+            margin-top: 0;
+            margin-bottom: 8px;
+            line-height: 1;
+        }
+        
+        .score-label {
+            font-size: 18px;
+            font-weight: 500;
+            color: #E8EAED;
+            opacity: 0.8;
+            margin-top: 0;
+        }
+        
+        .breakdown-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            padding-top: 10px;
+        }
+        
+        .breakdown-item {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .breakdown-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .breakdown-label {
+            font-size: 16px;
+            font-weight: 500;
+            color: #E8EAED;
+            margin-top: 0;
+        }
+        
+        .breakdown-value {
+            font-size: 18px;
+            font-weight: 700;
+            margin-top: 0;
+        }
+        
+        .value-purple { color: #7B61FF; }
+        .value-cyan { color: #00D4FF; }
+        .value-green { color: #00FFA3; }
+        .value-purple-alt { color: #9D7FFF; }
+        
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            transition: none;
+        }
+        
+        .fill-purple { background: #7B61FF; }
+        .fill-cyan { background: #00D4FF; }
+        .fill-green { background: #00FFA3; }
+        .fill-purple-alt { background: #9D7FFF; }
+        
+        .accent-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, #7B61FF 0%, #00D4FF 50%, #00FFA3 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h2 class="page-title">Advanced Candidate Matching</h2>
+            <p class="page-subtitle">Multi-factor algorithm for superior job-candidate fit</p>
+        </div>
+        
+        <div class="content-grid">
+            <div class="factors-section">
+                <div class="factor-item">
+                    <div class="factor-icon-wrapper">
+                        <i class="fas fa-code-branch factor-icon icon-purple"></i>
+                    </div>
+                    <div class="factor-content">
+                        <div class="factor-name">Skills Match</div>
+                        <div class="factor-description">Technical & soft skills alignment</div>
+                    </div>
+                    <div class="factor-weight">40%</div>
+                </div>
+                
+                <div class="factor-item">
+                    <div class="factor-icon-wrapper">
+                        <i class="fas fa-briefcase factor-icon icon-cyan"></i>
+                    </div>
+                    <div class="factor-content">
+                        <div class="factor-name">Experience Level</div>
+                        <div class="factor-description">Years of experience & relevance</div>
+                    </div>
+                    <div class="factor-weight">30%</div>
+                </div>
+                
+                <div class="factor-item">
+                    <div class="factor-icon-wrapper">
+                        <i class="fas fa-sliders factor-icon icon-green"></i>
+                    </div>
+                    <div class="factor-content">
+                        <div class="factor-name">Preferences Match</div>
+                        <div class="factor-description">Location, salary, culture fit</div>
+                    </div>
+                    <div class="factor-weight">15%</div>
+                </div>
+                
+                <div class="factor-item">
+                    <div class="factor-icon-wrapper">
+                        <i class="fas fa-brain factor-icon icon-purple-alt"></i>
+                    </div>
+                    <div class="factor-content">
+                        <div class="factor-name">Psychometric Data</div>
+                        <div class="factor-description">Personality & behavioral traits</div>
+                    </div>
+                    <div class="factor-weight">15%</div>
+                </div>
+            </div>
+            
+            <div class="scoring-section">
+                <div class="score-display">
+                    <div class="final-score">92%</div>
+                    <div class="score-label">Overall Match Score</div>
+                </div>
+                
+                <div class="breakdown-list">
+                    <div class="breakdown-item">
+                        <div class="breakdown-header">
+                            <span class="breakdown-label">Skills Match</span>
+                            <span class="breakdown-value value-purple">95%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill fill-purple" style="width: 95%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="breakdown-item">
+                        <div class="breakdown-header">
+                            <span class="breakdown-label">Experience Level</span>
+                            <span class="breakdown-value value-cyan">88%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill fill-cyan" style="width: 88%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="breakdown-item">
+                        <div class="breakdown-header">
+                            <span class="breakdown-label">Preferences Match</span>
+                            <span class="breakdown-value value-green">90%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill fill-green" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="breakdown-item">
+                        <div class="breakdown-header">
+                            <span class="breakdown-label">Psychometric Data</span>
+                            <span class="breakdown-value value-purple-alt">94%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill fill-purple-alt" style="width: 94%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="accent-bar"></div>
+    </div>
+</body>
+</html>

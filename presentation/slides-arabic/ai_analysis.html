@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font-family: 'Cairo', sans-serif; }
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+      
+      .header {
+        padding-top: 50px;
+        text-align: center;
+        margin-bottom: 60px;
+      }
+      
+      .title {
+        font-size: 36px;
+        font-weight: 700;
+        color: #60A5FA;
+        margin-bottom: 12px;
+      }
+      
+      .subtitle {
+        font-size: 18px;
+        color: #94A3B8;
+      }
+      
+      .process-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        padding-left: 40px;
+        padding-right: 40px;
+      }
+      
+      .process-step {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      
+      .step-icon-wrapper {
+        width: 100px;
+        height: 100px;
+        background: rgba(96, 165, 250, 0.15);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+      
+      .step-icon {
+        font-size: 44px;
+        color: #60A5FA;
+      }
+      
+      .step-number {
+        font-size: 14px;
+        color: #10B981;
+        font-weight: 700;
+        margin-bottom: 10px;
+        letter-spacing: 1px;
+      }
+      
+      .step-title {
+        font-size: 20px;
+        font-weight: 700;
+        color: #E2E8F0;
+        margin-bottom: 10px;
+      }
+      
+      .step-desc {
+        font-size: 15px;
+        color: #94A3B8;
+        line-height: 1.5;
+      }
+      
+      .arrow {
+        font-size: 32px;
+        color: #10B981;
+        margin-top: 40px;
+      }
+      
+      .features-section {
+        margin-top: 50px;
+        padding-left: 80px;
+        padding-right: 80px;
+      }
+      
+      .features-title {
+        font-size: 22px;
+        font-weight: 700;
+        color: #E2E8F0;
+        text-align: center;
+        margin-bottom: 25px;
+      }
+      
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+      }
+      
+      .feature-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        background: rgba(30, 41, 59, 0.4);
+        padding-top: 15px;
+        padding-left: 20px;
+        padding-right: 20px;
+        min-height: 60px;
+      }
+      
+      .feature-icon {
+        font-size: 20px;
+        color: #10B981;
+      }
+      
+      .feature-text {
+        font-size: 15px;
+        color: #E2E8F0;
+        font-weight: 600;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1 class="title">تحليل السير الذاتية بالذكاء الاصطناعي</h1>
+            <p class="subtitle">عملية تحليل ذكية ودقيقة لاستخراج وتقييم المعلومات</p>
+        </div>
+        
+        <div class="process-container">
+            <div class="process-step">
+                <div class="step-icon-wrapper">
+                    <i class="fas fa-file-upload step-icon"></i>
+                </div>
+                <div class="step-number">المرحلة 01</div>
+                <h3 class="step-title">رفع السيرة الذاتية</h3>
+                <p class="step-desc">رفع ملفات PDF أو Word بسهولة</p>
+            </div>
+            
+            <div class="arrow">
+                <i class="fas fa-arrow-left"></i>
+            </div>
+            
+            <div class="process-step">
+                <div class="step-icon-wrapper">
+                    <i class="fas fa-search step-icon"></i>
+                </div>
+                <div class="step-number">المرحلة 02</div>
+                <h3 class="step-title">استخراج البيانات</h3>
+                <p class="step-desc">تحليل النص واستخراج المعلومات الأساسية</p>
+            </div>
+            
+            <div class="arrow">
+                <i class="fas fa-arrow-left"></i>
+            </div>
+            
+            <div class="process-step">
+                <div class="step-icon-wrapper">
+                    <i class="fas fa-brain step-icon"></i>
+                </div>
+                <div class="step-number">المرحلة 03</div>
+                <h3 class="step-title">تحليل المهارات</h3>
+                <p class="step-desc">تقييم المهارات التقنية والشخصية</p>
+            </div>
+            
+            <div class="arrow">
+                <i class="fas fa-arrow-left"></i>
+            </div>
+            
+            <div class="process-step">
+                <div class="step-icon-wrapper">
+                    <i class="fas fa-check-circle step-icon"></i>
+                </div>
+                <div class="step-number">المرحلة 04</div>
+                <h3 class="step-title">تقييم المطابقة</h3>
+                <p class="step-desc">حساب نسبة التطابق مع الوظيفة</p>
+            </div>
+        </div>
+        
+        <div class="features-section">
+            <h2 class="features-title">القدرات الذكية للنظام</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fas fa-language feature-icon"></i>
+                    <span class="feature-text">دعم متعدد اللغات</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-graduation-cap feature-icon"></i>
+                    <span class="feature-text">تحليل المؤهلات العلمية</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-briefcase feature-icon"></i>
+                    <span class="feature-text">تقييم الخبرات العملية</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-certificate feature-icon"></i>
+                    <span class="feature-text">التحقق من الشهادات</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-chart-bar feature-icon"></i>
+                    <span class="feature-text">تقارير تفصيلية</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-users feature-icon"></i>
+                    <span class="feature-text">مقارنة بين المرشحين</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

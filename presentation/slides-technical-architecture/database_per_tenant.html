@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            font-family: 'Cairo', sans-serif;
+            color: #E2E8F0;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .header {
+            padding-top: 50px;
+            padding-right: 60px;
+            padding-left: 60px;
+            margin-bottom: 30px;
+        }
+        
+        .page-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #60A5FA;
+            margin-bottom: 10px;
+        }
+        
+        .title-underline {
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(90deg, #10B981 0%, #60A5FA 100%);
+            border-radius: 2px;
+        }
+        
+        .main-section {
+            padding-right: 60px;
+            padding-left: 60px;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .diagram-section {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .diagram-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #60A5FA;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .diagram-container {
+            width: 100%;
+            height: 320px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 2px solid rgba(96, 165, 250, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .diagram-container img {
+            width: 650px;
+            height: 300px;
+            object-fit: contain;
+        }
+        
+        .features-section {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+        
+        .features-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #10B981;
+            margin-bottom: 5px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            background: rgba(16, 185, 129, 0.05);
+            padding-top: 12px;
+            padding-right: 15px;
+            padding-left: 15px;
+            border-right: 3px solid #10B981;
+        }
+        
+        .feature-icon {
+            width: 28px;
+            height: 28px;
+            min-width: 28px;
+            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2px;
+        }
+        
+        .feature-icon i {
+            font-size: 12px;
+            color: #0F172A;
+        }
+        
+        .feature-content {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        
+        .feature-title-text {
+            font-size: 17px;
+            font-weight: 700;
+            color: #10B981;
+        }
+        
+        .feature-description {
+            font-size: 15px;
+            line-height: 1.5;
+            color: #E2E8F0;
+        }
+        
+        .elastic-pools-section {
+            padding-right: 60px;
+            padding-left: 60px;
+        }
+        
+        .elastic-box {
+            background: rgba(245, 158, 11, 0.1);
+            border: 2px solid rgba(245, 158, 11, 0.3);
+            padding-top: 20px;
+            padding-right: 25px;
+            padding-left: 25px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .elastic-icon-large {
+            width: 60px;
+            height: 60px;
+            min-width: 60px;
+            background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: #0F172A;
+        }
+        
+        .elastic-content {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .elastic-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #F59E0B;
+        }
+        
+        .elastic-description {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #E2E8F0;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <div class="page-title">نموذج Database-per-Tenant</div>
+            <div class="title-underline"></div>
+        </div>
+        
+        <div class="main-section">
+            <div class="diagram-section">
+                <div class="diagram-title">
+                    <i class="fas fa-project-diagram"></i>
+                    <span>المعمارية: تطبيق واحد - قواعد بيانات متعددة</span>
+                </div>
+                <div class="diagram-container">
+                    <img src="/home/ubuntu/oracle-smart-recruitment/presentation/slides-technical-architecture/assets/database-patterns.jpeg" alt="Database per Tenant Architecture">
+                </div>
+            </div>
+            
+            <div class="features-section">
+                <div class="features-title">المزايا الرئيسية</div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="feature-content">
+                        <div class="feature-title-text">عزل قوي للبيانات</div>
+                        <div class="feature-description">كل مستأجر له قاعدة بيانات منفصلة تماماً - أمان وخصوصية عالية</div>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="feature-content">
+                        <div class="feature-title-text">تخصيص Schema</div>
+                        <div class="feature-description">إمكانية تعديل بنية قاعدة البيانات لكل عميل حسب احتياجاته</div>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <div class="feature-content">
+                        <div class="feature-title-text">توازن التكلفة والأداء</div>
+                        <div class="feature-description">أرخص من Single-Tenant وأكثر عزلاً من Shared Database</div>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-undo"></i>
+                    </div>
+                    <div class="feature-content">
+                        <div class="feature-title-text">استرجاع سهل</div>
+                        <div class="feature-description">نسخ احتياطي واستعادة بيانات عميل واحد دون التأثير على الآخرين</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="elastic-pools-section">
+            <div class="elastic-box">
+                <div class="elastic-icon-large">
+                    <i class="fas fa-layer-group"></i>
+                </div>
+                <div class="elastic-content">
+                    <div class="elastic-title">Elastic Pools - تحسين التكلفة</div>
+                    <div class="elastic-description">
+                        تجميع قواعد البيانات في مجموعة واحدة (Pool) لمشاركة الموارد (CPU، RAM، Storage) - يدفع العملاء النشطون تكلفة الموارد بينما يستفيد الجميع من السعة المشتركة، مما يقلل التكلفة الإجمالية بنسبة تصل إلى 70%
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

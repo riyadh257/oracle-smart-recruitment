@@ -1,0 +1,154 @@
+{
+  "query": "SHOW TABLES;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute SHOW TABLES;",
+  "rows": [
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "__drizzle_migrations"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "alertHistory"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "applications"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "atsIntegrations"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "billingRecords"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "bulkSchedulingOperations"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "calendarConnections"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "calendarEvents"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "campaignPerformanceSnapshots"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "candidateAttributes"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "candidateAvailability"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "candidateLists"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "candidateValueScores"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "candidates"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "coachingSessions"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "companyInsights"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "competitiveMetrics"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "emailAbTests"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "emailAbVariants"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "emailAnalytics"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "emailBranding"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "emailCampaignVariants"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "emailTemplateVersions"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "emailTemplates"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "employeeSkills"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "employeeSurveys"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "employers"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "engagementAlerts"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "engagementThresholds"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "externalJobs"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "jobAttributes"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "jobs"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "ksaCoachingSessions"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "ksaMarketData"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "listMembers"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "notificationPreferences"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "performanceAlerts"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "predictiveInsights"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "retentionMetrics"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "savedJobs"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "schedulingConflictResolutions"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "shifts"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "skillGapAnalysis"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "strategicRoi"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "talentPool"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "teamMetrics"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "users"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "videoInterviews"
+    }
+  ],
+  "messages": [],
+  "stdout": "Tables_in_hjcHA4SjAwhM6aP28vcAkH\n__drizzle_migrations\nalertHistory\napplications\natsIntegrations\nbillingRecords\nbulkSchedulingOperations\ncalendarConnections\ncalendarEvents\ncampaignPerformanceSnapshots\ncandidateAttributes\ncandidateAvailability\ncandidateLists\ncandidateValueScores\ncandidates\ncoachingSessions\ncompanyInsights\ncompetitiveMetrics\nemailAbTests\nemailAbVariants\nemailAnalytics\nemailBranding\nemailCampaignVariants\nemailTemplateVersions\nemailTemplates\nemployeeSkills\nemployeeSurveys\nemployers\nengagementAlerts\nengagementThresholds\nexternalJobs\njobAttributes\njobs\nksaCoachingSessions\nksaMarketData\nlistMembers\nnotificationPreferences\nperformanceAlerts\npredictiveInsights\nretentionMetrics\nsavedJobs\nschedulingConflictResolutions\nshifts\nskillGapAnalysis\nstrategicRoi\ntalentPool\nteamMetrics\nusers\nvideoInterviews\n",
+  "stderr": "",
+  "execution_time_ms": 1673
+}

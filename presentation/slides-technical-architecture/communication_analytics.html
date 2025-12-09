@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: #0a1628;
+        font-family: 'IBM Plex Sans', sans-serif;
+        position: relative;
+        overflow: hidden;
+      }
+      .grid-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: 
+          linear-gradient(rgba(0, 217, 255, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 217, 255, 0.03) 1px, transparent 1px);
+        background-size: 40px 40px;
+        pointer-events: none;
+      }
+      .border-frame {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+        border: 2px solid rgba(0, 217, 255, 0.3);
+        pointer-events: none;
+      }
+      .content-wrapper {
+        position: relative;
+        z-index: 1;
+        padding-top: 50px;
+        padding-left: 50px;
+        padding-right: 50px;
+      }
+      .title {
+        font-size: 40px;
+        font-weight: 700;
+        color: #00d9ff;
+        text-align: center;
+        margin-bottom: 35px;
+      }
+      .main-grid {
+        display: grid;
+        grid-template-columns: 580px 1fr;
+        gap: 30px;
+      }
+      .section-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 20px;
+        padding-left: 15px;
+        border-left: 4px solid;
+      }
+      .section-header.communication { border-left-color: #00d9ff; }
+      .section-header.analytics { border-left-color: #ff6b35; }
+      .section-icon {
+        font-size: 28px;
+      }
+      .section-header.communication .section-icon { color: #00d9ff; }
+      .section-header.analytics .section-icon { color: #ff6b35; }
+      .section-title {
+        font-size: 26px;
+        font-weight: 700;
+        color: #e0e6ed;
+      }
+      .communication-section {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+      .channel-card {
+        background: rgba(0, 217, 255, 0.03);
+        border: 1px solid rgba(0, 217, 255, 0.3);
+        border-left: 3px solid;
+        padding-top: 15px;
+        padding-left: 20px;
+        padding-right: 20px;
+        min-height: 100px;
+      }
+      .channel-card.email { border-left-color: #00d9ff; }
+      .channel-card.sms { border-left-color: #4ecdc4; }
+      .channel-card.whatsapp { border-left-color: #25d366; }
+      .channel-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 10px;
+      }
+      .channel-icon {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        background: rgba(0, 217, 255, 0.1);
+        border: 2px solid;
+      }
+      .channel-card.email .channel-icon { 
+        color: #00d9ff; 
+        border-color: #00d9ff;
+      }
+      .channel-card.sms .channel-icon { 
+        color: #4ecdc4; 
+        border-color: #4ecdc4;
+      }
+      .channel-card.whatsapp .channel-icon { 
+        color: #25d366; 
+        border-color: #25d366;
+      }
+      .channel-name {
+        font-size: 20px;
+        font-weight: 700;
+        color: #e0e6ed;
+      }
+      .channel-features {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        margin-top: 8px;
+      }
+      .feature-tag {
+        font-size: 13px;
+        color: #4ecdc4;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .feature-bullet {
+        width: 5px;
+        height: 5px;
+        background: #4ecdc4;
+        transform: rotate(45deg);
+      }
+      .engagement-section {
+        background: rgba(78, 205, 196, 0.05);
+        border: 1px solid rgba(78, 205, 196, 0.3);
+        padding-top: 15px;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-top: 10px;
+        min-height: 80px;
+      }
+      .engagement-title {
+        font-size: 16px;
+        font-weight: 700;
+        color: #4ecdc4;
+        margin-bottom: 10px;
+      }
+      .engagement-items {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+      }
+      .engagement-item {
+        font-size: 12px;
+        color: #e0e6ed;
+      }
+      .analytics-section {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+      .metrics-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+      }
+      .metric-card {
+        background: rgba(255, 107, 53, 0.05);
+        border: 1px solid rgba(255, 107, 53, 0.3);
+        border-top: 3px solid;
+        padding-top: 15px;
+        padding-left: 18px;
+        padding-right: 18px;
+        min-height: 110px;
+      }
+      .metric-card.time { border-top-color: #ff6b35; }
+      .metric-card.cost { border-top-color: #ffd93d; }
+      .metric-label {
+        font-size: 14px;
+        color: rgba(224, 230, 237, 0.7);
+        margin-bottom: 8px;
+      }
+      .metric-value {
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
+      .metric-card.time .metric-value { color: #ff6b35; }
+      .metric-card.cost .metric-value { color: #ffd93d; }
+      .metric-trend {
+        font-size: 13px;
+        color: #4ecdc4;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+      .trend-arrow {
+        font-size: 12px;
+      }
+      .predictive-section {
+        background: rgba(255, 215, 61, 0.05);
+        border: 1px solid rgba(255, 215, 61, 0.3);
+        padding-top: 15px;
+        padding-left: 20px;
+        padding-right: 20px;
+        min-height: 130px;
+      }
+      .predictive-header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 12px;
+      }
+      .predictive-icon {
+        font-size: 22px;
+        color: #ffd93d;
+      }
+      .predictive-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: #e0e6ed;
+      }
+      .predictive-content {
+        font-size: 14px;
+        color: rgba(224, 230, 237, 0.85);
+        line-height: 1.6;
+      }
+      .predictive-features {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        margin-top: 10px;
+      }
+      .predictive-item {
+        font-size: 13px;
+        color: #ffd93d;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .predictive-bullet {
+        width: 5px;
+        height: 5px;
+        background: #ffd93d;
+        transform: rotate(45deg);
+      }
+      .realtime-section {
+        background: rgba(0, 217, 255, 0.05);
+        border: 1px solid rgba(0, 217, 255, 0.3);
+        padding-top: 15px;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-top: 10px;
+        min-height: 100px;
+      }
+      .realtime-title {
+        font-size: 16px;
+        font-weight: 700;
+        color: #00d9ff;
+        margin-bottom: 10px;
+      }
+      .realtime-items {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+      }
+      .realtime-item {
+        font-size: 13px;
+        color: #e0e6ed;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .realtime-dot {
+        width: 6px;
+        height: 6px;
+        background: #00d9ff;
+        border-radius: 50%;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="grid-overlay"></div>
+        <div class="border-frame"></div>
+        
+        <div class="content-wrapper">
+            <div class="title">مركز الاتصالات والتحليلات | Communication & Analytics Hub</div>
+            
+            <div class="main-grid">
+                <div class="communication-section">
+                    <div class="section-header communication">
+                        <div class="section-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <div class="section-title">Unified Communication Hub</div>
+                    </div>
+                    
+                    <div class="channel-card email">
+                        <div class="channel-header">
+                            <div class="channel-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="channel-name">Email Integration</div>
+                        </div>
+                        <div class="channel-features">
+                            <div class="feature-tag">
+                                <div class="feature-bullet"></div>
+                                <span>Manus Email Service</span>
+                            </div>
+                            <div class="feature-tag">
+                                <div class="feature-bullet"></div>
+                                <span>SMTP Fallback</span>
+                            </div>
+                            <div class="feature-tag">
+                                <div class="feature-bullet"></div>
+                                <span>Tracking Pixels</span>
+                            </div>
+                            <div class="feature-tag">
+                                <div class="feature-bullet"></div>
+                                <span>Rich HTML Templates</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="channel-card sms">
+                        <div class="channel-header">
+                            <div class="channel-icon">
+                                <i class="fas fa-sms"></i>
+                            </div>
+                            <div class="channel-name">SMS Notifications</div>
+                        </div>
+                        <div class="channel-features">
+                            <div class="feature-tag">
+                                <div class="feature-bullet"></div>
+                                <span>Interview Reminders</span>
+                            </div>
+                            <div class="feature-tag">
+                                <div class="feature-bullet"></div>
+                                <span>Status Updates</span>
+                            </div>
+                            <div class="feature-tag">
+                                <div class="feature-bullet"></div>
+                                <span>Delivery Confirmation</span>
+                            </div>
+                            <div class="feature-tag">
+                                <div class="feature-bullet"></div>
+                                <span>Multi-Region Support</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="channel-card whatsapp">
+                        <div class="channel-header">
+                            <div class="channel-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="channel-name">WhatsApp Business API</div>
+                        </div>
+                        <div class="channel-features">
+                            <div class="feature-tag">
+                                <div class="feature-bullet"></div>
+                                <span>Template Messages</span>
+                            </div>
+                            <div class="feature-tag">
+                                <div class="feature-bullet"></div>
+                                <span>Read Receipts</span>
+                            </div>
+                            <div class="feature-tag">
+                                <div class="feature-bullet"></div>
+                                <span>Media Attachments</span>
+                            </div>
+                            <div class="feature-tag">
+                                <div class="feature-bullet"></div>
+                                <span>Two-Way Messaging</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="engagement-section">
+                        <div class="engagement-title">
+                            <i class="fas fa-chart-line"></i> Engagement Tracking
+                        </div>
+                        <div class="engagement-items">
+                            <div class="engagement-item">• Open rates</div>
+                            <div class="engagement-item">• Click tracking</div>
+                            <div class="engagement-item">• Response time</div>
+                            <div class="engagement-item">• Delivery status</div>
+                            <div class="engagement-item">• Bounce handling</div>
+                            <div class="engagement-item">• Multi-language</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="analytics-section">
+                    <div class="section-header analytics">
+                        <div class="section-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="section-title">Real-Time Analytics</div>
+                    </div>
+                    
+                    <div class="metrics-grid">
+                        <div class="metric-card time">
+                            <div class="metric-label">Average Time-to-Hire</div>
+                            <div class="metric-value">18 days</div>
+                            <div class="metric-trend">
+                                <span class="trend-arrow">↓</span>
+                                <span>12% improvement</span>
+                            </div>
+                        </div>
+                        
+                        <div class="metric-card cost">
+                            <div class="metric-label">Cost-per-Hire</div>
+                            <div class="metric-value">$3,240</div>
+                            <div class="metric-trend">
+                                <span class="trend-arrow">↓</span>
+                                <span>8% reduction</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="predictive-section">
+                        <div class="predictive-header">
+                            <div class="predictive-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="predictive-title">Predictive Analytics & Forecasting</div>
+                        </div>
+                        <div class="predictive-content">
+                            AI-powered analysis of historical hiring patterns to forecast future recruitment needs, predict candidate success rates, and optimize resource allocation.
+                        </div>
+                        <div class="predictive-features">
+                            <div class="predictive-item">
+                                <div class="predictive-bullet"></div>
+                                <span>Hiring demand forecasts</span>
+                            </div>
+                            <div class="predictive-item">
+                                <div class="predictive-bullet"></div>
+                                <span>Success probability scoring</span>
+                            </div>
+                            <div class="predictive-item">
+                                <div class="predictive-bullet"></div>
+                                <span>Resource optimization</span>
+                            </div>
+                            <div class="predictive-item">
+                                <div class="predictive-bullet"></div>
+                                <span>Trend analysis & insights</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="realtime-section">
+                        <div class="realtime-title">
+                            <i class="fas fa-tachometer-alt"></i> Real-Time Dashboard Metrics
+                        </div>
+                        <div class="realtime-items">
+                            <div class="realtime-item">
+                                <div class="realtime-dot"></div>
+                                <span>Active applications pipeline</span>
+                            </div>
+                            <div class="realtime-item">
+                                <div class="realtime-dot"></div>
+                                <span>Interview completion rates</span>
+                            </div>
+                            <div class="realtime-item">
+                                <div class="realtime-dot"></div>
+                                <span>Offer acceptance ratios</span>
+                            </div>
+                            <div class="realtime-item">
+                                <div class="realtime-dot"></div>
+                                <span>Source effectiveness tracking</span>
+                            </div>
+                            <div class="realtime-item">
+                                <div class="realtime-dot"></div>
+                                <span>Recruiter performance metrics</span>
+                            </div>
+                            <div class="realtime-item">
+                                <div class="realtime-dot"></div>
+                                <span>Candidate satisfaction scores</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

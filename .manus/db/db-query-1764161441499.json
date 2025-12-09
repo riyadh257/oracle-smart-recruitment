@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS virustotal_scans (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  scan_type ENUM('file', 'url', 'hash') NOT NULL,\n  target_value VARCHAR(500) NOT NULL,\n  file_hash VARCHAR(128),\n  file_name VARCHAR(255),\n  scan_id VARCHAR(255),\n  threat_score INT DEFAULT 0 NOT NULL,\n  detections_count INT DEFAULT 0 NOT NULL,\n  total_engines INT DEFAULT 0 NOT NULL,\n  scan_result ENUM('clean', 'suspicious', 'malicious', 'error', 'pending') DEFAULT 'pending' NOT NULL,\n  detection_details TEXT,\n  scan_metadata TEXT,\n  candidate_id INT,\n  user_id INT,\n  scan_initiated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,\n  scan_completed_at TIMESTAMP NULL,\n  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL\n)",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS virustotal_scans (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  scan_type ENUM('file', 'url', 'hash') NOT NULL,\n  target_value VARCHAR(500) NOT NULL,\n  file_hash VARCHAR(128),\n  file_name VARCHAR(255),\n  scan_id VARCHAR(255),\n  threat_score INT DEFAULT 0 NOT NULL,\n  detections_count INT DEFAULT 0 NOT NULL,\n  total_engines INT DEFAULT 0 NOT NULL,\n  scan_result ENUM('clean', 'suspicious', 'malicious', 'error', 'pending') DEFAULT 'pending' NOT NULL,\n  detection_details TEXT,\n  scan_metadata TEXT,\n  candidate_id INT,\n  user_id INT,\n  scan_initiated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,\n  scan_completed_at TIMESTAMP NULL,\n  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL\n)",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 2135
+}

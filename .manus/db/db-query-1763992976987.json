@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS `scheduled_reminders` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `interview_id` int NOT NULL,\n  `candidate_email` varchar(320) NOT NULL,\n  `reminder_type` enum('24_hours','1_hour','custom') NOT NULL,\n  `scheduled_time` timestamp NOT NULL,\n  `sent_at` timestamp,\n  `status` enum('pending','sent','failed') NOT NULL DEFAULT 'pending',\n  `email_template_id` int,\n  `error_message` text,\n  `created_at` timestamp NOT NULL DEFAULT (now()),\n  CONSTRAINT `scheduled_reminders_id` PRIMARY KEY(`id`)\n);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS `scheduled_reminders` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `interview_id` int NOT NULL,\n  `candidate_email` varchar(320) NOT NULL,\n  `reminder_type` enum('24_hours','1_hour','custom') NOT NULL,\n  `scheduled_time` timestamp NOT NULL,\n  `sent_at` timestamp,\n  `status` enum('pending','sent','failed') NOT NULL DEFAULT 'pending',\n  `email_template_id` int,\n  `error_message` text,\n  `created_at` timestamp NOT NULL DEFAULT (now()),\n  CONSTRAINT `scheduled_reminders_id` PRIMARY KEY(`id`)\n);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1728
+}

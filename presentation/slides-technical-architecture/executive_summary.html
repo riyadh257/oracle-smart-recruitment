@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: linear-gradient(135deg, #0A1628 0%, #1A2332 100%);
+        font-family: 'Inter', sans-serif;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .grid-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.05;
+        background-image: 
+          linear-gradient(#00D9FF 1px, transparent 1px),
+          linear-gradient(90deg, #00D9FF 1px, transparent 1px);
+        background-size: 40px 40px;
+      }
+      
+      .content-wrapper {
+        position: relative;
+        z-index: 2;
+        padding-top: 60px; /* keep title top spacing consistent */
+        padding-left: 80px;
+        padding-right: 80px;
+        min-height: 720px;
+      }
+      
+      .header {
+        margin-bottom: 36px; /* was 50px */
+      }
+      
+      .page-title {
+        font-size: 40px;
+        font-weight: 700;
+        color: #00D9FF;
+        margin-bottom: 10px;
+      }
+      
+      .title-underline {
+        width: 80px;
+        height: 3px;
+        background: linear-gradient(90deg, #00D9FF, #0066FF);
+      }
+      
+      .main-content {
+        display: grid;
+        grid-template-columns: 1.3fr 1fr;
+        gap: 60px; /* column gap only, doesn't affect height */
+        margin-bottom: 20px; /* was 40px */
+      }
+      
+      .left-column {
+        padding-top: 4px; /* was 10px */
+      }
+      
+      .section-heading {
+        font-size: 24px;
+        font-weight: 600;
+        color: #E8EDF2;
+        margin-bottom: 16px; /* was 30px */
+      }
+      
+      .key-points {
+        display: flex;
+        flex-direction: column;
+        gap: 12px; /* was 20px */
+      }
+      
+      .point-item {
+        display: flex;
+        gap: 15px;
+        align-items: flex-start;
+      }
+      
+      .point-bullet {
+        width: 6px;
+        height: 6px;
+        background: #00CCA3;
+        border-radius: 50%;
+        margin-top: 8px;
+        flex-shrink: 0;
+      }
+      
+      .point-text {
+        font-size: 18px;
+        color: #E8EDF2;
+        line-height: 1.6;
+        font-weight: 400;
+      }
+      
+      .right-column {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      
+      .metric-box {
+        background: rgba(0, 217, 255, 0.05);
+        border-left: 4px solid #0066FF;
+        padding-top: 16px; /* was 20px */
+        padding-left: 25px;
+        padding-right: 25px;
+        min-height: 100px;
+      }
+      
+      .metric-value {
+        font-size: 36px;
+        font-weight: 700;
+        color: #00D9FF;
+        margin-bottom: 8px;
+      }
+      
+      .metric-label {
+        font-size: 16px;
+        color: #E8EDF2;
+        font-weight: 400;
+        line-height: 1.4;
+      }
+      
+      .tech-stack {
+        margin-top: 16px; /* was 30px; collapses with main-content margin */
+        padding-top: 22px; /* was 30px */
+        border-top: 1px solid rgba(0, 217, 255, 0.2);
+      }
+      
+      .stack-label {
+        font-size: 14px;
+        color: #00CCA3;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+      }
+      
+      .stack-items {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+      
+      .stack-badge {
+        padding-top: 6px; /* was 8px */
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-bottom: 6px; /* was 8px */
+        background: rgba(0, 102, 255, 0.15);
+        border: 1px solid rgba(0, 102, 255, 0.3);
+        color: #E8EDF2;
+        font-size: 14px;
+        font-weight: 500;
+      }
+      
+      .accent-shape {
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        border: 2px solid rgba(0, 204, 163, 0.2);
+        transform: rotate(45deg);
+        top: 100px;
+        right: 50px;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="grid-background"></div>
+        <div class="accent-shape"></div>
+        
+        <div class="content-wrapper">
+            <div class="header">
+                <h1 class="page-title">Executive Summary</h1>
+                <div class="title-underline"></div>
+            </div>
+            
+            <div class="main-content">
+                <div class="left-column">
+                    <h2 class="section-heading">Enterprise-grade recruitment platform combining AI-powered matching with comprehensive workflow automation</h2>
+                    
+                    <div class="key-points">
+                        <div class="point-item">
+                            <div class="point-bullet"></div>
+                            <p class="point-text">Full-stack web application built on React 19, tRPC 11, and Express 4 with MySQL database</p>
+                        </div>
+                        
+                        <div class="point-item">
+                            <div class="point-bullet"></div>
+                            <p class="point-text">AI-driven candidate screening analyzes 10,000+ attributes for precise skill matching and cultural fit assessment</p>
+                        </div>
+                        
+                        <div class="point-item">
+                            <div class="point-bullet"></div>
+                            <p class="point-text">Real-time collaboration features including WebSocket notifications, calendar integration, and mobile-optimized feedback collection</p>
+                        </div>
+                        
+                        <div class="point-item">
+                            <div class="point-bullet"></div>
+                            <p class="point-text">Integrated email campaign management with A/B testing, Gmail API connectivity, and engagement analytics</p>
+                        </div>
+                        
+                        <div class="point-item">
+                            <div class="point-bullet"></div>
+                            <p class="point-text">Offline-capable mobile interface with IndexedDB storage and automatic synchronization</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="right-column">
+                    <div class="metric-box">
+                        <div class="metric-value">70+</div>
+                        <div class="metric-label">Database tables supporting complex recruitment workflows</div>
+                    </div>
+                    
+                    <div class="metric-box">
+                        <div class="metric-value">Real-Time</div>
+                        <div class="metric-label">Processing via Socket.IO for instant notifications</div>
+                    </div>
+                    
+                    <div class="metric-box">
+                        <div class="metric-value">Mobile-First</div>
+                        <div class="metric-label">Design with QR code access and offline functionality</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tech-stack">
+                <div class="stack-label">Core Technologies</div>
+                <div class="stack-items">
+                    <div class="stack-badge">React 19</div>
+                    <div class="stack-badge">TypeScript</div>
+                    <div class="stack-badge">tRPC 11</div>
+                    <div class="stack-badge">Express 4</div>
+                    <div class="stack-badge">MySQL</div>
+                    <div class="stack-badge">Socket.IO</div>
+                    <div class="stack-badge">Drizzle ORM</div>
+                    <div class="stack-badge">Tailwind CSS 4</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

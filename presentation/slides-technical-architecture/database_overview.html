@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: #0a1628;
+        font-family: 'IBM Plex Sans', sans-serif;
+        position: relative;
+        overflow: hidden;
+      }
+      .grid-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: 
+          linear-gradient(rgba(0, 217, 255, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 217, 255, 0.03) 1px, transparent 1px);
+        background-size: 40px 40px;
+        pointer-events: none;
+      }
+      .border-frame {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+        border: 2px solid rgba(0, 217, 255, 0.3);
+        pointer-events: none;
+      }
+      .content-wrapper {
+        position: relative;
+        z-index: 1;
+        padding-top: 50px;
+        padding-left: 50px;
+        padding-right: 50px;
+      }
+      .header-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+      }
+      .title-area {
+        flex: 1;
+      }
+      .title {
+        font-size: 40px;
+        font-weight: 700;
+        color: #00d9ff;
+        margin-bottom: 10px;
+      }
+      .subtitle {
+        font-size: 18px;
+        color: #e0e6ed;
+      }
+      .metrics-box {
+        background: rgba(255, 107, 53, 0.1);
+        border: 2px solid #ff6b35;
+        padding-top: 20px;
+        padding-left: 30px;
+        padding-right: 30px;
+        text-align: center;
+        min-height: 100px;
+      }
+      .metric-number {
+        font-size: 56px;
+        font-weight: 700;
+        color: #ff6b35;
+        line-height: 1;
+      }
+      .metric-label {
+        font-size: 16px;
+        color: #e0e6ed;
+        margin-top: 8px;
+      }
+      .main-content {
+        display: grid;
+        grid-template-columns: 1fr 380px;
+        gap: 30px;
+      }
+      .left-section {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+      }
+      .diagram-container {
+        width: 100%;
+        height: 240px;
+        border: 2px solid rgba(0, 217, 255, 0.3);
+        background: rgba(0, 217, 255, 0.03);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+      .diagram-container img {
+        width: 100%;
+        height: 240px;
+        object-fit: contain;
+      }
+      .modules-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+      }
+      .module-box {
+        background: rgba(0, 217, 255, 0.05);
+        border: 1px solid rgba(0, 217, 255, 0.3);
+        border-top: 3px solid;
+        padding-top: 15px;
+        padding-left: 15px;
+        padding-right: 15px;
+        min-height: 90px;
+      }
+      .module-box.mod-1 { border-top-color: #00d9ff; }
+      .module-box.mod-2 { border-top-color: #4ecdc4; }
+      .module-box.mod-3 { border-top-color: #ff6b35; }
+      .module-box.mod-4 { border-top-color: #ffd93d; }
+      .module-box.mod-5 { border-top-color: #a78bfa; }
+      .module-box.mod-6 { border-top-color: #f472b6; }
+      .module-icon {
+        font-size: 24px;
+        margin-bottom: 8px;
+      }
+      .mod-1 .module-icon { color: #00d9ff; }
+      .mod-2 .module-icon { color: #4ecdc4; }
+      .mod-3 .module-icon { color: #ff6b35; }
+      .mod-4 .module-icon { color: #ffd93d; }
+      .mod-5 .module-icon { color: #a78bfa; }
+      .mod-6 .module-icon { color: #f472b6; }
+      .module-name {
+        font-size: 16px;
+        font-weight: 700;
+        color: #e0e6ed;
+        margin-bottom: 5px;
+      }
+      .module-desc {
+        font-size: 12px;
+        color: rgba(224, 230, 237, 0.7);
+        line-height: 1.4;
+      }
+      .right-section {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .principles-box {
+        background: rgba(78, 205, 196, 0.05);
+        border: 2px solid rgba(78, 205, 196, 0.3);
+        padding-top: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        min-height: 520px;
+      }
+      .principles-title {
+        font-size: 22px;
+        font-weight: 700;
+        color: #4ecdc4;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .principle-item {
+        margin-bottom: 20px;
+      }
+      .principle-header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 8px;
+      }
+      .principle-bullet {
+        width: 8px;
+        height: 8px;
+        background: #00d9ff;
+        transform: rotate(45deg);
+      }
+      .principle-name {
+        font-size: 16px;
+        font-weight: 700;
+        color: #e0e6ed;
+      }
+      .principle-desc {
+        font-size: 14px;
+        color: rgba(224, 230, 237, 0.8);
+        line-height: 1.5;
+        padding-left: 18px;
+      }
+      .tech-specs {
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(78, 205, 196, 0.3);
+      }
+      .spec-item {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 12px;
+        font-size: 14px;
+      }
+      .spec-label {
+        color: rgba(224, 230, 237, 0.7);
+      }
+      .spec-value {
+        color: #4ecdc4;
+        font-weight: 700;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="grid-overlay"></div>
+        <div class="border-frame"></div>
+        
+        <div class="content-wrapper">
+            <div class="header-section">
+                <div class="title-area">
+                    <div class="title">نظرة عامة على قاعدة البيانات</div>
+                    <div class="subtitle">Database Schema Overview | MySQL/TiDB with InnoDB Engine</div>
+                </div>
+                <div class="metrics-box">
+                    <div class="metric-number">157</div>
+                    <div class="metric-label">Total Tables</div>
+                </div>
+            </div>
+            
+            <div class="main-content">
+                <div class="left-section">
+                    <div class="diagram-container">
+                        <img src="/home/ubuntu/oracle-smart-recruitment/presentation/slides-technical-architecture/assets/89CPOcPHH6ze.png" alt="Database ERD Diagram">
+                    </div>
+                    
+                    <div class="modules-grid">
+                        <div class="module-box mod-1">
+                            <div class="module-icon">
+                                <i class="fas fa-user-shield"></i>
+                            </div>
+                            <div class="module-name">Core Module</div>
+                            <div class="module-desc">Users, authentication, roles & permissions</div>
+                        </div>
+                        
+                        <div class="module-box mod-2">
+                            <div class="module-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div class="module-name">Recruitment</div>
+                            <div class="module-desc">Candidates, jobs, applications, interviews</div>
+                        </div>
+                        
+                        <div class="module-box mod-3">
+                            <div class="module-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <div class="module-name">Communication</div>
+                            <div class="module-desc">Email, SMS, WhatsApp, notifications</div>
+                        </div>
+                        
+                        <div class="module-box mod-4">
+                            <div class="module-icon">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <div class="module-name">Analytics</div>
+                            <div class="module-desc">Metrics, reports, dashboards, insights</div>
+                        </div>
+                        
+                        <div class="module-box mod-5">
+                            <div class="module-icon">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                            <div class="module-name">Security</div>
+                            <div class="module-desc">Audit logs, alerts, threat detection</div>
+                        </div>
+                        
+                        <div class="module-box mod-6">
+                            <div class="module-icon">
+                                <i class="fas fa-plug"></i>
+                            </div>
+                            <div class="module-name">Integration</div>
+                            <div class="module-desc">External services, APIs, webhooks</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="right-section">
+                    <div class="principles-box">
+                        <div class="principles-title">
+                            <i class="fas fa-cog"></i>
+                            Design Principles
+                        </div>
+                        
+                        <div class="principle-item">
+                            <div class="principle-header">
+                                <div class="principle-bullet"></div>
+                                <div class="principle-name">Normalization</div>
+                            </div>
+                            <div class="principle-desc">
+                                Follows normalization principles to minimize data redundancy while maintaining query performance
+                            </div>
+                        </div>
+                        
+                        <div class="principle-item">
+                            <div class="principle-header">
+                                <div class="principle-bullet"></div>
+                                <div class="principle-name">Audit Tracking</div>
+                            </div>
+                            <div class="principle-desc">
+                                Timestamps (created_at, updated_at) track record lifecycle across all tables
+                            </div>
+                        </div>
+                        
+                        <div class="principle-item">
+                            <div class="principle-header">
+                                <div class="principle-bullet"></div>
+                                <div class="principle-name">Soft Deletes</div>
+                            </div>
+                            <div class="principle-desc">
+                                Implemented where data retention is required for audit and compliance purposes
+                            </div>
+                        </div>
+                        
+                        <div class="principle-item">
+                            <div class="principle-header">
+                                <div class="principle-bullet"></div>
+                                <div class="principle-name">Strategic Denormalization</div>
+                            </div>
+                            <div class="principle-desc">
+                                Applied selectively for performance optimization in high-traffic queries
+                            </div>
+                        </div>
+                        
+                        <div class="tech-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Naming Convention:</span>
+                                <span class="spec-value">snake_case</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Storage Engine:</span>
+                                <span class="spec-value">InnoDB</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">ACID Compliance:</span>
+                                <span class="spec-value">Full Support</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Foreign Keys:</span>
+                                <span class="spec-value">Enabled</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

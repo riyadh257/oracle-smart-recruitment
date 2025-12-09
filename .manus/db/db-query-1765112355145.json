@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS customTemplates (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  name VARCHAR(255) NOT NULL,\n  description TEXT,\n  scenarioType VARCHAR(50) NOT NULL,\n  createdBy INT NOT NULL,\n  isPublic BOOLEAN DEFAULT FALSE,\n  templateData JSON NOT NULL,\n  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,\n  updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,\n  INDEX idx_created_by (createdBy),\n  INDEX idx_scenario_type (scenarioType)\n)",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS customTemplates (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  name VARCHAR(255) NOT NULL,\n  description TEXT,\n  scenarioType VARCHAR(50) NOT NULL,\n  createdBy INT NOT NULL,\n  isPublic BOOLEAN DEFAULT FALSE,\n  templateData JSON NOT NULL,\n  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,\n  updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,\n  INDEX idx_created_by (createdBy),\n  INDEX idx_scenario_type (scenarioType)\n)",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 5319
+}

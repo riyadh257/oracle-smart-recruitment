@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS talentPool (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  employerId INT NOT NULL,\n  candidateId INT NOT NULL,\n  tags JSON,\n  notes TEXT,\n  matchScore INT,\n  addedFromJobId INT,\n  status ENUM('active', 'contacted', 'hired', 'not_interested') DEFAULT 'active',\n  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,\n  updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL,\n  UNIQUE KEY unique_employer_candidate (employerId, candidateId)\n)",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS talentPool (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  employerId INT NOT NULL,\n  candidateId INT NOT NULL,\n  tags JSON,\n  notes TEXT,\n  matchScore INT,\n  addedFromJobId INT,\n  status ENUM('active', 'contacted', 'hired', 'not_interested') DEFAULT 'active',\n  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,\n  updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL,\n  UNIQUE KEY unique_employer_candidate (employerId, candidateId)\n)",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1722
+}

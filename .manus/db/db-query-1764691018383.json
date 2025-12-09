@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS `interview_recordings` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `interview_id` int NOT NULL,\n  `recording_url` text NOT NULL,\n  `file_key` varchar(500) NOT NULL,\n  `duration` int,\n  `file_size` int,\n  `mime_type` varchar(100),\n  `thumbnail_url` text,\n  `status` enum('processing','ready','failed') NOT NULL DEFAULT 'processing',\n  `recorded_by` int NOT NULL,\n  `created_at` timestamp NOT NULL DEFAULT (now()),\n  `updated_at` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,\n  CONSTRAINT `interview_recordings_id` PRIMARY KEY(`id`)\n);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS `interview_recordings` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `interview_id` int NOT NULL,\n  `recording_url` text NOT NULL,\n  `file_key` varchar(500) NOT NULL,\n  `duration` int,\n  `file_size` int,\n  `mime_type` varchar(100),\n  `thumbnail_url` text,\n  `status` enum('processing','ready','failed') NOT NULL DEFAULT 'processing',\n  `recorded_by` int NOT NULL,\n  `created_at` timestamp NOT NULL DEFAULT (now()),\n  `updated_at` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,\n  CONSTRAINT `interview_recordings_id` PRIMARY KEY(`id`)\n);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1717
+}

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: #0a1628;
+        font-family: 'IBM Plex Sans', sans-serif;
+        position: relative;
+        overflow: hidden;
+      }
+      .grid-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: 
+          linear-gradient(rgba(0, 217, 255, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 217, 255, 0.03) 1px, transparent 1px);
+        background-size: 40px 40px;
+        pointer-events: none;
+      }
+      .border-frame {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+        border: 2px solid rgba(0, 217, 255, 0.3);
+        pointer-events: none;
+      }
+      .content-wrapper {
+        position: relative;
+        z-index: 1;
+        padding-top: 45px; /* keep title top padding consistent */
+        padding-left: 50px;
+        padding-right: 50px;
+      }
+      .title {
+        font-size: 40px;
+        font-weight: 700;
+        color: #00d9ff;
+        text-align: center;
+        margin-bottom: 16px; /* reduced from 25px to save vertical space */
+      }
+      .architecture-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 6px; /* reduced from 10px */
+        margin-bottom: 12px; /* reduced from 20px */
+      }
+      .arch-layer {
+        background: rgba(0, 217, 255, 0.03);
+        border: 1px solid rgba(0, 217, 255, 0.3);
+        border-left: 5px solid;
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 20px;
+        padding-top: 8px; /* reduced from 12px */
+        padding-left: 20px;
+        padding-right: 20px;
+        min-height: 70px; /* reduced from 75px */
+      }
+      .layer-navigation { border-left-color: #00d9ff; }
+      .layer-state { border-left-color: #4ecdc4; }
+      .layer-ui { border-left-color: #ff6b35; }
+      .layer-api { border-left-color: #ffd93d; }
+      .layer-services { border-left-color: #a78bfa; }
+      .layer-label {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .layer-icon {
+        width: 42px;
+        height: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        border: 2px solid;
+        flex-shrink: 0;
+      }
+      .layer-navigation .layer-icon {
+        color: #00d9ff;
+        border-color: #00d9ff;
+        background: rgba(0, 217, 255, 0.1);
+      }
+      .layer-state .layer-icon {
+        color: #4ecdc4;
+        border-color: #4ecdc4;
+        background: rgba(78, 205, 196, 0.1);
+      }
+      .layer-ui .layer-icon {
+        color: #ff6b35;
+        border-color: #ff6b35;
+        background: rgba(255, 107, 53, 0.1);
+      }
+      .layer-api .layer-icon {
+        color: #ffd93d;
+        border-color: #ffd93d;
+        background: rgba(255, 217, 61, 0.1);
+      }
+      .layer-services .layer-icon {
+        color: #a78bfa;
+        border-color: #a78bfa;
+        background: rgba(167, 139, 250, 0.1);
+      }
+      .layer-name {
+        font-size: 18px;
+        font-weight: 700;
+        color: #e0e6ed;
+      }
+      .layer-tech {
+        font-size: 13px;
+        color: rgba(224, 230, 237, 0.6);
+        margin-top: 2px;
+      }
+      .layer-components {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .component-tag {
+        font-size: 13px;
+        color: #e0e6ed;
+        background: rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(78, 205, 196, 0.3);
+        padding-top: 3px; /* reduced from 5px */
+        padding-left: 12px;
+        padding-right: 12px;
+        white-space: nowrap;
+        line-height: 1.2; /* tighten to reduce tag row height without changing font size */
+      }
+      .screens-section {
+        border-top: 2px solid rgba(0, 217, 255, 0.2);
+        padding-top: 12px; /* reduced from 18px */
+      }
+      .screens-header {
+        font-size: 22px;
+        font-weight: 700;
+        color: #00d9ff;
+        text-align: center;
+        margin-bottom: 10px; /* reduced from 15px */
+      }
+      .screens-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+      }
+      .screen-card {
+        background: rgba(0, 217, 255, 0.03);
+        border: 1px solid rgba(0, 217, 255, 0.3);
+        border-top: 3px solid;
+        padding-top: 10px; /* reduced from 15px */
+        text-align: center;
+        min-height: 95px; /* reduced from 110px to allow content to fit tighter */
+      }
+      .screen-applications { border-top-color: #00d9ff; }
+      .screen-interviews { border-top-color: #4ecdc4; }
+      .screen-documents { border-top-color: #ff6b35; }
+      .screen-settings { border-top-color: #ffd93d; }
+      .screen-icon {
+        font-size: 32px;
+        margin-bottom: 6px; /* reduced from 10px */
+      }
+      .screen-applications .screen-icon { color: #00d9ff; }
+      .screen-interviews .screen-icon { color: #4ecdc4; }
+      .screen-documents .screen-icon { color: #ff6b35; }
+      .screen-settings .screen-icon { color: #ffd93d; }
+      .screen-name {
+        font-size: 16px;
+        font-weight: 700;
+        color: #e0e6ed;
+        margin-bottom: 4px; /* reduced from 6px */
+      }
+      .screen-desc {
+        font-size: 12px;
+        color: rgba(224, 230, 237, 0.7);
+        line-height: 1.3; /* tightened from 1.4 to reduce height */
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="grid-overlay"></div>
+        <div class="border-frame"></div>
+        
+        <div class="content-wrapper">
+            <div class="title">البنية التقنية لتطبيق الهاتف<br>Mobile Technical Structure</div>
+            
+            <div class="architecture-stack">
+                <div class="arch-layer layer-navigation">
+                    <div class="layer-label">
+                        <div class="layer-icon">
+                            <i class="fas fa-route"></i>
+                        </div>
+                        <div>
+                            <div class="layer-name">Navigation Layer</div>
+                            <div class="layer-tech">React Navigation 6.x</div>
+                        </div>
+                    </div>
+                    <div class="layer-components">
+                        <span class="component-tag">Stack Navigator</span>
+                        <span class="component-tag">Tab Navigator</span>
+                        <span class="component-tag">Deep Linking</span>
+                        <span class="component-tag">Screen Transitions</span>
+                        <span class="component-tag">Nested Navigation</span>
+                    </div>
+                </div>
+                
+                <div class="arch-layer layer-state">
+                    <div class="layer-label">
+                        <div class="layer-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div>
+                            <div class="layer-name">State Management</div>
+                            <div class="layer-tech">React Query (TanStack Query)</div>
+                        </div>
+                    </div>
+                    <div class="layer-components">
+                        <span class="component-tag">Query Caching</span>
+                        <span class="component-tag">Optimistic Updates</span>
+                        <span class="component-tag">Background Refetch</span>
+                        <span class="component-tag">Infinite Queries</span>
+                        <span class="component-tag">Mutation Management</span>
+                    </div>
+                </div>
+                
+                <div class="arch-layer layer-ui">
+                    <div class="layer-label">
+                        <div class="layer-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <div>
+                            <div class="layer-name">UI Components</div>
+                            <div class="layer-tech">React Native Paper / NativeBase</div>
+                        </div>
+                    </div>
+                    <div class="layer-components">
+                        <span class="component-tag">Material Design</span>
+                        <span class="component-tag">iOS Guidelines</span>
+                        <span class="component-tag">Theme System</span>
+                        <span class="component-tag">Responsive Layout</span>
+                        <span class="component-tag">Accessibility (a11y)</span>
+                    </div>
+                </div>
+                
+                <div class="arch-layer layer-api">
+                    <div class="layer-label">
+                        <div class="layer-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <div>
+                            <div class="layer-name">API Client</div>
+                            <div class="layer-tech">tRPC Client with TypeScript</div>
+                        </div>
+                    </div>
+                    <div class="layer-components">
+                        <span class="component-tag">Type-Safe Calls</span>
+                        <span class="component-tag">Auto-Complete</span>
+                        <span class="component-tag">Request Batching</span>
+                        <span class="component-tag">Error Handling</span>
+                        <span class="component-tag">Token Refresh</span>
+                    </div>
+                </div>
+                
+                <div class="arch-layer layer-services">
+                    <div class="layer-label">
+                        <div class="layer-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <div>
+                            <div class="layer-name">Device Services</div>
+                            <div class="layer-tech">Native Modules & Third-Party</div>
+                        </div>
+                    </div>
+                    <div class="layer-components">
+                        <span class="component-tag">FCM Notifications</span>
+                        <span class="component-tag">Secure Storage (Keychain/Keystore)</span>
+                        <span class="component-tag">Biometric Auth</span>
+                        <span class="component-tag">Camera/Gallery</span>
+                        <span class="component-tag">File System</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="screens-section">
+                <div class="screens-header">Main Application Screens</div>
+                <div class="screens-grid">
+                    <div class="screen-card screen-applications">
+                        <div class="screen-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="screen-name">Applications</div>
+                        <div class="screen-desc">Track job applications</div>
+                    </div>
+                    
+                    <div class="screen-card screen-interviews">
+                        <div class="screen-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <div class="screen-name">Interviews</div>
+                        <div class="screen-desc">Manage upcoming interviews</div>
+                    </div>
+                    
+                    <div class="screen-card screen-documents">
+                        <div class="screen-icon">
+                            <i class="fas fa-folder-open"></i>
+                        </div>
+                        <div class="screen-name">Documents</div>
+                        <div class="screen-desc">Access key documents</div>
+                    </div>
+                    
+                    <div class="screen-card screen-settings">
+                        <div class="screen-icon">
+                            <i class="fas fa-cog"></i>
+                        </div>
+                        <div class="screen-name">Settings</div>
+                        <div class="screen-desc">Adjust app settings</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

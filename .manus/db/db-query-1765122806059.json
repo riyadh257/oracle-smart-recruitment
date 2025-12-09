@@ -1,0 +1,9 @@
+{
+  "query": "ALTER TABLE userNotificationPreferences \n  ADD COLUMN quietHoursDays json NULL,\n  ADD COLUMN interviewReminderSms tinyint DEFAULT 0,\n  ADD COLUMN feedbackRequestSms tinyint DEFAULT 0,\n  ADD COLUMN candidateResponseSms tinyint DEFAULT 0,\n  ADD COLUMN engagementAlertSms tinyint DEFAULT 0,\n  ADD COLUMN abTestResultSms tinyint DEFAULT 0,\n  ADD COLUMN systemUpdateSms tinyint DEFAULT 0,\n  ADD COLUMN generalSms tinyint DEFAULT 0",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute ALTER TABLE userNotificationPreferences \n  ADD COLUMN quietHoursDays json NULL,\n  ADD COLUMN interviewReminderSms tinyint DEFAULT 0,\n  ADD COLUMN feedbackRequestSms tinyint DEFAULT 0,\n  ADD COLUMN candidateResponseSms tinyint DEFAULT 0,\n  ADD COLUMN engagementAlertSms tinyint DEFAULT 0,\n  ADD COLUMN abTestResultSms tinyint DEFAULT 0,\n  ADD COLUMN systemUpdateSms tinyint DEFAULT 0,\n  ADD COLUMN generalSms tinyint DEFAULT 0",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 3973
+}

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font-family: 'Cairo', sans-serif; direction: rtl; }
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: #ffffff;
+        padding-top: 50px;
+      }
+      .header {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      .title {
+        font-size: 32px;
+        font-weight: 700;
+        color: #1e3a8a;
+        margin-bottom: 10px;
+      }
+      .subtitle {
+        font-size: 18px;
+        color: #4b5563;
+      }
+      .content-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 4px 1fr;
+        gap: 40px;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 60px;
+      }
+      .column {
+        min-height: 500px;
+      }
+      .column-header {
+        text-align: center;
+        margin-bottom: 25px;
+      }
+      .column-icon {
+        font-size: 36px;
+        margin-bottom: 10px;
+      }
+      .challenges-icon {
+        color: #ef4444;
+      }
+      .solutions-icon {
+        color: #10b981;
+      }
+      .column-title {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 5px;
+      }
+      .challenges-title {
+        color: #ef4444;
+      }
+      .solutions-title {
+        color: #10b981;
+      }
+      .divider {
+        width: 4px;
+        background: linear-gradient(180deg, #ef4444 0%, #10b981 100%);
+        min-height: 500px;
+      }
+      .items-list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+      }
+      .item-icon {
+        font-size: 20px;
+        margin-top: 2px;
+        min-width: 20px;
+      }
+      .challenge-icon {
+        color: #f59e0b;
+      }
+      .solution-icon {
+        color: #10b981;
+      }
+      .item-content {
+        flex: 1;
+      }
+      .item-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #1f2937;
+        margin-bottom: 5px;
+      }
+      .item-text {
+        font-size: 16px;
+        color: #4b5563;
+        line-height: 1.5;
+      }
+      .highlight-number {
+        color: #ef4444;
+        font-weight: 700;
+      }
+      .highlight-solution {
+        color: #10b981;
+        font-weight: 600;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1 class="title">التحديات والحلول المبتكرة</h1>
+            <p class="subtitle">من المشاكل التقليدية إلى الحلول الذكية</p>
+        </div>
+        
+        <div class="content-wrapper">
+            <div class="column">
+                <div class="column-header">
+                    <div class="column-icon challenges-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h2 class="column-title challenges-title">التحديات الحالية</h2>
+                </div>
+                
+                <div class="items-list">
+                    <div class="item">
+                        <i class="fas fa-times-circle item-icon challenge-icon"></i>
+                        <div class="item-content">
+                            <h3 class="item-title">هدر الوقت والموارد</h3>
+                            <p class="item-text">عمليات التوظيف التقليدية تستهلك <span class="highlight-number">30-40%</span> من وقت الموارد البشرية في مهام متكررة</p>
+                        </div>
+                    </div>
+                    
+                    <div class="item">
+                        <i class="fas fa-times-circle item-icon challenge-icon"></i>
+                        <div class="item-content">
+                            <h3 class="item-title">طول مدة التوظيف</h3>
+                            <p class="item-text">فترات توظيف طويلة تؤدي لفقدان المواهب المميزة لصالح المنافسين</p>
+                        </div>
+                    </div>
+                    
+                    <div class="item">
+                        <i class="fas fa-times-circle item-icon challenge-icon"></i>
+                        <div class="item-content">
+                            <h3 class="item-title">صعوبة الامتثال</h3>
+                            <p class="item-text">تتبع يدوي معقد لمتطلبات السعودة والتأمينات مع مخاطر عدم الامتثال</p>
+                        </div>
+                    </div>
+                    
+                    <div class="item">
+                        <i class="fas fa-times-circle item-icon challenge-icon"></i>
+                        <div class="item-content">
+                            <h3 class="item-title">قرارات غير مستنيرة</h3>
+                            <p class="item-text">نقص البيانات والتحليلات يؤدي لقرارات توظيف ذاتية وغير دقيقة</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="divider"></div>
+            
+            <div class="column">
+                <div class="column-header">
+                    <div class="column-icon solutions-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h2 class="column-title solutions-title">الحلول المقدمة</h2>
+                </div>
+                
+                <div class="items-list">
+                    <div class="item">
+                        <i class="fas fa-check-circle item-icon solution-icon"></i>
+                        <div class="item-content">
+                            <h3 class="item-title">أتمتة ذكية شاملة</h3>
+                            <p class="item-text"><span class="highlight-solution">أتمتة كاملة</span> للعمليات المتكررة مع تحرير الفريق للتركيز على المهام الاستراتيجية</p>
+                        </div>
+                    </div>
+                    
+                    <div class="item">
+                        <i class="fas fa-check-circle item-icon solution-icon"></i>
+                        <div class="item-content">
+                            <h3 class="item-title">ذكاء اصطناعي متقدم</h3>
+                            <p class="item-text"><span class="highlight-solution">تحليل السير الذاتية</span> والمطابقة الذكية للمرشحين تسرع عملية الاختيار بشكل كبير</p>
+                        </div>
+                    </div>
+                    
+                    <div class="item">
+                        <i class="fas fa-check-circle item-icon solution-icon"></i>
+                        <div class="item-content">
+                            <h3 class="item-title">امتثال تلقائي</h3>
+                            <p class="item-text"><span class="highlight-solution">تتبع تلقائي</span> لمتطلبات السعودة مع تنبيهات استباقية وتكامل مع قوى والتأمينات</p>
+                        </div>
+                    </div>
+                    
+                    <div class="item">
+                        <i class="fas fa-check-circle item-icon solution-icon"></i>
+                        <div class="item-content">
+                            <h3 class="item-title">تحليلات شاملة</h3>
+                            <p class="item-text"><span class="highlight-solution">لوحات معلومات</span> تفاعلية توفر رؤى عميقة لاتخاذ قرارات مبنية على البيانات</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

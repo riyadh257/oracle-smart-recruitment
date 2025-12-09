@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #0A1628 0%, #0D1F38 100%);
+            position: relative;
+            font-family: 'Cairo', sans-serif;
+            color: #E8F1F5;
+        }
+        
+        /* Grid background */
+        .grid-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.05;
+            background-image: 
+                linear-gradient(rgba(0, 217, 255, 0.3) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 217, 255, 0.3) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        
+        /* Accent line */
+        .accent-line {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #00D9FF 0%, #7C3AED 100%);
+        }
+        
+        /* Content wrapper */
+        .content {
+            position: relative;
+            z-index: 10;
+            min-height: 720px;
+        }
+        
+        /* Header */
+        .header {
+            padding-top: 50px;
+            padding-right: 80px;
+            padding-left: 80px;
+            margin-bottom: 40px;
+        }
+        
+        .title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #00D9FF;
+        }
+        
+        /* Main grid */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 50px;
+            padding-right: 80px;
+            padding-left: 80px;
+        }
+        
+        /* Left column - Technologies */
+        .tech-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .tech-card {
+            background: rgba(0, 217, 255, 0.04);
+            border: 1px solid rgba(0, 217, 255, 0.15);
+            border-right: 3px solid;
+            min-height: 85px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding-right: 25px;
+            padding-left: 25px;
+        }
+        
+        .tech-card:nth-child(1) { border-right-color: #10B981; }
+        .tech-card:nth-child(2) { border-right-color: #7C3AED; }
+        .tech-card:nth-child(3) { border-right-color: #00D9FF; }
+        .tech-card:nth-child(4) { border-right-color: #F59E0B; }
+        .tech-card:nth-child(5) { border-right-color: #EF4444; }
+        .tech-card:nth-child(6) { border-right-color: #06B6D4; }
+        
+        .tech-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            flex-shrink: 0;
+        }
+        
+        .tech-card:nth-child(1) .tech-icon { color: #10B981; }
+        .tech-card:nth-child(2) .tech-icon { color: #7C3AED; }
+        .tech-card:nth-child(3) .tech-icon { color: #00D9FF; }
+        .tech-card:nth-child(4) .tech-icon { color: #F59E0B; }
+        .tech-card:nth-child(5) .tech-icon { color: #EF4444; }
+        .tech-card:nth-child(6) .tech-icon { color: #06B6D4; }
+        
+        .tech-info {
+            flex: 1;
+        }
+        
+        .tech-name {
+            font-size: 20px;
+            font-weight: 700;
+            color: #E8F1F5;
+            margin-bottom: 4px;
+        }
+        
+        .tech-version {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 14px;
+            color: #00D9FF;
+            margin-left: 8px;
+        }
+        
+        .tech-desc {
+            font-size: 14px;
+            color: #E8F1F5;
+            opacity: 0.75;
+            line-height: 1.4;
+        }
+        
+        /* Right column - Features */
+        .features-section {
+            background: rgba(124, 58, 237, 0.05);
+            border: 1px solid rgba(124, 58, 237, 0.2);
+            min-height: 540px;
+        }
+        
+        .features-header {
+            background: rgba(124, 58, 237, 0.15);
+            padding-top: 20px;
+            padding-bottom: 20px;
+            padding-right: 25px;
+            padding-left: 25px;
+            border-bottom: 2px solid rgba(124, 58, 237, 0.3);
+        }
+        
+        .features-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #7C3AED;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .features-icon {
+            font-size: 24px;
+        }
+        
+        .features-list {
+            padding-top: 30px;
+            padding-right: 25px;
+            padding-left: 25px;
+        }
+        
+        .feature-item {
+            margin-bottom: 25px;
+            display: flex;
+            gap: 15px;
+        }
+        
+        .feature-bullet {
+            width: 32px;
+            height: 32px;
+            background: rgba(124, 58, 237, 0.15);
+            border: 2px solid rgba(124, 58, 237, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        
+        .feature-check {
+            color: #7C3AED;
+            font-size: 14px;
+        }
+        
+        .feature-content {
+            flex: 1;
+        }
+        
+        .feature-name {
+            font-size: 17px;
+            font-weight: 700;
+            color: #E8F1F5;
+            margin-bottom: 4px;
+        }
+        
+        .feature-desc {
+            font-size: 14px;
+            color: #E8F1F5;
+            opacity: 0.8;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <!-- Grid background -->
+        <div class="grid-background"></div>
+        
+        <!-- Accent line -->
+        <div class="accent-line"></div>
+        
+        <!-- Content -->
+        <div class="content">
+            <!-- Header -->
+            <div class="header">
+                <h1 class="title">معمارية الخادم الخلفي</h1>
+            </div>
+            
+            <!-- Main grid -->
+            <div class="main-grid">
+                <!-- Left: Technologies -->
+                <div class="tech-section">
+                    <!-- Node.js -->
+                    <div class="tech-card">
+                        <div class="tech-icon">
+                            <i class="fab fa-node-js"></i>
+                        </div>
+                        <div class="tech-info">
+                            <div class="tech-name">
+                                <span class="tech-version">Node.js 22</span>
+                                بيئة التشغيل
+                            </div>
+                            <div class="tech-desc">بيئة تشغيل JavaScript عالية الأداء مع دعم ES Modules والميزات الحديثة</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Express -->
+                    <div class="tech-card">
+                        <div class="tech-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <div class="tech-info">
+                            <div class="tech-name">
+                                <span class="tech-version">Express 4</span>
+                                إطار العمل
+                            </div>
+                            <div class="tech-desc">إطار عمل ويب مرن وسريع لبناء واجهات برمجية قوية وقابلة للتوسع</div>
+                        </div>
+                    </div>
+                    
+                    <!-- tRPC -->
+                    <div class="tech-card">
+                        <div class="tech-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="tech-info">
+                            <div class="tech-name">
+                                <span class="tech-version">tRPC 11</span>
+                                واجهة آمنة نوعياً
+                            </div>
+                            <div class="tech-desc">بناء واجهات برمجية آمنة نوعياً من البداية للنهاية بدون الحاجة لتوليد الكود</div>
+                        </div>
+                    </div>
+                    
+                    <!-- SuperJSON -->
+                    <div class="tech-card">
+                        <div class="tech-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <div class="tech-info">
+                            <div class="tech-name">
+                                <span class="tech-version">SuperJSON</span>
+                                التسلسل التلقائي
+                            </div>
+                            <div class="tech-desc">معالجة تلقائية للأنواع المعقدة مثل Date و Map و Set بدون تحويل يدوي</div>
+                        </div>
+                    </div>
+                    
+                    <!-- WebSocket -->
+                    <div class="tech-card">
+                        <div class="tech-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="tech-info">
+                            <div class="tech-name">
+                                <span class="tech-version">WebSocket</span>
+                                التحديثات الفورية
+                            </div>
+                            <div class="tech-desc">اتصال ثنائي الاتجاه في الوقت الفعلي للإشعارات والتحديثات الحية</div>
+                        </div>
+                    </div>
+                    
+                    <!-- RESTful -->
+                    <div class="tech-card">
+                        <div class="tech-icon">
+                            <i class="fas fa-sitemap"></i>
+                        </div>
+                        <div class="tech-info">
+                            <div class="tech-name">
+                                <span class="tech-version">RESTful</span>
+                                المعمارية القياسية
+                            </div>
+                            <div class="tech-desc">تصميم واجهات برمجية متوافقة مع معايير REST للتكامل السهل</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right: Features -->
+                <div class="features-section">
+                    <div class="features-header">
+                        <div class="features-title">
+                            <i class="fas fa-star features-icon"></i>
+                            المزايا الرئيسية
+                        </div>
+                    </div>
+                    
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <div class="feature-bullet">
+                                <i class="fas fa-check feature-check"></i>
+                            </div>
+                            <div class="feature-content">
+                                <div class="feature-name">الأمان النوعي الشامل</div>
+                                <div class="feature-desc">TypeScript من الواجهة الأمامية إلى الخلفية يمنع الأخطاء في وقت التطوير</div>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-bullet">
+                                <i class="fas fa-check feature-check"></i>
+                            </div>
+                            <div class="feature-content">
+                                <div class="feature-name">توثيق تلقائي للواجهات</div>
+                                <div class="feature-desc">tRPC يولد التوثيق والأنواع تلقائياً من تعريفات الإجراءات</div>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-bullet">
+                                <i class="fas fa-check feature-check"></i>
+                            </div>
+                            <div class="feature-content">
+                                <div class="feature-name">اتصال ثنائي الاتجاه</div>
+                                <div class="feature-desc">WebSocket يتيح التحديثات الفورية والإشعارات في الوقت الحقيقي</div>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-bullet">
+                                <i class="fas fa-check feature-check"></i>
+                            </div>
+                            <div class="feature-content">
+                                <div class="feature-name">معمارية قابلة للتوسع</div>
+                                <div class="feature-desc">تصميم Microservices يسمح بالتوسع الأفقي حسب الحاجة</div>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-bullet">
+                                <i class="fas fa-check feature-check"></i>
+                            </div>
+                            <div class="feature-content">
+                                <div class="feature-name">تحسين الأداء</div>
+                                <div class="feature-desc">Connection pooling و caching و async processing لأداء عالي</div>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-bullet">
+                                <i class="fas fa-check feature-check"></i>
+                            </div>
+                            <div class="feature-content">
+                                <div class="feature-name">سهولة الصيانة</div>
+                                <div class="feature-desc">فصل واضح للمسؤوليات وكود نظيف قابل للاختبار</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

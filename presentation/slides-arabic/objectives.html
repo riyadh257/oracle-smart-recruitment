@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font-family: 'Cairo', sans-serif; direction: rtl; }
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: #ffffff;
+        padding-top: 50px;
+      }
+      .header {
+        text-align: center;
+        margin-bottom: 45px;
+      }
+      .title {
+        font-size: 32px;
+        font-weight: 700;
+        color: #1e3a8a;
+        margin-bottom: 10px;
+      }
+      .subtitle {
+        font-size: 18px;
+        color: #4b5563;
+      }
+      .objectives-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 35px;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 60px;
+      }
+      .objective-card {
+        background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+        padding-top: 35px;
+        min-height: 240px;
+        border: 2px solid #e5e7eb;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+      }
+      .objective-number {
+        font-size: 56px;
+        font-weight: 800;
+        line-height: 1;
+        margin-bottom: 15px;
+      }
+      .number-blue {
+        color: #3b82f6;
+      }
+      .number-green {
+        color: #10b981;
+      }
+      .number-purple {
+        color: #8b5cf6;
+      }
+      .number-orange {
+        color: #f59e0b;
+      }
+      .objective-icon {
+        font-size: 32px;
+        margin-bottom: 15px;
+      }
+      .icon-blue {
+        color: #3b82f6;
+      }
+      .icon-green {
+        color: #10b981;
+      }
+      .icon-purple {
+        color: #8b5cf6;
+      }
+      .icon-orange {
+        color: #f59e0b;
+      }
+      .objective-title {
+        font-size: 20px;
+        font-weight: 700;
+        color: #1e3a8a;
+        margin-bottom: 10px;
+      }
+      .objective-description {
+        font-size: 16px;
+        color: #4b5563;
+        line-height: 1.5;
+        padding: 0 25px;
+      }
+      .highlight {
+        font-weight: 600;
+        color: #1f2937;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1 class="title">الأهداف الاستراتيجية والنتائج المتوقعة</h1>
+            <p class="subtitle">أهداف قابلة للقياس لتحويل عمليات التوظيف</p>
+        </div>
+        
+        <div class="objectives-grid">
+            <div class="objective-card">
+                <div class="objective-number number-blue">40%</div>
+                <div class="objective-icon icon-blue">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <h3 class="objective-title">تحسين الكفاءة</h3>
+                <p class="objective-description">
+                    تقليل <span class="highlight">وقت التوظيف</span> بنسبة 40% من خلال الأتمتة والذكاء الاصطناعي
+                </p>
+            </div>
+            
+            <div class="objective-card">
+                <div class="objective-number number-green">30%</div>
+                <div class="objective-icon icon-green">
+                    <i class="fas fa-dollar-sign"></i>
+                </div>
+                <h3 class="objective-title">خفض التكاليف</h3>
+                <p class="objective-description">
+                    تقليل <span class="highlight">تكلفة التوظيف</span> بنسبة 30% عبر تحسين العمليات وتقليل الهدر
+                </p>
+            </div>
+            
+            <div class="objective-card">
+                <div class="objective-number number-purple">100%</div>
+                <div class="objective-icon icon-purple">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3 class="objective-title">ضمان الامتثال</h3>
+                <p class="objective-description">
+                    <span class="highlight">امتثال تلقائي كامل</span> لمتطلبات السعودة والتأمينات الاجتماعية مع تنبيهات استباقية
+                </p>
+            </div>
+            
+            <div class="objective-card">
+                <div class="objective-number number-orange">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="objective-icon icon-orange">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3 class="objective-title">قرارات مستنيرة</h3>
+                <p class="objective-description">
+                    اتخاذ قرارات <span class="highlight">مبنية على البيانات</span> من خلال تحليلات شاملة وذكاء اصطناعي متقدم
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

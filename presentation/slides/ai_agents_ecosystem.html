@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelligent AI Agents Ecosystem</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow: hidden;
+        }
+        
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #0A1628;
+            position: relative;
+        }
+        
+        .header {
+            padding-top: 60px;
+            padding-left: 80px;
+            padding-right: 80px;
+            margin-bottom: 50px;
+        }
+        
+        .title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #00D4FF;
+            margin-bottom: 12px;
+        }
+        
+        .title-underline {
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(90deg, #6366F1, #00D4FF);
+        }
+        
+        .agents-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px;
+            padding-left: 80px;
+            padding-right: 80px;
+            position: relative;
+        }
+        
+        .agent-item {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(0, 212, 255, 0.05));
+            border: 2px solid rgba(99, 102, 241, 0.3);
+            padding-top: 30px;
+            padding-left: 30px;
+            padding-right: 30px;
+            min-height: 220px;
+            position: relative;
+        }
+        
+        .agent-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .agent-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #6366F1, #00D4FF);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: #0A1628;
+        }
+        
+        .agent-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: #00D4FF;
+        }
+        
+        .agent-features {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 16px;
+            color: #E8EDF2;
+            opacity: 0.85;
+            line-height: 1.5;
+        }
+        
+        .feature-bullet {
+            width: 6px;
+            height: 6px;
+            background: #10B981;
+            margin-top: 8px;
+            flex-shrink: 0;
+        }
+        
+        .connector-horizontal {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 2px;
+            height: 100px;
+            background: linear-gradient(180deg, #6366F1, transparent, #6366F1);
+            opacity: 0.4;
+        }
+        
+        .connector-vertical {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, #6366F1, transparent, #6366F1);
+            opacity: 0.4;
+        }
+        
+        .center-hub {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            background: #0A1628;
+            border: 3px solid #00D4FF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+        
+        .hub-icon {
+            font-size: 18px;
+            color: #00D4FF;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1 class="title">Intelligent AI Agents Ecosystem</h1>
+            <div class="title-underline"></div>
+        </div>
+        
+        <div class="agents-grid">
+            <div class="connector-horizontal"></div>
+            <div class="connector-vertical"></div>
+            <div class="center-hub">
+                <i class="fas fa-network-wired hub-icon"></i>
+            </div>
+            
+            <div class="agent-item">
+                <div class="agent-header">
+                    <div class="agent-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="agent-name">Scheduling Agent</div>
+                </div>
+                <div class="agent-features">
+                    <div class="feature-item">
+                        <div class="feature-bullet"></div>
+                        <span>Automated slot detection and calendar integration</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-bullet"></div>
+                        <span>AI-powered conflict resolution and timezone management</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-bullet"></div>
+                        <span>Automatic reminders and meeting link generation</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="agent-item">
+                <div class="agent-header">
+                    <div class="agent-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <div class="agent-name">Follow-up Agent</div>
+                </div>
+                <div class="agent-features">
+                    <div class="feature-item">
+                        <div class="feature-bullet"></div>
+                        <span>Multi-channel communication (Email, SMS, WhatsApp, Push)</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-bullet"></div>
+                        <span>AI-powered message personalization and auto-reply</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-bullet"></div>
+                        <span>Sentiment analysis and engagement tracking</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="agent-item">
+                <div class="agent-header">
+                    <div class="agent-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="agent-name">Research Agent</div>
+                </div>
+                <div class="agent-features">
+                    <div class="feature-item">
+                        <div class="feature-bullet"></div>
+                        <span>Profile enrichment from LinkedIn, GitHub, StackOverflow</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-bullet"></div>
+                        <span>Employment and education verification</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-bullet"></div>
+                        <span>Competitive intelligence and salary data research</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="agent-item">
+                <div class="agent-header">
+                    <div class="agent-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <div class="agent-name">Orchestration</div>
+                </div>
+                <div class="agent-features">
+                    <div class="feature-item">
+                        <div class="feature-bullet"></div>
+                        <span>Coordinated workflow automation across all agents</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-bullet"></div>
+                        <span>Decision logging and comprehensive reporting</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-bullet"></div>
+                        <span>Batch processing and performance optimization</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

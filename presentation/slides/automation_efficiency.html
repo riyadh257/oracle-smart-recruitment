@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: #FFFFFF;
+        font-family: 'Inter', sans-serif;
+        position: relative;
+      }
+      
+      .header-section {
+        padding-top: 60px;
+        padding-left: 80px;
+        padding-right: 80px;
+        margin-bottom: 48px;
+      }
+      
+      .accent-bar {
+        width: 80px;
+        height: 4px;
+        background: #0066CC;
+        margin-bottom: 24px;
+      }
+      
+      .page-title {
+        font-size: 40px;
+        font-weight: 700;
+        color: #1a1a1a;
+        line-height: 1.2;
+        margin-bottom: 16px;
+      }
+      
+      .highlight {
+        color: #0066CC;
+      }
+      
+      .intro-text {
+        font-size: 18px;
+        font-weight: 400;
+        color: #666666;
+        line-height: 1.6;
+        max-width: 900px;
+      }
+      
+      .automation-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+        padding-left: 80px;
+        padding-right: 80px;
+      }
+      
+      .automation-block {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+      }
+      
+      .automation-icon {
+        width: 56px;
+        height: 56px;
+        background: linear-gradient(135deg, #0066CC 0%, #0052A3 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      
+      .automation-icon i {
+        color: #FFFFFF;
+        font-size: 26px;
+      }
+      
+      .automation-block:nth-child(2) .automation-icon {
+        background: linear-gradient(135deg, #FF6B35 0%, #E55A2B 100%);
+      }
+      
+      .automation-block:nth-child(3) .automation-icon {
+        background: linear-gradient(135deg, #0066CC 0%, #0052A3 100%);
+      }
+      
+      .automation-block:nth-child(4) .automation-icon {
+        background: linear-gradient(135deg, #FF6B35 0%, #E55A2B 100%);
+      }
+      
+      .automation-block:nth-child(5) .automation-icon {
+        background: linear-gradient(135deg, #0066CC 0%, #0052A3 100%);
+      }
+      
+      .automation-block:nth-child(6) .automation-icon {
+        background: linear-gradient(135deg, #FF6B35 0%, #E55A2B 100%);
+      }
+      
+      .automation-content {
+        flex: 1;
+      }
+      
+      .automation-title {
+        font-size: 22px;
+        font-weight: 600;
+        color: #1a1a1a;
+        margin-bottom: 8px;
+        line-height: 1.3;
+      }
+      
+      .automation-description {
+        font-size: 16px;
+        font-weight: 400;
+        color: #666666;
+        line-height: 1.6;
+      }
+      
+      .efficiency-badge {
+        position: absolute;
+        bottom: 40px;
+        right: 80px;
+        background: linear-gradient(135deg, #0066CC 0%, #0052A3 100%);
+        padding-left: 28px;
+        padding-right: 28px;
+        padding-top: 20px;
+        min-height: 90px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+      }
+      
+      .badge-value {
+        font-size: 36px;
+        font-weight: 700;
+        color: #FFFFFF;
+        line-height: 1;
+      }
+      
+      .badge-label {
+        font-size: 14px;
+        font-weight: 500;
+        color: #FFFFFF;
+        opacity: 0.95;
+        text-align: center;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header-section">
+            <div class="accent-bar"></div>
+            <h2 class="page-title">
+                <span class="highlight">Automation</span> Driving Efficiency
+            </h2>
+            <p class="intro-text">
+                Intelligent workflow automation eliminates repetitive tasks, optimizes recruiter productivity, and accelerates hiring cycles through smart scheduling, prioritization, and communication management.
+            </p>
+        </div>
+        
+        <div class="automation-grid">
+            <div class="automation-block">
+                <div class="automation-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="automation-content">
+                    <h3 class="automation-title">Email Template Management</h3>
+                    <p class="automation-description">Customizable templates for interview invitations, status updates, and follow-ups with dynamic variable insertion and multi-language support.</p>
+                </div>
+            </div>
+            
+            <div class="automation-block">
+                <div class="automation-icon">
+                    <i class="fas fa-sort-amount-down"></i>
+                </div>
+                <div class="automation-content">
+                    <h3 class="automation-title">Notification Prioritization</h3>
+                    <p class="automation-description">Smart routing of urgent notifications based on candidate stage, role criticality, and hiring manager preferences to reduce alert fatigue.</p>
+                </div>
+            </div>
+            
+            <div class="automation-block">
+                <div class="automation-icon">
+                    <i class="fas fa-moon"></i>
+                </div>
+                <div class="automation-content">
+                    <h3 class="automation-title">Quiet Hours Scheduling</h3>
+                    <p class="automation-description">Respect candidate time zones and preferences by scheduling communications during appropriate hours with automatic delay queuing.</p>
+                </div>
+            </div>
+            
+            <div class="automation-block">
+                <div class="automation-icon">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <div class="automation-content">
+                    <h3 class="automation-title">Digest Reports</h3>
+                    <p class="automation-description">Automated weekly summaries of pipeline activity, candidate progress, and key metrics delivered to stakeholders on schedule.</p>
+                </div>
+            </div>
+            
+            <div class="automation-block">
+                <div class="automation-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="automation-content">
+                    <h3 class="automation-title">Engagement Tracking</h3>
+                    <p class="automation-description">Monitor email open rates, response times, and candidate interaction patterns to optimize communication strategies.</p>
+                </div>
+            </div>
+            
+            <div class="automation-block">
+                <div class="automation-icon">
+                    <i class="fas fa-vial"></i>
+                </div>
+                <div class="automation-content">
+                    <h3 class="automation-title">A/B Testing</h3>
+                    <p class="automation-description">Experiment with different email templates, notification timing, and messaging approaches to identify most effective strategies.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="efficiency-badge">
+            <span class="badge-value">60%</span>
+            <span class="badge-label">Time Saved on<br>Manual Tasks</span>
+        </div>
+    </div>
+</body>
+</html>

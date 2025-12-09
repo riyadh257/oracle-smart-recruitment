@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #0A1628 0%, #0D1F38 100%);
+            position: relative;
+            font-family: 'Cairo', sans-serif;
+            color: #E8F1F5;
+        }
+        
+        /* Grid background */
+        .grid-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.05;
+            background-image: 
+                linear-gradient(rgba(0, 217, 255, 0.3) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 217, 255, 0.3) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        
+        /* Accent line */
+        .accent-line {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #00D9FF 0%, #7C3AED 100%);
+        }
+        
+        /* Content wrapper */
+        .content {
+            position: relative;
+            z-index: 10;
+            min-height: 720px;
+        }
+        
+        /* Header */
+        .header {
+            padding-top: 50px; /* Do not change to keep title consistency */
+            padding-right: 80px;
+            padding-left: 80px;
+            margin-bottom: 40px;
+        }
+        
+        .title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #00D9FF;
+        }
+        
+        /* Main layout */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 50px;
+            padding-right: 80px;
+            padding-left: 80px;
+        }
+        
+        /* Left visual section */
+        .visual-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .ai-brain-container {
+            width: 280px;
+            height: 280px;
+            background: radial-gradient(circle, rgba(124, 58, 237, 0.15) 0%, rgba(0, 217, 255, 0.05) 100%);
+            border: 2px solid rgba(0, 217, 255, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        .ai-brain-icon {
+            font-size: 120px;
+            color: #7C3AED;
+            opacity: 0.9;
+        }
+        
+        .pulse-ring {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 2px solid rgba(124, 58, 237, 0.4);
+            top: -15px;
+            left: -15px;
+            width: calc(100% + 30px);
+            height: calc(100% + 30px);
+        }
+        
+        .ai-label {
+            font-size: 18px;
+            font-weight: 600;
+            color: #7C3AED;
+            text-align: center;
+            line-height: 1.6;
+        }
+        
+        .ai-label-en {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 14px;
+            color: #00D9FF;
+            opacity: 0.8;
+            margin-top: 8px;
+        }
+        
+        /* Right capabilities section */
+        .capabilities-section {
+            display: flex;
+            flex-direction: column;
+            gap: 8px; /* reduced from 18px to save vertical space: 6 gaps -> 60px saved */
+        }
+        
+        .capability-item {
+            background: rgba(0, 217, 255, 0.04);
+            border: 1px solid rgba(0, 217, 255, 0.15);
+            border-right: 3px solid;
+            min-height: 70px; /* keep min-height, content compressed to fit */
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding-right: 25px;
+            padding-left: 25px;
+        }
+        
+        .capability-item:nth-child(1) { border-right-color: #00D9FF; }
+        .capability-item:nth-child(2) { border-right-color: #10B981; }
+        .capability-item:nth-child(3) { border-right-color: #7C3AED; }
+        .capability-item:nth-child(4) { border-right-color: #F59E0B; }
+        .capability-item:nth-child(5) { border-right-color: #EF4444; }
+        .capability-item:nth-child(6) { border-right-color: #06B6D4; }
+        .capability-item:nth-child(7) { border-right-color: #8B5CF6; }
+        
+        .capability-icon {
+            width: 45px;
+            height: 45px;
+            background: rgba(0, 217, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            flex-shrink: 0;
+        }
+        
+        .capability-item:nth-child(1) .capability-icon { color: #00D9FF; }
+        .capability-item:nth-child(2) .capability-icon { color: #10B981; }
+        .capability-item:nth-child(3) .capability-icon { color: #7C3AED; }
+        .capability-item:nth-child(4) .capability-icon { color: #F59E0B; }
+        .capability-item:nth-child(5) .capability-icon { color: #EF4444; }
+        .capability-item:nth-child(6) .capability-icon { color: #06B6D4; }
+        .capability-item:nth-child(7) .capability-icon { color: #8B5CF6; }
+        
+        .capability-content { flex: 1; }
+        
+        .capability-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #E8F1F5;
+            line-height: 1.3; /* compress title line height */
+            margin-bottom: 2px; /* reduced from 4px */
+        }
+        
+        .capability-title-en {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 12px;
+            color: #00D9FF;
+            opacity: 0.7;
+            letter-spacing: 0.5px;
+            line-height: 1.2; /* compact line height */
+        }
+        
+        .capability-description {
+            font-size: 14px;
+            color: #E8F1F5;
+            opacity: 0.8;
+            line-height: 1.4; /* reduced from 1.5 */
+            margin-top: 2px; /* reduced from 5px */
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <!-- Grid background -->
+        <div class="grid-background"></div>
+        
+        <!-- Accent line -->
+        <div class="accent-line"></div>
+        
+        <!-- Content -->
+        <div class="content">
+            <!-- Header -->
+            <div class="header">
+                <h1 class="title">تكامل الذكاء الاصطناعي والتعلم الآلي</h1>
+            </div>
+            
+            <!-- Main layout -->
+            <div class="main-layout">
+                <!-- Left visual section -->
+                <div class="visual-section">
+                    <div class="ai-brain-container">
+                        <div class="pulse-ring"></div>
+                        <i class="fas fa-brain ai-brain-icon"></i>
+                    </div>
+                    <div class="ai-label">
+                        قدرات الذكاء الاصطناعي المتقدمة<br>
+                        للتوظيف الذكي
+                        <div class="ai-label-en">AI/ML POWERED RECRUITMENT</div>
+                    </div>
+                </div>
+                
+                <!-- Right capabilities section -->
+                <div class="capabilities-section">
+                    <!-- LLM API -->
+                    <div class="capability-item">
+                        <div class="capability-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="capability-content">
+                            <div class="capability-title">نماذج اللغة الكبيرة</div>
+                            <div class="capability-title-en">Large Language Models (LLM API)</div>
+                            <div class="capability-description">تحليل شامل للمرشحين باستخدام نماذج لغوية متقدمة لفهم المهارات والخبرات بعمق</div>
+                        </div>
+                    </div>
+                    
+                    <!-- NLP -->
+                    <div class="capability-item">
+                        <div class="capability-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="capability-content">
+                            <div class="capability-title">معالجة اللغة الطبيعية</div>
+                            <div class="capability-title-en">Natural Language Processing (NLP)</div>
+                            <div class="capability-description">تحليل السير الذاتية تلقائياً واستخراج المهارات والخبرات والمؤهلات بدقة عالية</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Sentiment Analysis -->
+                    <div class="capability-item">
+                        <div class="capability-icon">
+                            <i class="fas fa-smile"></i>
+                        </div>
+                        <div class="capability-content">
+                            <div class="capability-title">تحليل المشاعر</div>
+                            <div class="capability-title-en">Sentiment Analysis</div>
+                            <div class="capability-description">تقييم ردود المرشحين والتعليقات لفهم المواقف والدوافع والملاءمة الثقافية</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Predictive Analytics -->
+                    <div class="capability-item">
+                        <div class="capability-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="capability-content">
+                            <div class="capability-title">التحليلات التنبؤية</div>
+                            <div class="capability-title-en">Predictive Analytics</div>
+                            <div class="capability-description">التنبؤ بنجاح المرشح في الوظيفة بناءً على البيانات التاريخية وأنماط الأداء</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Computer Vision -->
+                    <div class="capability-item">
+                        <div class="capability-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <div class="capability-content">
+                            <div class="capability-title">رؤية الحاسوب</div>
+                            <div class="capability-title-en">Computer Vision</div>
+                            <div class="capability-description">تحليل المقابلات المرئية لتقييم لغة الجسد والتعبيرات والاحترافية</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Speech-to-Text -->
+                    <div class="capability-item">
+                        <div class="capability-icon">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                        <div class="capability-content">
+                            <div class="capability-title">تحويل الكلام إلى نص</div>
+                            <div class="capability-title-en">Speech-to-Text Transcription</div>
+                            <div class="capability-description">نسخ المقابلات الصوتية تلقائياً لتسهيل المراجعة والتحليل والتوثيق</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Continuous Learning -->
+                    <div class="capability-item">
+                        <div class="capability-icon">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <div class="capability-content">
+                            <div class="capability-title">التعلم المستمر</div>
+                            <div class="capability-title-en">Continuous Learning & Improvement</div>
+                            <div class="capability-description">تحسين النماذج باستمرار من خلال التعليقات والبيانات الجديدة لزيادة الدقة</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

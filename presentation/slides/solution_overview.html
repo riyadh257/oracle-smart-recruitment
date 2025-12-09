@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .slide-container {
+      width: 1280px;
+      min-height: 720px;
+      background: #0A1628;
+      position: relative;
+    }
+    
+    .header {
+      padding-top: 60px;
+      padding-left: 80px;
+      padding-right: 80px;
+      margin-bottom: 50px;
+    }
+    
+    .page-title {
+      font-size: 40px;
+      font-weight: 700;
+      color: #FFFFFF;
+      line-height: 1.2;
+    }
+    
+    .content-grid {
+      display: grid;
+      grid-template-columns: 520px 1fr;
+      gap: 50px;
+      padding-left: 80px;
+      padding-right: 80px;
+      align-items: center;
+    }
+    
+    .dashboard-preview {
+      width: 520px;
+      height: 390px;
+      object-fit: contain;
+      border: 2px solid rgba(59, 130, 246, 0.3);
+    }
+    
+    .capabilities-column {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    
+    .capability-card {
+      background: rgba(59, 130, 246, 0.08);
+      border-left: 3px solid #3B82F6;
+      padding-left: 20px;
+      padding-top: 15px;
+      min-height: 70px;
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+    }
+    
+    .capability-icon {
+      font-size: 28px;
+      line-height: 1;
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+    
+    .capability-content {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    
+    .capability-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #FFFFFF;
+      line-height: 1.2;
+    }
+    
+    .capability-description {
+      font-size: 15px;
+      font-weight: 400;
+      color: #E2E8F0;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="header">
+      <div class="page-title">Comprehensive AI-Driven Solution</div>
+    </div>
+    
+    <div class="content-grid">
+      <div>
+        <img src="/home/ubuntu/oracle-smart-recruitment/presentation/assets/dashboard1.png" alt="Dashboard Preview" class="dashboard-preview">
+      </div>
+      
+      <div class="capabilities-column">
+        <div class="capability-card">
+          <div class="capability-icon">🧠</div>
+          <div class="capability-content">
+            <div class="capability-title">Intelligent Resume Screening</div>
+            <div class="capability-description">AI-powered NLP extracts skills, ranks candidates, and eliminates bias</div>
+          </div>
+        </div>
+        
+        <div class="capability-card">
+          <div class="capability-icon">📅</div>
+          <div class="capability-content">
+            <div class="capability-title">Automated Interview Scheduling</div>
+            <div class="capability-description">Smart calendar integration with conflict detection and instant notifications</div>
+          </div>
+        </div>
+        
+        <div class="capability-card">
+          <div class="capability-icon">🎥</div>
+          <div class="capability-content">
+            <div class="capability-title">Video Interview Analysis</div>
+            <div class="capability-description">Multi-provider support with AI-powered feedback and structured scorecards</div>
+          </div>
+        </div>
+        
+        <div class="capability-card">
+          <div class="capability-icon">📈</div>
+          <div class="capability-content">
+            <div class="capability-title">Predictive Analytics</div>
+            <div class="capability-description">Real-time metrics, hiring success predictions, and bottleneck identification</div>
+          </div>
+        </div>
+        
+        <div class="capability-card">
+          <div class="capability-icon">👤</div>
+          <div class="capability-content">
+            <div class="capability-title">Candidate Self-Service Portal</div>
+            <div class="capability-description">Application tracking, document upload, and interview self-scheduling</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

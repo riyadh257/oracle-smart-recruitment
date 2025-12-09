@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS campaignTemplates (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  name VARCHAR(255) NOT NULL,\n  description TEXT,\n  category ENUM('welcome', 'nurture', 'reengagement', 'interview', 'onboarding', 'custom') NOT NULL,\n  sequence JSON NOT NULL COMMENT 'Array of email steps with delays',\n  totalSteps INT NOT NULL,\n  estimatedDuration INT NOT NULL COMMENT 'Total duration in days',\n  isActive BOOLEAN DEFAULT TRUE,\n  usageCount INT DEFAULT 0,\n  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,\n  updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,\n  INDEX idx_category (category),\n  INDEX idx_active (isActive)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS campaignTemplates (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  name VARCHAR(255) NOT NULL,\n  description TEXT,\n  category ENUM('welcome', 'nurture', 'reengagement', 'interview', 'onboarding', 'custom') NOT NULL,\n  sequence JSON NOT NULL COMMENT 'Array of email steps with delays',\n  totalSteps INT NOT NULL,\n  estimatedDuration INT NOT NULL COMMENT 'Total duration in days',\n  isActive BOOLEAN DEFAULT TRUE,\n  usageCount INT DEFAULT 0,\n  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,\n  updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,\n  INDEX idx_category (category),\n  INDEX idx_active (isActive)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1702
+}

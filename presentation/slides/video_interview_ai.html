@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Interview Intelligence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow: hidden;
+        }
+        
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #0A1628;
+            position: relative;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 45% 55%;
+            height: 720px;
+        }
+        
+        .image-section {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .video-image {
+            width: 576px;
+            height: 720px;
+            object-fit: cover;
+            object-position: center;
+        }
+        
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 576px;
+            height: 720px;
+            background: linear-gradient(90deg, transparent 0%, #0A1628 100%);
+        }
+        
+        .content-section {
+            padding-top: 70px;
+            padding-left: 60px;
+            padding-right: 80px;
+        }
+        
+        .title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #00D4FF;
+            margin-bottom: 16px;
+        }
+        
+        .subtitle {
+            font-size: 18px;
+            color: #E8EDF2;
+            opacity: 0.8;
+            margin-bottom: 50px;
+            line-height: 1.5;
+        }
+        
+        .features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 38px;
+        }
+        
+        .feature-item {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+        
+        .feature-icon {
+            flex-shrink: 0;
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, #6366F1, #00D4FF);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: #0A1628;
+        }
+        
+        .feature-content {
+            flex: 1;
+        }
+        
+        .feature-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #E8EDF2;
+            margin-bottom: 6px;
+        }
+        
+        .feature-description {
+            font-size: 16px;
+            color: #E8EDF2;
+            opacity: 0.7;
+            line-height: 1.5;
+        }
+        
+        .tech-badge {
+            display: inline-block;
+            padding-top: 4px;
+            padding-right: 12px;
+            padding-left: 12px;
+            background: #6366F1;
+            color: #E8EDF2;
+            font-size: 13px;
+            font-weight: 600;
+            margin-top: 6px;
+        }
+        
+        .accent-line {
+            position: absolute;
+            bottom: 60px;
+            right: 80px;
+            width: 200px;
+            height: 3px;
+            background: linear-gradient(90deg, #6366F1, #00D4FF);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="content-grid">
+            <div class="image-section">
+                <img src="/home/ubuntu/oracle-smart-recruitment/presentation/slides/assets/video-interview.jpg" alt="Video Interview Analysis" class="video-image">
+                <div class="image-overlay"></div>
+            </div>
+            
+            <div class="content-section">
+                <h1 class="title">Video Interview Intelligence</h1>
+                <p class="subtitle">Advanced AI-powered analysis transforming video interviews into actionable insights</p>
+                
+                <div class="features-list">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                        <div class="feature-content">
+                            <div class="feature-title">Speech-to-Text Transcription</div>
+                            <div class="feature-description">
+                                Whisper API integration for accurate multi-language transcription with timestamp precision
+                            </div>
+                            <span class="tech-badge">WHISPER API</span>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="feature-content">
+                            <div class="feature-title">LLM Content Analysis</div>
+                            <div class="feature-description">
+                                Deep semantic analysis of responses for relevance, depth, and technical accuracy
+                            </div>
+                            <span class="tech-badge">LLM POWERED</span>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <div class="feature-content">
+                            <div class="feature-title">Communication Skills Assessment</div>
+                            <div class="feature-description">
+                                Words-per-minute calculation, filler word detection, clarity scoring, and articulation metrics
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="feature-content">
+                            <div class="feature-title">Comprehensive Scoring System</div>
+                            <div class="feature-description">
+                                Multi-dimensional evaluation combining content quality, communication effectiveness, and behavioral indicators
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="accent-line"></div>
+    </div>
+</body>
+</html>

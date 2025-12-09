@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: linear-gradient(135deg, #0A1628 0%, #1A2332 100%);
+        font-family: 'Inter', sans-serif;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .grid-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.05;
+        background-image: 
+          linear-gradient(#00D9FF 1px, transparent 1px),
+          linear-gradient(90deg, #00D9FF 1px, transparent 1px);
+        background-size: 40px 40px;
+      }
+      
+      .content-wrapper {
+        position: relative;
+        z-index: 2;
+        padding-top: 60px;
+        padding-left: 80px;
+        padding-right: 80px;
+        min-height: 720px;
+      }
+      
+      .header {
+        margin-bottom: 30px;
+      }
+      
+      .page-title {
+        font-size: 40px;
+        font-weight: 700;
+        color: #00D9FF;
+        margin-bottom: 8px;
+      }
+      
+      .page-subtitle {
+        font-size: 20px;
+        color: #E8EDF2;
+        font-weight: 400;
+      }
+      
+      .architecture-layers {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 20px;
+      }
+      
+      .layer {
+        background: rgba(0, 217, 255, 0.03);
+        border-left: 4px solid;
+        padding-top: 18px;
+        padding-left: 30px;
+        padding-right: 30px;
+        min-height: 130px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .layer-frontend { border-left-color: #00D9FF; }
+      .layer-backend { border-left-color: #0066FF; }
+      .layer-data { border-left-color: #00CCA3; }
+      
+      .layer-info {
+        flex: 1;
+      }
+      
+      .layer-number {
+        font-size: 14px;
+        color: #00CCA3;
+        font-weight: 600;
+        margin-bottom: 6px;
+      }
+      
+      .layer-title {
+        font-size: 24px;
+        font-weight: 700;
+        color: #E8EDF2;
+        margin-bottom: 10px;
+      }
+      
+      .layer-description {
+        font-size: 16px;
+        color: #E8EDF2;
+        line-height: 1.5;
+        opacity: 0.9;
+        margin-bottom: 10px;
+      }
+      
+      .layer-tech {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      
+      .tech-tag {
+        padding-top: 4px;
+        padding-left: 12px;
+        padding-right: 12px;
+        padding-bottom: 4px;
+        background: rgba(0, 102, 255, 0.2);
+        color: #00D9FF;
+        font-size: 13px;
+        font-weight: 500;
+      }
+      
+      .layer-icon {
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        color: #00D9FF;
+        opacity: 0.5;
+      }
+      
+      .integrations {
+        background: rgba(0, 204, 163, 0.05);
+        border-top: 2px solid rgba(0, 204, 163, 0.3);
+        padding-top: 18px;
+        padding-left: 30px;
+        padding-right: 30px;
+        min-height: 90px;
+      }
+      
+      .integration-title {
+        font-size: 16px;
+        color: #00CCA3;
+        font-weight: 600;
+        margin-bottom: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      
+      .integration-items {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      
+      .integration-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      
+      .integration-icon {
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        color: #00CCA3;
+      }
+      
+      .integration-text {
+        font-size: 15px;
+        color: #E8EDF2;
+        font-weight: 500;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="grid-background"></div>
+        
+        <div class="content-wrapper">
+            <div class="header">
+                <h1 class="page-title">System Architecture Overview</h1>
+                <p class="page-subtitle">Modern three-tier architecture ensures scalability, maintainability, and real-time performance</p>
+            </div>
+            
+            <div class="architecture-layers">
+                <div class="layer layer-frontend">
+                    <div class="layer-info">
+                        <div class="layer-number">LAYER 1</div>
+                        <h2 class="layer-title">Frontend Layer (React 19 + Tailwind 4)</h2>
+                        <p class="layer-description">Single-page application with type-safe tRPC client, real-time updates via WebSocket, and offline-first mobile interface</p>
+                        <div class="layer-tech">
+                            <span class="tech-tag">React 19</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">tRPC Client</span>
+                            <span class="tech-tag">Socket.IO Client</span>
+                            <span class="tech-tag">IndexedDB</span>
+                            <span class="tech-tag">shadcn/ui</span>
+                        </div>
+                    </div>
+                    <div class="layer-icon">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                </div>
+                
+                <div class="layer layer-backend">
+                    <div class="layer-info">
+                        <div class="layer-number">LAYER 2</div>
+                        <h2 class="layer-title">Backend Layer (Express 4 + tRPC 11)</h2>
+                        <p class="layer-description">Type-safe API with end-to-end TypeScript, Manus OAuth authentication, real-time event broadcasting, and scheduled job processing</p>
+                        <div class="layer-tech">
+                            <span class="tech-tag">Express 4</span>
+                            <span class="tech-tag">tRPC 11</span>
+                            <span class="tech-tag">Socket.IO</span>
+                            <span class="tech-tag">node-cron</span>
+                            <span class="tech-tag">JWT Auth</span>
+                            <span class="tech-tag">Zod Validation</span>
+                        </div>
+                    </div>
+                    <div class="layer-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                </div>
+                
+                <div class="layer layer-data">
+                    <div class="layer-info">
+                        <div class="layer-number">LAYER 3</div>
+                        <h2 class="layer-title">Data Layer (MySQL + Drizzle ORM)</h2>
+                        <p class="layer-description">Relational database with 70+ normalized tables, type-safe query builder, indexed columns for performance, and foreign key constraints</p>
+                        <div class="layer-tech">
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Drizzle ORM</span>
+                            <span class="tech-tag">70+ Tables</span>
+                            <span class="tech-tag">Type-Safe Queries</span>
+                            <span class="tech-tag">Migrations</span>
+                        </div>
+                    </div>
+                    <div class="layer-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="integrations">
+                <div class="integration-title">Integration Points</div>
+                <div class="integration-items">
+                    <div class="integration-item">
+                        <div class="integration-icon"><i class="fas fa-calendar"></i></div>
+                        <span class="integration-text">Google Calendar API</span>
+                    </div>
+                    <div class="integration-item">
+                        <div class="integration-icon"><i class="fas fa-envelope"></i></div>
+                        <span class="integration-text">Gmail MCP</span>
+                    </div>
+                    <div class="integration-item">
+                        <div class="integration-icon"><i class="fas fa-brain"></i></div>
+                        <span class="integration-text">Manus LLM</span>
+                    </div>
+                    <div class="integration-item">
+                        <div class="integration-icon"><i class="fas fa-cloud"></i></div>
+                        <span class="integration-text">S3 Storage</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #0A1628 0%, #0D1F38 100%);
+            position: relative;
+            font-family: 'Cairo', sans-serif;
+            color: #E8F1F5;
+        }
+        
+        /* Grid background */
+        .grid-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.05;
+            background-image: 
+                linear-gradient(rgba(0, 217, 255, 0.3) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 217, 255, 0.3) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        
+        /* Accent line */
+        .accent-line {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #00D9FF 0%, #7C3AED 100%);
+        }
+        
+        /* Content wrapper */
+        .content {
+            position: relative;
+            z-index: 10;
+            min-height: 720px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Header */
+        .header {
+            padding-top: 60px;
+            padding-right: 80px;
+            padding-left: 80px;
+            margin-bottom: 50px;
+        }
+        
+        .title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #00D9FF;
+            margin-bottom: 10px;
+        }
+        
+        /* Main grid */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            padding-right: 80px;
+            padding-left: 80px;
+            flex: 1;
+        }
+        
+        /* Tech column */
+        .tech-column {
+            background: rgba(0, 217, 255, 0.03);
+            border: 1px solid rgba(0, 217, 255, 0.15);
+            display: flex;
+            flex-direction: column;
+            min-height: 480px;
+        }
+        
+        .column-header {
+            background: rgba(0, 217, 255, 0.1);
+            padding-top: 25px;
+            padding-bottom: 25px;
+            text-align: center;
+            border-bottom: 2px solid rgba(0, 217, 255, 0.3);
+        }
+        
+        .column-icon {
+            font-size: 40px;
+            color: #00D9FF;
+            margin-bottom: 12px;
+        }
+        
+        .column-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #00D9FF;
+            margin-bottom: 6px;
+        }
+        
+        .column-subtitle {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 12px;
+            color: #E8F1F5;
+            opacity: 0.7;
+            letter-spacing: 1px;
+        }
+        
+        /* Tech list */
+        .tech-list {
+            padding-top: 30px;
+            padding-right: 25px;
+            padding-left: 25px;
+            flex: 1;
+        }
+        
+        .tech-item {
+            margin-bottom: 18px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .tech-bullet {
+            color: #10B981;
+            font-size: 8px;
+            margin-top: 8px;
+            flex-shrink: 0;
+        }
+        
+        .tech-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: #E8F1F5;
+            line-height: 1.5;
+        }
+        
+        .tech-version {
+            font-family: 'Roboto Mono', monospace;
+            color: #7C3AED;
+            font-size: 14px;
+            margin-right: 6px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <!-- Grid background -->
+        <div class="grid-background"></div>
+        
+        <!-- Accent line -->
+        <div class="accent-line"></div>
+        
+        <!-- Content -->
+        <div class="content">
+            <!-- Header -->
+            <div class="header">
+                <h1 class="title">نظرة عامة على المكونات التقنية</h1>
+            </div>
+            
+            <!-- Tech grid -->
+            <div class="tech-grid">
+                <!-- Frontend -->
+                <div class="tech-column">
+                    <div class="column-header">
+                        <div class="column-icon">
+                            <i class="fas fa-desktop"></i>
+                        </div>
+                        <div class="column-title">الواجهة الأمامية</div>
+                        <div class="column-subtitle">FRONTEND</div>
+                    </div>
+                    <div class="tech-list">
+                        <div class="tech-item">
+                            <i class="fas fa-circle tech-bullet"></i>
+                            <div class="tech-name"><span class="tech-version">React 19</span>إطار العمل الحديث</div>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-circle tech-bullet"></i>
+                            <div class="tech-name"><span class="tech-version">Tailwind CSS 4</span>التصميم</div>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-circle tech-bullet"></i>
+                            <div class="tech-name"><span class="tech-version">TypeScript</span>الأمان النوعي</div>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-circle tech-bullet"></i>
+                            <div class="tech-name"><span class="tech-version">shadcn/ui</span>المكونات</div>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-circle tech-bullet"></i>
+                            <div class="tech-name"><span class="tech-version">TanStack Query</span>إدارة البيانات</div>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-circle tech-bullet"></i>
+                            <div class="tech-name">تصميم متجاوب Mobile-First</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Backend -->
+                <div class="tech-column">
+                    <div class="column-header">
+                        <div class="column-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <div class="column-title">الخادم الخلفي</div>
+                        <div class="column-subtitle">BACKEND</div>
+                    </div>
+                    <div class="tech-list">
+                        <div class="tech-item">
+                            <i class="fas fa-circle tech-bullet"></i>
+                            <div class="tech-name"><span class="tech-version">Node.js 22</span>بيئة التشغيل</div>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-circle tech-bullet"></i>
+                            <div class="tech-name"><span class="tech-version">Express 4</span>إطار العمل</div>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-circle tech-bullet"></i>
+                            <div class="tech-name"><span class="tech-version">tRPC 11</span>واجهة آمنة نوعياً</div>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-circle tech-bullet"></i>
+                            <div class="tech-name"><span class="tech-version">SuperJSON</span>التسلسل التلقائي</div>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-circle tech-bullet"></i>
+                            <div class="tech-name"><span class="tech-version">WebSocket</span>التحديثات الفورية</div>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-circle tech-bullet"></i>
+                            <div class="tech-name">معمارية RESTful</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Database -->
+                <div class="tech-column">
+                    <div class="column-header">
+                        <div class="column-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="column-title">قاعدة البيانات</div>
+                        <div class="column-subtitle">DATABASE</div>
+                    </div>
+                    <div class="tech-list">
+                        <div class="tech-item">
+                            <i class="fas fa-circle tech-bullet"></i>
+                            <div class="tech-name"><span class="tech-version">MySQL/TiDB</span>قاعدة علائقية</div>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-circle tech-bullet"></i>
+                            <div class="tech-name"><span class="tech-version">Drizzle ORM</span>استعلامات آمنة</div>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-circle tech-bullet"></i>
+                            <div class="tech-name">إدارة الترحيلات</div>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-circle tech-bullet"></i>
+                            <div class="tech-name">تجميع الاتصالات</div>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-circle tech-bullet"></i>
+                            <div class="tech-name">استراتيجية الفهرسة</div>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-circle tech-bullet"></i>
+                            <div class="tech-name">النسخ الاحتياطي التلقائي</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- AI Integration -->
+                <div class="tech-column">
+                    <div class="column-header">
+                        <div class="column-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="column-title">الذكاء الاصطناعي</div>
+                        <div class="column-subtitle">AI/ML</div>
+                    </div>
+                    <div class="tech-list">
+                        <div class="tech-item">
+                            <i class="fas fa-circle tech-bullet"></i>
+                            <div class="tech-name"><span class="tech-version">LLM API</span>نماذج لغوية كبيرة</div>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-circle tech-bullet"></i>
+                            <div class="tech-name">معالجة اللغة الطبيعية</div>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-circle tech-bullet"></i>
+                            <div class="tech-name">تحليل المشاعر</div>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-circle tech-bullet"></i>
+                            <div class="tech-name">التحليلات التنبؤية</div>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-circle tech-bullet"></i>
+                            <div class="tech-name">رؤية الحاسوب</div>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-circle tech-bullet"></i>
+                            <div class="tech-name">تحويل الكلام إلى نص</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

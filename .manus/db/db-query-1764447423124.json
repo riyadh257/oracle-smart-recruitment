@@ -1,0 +1,9 @@
+{
+  "query": "ALTER TABLE alert_rules \nADD COLUMN metric_type VARCHAR(100),\nADD COLUMN comparison_operator ENUM('less_than', 'greater_than', 'equals', 'not_equals') NOT NULL DEFAULT 'less_than',\nADD COLUMN threshold_value INT NOT NULL DEFAULT 0,\nADD COLUMN consecutive_months INT DEFAULT 1,\nADD COLUMN severity ENUM('info', 'warning', 'critical') NOT NULL DEFAULT 'warning',\nADD COLUMN notify_in_app BOOLEAN DEFAULT TRUE,\nADD COLUMN notify_email BOOLEAN DEFAULT TRUE,\nADD COLUMN condition_logic JSON,\nADD COLUMN created_by INT NOT NULL DEFAULT 1;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute ALTER TABLE alert_rules \nADD COLUMN metric_type VARCHAR(100),\nADD COLUMN comparison_operator ENUM('less_than', 'greater_than', 'equals', 'not_equals') NOT NULL DEFAULT 'less_than',\nADD COLUMN threshold_value INT NOT NULL DEFAULT 0,\nADD COLUMN consecutive_months INT DEFAULT 1,\nADD COLUMN severity ENUM('info', 'warning', 'critical') NOT NULL DEFAULT 'warning',\nADD COLUMN notify_in_app BOOLEAN DEFAULT TRUE,\nADD COLUMN notify_email BOOLEAN DEFAULT TRUE,\nADD COLUMN condition_logic JSON,\nADD COLUMN created_by INT NOT NULL DEFAULT 1;",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 4168
+}

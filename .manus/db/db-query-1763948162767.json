@@ -1,0 +1,33 @@
+{
+  "query": "SELECT * FROM candidates LIMIT 1;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute SELECT * FROM candidates LIMIT 1;",
+  "rows": [
+    {
+      "id": "1",
+      "fullName": "أحمد محمد السعيد",
+      "email": "ahmed.said@example.com",
+      "phone": "+966501234567",
+      "nationalId": "1234567890",
+      "dateOfBirth": "NULL",
+      "gender": "male",
+      "nationality": "سعودي",
+      "city": "الرياض",
+      "address": "حي النرجس، الرياض",
+      "education": "بكالوريوس علوم الحاسب - جامعة الملك سعود",
+      "experience": "5",
+      "cvUrl": "/uploads/cvs/ahmed_said.pdf",
+      "cvScore": "92",
+      "skills": "[\"JavaScript\",\"React\",\"Node.js\",\"TypeScript\",\"SQL\"]",
+      "status": "screening",
+      "source": "LinkedIn",
+      "notes": "NULL",
+      "createdBy": "NULL",
+      "createdAt": "2025-11-23 23:35:50",
+      "updatedAt": "2025-11-23 23:35:50"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tfullName\temail\tphone\tnationalId\tdateOfBirth\tgender\tnationality\tcity\taddress\teducation\texperience\tcvUrl\tcvScore\tskills\tstatus\tsource\tnotes\tcreatedBy\tcreatedAt\tupdatedAt\n1\tأحمد محمد السعيد\tahmed.said@example.com\t+966501234567\t1234567890\tNULL\tmale\tسعودي\tالرياض\tحي النرجس، الرياض\tبكالوريوس علوم الحاسب - جامعة الملك سعود\t5\t/uploads/cvs/ahmed_said.pdf\t92\t[\"JavaScript\",\"React\",\"Node.js\",\"TypeScript\",\"SQL\"]\tscreening\tLinkedIn\tNULL\tNULL\t2025-11-23 23:35:50\t2025-11-23 23:35:50\n",
+  "stderr": "",
+  "execution_time_ms": 1599
+}

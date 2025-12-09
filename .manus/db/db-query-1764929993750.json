@@ -1,0 +1,9 @@
+{
+  "query": "-- Add Foreign Key Constraints to Existing Tables\nALTER TABLE `alertHistory` ADD CONSTRAINT `alertHistory_alertId_performanceAlerts_id_fk` FOREIGN KEY (`alertId`) REFERENCES `performanceAlerts`(`id`) ON DELETE cascade ON UPDATE no action;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute -- Add Foreign Key Constraints to Existing Tables\nALTER TABLE `alertHistory` ADD CONSTRAINT `alertHistory_alertId_performanceAlerts_id_fk` FOREIGN KEY (`alertId`) REFERENCES `performanceAlerts`(`id`) ON DELETE cascade ON UPDATE no action;",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 2510
+}

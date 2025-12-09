@@ -1,0 +1,31 @@
+{
+  "query": "SHOW TABLES LIKE 'career%'",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute SHOW TABLES LIKE 'career%'",
+  "rows": [
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH (career%)": "career_forecasts"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH (career%)": "career_page_templates"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH (career%)": "career_path_nodes"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH (career%)": "career_path_skills"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH (career%)": "career_path_transitions"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH (career%)": "career_paths"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH (career%)": "career_scout_conversations"
+    }
+  ],
+  "messages": [],
+  "stdout": "Tables_in_hjcHA4SjAwhM6aP28vcAkH (career%)\ncareer_forecasts\ncareer_page_templates\ncareer_path_nodes\ncareer_path_skills\ncareer_path_transitions\ncareer_paths\ncareer_scout_conversations\n",
+  "stderr": "",
+  "execution_time_ms": 1624
+}

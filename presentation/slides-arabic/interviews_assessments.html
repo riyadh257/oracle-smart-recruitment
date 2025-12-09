@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font-family: 'Cairo', sans-serif; direction: rtl; }
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: #ffffff;
+        padding-top: 50px;
+      }
+      .header {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      .title {
+        font-size: 32px;
+        font-weight: 700;
+        color: #1e3a8a;
+        margin-bottom: 10px;
+      }
+      .subtitle {
+        font-size: 18px;
+        color: #4b5563;
+      }
+      .content-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 60px;
+      }
+      .section {
+        min-height: 450px;
+      }
+      .section-header {
+        text-align: center;
+        margin-bottom: 25px;
+        padding-top: 20px;
+        background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%);
+        min-height: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border: 2px solid #e5e7eb;
+      }
+      .section-icon {
+        font-size: 36px;
+        margin-bottom: 10px;
+      }
+      .interviews-icon {
+        color: #3b82f6;
+      }
+      .assessments-icon {
+        color: #10b981;
+      }
+      .section-title {
+        font-size: 24px;
+        font-weight: 700;
+      }
+      .interviews-title {
+        color: #1e3a8a;
+      }
+      .assessments-title {
+        color: #059669;
+      }
+      .features-list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding-top: 20px;
+      }
+      .feature-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+      }
+      .feature-icon {
+        font-size: 20px;
+        margin-top: 2px;
+        min-width: 24px;
+      }
+      .interviews-feature-icon {
+        color: #3b82f6;
+      }
+      .assessments-feature-icon {
+        color: #10b981;
+      }
+      .feature-content {
+        flex: 1;
+      }
+      .feature-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #1f2937;
+        margin-bottom: 5px;
+      }
+      .feature-text {
+        font-size: 16px;
+        color: #4b5563;
+        line-height: 1.5;
+      }
+      .highlight-blue {
+        color: #3b82f6;
+        font-weight: 600;
+      }
+      .highlight-green {
+        color: #10b981;
+        font-weight: 600;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1 class="title">المقابلات والتقييمات الذكية</h1>
+            <p class="subtitle">نظام متكامل لإدارة المقابلات والتقييمات بكفاءة عالية</p>
+        </div>
+        
+        <div class="content-wrapper">
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-icon interviews-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h2 class="section-title interviews-title">إدارة المقابلات</h2>
+                </div>
+                
+                <div class="features-list">
+                    <div class="feature-item">
+                        <i class="fas fa-brain feature-icon interviews-feature-icon"></i>
+                        <div class="feature-content">
+                            <h3 class="feature-title">جدولة ذكية بالذكاء الاصطناعي</h3>
+                            <p class="feature-text">اقتراحات <span class="highlight-blue">تلقائية للأوقات المناسبة</span> بناءً على توفر المقابلين والمرشحين</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <i class="fas fa-sync-alt feature-icon interviews-feature-icon"></i>
+                        <div class="feature-content">
+                            <h3 class="feature-title">تكامل مع التقويمات</h3>
+                            <p class="feature-text">مزامنة تلقائية مع <span class="highlight-blue">Google Calendar وMicrosoft Outlook</span> لتجنب التعارضات</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <i class="fas fa-bell feature-icon interviews-feature-icon"></i>
+                        <div class="feature-content">
+                            <h3 class="feature-title">تذكيرات تلقائية</h3>
+                            <p class="feature-text">إشعارات عبر <span class="highlight-blue">البريد الإلكتروني والرسائل النصية</span> للمقابلين والمرشحين</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <i class="fas fa-clipboard-check feature-icon interviews-feature-icon"></i>
+                        <div class="feature-content">
+                            <h3 class="feature-title">نماذج تقييم منظمة</h3>
+                            <p class="feature-text">جمع <span class="highlight-blue">ملاحظات منظمة</span> من المقابلين مع معايير تقييم موحدة</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-icon assessments-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h2 class="section-title assessments-title">نظام التقييمات</h2>
+                </div>
+                
+                <div class="features-list">
+                    <div class="feature-item">
+                        <i class="fas fa-code feature-icon assessments-feature-icon"></i>
+                        <div class="feature-content">
+                            <h3 class="feature-title">اختبارات برمجية تلقائية</h3>
+                            <p class="feature-text">تحديات برمجية مع <span class="highlight-green">تقييم تلقائي</span> للكود وتحليل الأداء</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <i class="fas fa-book feature-icon assessments-feature-icon"></i>
+                        <div class="feature-content">
+                            <h3 class="feature-title">مكتبة تقييمات شاملة</h3>
+                            <p class="feature-text">تقييمات منظمة <span class="highlight-green">حسب الدور والمهارة</span> مع إمكانية التخصيص</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <i class="fas fa-chart-bar feature-icon assessments-feature-icon"></i>
+                        <div class="feature-content">
+                            <h3 class="feature-title">تتبع النتائج</h3>
+                            <p class="feature-text"><span class="highlight-green">تحليل شامل للنتائج</span> ومقارنة أداء المرشحين بشكل موضوعي</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <i class="fas fa-link feature-icon assessments-feature-icon"></i>
+                        <div class="feature-content">
+                            <h3 class="feature-title">تكامل مع سير العمل</h3>
+                            <p class="feature-text">ربط التقييمات <span class="highlight-green">بمراحل التوظيف</span> لاتخاذ قرارات مستنيرة</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

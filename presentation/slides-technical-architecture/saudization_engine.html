@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: linear-gradient(135deg, #0A1628 0%, #1a2942 100%);
+        font-family: 'Inter', sans-serif;
+        color: #E2E8F0;
+        position: relative;
+      }
+      
+      .content-wrapper {
+        padding-top: 50px;
+        padding-left: 60px;
+        padding-right: 60px;
+        min-height: 720px;
+      }
+      
+      .page-title {
+        font-size: 36px;
+        font-weight: 700;
+        color: #60A5FA;
+        margin-bottom: 10px;
+        line-height: 1.2;
+      }
+      
+      .subtitle {
+        font-size: 18px;
+        font-weight: 500;
+        color: #10B981;
+        margin-bottom: 40px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      
+      .subtitle i {
+        font-size: 20px;
+      }
+      
+      .main-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+      }
+      
+      .features-section {
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+      }
+      
+      .feature-item {
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+      }
+      
+      .feature-icon {
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        color: #ffffff;
+      }
+      
+      .feature-content h3 {
+        font-size: 18px;
+        font-weight: 600;
+        color: #E2E8F0;
+        margin-bottom: 6px;
+      }
+      
+      .feature-content p {
+        font-size: 14px;
+        font-weight: 400;
+        color: #94A3B8;
+        line-height: 1.5;
+      }
+      
+      .compliance-visual {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding-top: 10px;
+      }
+      
+      .nitaqat-bands {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      
+      .band-label {
+        font-size: 14px;
+        font-weight: 600;
+        color: #94A3B8;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      
+      .band-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding-top: 12px;
+        padding-right: 16px;
+        padding-left: 16px;
+        min-height: 50px;
+        background: rgba(255, 255, 255, 0.03);
+      }
+      
+      .band-color {
+        width: 8px;
+        height: 50px;
+      }
+      
+      .platinum { background: linear-gradient(180deg, #E5E7EB 0%, #9CA3AF 100%); }
+      .green { background: linear-gradient(180deg, #10B981 0%, #059669 100%); }
+      .yellow { background: linear-gradient(180deg, #F59E0B 0%, #D97706 100%); }
+      .red { background: linear-gradient(180deg, #EF4444 0%, #DC2626 100%); }
+      
+      .band-info {
+        flex: 1;
+      }
+      
+      .band-name {
+        font-size: 16px;
+        font-weight: 600;
+        color: #E2E8F0;
+      }
+      
+      .band-status {
+        font-size: 13px;
+        color: #94A3B8;
+      }
+      
+      .integration-section {
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(96, 165, 250, 0.2);
+      }
+      
+      .integration-label {
+        font-size: 14px;
+        font-weight: 600;
+        color: #94A3B8;
+        margin-bottom: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      
+      .integration-badges {
+        display: flex;
+        gap: 12px;
+      }
+      
+      .integration-badge {
+        flex: 1;
+        padding-top: 16px;
+        padding-right: 16px;
+        padding-left: 16px;
+        min-height: 70px;
+        background: rgba(59, 130, 246, 0.1);
+        border: 1px solid rgba(59, 130, 246, 0.3);
+        text-align: center;
+      }
+      
+      .integration-badge i {
+        font-size: 24px;
+        color: #60A5FA;
+        margin-bottom: 8px;
+      }
+      
+      .integration-badge .name {
+        font-size: 15px;
+        font-weight: 600;
+        color: #E2E8F0;
+      }
+      
+      .competitive-advantage {
+        position: absolute;
+        bottom: 40px;
+        left: 60px;
+        right: 60px;
+        padding-top: 20px;
+        padding-right: 30px;
+        padding-left: 30px;
+        min-height: 60px;
+        background: linear-gradient(90deg, rgba(16, 185, 129, 0.15) 0%, rgba(16, 185, 129, 0.05) 100%);
+        border-left: 4px solid #10B981;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+      
+      .competitive-advantage i {
+        font-size: 28px;
+        color: #10B981;
+      }
+      
+      .competitive-advantage .text {
+        font-size: 16px;
+        font-weight: 600;
+        color: #10B981;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="content-wrapper">
+            <h2 class="page-title">Real-Time Nitaqat Calculation and Government Integration Unique to KSA Market</h2>
+            <div class="subtitle">
+                <i class="fas fa-star"></i>
+                <span>Critical Market Differentiator - No Competitor Offers This Capability</span>
+            </div>
+            
+            <div class="main-content">
+                <div class="features-section">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Automated Nitaqat Band Calculation</h3>
+                            <p>Real-time determination of Platinum/Green/Yellow/Red status based on workforce composition and sector-specific thresholds</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>What-If Scenario Simulation</h3>
+                            <p>Model hiring decisions before execution, predicting compliance impact and band changes for strategic workforce planning</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>MHRSD Integration</h3>
+                            <p>Automated workforce reporting to Ministry of Human Resources and Social Development with API synchronization</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-id-card"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Qiwa Integration</h3>
+                            <p>Track work permits, visa statuses, and expiring documents with proactive alerts for compliance maintenance</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Compliance Alerts & Recommendations</h3>
+                            <p>Notify employers when approaching threshold violations with corrective hiring action recommendations</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="compliance-visual">
+                    <div class="nitaqat-bands">
+                        <div class="band-label">Nitaqat Band Status Tracking</div>
+                        
+                        <div class="band-item">
+                            <div class="band-color platinum"></div>
+                            <div class="band-info">
+                                <div class="band-name">Platinum Band</div>
+                                <div class="band-status">Highest compliance tier - full benefits</div>
+                            </div>
+                        </div>
+                        
+                        <div class="band-item">
+                            <div class="band-color green"></div>
+                            <div class="band-info">
+                                <div class="band-name">Green Band</div>
+                                <div class="band-status">Compliant - standard operations</div>
+                            </div>
+                        </div>
+                        
+                        <div class="band-item">
+                            <div class="band-color yellow"></div>
+                            <div class="band-info">
+                                <div class="band-name">Yellow Band</div>
+                                <div class="band-status">Warning - corrective action needed</div>
+                            </div>
+                        </div>
+                        
+                        <div class="band-item">
+                            <div class="band-color red"></div>
+                            <div class="band-info">
+                                <div class="band-name">Red Band</div>
+                                <div class="band-status">Non-compliant - restrictions apply</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="integration-section">
+                        <div class="integration-label">Government API Integration</div>
+                        <div class="integration-badges">
+                            <div class="integration-badge">
+                                <i class="fas fa-university"></i>
+                                <div class="name">MHRSD API</div>
+                            </div>
+                            <div class="integration-badge">
+                                <i class="fas fa-passport"></i>
+                                <div class="name">Qiwa Portal</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="competitive-advantage">
+                <i class="fas fa-trophy"></i>
+                <div class="text">Unique Competitive Advantage: No other recruitment platform offers automated Nitaqat tracking with government API integration</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

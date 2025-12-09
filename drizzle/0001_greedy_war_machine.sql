@@ -1,0 +1,2 @@
+ALTER TABLE `interviews` ADD `templateId` int;--> statement-breakpoint
+ALTER TABLE `interviews` ADD CONSTRAINT `interviews_templateId_feedbackTemplates_id_fk` FOREIGN KEY (`templateId`) REFERENCES `feedbackTemplates`(`id`) ON DELETE set null ON UPDATE no action;

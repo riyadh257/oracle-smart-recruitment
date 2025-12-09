@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS alert_configurations (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  alert_name VARCHAR(255) NOT NULL,\n  alert_type ENUM('performance_degradation', 'endpoint_failure', 'health_check_failure', 'threshold_breach', 'custom') NOT NULL,\n  target_type ENUM('endpoint', 'system', 'database', 'service') NOT NULL,\n  target_identifier VARCHAR(500),\n  `condition` JSON NOT NULL,\n  severity ENUM('info', 'warning', 'critical') NOT NULL,\n  notification_channels JSON NOT NULL,\n  escalation_rules JSON,\n  cooldown_minutes INT DEFAULT 15,\n  is_active BOOLEAN NOT NULL DEFAULT TRUE,\n  last_triggered TIMESTAMP NULL,\n  created_by INT NOT NULL,\n  createdAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,\n  updatedAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP\n)",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS alert_configurations (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  alert_name VARCHAR(255) NOT NULL,\n  alert_type ENUM('performance_degradation', 'endpoint_failure', 'health_check_failure', 'threshold_breach', 'custom') NOT NULL,\n  target_type ENUM('endpoint', 'system', 'database', 'service') NOT NULL,\n  target_identifier VARCHAR(500),\n  `condition` JSON NOT NULL,\n  severity ENUM('info', 'warning', 'critical') NOT NULL,\n  notification_channels JSON NOT NULL,\n  escalation_rules JSON,\n  cooldown_minutes INT DEFAULT 15,\n  is_active BOOLEAN NOT NULL DEFAULT TRUE,\n  last_triggered TIMESTAMP NULL,\n  created_by INT NOT NULL,\n  createdAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,\n  updatedAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP\n)",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1708
+}

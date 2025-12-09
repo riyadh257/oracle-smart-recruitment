@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #0A1628 0%, #1a2942 100%);
+            font-family: 'Tajawal', sans-serif;
+            color: #E8F1F5;
+            position: relative;
+            overflow: hidden;
+        }
+        .geometric-accent-1 { position: absolute; width: 200px; height: 200px; border: 2px solid rgba(0, 217, 255, 0.1); clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); top: -50px; right: -50px; transform: rotate(20deg); }
+        .geometric-accent-2 { position: absolute; width: 180px; height: 180px; border: 2px solid rgba(255, 107, 53, 0.1); clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); bottom: -40px; left: -40px; transform: rotate(-15deg); }
+        .content-wrapper { position: relative; z-index: 2; padding-right: 80px; padding-left: 80px; padding-top: 50px; min-height: 720px; }
+        .header-section { text-align: center; margin-bottom: 30px; }
+        .page-title { font-size: 48px; font-weight: 900; color: #00D9FF; margin-bottom: 10px; line-height: 1.3; }
+        .subtitle { font-size: 16px; color: rgba(232, 241, 245, 0.7); font-weight: 400; }
+        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+        .feature-item {
+            text-align: center;
+            border: 2px solid;
+            padding-top: 18px;
+            min-height: 165px;
+            position: relative;
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.05), transparent);
+        }
+        .feature-item:nth-child(1), .feature-item:nth-child(4), .feature-item:nth-child(7) { border-color: #00D9FF; }
+        .feature-item:nth-child(2), .feature-item:nth-child(5), .feature-item:nth-child(8) { border-color: #FF6B35; }
+        .feature-item:nth-child(3), .feature-item:nth-child(6), .feature-item:nth-child(9) { border-color: #4ECDC4; }
+        .feature-icon { width: 54px; height: 54px; margin: 0 auto 12px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; }
+        .feature-item:nth-child(1) .feature-icon, .feature-item:nth-child(4) .feature-icon, .feature-item:nth-child(7) .feature-icon { background: linear-gradient(135deg, rgba(0, 217, 255, 0.3), rgba(0, 217, 255, 0.1)); color: #00D9FF; }
+        .feature-item:nth-child(2) .feature-icon, .feature-item:nth-child(5) .feature-icon, .feature-item:nth-child(8) .feature-icon { background: linear-gradient(135deg, rgba(255, 107, 53, 0.3), rgba(255, 107, 53, 0.1)); color: #FF6B35; }
+        .feature-item:nth-child(3) .feature-icon, .feature-item:nth-child(6) .feature-icon, .feature-item:nth-child(9) .feature-icon { background: linear-gradient(135deg, rgba(78, 205, 196, 0.3), rgba(78, 205, 196, 0.1)); color: #4ECDC4; }
+        .feature-title { font-size: 18px; font-weight: 700; color: #E8F1F5; margin-bottom: 8px; line-height: 1.3; }
+        .feature-subtitle { font-size: 13px; color: rgba(232, 241, 245, 0.6); margin-bottom: 6px; font-style: italic; }
+        .feature-description { font-size: 14px; color: rgba(232, 241, 245, 0.85); line-height: 1.5; padding-right: 15px; padding-left: 15px; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="geometric-accent-1"></div>
+        <div class="geometric-accent-2"></div>
+        <div class="content-wrapper">
+            <div class="header-section">
+                <h2 class="page-title">الميزات الإضافية للتميز</h2>
+                <p class="subtitle">أدوات متقدمة تمنح المرشحين وأصحاب العمل ميزة تنافسية حقيقية</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-dollar-sign"></i></div>
+                    <h3 class="feature-title">الرواتب المفتوحة</h3>
+                    <p class="feature-subtitle">Open Salary Transparency</p>
+                    <p class="feature-description">عرض الرواتب الفعلية ومقارنتها حسب الموقع والخبرة</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-handshake"></i></div>
+                    <h3 class="feature-title">الربط مع المسؤولين</h3>
+                    <p class="feature-subtitle">Recruiter Matching Network</p>
+                    <p class="feature-description">ربط مع 50+ مسؤول توظيف أسبوعياً</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-microphone"></i></div>
+                    <h3 class="feature-title">الإدخال الصوتي</h3>
+                    <p class="feature-subtitle">Voice Input Resume Builder</p>
+                    <p class="feature-description">إنشاء السيرة الذاتية بالتحدث مع تصحيح AI تلقائي</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fab fa-linkedin"></i></div>
+                    <h3 class="feature-title">تحسين LinkedIn</h3>
+                    <p class="feature-subtitle">LinkedIn Profile Review</p>
+                    <p class="feature-description">تقييم وتحسين الملف الشخصي لزيادة الظهور</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-file-signature"></i></div>
+                    <h3 class="feature-title">مولد خطاب الاستقالة</h3>
+                    <p class="feature-subtitle">AI Resignation Letter</p>
+                    <p class="feature-description">إنشاء خطاب استقالة احترافي يحفظ العلاقات</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-route"></i></div>
+                    <h3 class="feature-title">خريطة المسار المهني</h3>
+                    <p class="feature-subtitle">Career Map Visualization</p>
+                    <p class="feature-description">عرض المسارات الممكنة والمهارات المطلوبة</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-globe"></i></div>
+                    <h3 class="feature-title">موقع من السيرة الذاتية</h3>
+                    <p class="feature-subtitle">Resume-to-Website</p>
+                    <p class="feature-description">تحويل السيرة الذاتية لموقع شخصي احترافي</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-book"></i></div>
+                    <h3 class="feature-title">مكتبة العبارات</h3>
+                    <p class="feature-subtitle">20,000+ Phrases Library</p>
+                    <p class="feature-description">عبارات احترافية لـ 3,200+ وظيفة</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-user-graduate"></i></div>
+                    <h3 class="feature-title">تدريب المقابلات</h3>
+                    <p class="feature-subtitle">AI Interview Coach</p>
+                    <p class="feature-description">أسئلة حقيقية مع تقييم AI للإجابات</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

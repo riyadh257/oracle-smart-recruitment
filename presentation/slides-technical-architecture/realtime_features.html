@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: linear-gradient(135deg, #0A1628 0%, #1a2942 100%);
+        font-family: 'Inter', sans-serif;
+        color: #E2E8F0;
+        position: relative;
+      }
+      
+      .content-wrapper {
+        padding-top: 60px;
+        padding-left: 60px;
+        padding-right: 60px;
+        min-height: 720px;
+      }
+      
+      .page-title {
+        font-size: 36px;
+        font-weight: 700;
+        color: #60A5FA;
+        margin-bottom: 45px;
+        line-height: 1.2;
+      }
+      
+      .main-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+      }
+      
+      .features-section {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      
+      .feature-item {
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+        background: rgba(16, 185, 129, 0.05);
+        border-left: 3px solid #10B981;
+        padding-top: 16px;
+        padding-right: 16px;
+        padding-left: 16px;
+        min-height: 95px;
+      }
+      
+      .feature-icon {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        background: linear-gradient(135deg, #10B981 0%, #34D399 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        color: #ffffff;
+      }
+      
+      .feature-content h3 {
+        font-size: 17px;
+        font-weight: 600;
+        color: #E2E8F0;
+        margin-bottom: 6px;
+      }
+      
+      .feature-content p {
+        font-size: 14px;
+        font-weight: 400;
+        color: #94A3B8;
+        line-height: 1.5;
+      }
+      
+      .architecture-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+      }
+      
+      .websocket-diagram {
+        width: 500px;
+        height: 400px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+      }
+      
+      .server-node {
+        width: 200px;
+        height: 80px;
+        background: linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+      
+      .server-node i {
+        font-size: 28px;
+        color: #ffffff;
+        margin-bottom: 8px;
+      }
+      
+      .server-node .label {
+        font-size: 16px;
+        font-weight: 600;
+        color: #ffffff;
+      }
+      
+      .connection-indicator {
+        width: 3px;
+        height: 60px;
+        background: linear-gradient(180deg, #10B981 0%, rgba(16, 185, 129, 0.3) 100%);
+        position: relative;
+      }
+      
+      .connection-indicator::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 12px;
+        height: 12px;
+        background: #10B981;
+        border: 2px solid #0A1628;
+      }
+      
+      .clients-row {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+      }
+      
+      .client-node {
+        width: 140px;
+        height: 70px;
+        background: rgba(16, 185, 129, 0.15);
+        border: 2px solid #10B981;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .client-node i {
+        font-size: 22px;
+        color: #10B981;
+        margin-bottom: 6px;
+      }
+      
+      .client-node .label {
+        font-size: 13px;
+        font-weight: 500;
+        color: #10B981;
+      }
+      
+      .use-cases {
+        width: 500px;
+        padding-top: 20px;
+        padding-right: 20px;
+        padding-left: 20px;
+        background: rgba(59, 130, 246, 0.05);
+        border: 1px solid rgba(59, 130, 246, 0.2);
+        min-height: 90px;
+      }
+      
+      .use-cases-title {
+        font-size: 15px;
+        font-weight: 600;
+        color: #60A5FA;
+        margin-bottom: 10px;
+      }
+      
+      .use-cases-list {
+        font-size: 13px;
+        color: #94A3B8;
+        line-height: 1.6;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="content-wrapper">
+            <h2 class="page-title">Socket.io Powers Live Notifications and Collaborative Features</h2>
+            
+            <div class="main-content">
+                <div class="features-section">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Real-Time Notifications</h3>
+                            <p>Deliver instant updates on application status changes, new matches, and interview invitations without page refresh</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Live Dashboard Updates</h3>
+                            <p>Refresh analytics charts and metrics automatically as data changes, providing real-time business intelligence</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Collaborative Features</h3>
+                            <p>Enable employer teams to review candidates simultaneously with live commenting and presence tracking</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Connection Management</h3>
+                            <p>Handle reconnection logic, room-based broadcasting, and user presence tracking for reliable real-time experience</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Event-Driven Architecture</h3>
+                            <p>Decouple notification triggers from delivery mechanism for horizontal scalability and system resilience</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="architecture-section">
+                    <div class="websocket-diagram">
+                        <div class="server-node">
+                            <i class="fas fa-server"></i>
+                            <div class="label">Socket.io Server</div>
+                        </div>
+                        
+                        <div class="connection-indicator"></div>
+                        
+                        <div class="clients-row">
+                            <div class="client-node">
+                                <i class="fas fa-desktop"></i>
+                                <div class="label">Web Client</div>
+                            </div>
+                            <div class="client-node">
+                                <i class="fas fa-laptop"></i>
+                                <div class="label">Dashboard</div>
+                            </div>
+                            <div class="client-node">
+                                <i class="fas fa-mobile-alt"></i>
+                                <div class="label">Mobile</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="use-cases">
+                        <div class="use-cases-title"><i class="fas fa-lightbulb"></i> Real-Time Use Cases</div>
+                        <div class="use-cases-list">
+                            Application alerts • Interview reminders • Compliance warnings • System announcements • Chat messages • Status updates • Collaborative editing • Live analytics
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

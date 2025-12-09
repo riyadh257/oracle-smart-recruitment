@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS candidateLists (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  employerId INT NOT NULL,\n  name VARCHAR(255) NOT NULL,\n  description TEXT,\n  segmentationRules JSON NOT NULL COMMENT 'Dynamic filtering rules',\n  candidateCount INT DEFAULT 0,\n  lastUpdated TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,\n  isActive BOOLEAN DEFAULT TRUE,\n  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,\n  INDEX idx_employer (employerId),\n  INDEX idx_active (isActive)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS candidateLists (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  employerId INT NOT NULL,\n  name VARCHAR(255) NOT NULL,\n  description TEXT,\n  segmentationRules JSON NOT NULL COMMENT 'Dynamic filtering rules',\n  candidateCount INT DEFAULT 0,\n  lastUpdated TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,\n  isActive BOOLEAN DEFAULT TRUE,\n  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,\n  INDEX idx_employer (employerId),\n  INDEX idx_active (isActive)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1795
+}

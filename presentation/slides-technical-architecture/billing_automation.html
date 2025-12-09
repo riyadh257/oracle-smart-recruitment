@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: #0a1628;
+        font-family: 'Inter', sans-serif;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .grid-pattern {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.05;
+        background-image: 
+          linear-gradient(#60a5fa 1px, transparent 1px),
+          linear-gradient(90deg, #60a5fa 1px, transparent 1px);
+        background-size: 40px 40px;
+      }
+      
+      .content {
+        position: relative;
+        z-index: 10;
+        padding-top: 60px;
+        padding-left: 80px;
+        padding-right: 80px;
+      }
+      
+      .title {
+        font-size: 40px;
+        font-weight: 700;
+        color: #60a5fa;
+        margin-bottom: 48px;
+        letter-spacing: -0.5px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+      
+      .title-icon {
+        color: #10b981;
+        font-size: 36px;
+      }
+      
+      .main-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+      }
+      
+      .models-section {
+        padding-top: 20px;
+      }
+      
+      .section-label {
+        font-size: 22px;
+        font-weight: 600;
+        color: #60a5fa;
+        margin-bottom: 24px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #3b82f6;
+      }
+      
+      .model-card {
+        background: rgba(59, 130, 246, 0.08);
+        border: 2px solid #3b82f6;
+        padding-top: 20px;
+        padding-left: 24px;
+        padding-right: 24px;
+        margin-bottom: 20px;
+        min-height: 100px;
+      }
+      
+      .model-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 12px;
+      }
+      
+      .model-icon {
+        width: 36px;
+        height: 36px;
+        background: linear-gradient(135deg, #3b82f6, #10b981);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 16px;
+      }
+      
+      .model-name {
+        font-size: 20px;
+        font-weight: 600;
+        color: #e2e8f0;
+      }
+      
+      .model-desc {
+        font-size: 15px;
+        color: #94a3b8;
+        line-height: 1.6;
+      }
+      
+      .automation-section {
+        padding-top: 20px;
+      }
+      
+      .metrics-box {
+        background: rgba(16, 185, 129, 0.08);
+        border: 1px solid rgba(16, 185, 129, 0.3);
+        padding-top: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-bottom: 24px;
+        min-height: 120px;
+      }
+      
+      .metrics-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #10b981;
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      
+      .metric-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 12px;
+      }
+      
+      .metric-label {
+        font-size: 15px;
+        color: #e2e8f0;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      
+      .metric-icon {
+        color: #10b981;
+        font-size: 14px;
+      }
+      
+      .metric-value {
+        font-size: 16px;
+        font-weight: 700;
+        color: #60a5fa;
+      }
+      
+      .features-list {
+        list-style: none;
+      }
+      
+      .feature-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 16px;
+      }
+      
+      .feature-bullet {
+        width: 24px;
+        height: 24px;
+        background: rgba(59, 130, 246, 0.2);
+        border: 2px solid #3b82f6;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #3b82f6;
+        font-size: 12px;
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+      
+      .feature-text {
+        font-size: 16px;
+        color: #e2e8f0;
+        line-height: 1.6;
+      }
+      
+      .tech-note {
+        margin-top: 24px;
+        padding-top: 16px;
+        padding-left: 16px;
+        padding-right: 16px;
+        background: rgba(59, 130, 246, 0.05);
+        border-left: 3px solid #3b82f6;
+      }
+      
+      .tech-note-title {
+        font-size: 14px;
+        font-weight: 600;
+        color: #60a5fa;
+        margin-bottom: 8px;
+      }
+      
+      .tech-note-text {
+        font-size: 13px;
+        color: #94a3b8;
+        line-height: 1.5;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+      <div class="grid-pattern"></div>
+      
+      <div class="content">
+        <div class="title">
+          <i class="fas fa-file-invoice-dollar title-icon"></i>
+          Pay-for-Performance Billing
+        </div>
+        
+        <div class="main-layout">
+          <div class="models-section">
+            <div class="section-label">Billing Models</div>
+            
+            <div class="model-card">
+              <div class="model-header">
+                <div class="model-icon">
+                  <i class="fas fa-calendar-alt"></i>
+                </div>
+                <div class="model-name">Subscription</div>
+              </div>
+              <div class="model-desc">
+                Fixed monthly or annual fee for platform access with unlimited job postings and candidate matching
+              </div>
+            </div>
+            
+            <div class="model-card">
+              <div class="model-header">
+                <div class="model-icon">
+                  <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="model-name">Performance-Based</div>
+              </div>
+              <div class="model-desc">
+                Pay only for qualified applications and scheduled interviews — aligns cost with hiring success
+              </div>
+            </div>
+            
+            <div class="model-card">
+              <div class="model-header">
+                <div class="model-icon">
+                  <i class="fas fa-layer-group"></i>
+                </div>
+                <div class="model-name">Hybrid</div>
+              </div>
+              <div class="model-desc">
+                Combination of base subscription fee plus performance-based charges for premium features
+              </div>
+            </div>
+          </div>
+          
+          <div class="automation-section">
+            <div class="section-label">Automation Features</div>
+            
+            <div class="metrics-box">
+              <div class="metrics-title">
+                <i class="fas fa-tachometer-alt"></i>
+                Performance Metrics
+              </div>
+              
+              <div class="metric-item">
+                <div class="metric-label">
+                  <i class="fas fa-check-circle metric-icon"></i>
+                  Qualified Applications
+                </div>
+                <div class="metric-value">Auto-tracked</div>
+              </div>
+              
+              <div class="metric-item">
+                <div class="metric-label">
+                  <i class="fas fa-calendar-check metric-icon"></i>
+                  Scheduled Interviews
+                </div>
+                <div class="metric-value">Auto-tracked</div>
+              </div>
+              
+              <div class="metric-item">
+                <div class="metric-label">
+                  <i class="fas fa-calculator metric-icon"></i>
+                  Billing Amount
+                </div>
+                <div class="metric-value">Auto-calculated</div>
+              </div>
+            </div>
+            
+            <ul class="features-list">
+              <li class="feature-item">
+                <div class="feature-bullet">
+                  <i class="fas fa-check"></i>
+                </div>
+                <div class="feature-text">
+                  <strong>Automatic Qualification</strong> — Applications flagged as billable based on match score and employer criteria
+                </div>
+              </li>
+              
+              <li class="feature-item">
+                <div class="feature-bullet">
+                  <i class="fas fa-check"></i>
+                </div>
+                <div class="feature-text">
+                  <strong>Period-Based Tracking</strong> — Monthly billing cycles with start/end date management
+                </div>
+              </li>
+              
+              <li class="feature-item">
+                <div class="feature-bullet">
+                  <i class="fas fa-check"></i>
+                </div>
+                <div class="feature-text">
+                  <strong>Invoice Generation</strong> — Automated monthly invoice creation with detailed breakdowns
+                </div>
+              </li>
+              
+              <li class="feature-item">
+                <div class="feature-bullet">
+                  <i class="fas fa-check"></i>
+                </div>
+                <div class="feature-text">
+                  <strong>Payment Status Tracking</strong> — Real-time monitoring of pending and paid invoices
+                </div>
+              </li>
+            </ul>
+            
+            <div class="tech-note">
+              <div class="tech-note-title">
+                <i class="fas fa-code"></i> Technical Implementation
+              </div>
+              <div class="tech-note-text">
+                Billing logic implemented in <code>server/invoiceGeneration.ts</code> with <code>billingRecords</code> table storing period-based charges. Applications table includes <code>qualifiesForBilling</code> flag and <code>billingAmount</code> field.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>

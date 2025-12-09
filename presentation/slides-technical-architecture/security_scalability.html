@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font-family: 'Inter', sans-serif; }
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: #0F172A;
+        padding-top: 60px;
+      }
+      .header {
+        padding-left: 80px;
+        padding-right: 80px;
+        margin-bottom: 35px;
+      }
+      .page-title {
+        font-size: 36px;
+        font-weight: 700;
+        color: #3B82F6;
+        margin-bottom: 10px;
+      }
+      .title-underline {
+        width: 80px;
+        height: 3px;
+        background: linear-gradient(90deg, #3B82F6, #10B981);
+      }
+      .content-sections {
+        padding-left: 80px;
+        padding-right: 80px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+      }
+      .section {
+        display: grid;
+        grid-template-columns: 35% 65%;
+        gap: 40px;
+        min-height: 260px;
+        align-items: center;
+      }
+      .section-visual {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #1E293B, #0F172A);
+        min-height: 260px;
+      }
+      .section-icon {
+        font-size: 100px;
+        color: #3B82F6;
+        margin-bottom: 20px;
+      }
+      .section-label {
+        font-size: 24px;
+        font-weight: 600;
+        color: #60A5FA;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .section-content {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+      .section-title {
+        font-size: 22px;
+        font-weight: 600;
+        color: #60A5FA;
+        margin-bottom: 5px;
+      }
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+      .feature-item {
+        display: flex;
+        align-items: start;
+        gap: 10px;
+        padding-top: 8px;
+        padding-left: 15px;
+        padding-right: 15px;
+        background: linear-gradient(135deg, #1E293B, #0F172A);
+        border-left: 2px solid #3B82F6;
+        min-height: 50px;
+      }
+      .feature-icon {
+        color: #10B981;
+        font-size: 16px;
+        margin-top: 2px;
+        min-width: 16px;
+      }
+      .feature-text {
+        font-size: 15px;
+        color: #CBD5E1;
+        line-height: 1.4;
+      }
+      .divider-line {
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #334155, transparent);
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+      <div class="header">
+        <h1 class="page-title">Security & Scalability</h1>
+        <div class="title-underline"></div>
+      </div>
+      
+      <div class="content-sections">
+        <div class="section">
+          <div class="section-visual">
+            <i class="fas fa-shield-alt section-icon"></i>
+            <div class="section-label">Security</div>
+          </div>
+          
+          <div class="section-content">
+            <h2 class="section-title">Multi-Layer Security Architecture</h2>
+            <div class="feature-grid">
+              <div class="feature-item">
+                <i class="fas fa-check feature-icon"></i>
+                <span class="feature-text">JWT-based authentication with secure token management</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-check feature-icon"></i>
+                <span class="feature-text">OAuth 2.0 integration (Manus OAuth)</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-check feature-icon"></i>
+                <span class="feature-text">Role-based access control (RBAC) for users, candidates, employers, admins</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-check feature-icon"></i>
+                <span class="feature-text">Encrypted data transmission (HTTPS/TLS)</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-check feature-icon"></i>
+                <span class="feature-text">Secure session management with HTTP-only cookies</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-check feature-icon"></i>
+                <span class="feature-text">API key protection for external integrations</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="divider-line"></div>
+        
+        <div class="section">
+          <div class="section-visual">
+            <i class="fas fa-cloud section-icon"></i>
+            <div class="section-label">Scalability</div>
+          </div>
+          
+          <div class="section-content">
+            <h2 class="section-title">Cloud-Native Architecture for Growth</h2>
+            <div class="feature-grid">
+              <div class="feature-item">
+                <i class="fas fa-check feature-icon"></i>
+                <span class="feature-text">Horizontal scaling with stateless application servers</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-check feature-icon"></i>
+                <span class="feature-text">Database connection pooling for high concurrency</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-check feature-icon"></i>
+                <span class="feature-text">Redis caching for performance optimization</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-check feature-icon"></i>
+                <span class="feature-text">Load balancing across multiple instances</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-check feature-icon"></i>
+                <span class="feature-text">S3 storage for distributed file management</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-check feature-icon"></i>
+                <span class="feature-text">Microservices-ready modular design</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>

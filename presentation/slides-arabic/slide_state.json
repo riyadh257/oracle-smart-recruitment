@@ -1,0 +1,108 @@
+{
+  "project_info": {
+    "title": "نظام Oracle للتوظيف الذكي",
+    "created": 1764782065.2662225,
+    "last_updated": 1764782317.1956933,
+    "total_slides": 12
+  },
+  "slides": {
+    "cover": "edited",
+    "overview": "edited",
+    "challenges": "edited",
+    "objectives": "edited",
+    "stakeholders": "edited",
+    "candidate_management": "edited",
+    "job_application": "edited",
+    "interviews_assessments": "edited",
+    "compliance_analytics": "edited",
+    "architecture": "edited",
+    "roadmap": "edited",
+    "closing": "edited"
+  },
+  "outline": [
+    {
+      "id": "cover",
+      "title": "نظام Oracle للتوظيف الذكي",
+      "summary": "الشريحة الافتتاحية تعرض العنوان الرئيسي للنظام مع نبذة مختصرة عن كونه منصة شاملة مدعومة بالذكاء الاصطناعي لتحويل عمليات التوظيف في منطقة الشرق الأوسط.",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "overview",
+      "title": "نظرة عامة على النظام",
+      "summary": "تعريف شامل بالنظام كمنصة متكاملة لإدارة دورة التوظيف الكاملة، مع التركيز على السوق السعودي والشرق أوسطي، والميزة التنافسية المتمثلة في دمج الذكاء الاصطناعي مع الامتثال المحلي.",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "challenges",
+      "title": "التحديات والحلول المبتكرة",
+      "summary": "عرض التحديات الرئيسية في عمليات التوظيف التقليدية مثل هدر الوقت بنسبة 30-40% وصعوبة الامتثال، مع الحلول التي يقدمها النظام من خلال الأتمتة والذكاء الاصطناعي.",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "objectives",
+      "title": "الأهداف الاستراتيجية والنتائج المتوقعة",
+      "summary": "توضيح الأهداف الاستراتيجية الأربعة الرئيسية: تقليل وقت التوظيف بنسبة 40%، خفض التكاليف بنسبة 30%، ضمان الامتثال التلقائي، واتخاذ قرارات مبنية على البيانات.",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "stakeholders",
+      "title": "أصحاب المصلحة والأدوار",
+      "summary": "شرح الأدوار الستة الرئيسية في النظام من مدير النظام إلى المرشح، مع توضيح صلاحيات ومسؤوليات كل دور وكيفية تكاملهم في سير العمل.",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "candidate_management",
+      "title": "إدارة المرشحين بالذكاء الاصطناعي",
+      "summary": "استعراض ميزات إدارة المرشحين المتقدمة بما في ذلك تحليل السير الذاتية بالذكاء الاصطناعي، الاستخراج التلقائي للمهارات، امتداد Chrome، والمطابقة الذكية بنسب مئوية.",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "job_application",
+      "title": "إدارة الوظائف وتتبع الطلبات",
+      "summary": "شرح نظام إدارة الوظائف الشامل من الإنشاء إلى النشر متعدد القنوات، ونظام تتبع الطلبات المرئي بالسحب والإفلات مع الفرز التلقائي والإشعارات الذكية.",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "interviews_assessments",
+      "title": "المقابلات والتقييمات الذكية",
+      "summary": "توضيح نظام الجدولة الذكية للمقابلات مع اقتراحات الأوقات بالذكاء الاصطناعي، التكامل مع التقويمات، ونظام التقييمات الشامل مع الاختبارات البرمجية التلقائية.",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "compliance_analytics",
+      "title": "الامتثال والتحليلات الشاملة",
+      "summary": "عرض نظام الامتثال التلقائي لمتطلبات السعودة والتأمينات الاجتماعية مع التنبيهات الذكية، ولوحات التحليلات الشاملة للمقاييس والتوقعات المستقبلية.",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "architecture",
+      "title": "البنية التقنية المتقدمة",
+      "summary": "شرح البنية التقنية ثلاثية الطبقات المتقدمة باستخدام React 19 وNode.js 22 وقاعدة بيانات بـ157 جدول، مع التركيز على الأداء والأمان والقابلية للتوسع.",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "roadmap",
+      "title": "خارطة الطريق المستقبلية",
+      "summary": "استعراض خطة التطوير على مدى 18-24 شهر عبر 4 مراحل رئيسية تشمل تحليل الفيديو بالذكاء الاصطناعي، الوكلاء الأذكياء، تطبيقات الجوال، والتوسع العالمي.",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "closing",
+      "title": "شكراً لكم",
+      "summary": "شريحة ختامية تحتوي على رسالة شكر ودعوة للأسئلة والنقاش، مع معلومات التواصل والخطوات التالية.",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    }
+  ]
+}

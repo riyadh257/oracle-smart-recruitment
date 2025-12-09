@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: #0a1628;
+        font-family: 'Inter', sans-serif;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .grid-pattern {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.05;
+        background-image: 
+          linear-gradient(#60a5fa 1px, transparent 1px),
+          linear-gradient(90deg, #60a5fa 1px, transparent 1px);
+        background-size: 40px 40px;
+      }
+      
+      .content {
+        position: relative;
+        z-index: 10;
+        padding-top: 60px;
+        padding-left: 80px;
+        padding-right: 80px;
+      }
+      
+      .title {
+        font-size: 40px;
+        font-weight: 700;
+        color: #60a5fa;
+        margin-bottom: 48px;
+        letter-spacing: -0.5px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+      
+      .title-icon {
+        color: #10b981;
+        font-size: 36px;
+      }
+      
+      .main-layout {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 50px;
+      }
+      
+      .entities-section {
+        padding-top: 10px;
+      }
+      
+      .section-label {
+        font-size: 20px;
+        font-weight: 600;
+        color: #60a5fa;
+        margin-bottom: 24px;
+        padding-bottom: 8px;
+        border-bottom: 2px solid #3b82f6;
+      }
+      
+      .entity-group {
+        margin-bottom: 28px;
+      }
+      
+      .entity-box {
+        background: rgba(59, 130, 246, 0.08);
+        border-left: 3px solid #3b82f6;
+        padding-top: 12px;
+        padding-left: 16px;
+        padding-right: 16px;
+        margin-bottom: 12px;
+        min-height: 60px;
+      }
+      
+      .entity-name {
+        font-size: 18px;
+        font-weight: 600;
+        color: #e2e8f0;
+        margin-bottom: 6px;
+      }
+      
+      .entity-desc {
+        font-size: 14px;
+        color: #94a3b8;
+        line-height: 1.4;
+      }
+      
+      .features-section {
+        padding-top: 10px;
+      }
+      
+      .feature-card {
+        background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(16, 185, 129, 0.1));
+        border: 1px solid rgba(59, 130, 246, 0.3);
+        padding-top: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-bottom: 24px;
+        min-height: 100px;
+      }
+      
+      .feature-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 16px;
+      }
+      
+      .feature-icon {
+        width: 32px;
+        height: 32px;
+        background: linear-gradient(135deg, #3b82f6, #10b981);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 14px;
+      }
+      
+      .feature-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #60a5fa;
+      }
+      
+      .feature-content {
+        font-size: 14px;
+        color: #e2e8f0;
+        line-height: 1.6;
+      }
+      
+      .json-field {
+        display: inline-block;
+        background: rgba(16, 185, 129, 0.2);
+        color: #10b981;
+        padding-left: 8px;
+        padding-right: 8px;
+        padding-top: 2px;
+        margin-right: 6px;
+        margin-top: 6px;
+        font-size: 12px;
+        font-family: 'Courier New', monospace;
+        border: 1px solid rgba(16, 185, 129, 0.3);
+      }
+      
+      .relationship-note {
+        font-size: 14px;
+        color: #94a3b8;
+        margin-top: 20px;
+        padding-top: 16px;
+        border-top: 1px solid rgba(59, 130, 246, 0.2);
+      }
+      
+      .relationship-icon {
+        color: #10b981;
+        margin-right: 8px;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+      <div class="grid-pattern"></div>
+      
+      <div class="content">
+        <div class="title">
+          <i class="fas fa-project-diagram title-icon"></i>
+          Data Model & Schema
+        </div>
+        
+        <div class="main-layout">
+          <div class="entities-section">
+            <div class="section-label">Core Entities</div>
+            
+            <div class="entity-group">
+              <div class="entity-box">
+                <div class="entity-name">Users</div>
+                <div class="entity-desc">Authentication and role management (admin, employer, candidate)</div>
+              </div>
+              
+              <div class="entity-box">
+                <div class="entity-name">Candidates</div>
+                <div class="entity-desc">Profile data with skills, experience, preferences, and AI-inferred attributes</div>
+              </div>
+              
+              <div class="entity-box">
+                <div class="entity-name">Employers</div>
+                <div class="entity-desc">Company profiles with culture attributes and operational metrics</div>
+              </div>
+              
+              <div class="entity-box">
+                <div class="entity-name">Jobs</div>
+                <div class="entity-desc">Job postings with enriched descriptions and ideal candidate profiles</div>
+              </div>
+              
+              <div class="entity-box">
+                <div class="entity-name">Applications</div>
+                <div class="entity-desc">Candidate-job matches with AI scoring and billing qualification</div>
+              </div>
+              
+              <div class="entity-box">
+                <div class="entity-name">Interviews</div>
+                <div class="entity-desc">Scheduling, feedback collection, and QR code access</div>
+              </div>
+            </div>
+            
+            <div class="relationship-note">
+              <i class="fas fa-link relationship-icon"></i>
+              <strong>Relationships:</strong> Users → Candidates/Employers (1:1) | Employers → Jobs (1:N) | Candidates + Jobs → Applications (M:N) | Applications → Interviews (1:N)
+            </div>
+          </div>
+          
+          <div class="features-section">
+            <div class="section-label">Schema Features</div>
+            
+            <div class="feature-card">
+              <div class="feature-header">
+                <div class="feature-icon">
+                  <i class="fas fa-code"></i>
+                </div>
+                <div class="feature-title">JSON Flexibility</div>
+              </div>
+              <div class="feature-content">
+                Flexible attribute storage using JSON fields enables 10,000+ attribute matching:
+                <div style="margin-top: 10px;">
+                  <span class="json-field">technicalSkills</span>
+                  <span class="json-field">softSkills</span>
+                  <span class="json-field">workStyleAttributes</span>
+                  <span class="json-field">personalityTraits</span>
+                  <span class="json-field">cultureFitPreferences</span>
+                  <span class="json-field">aiInferredAttributes</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="feature-card">
+              <div class="feature-header">
+                <div class="feature-icon">
+                  <i class="fas fa-brain"></i>
+                </div>
+                <div class="feature-title">AI-Powered Enrichment</div>
+              </div>
+              <div class="feature-content">
+                AI inference fields store machine learning outputs for enhanced matching accuracy and profile completeness scoring.
+              </div>
+            </div>
+            
+            <div class="feature-card">
+              <div class="feature-header">
+                <div class="feature-icon">
+                  <i class="fas fa-flag"></i>
+                </div>
+                <div class="feature-title">KSA Compliance</div>
+              </div>
+              <div class="feature-content">
+                Dedicated tables for Nitaqat tracking, MHRSD sync, and Qiwa integration ensure regulatory compliance.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>

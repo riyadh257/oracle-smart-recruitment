@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS applications (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  job_id INT NOT NULL,\n  candidate_id INT NOT NULL,\n  status ENUM('pending', 'reviewed', 'shortlisted', 'interview', 'offered', 'accepted', 'rejected') DEFAULT 'pending' NOT NULL,\n  cover_letter TEXT,\n  resume_url TEXT,\n  match_score INT,\n  screening_score INT,\n  overall_rating INT,\n  review_notes TEXT,\n  reviewed_by INT,\n  reviewed_at TIMESTAMP NULL,\n  status_history JSON,\n  applied_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,\n  updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL,\n  INDEX idx_job_id (job_id),\n  INDEX idx_candidate_id (candidate_id),\n  INDEX idx_status (status),\n  INDEX idx_applied_at (applied_at)\n)",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS applications (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  job_id INT NOT NULL,\n  candidate_id INT NOT NULL,\n  status ENUM('pending', 'reviewed', 'shortlisted', 'interview', 'offered', 'accepted', 'rejected') DEFAULT 'pending' NOT NULL,\n  cover_letter TEXT,\n  resume_url TEXT,\n  match_score INT,\n  screening_score INT,\n  overall_rating INT,\n  review_notes TEXT,\n  reviewed_by INT,\n  reviewed_at TIMESTAMP NULL,\n  status_history JSON,\n  applied_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,\n  updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL,\n  INDEX idx_job_id (job_id),\n  INDEX idx_candidate_id (candidate_id),\n  INDEX idx_status (status),\n  INDEX idx_applied_at (applied_at)\n)",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1775
+}

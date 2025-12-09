@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS `emailTemplateVersions` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `templateId` varchar(255) NOT NULL,\n  `version` int NOT NULL,\n  `name` varchar(255) NOT NULL,\n  `subject` varchar(500) NOT NULL,\n  `bodyHtml` text NOT NULL,\n  `bodyText` text,\n  `variables` json,\n  `createdBy` int,\n  `createdAt` timestamp NOT NULL DEFAULT (now()),\n  `isActive` boolean NOT NULL DEFAULT false,\n  `performanceScore` int NOT NULL DEFAULT 0,\n  `totalSent` int NOT NULL DEFAULT 0,\n  `totalOpened` int NOT NULL DEFAULT 0,\n  `totalClicked` int NOT NULL DEFAULT 0,\n  `openRate` int NOT NULL DEFAULT 0,\n  `clickRate` int NOT NULL DEFAULT 0,\n  `notes` text,\n  CONSTRAINT `emailTemplateVersions_id` PRIMARY KEY(`id`),\n  INDEX `templateId_idx` (`templateId`),\n  INDEX `version_idx` (`version`)\n)",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS `emailTemplateVersions` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `templateId` varchar(255) NOT NULL,\n  `version` int NOT NULL,\n  `name` varchar(255) NOT NULL,\n  `subject` varchar(500) NOT NULL,\n  `bodyHtml` text NOT NULL,\n  `bodyText` text,\n  `variables` json,\n  `createdBy` int,\n  `createdAt` timestamp NOT NULL DEFAULT (now()),\n  `isActive` boolean NOT NULL DEFAULT false,\n  `performanceScore` int NOT NULL DEFAULT 0,\n  `totalSent` int NOT NULL DEFAULT 0,\n  `totalOpened` int NOT NULL DEFAULT 0,\n  `totalClicked` int NOT NULL DEFAULT 0,\n  `openRate` int NOT NULL DEFAULT 0,\n  `clickRate` int NOT NULL DEFAULT 0,\n  `notes` text,\n  CONSTRAINT `emailTemplateVersions_id` PRIMARY KEY(`id`),\n  INDEX `templateId_idx` (`templateId`),\n  INDEX `version_idx` (`version`)\n)",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1731
+}

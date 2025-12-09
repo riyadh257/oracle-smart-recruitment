@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Predictive Analytics Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .slide-container {
+      width: 1280px;
+      min-height: 720px;
+      background: #1F233E;
+      font-family: 'Space Grotesk', sans-serif;
+      color: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 45% 55%;
+      min-height: 720px;
+      gap: 40px;
+      padding-top: 60px;
+      padding-left: 80px;
+      padding-right: 80px;
+    }
+
+    .left-section {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .page-title {
+      font-size: 48px;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .page-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 120px;
+      height: 4px;
+      background: linear-gradient(90deg, #04DBFA, #00E3B5);
+    }
+
+    .subtitle {
+      font-size: 18px;
+      font-weight: 300;
+      color: #8EC5FC;
+      line-height: 1.6;
+      margin-bottom: 40px;
+      margin-top: 20px;
+    }
+
+    .features-list {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .feature-icon {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(4, 219, 250, 0.1);
+      border: 2px solid #04DBFA;
+      flex-shrink: 0;
+    }
+
+    .feature-icon i {
+      font-size: 24px;
+      color: #04DBFA;
+    }
+
+    .feature-item:nth-child(2) .feature-icon {
+      border-color: #00E3B5;
+      background: rgba(0, 227, 181, 0.1);
+    }
+
+    .feature-item:nth-child(2) .feature-icon i {
+      color: #00E3B5;
+    }
+
+    .feature-item:nth-child(3) .feature-icon {
+      border-color: #8EC5FC;
+      background: rgba(142, 197, 252, 0.1);
+    }
+
+    .feature-item:nth-child(3) .feature-icon i {
+      color: #8EC5FC;
+    }
+
+    .feature-content {
+      flex: 1;
+    }
+
+    .feature-title {
+      font-size: 22px;
+      font-weight: 600;
+      color: #FFFFFF;
+      margin-bottom: 8px;
+    }
+
+    .feature-description {
+      font-size: 15px;
+      font-weight: 300;
+      color: #8EC5FC;
+      line-height: 1.5;
+    }
+
+    .right-section {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      padding-top: 80px;
+    }
+
+    .metric-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 2px solid rgba(4, 219, 250, 0.2);
+      min-height: 160px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 30px;
+      padding-right: 30px;
+      padding-top: 25px;
+      position: relative;
+    }
+
+    .metric-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, #04DBFA, #00E3B5);
+    }
+
+    .metric-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .metric-label {
+      font-size: 16px;
+      font-weight: 500;
+      color: #8EC5FC;
+    }
+
+    .metric-value {
+      font-size: 48px;
+      font-weight: 700;
+      color: #04DBFA;
+      line-height: 1;
+    }
+
+    .metric-description {
+      font-size: 14px;
+      font-weight: 300;
+      color: #FFFFFF;
+      line-height: 1.5;
+      margin-top: 10px;
+    }
+
+    .chart-container {
+      width: 100%;
+      height: 80px;
+      margin-top: 15px;
+    }
+
+    .accent-line {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #04DBFA 0%, #00E3B5 50%, #1F233E 100%);
+    }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="content-grid">
+      <div class="left-section">
+        <h1 class="page-title">Predictive Analytics Dashboard</h1>
+        <p class="subtitle">Machine learning models analyze historical hiring data to enable data-driven recruitment decisions</p>
+
+        <div class="features-list">
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-user-check"></i>
+            </div>
+            <div class="feature-content">
+              <div class="feature-title">Candidate Success Prediction</div>
+              <div class="feature-description">ML algorithms analyze candidate profiles against historical performance data to predict job success probability</div>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="feature-content">
+              <div class="feature-title">Time-to-Hire Estimation</div>
+              <div class="feature-description">Predictive models forecast hiring timelines for new positions based on role complexity and market conditions</div>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <div class="feature-content">
+              <div class="feature-title">Bottleneck Identification</div>
+              <div class="feature-description">Automated detection of recruitment pipeline delays and inefficiencies with actionable improvement recommendations</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="right-section">
+        <div class="metric-card">
+          <div class="metric-header">
+            <span class="metric-label">Prediction Accuracy</span>
+          </div>
+          <div class="metric-value">85%</div>
+          <div class="metric-description">Success rate in forecasting candidate performance and cultural fit</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-header">
+            <span class="metric-label">Success Rate Trend</span>
+          </div>
+          <div class="chart-container">
+            <canvas id="trendChart"></canvas>
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-header">
+            <span class="metric-label">Better Outcomes</span>
+          </div>
+          <div class="metric-value">85%</div>
+          <div class="metric-description">Improvement in hiring quality through data-driven decision making</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accent-line"></div>
+  </div>
+
+  <script>
+    const ctx = document.getElementById('trendChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Q1', 'Q2', 'Q3', 'Q4', 'Q1', 'Q2'],
+        datasets: [{
+          label: 'Success Rate',
+          data: [72, 75, 78, 81, 83, 85],
+          borderColor: '#04DBFA',
+          backgroundColor: 'rgba(4, 219, 250, 0.1)',
+          borderWidth: 3,
+          tension: 0.4,
+          fill: true,
+          pointRadius: 4,
+          pointBackgroundColor: '#04DBFA',
+          pointBorderColor: '#FFFFFF',
+          pointBorderWidth: 2
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: false
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: false,
+            min: 70,
+            max: 90,
+            ticks: {
+              color: '#8EC5FC',
+              font: {
+                family: 'Space Grotesk',
+                size: 11
+              }
+            },
+            grid: {
+              color: 'rgba(255, 255, 255, 0.05)'
+            }
+          },
+          x: {
+            ticks: {
+              color: '#8EC5FC',
+              font: {
+                family: 'Space Grotesk',
+                size: 11
+              }
+            },
+            grid: {
+              display: false
+            }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

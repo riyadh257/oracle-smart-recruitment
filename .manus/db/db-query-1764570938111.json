@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS `email_templates` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `name` varchar(255) NOT NULL,\n  `category` enum('candidate_invitation','interview_scheduling','application_status','offer_letter','rejection','custom') NOT NULL,\n  `subject` varchar(500) NOT NULL,\n  `body` text NOT NULL,\n  `variables` json,\n  `is_active` boolean NOT NULL DEFAULT true,\n  `created_by` int NOT NULL,\n  `createdAt` timestamp NOT NULL DEFAULT (now()),\n  `updatedAt` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,\n  CONSTRAINT `email_templates_id` PRIMARY KEY(`id`)\n);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS `email_templates` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `name` varchar(255) NOT NULL,\n  `category` enum('candidate_invitation','interview_scheduling','application_status','offer_letter','rejection','custom') NOT NULL,\n  `subject` varchar(500) NOT NULL,\n  `body` text NOT NULL,\n  `variables` json,\n  `is_active` boolean NOT NULL DEFAULT true,\n  `created_by` int NOT NULL,\n  `createdAt` timestamp NOT NULL DEFAULT (now()),\n  `updatedAt` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,\n  CONSTRAINT `email_templates_id` PRIMARY KEY(`id`)\n);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1719
+}

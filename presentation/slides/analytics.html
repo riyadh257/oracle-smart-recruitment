@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #0A0E27 0%, #1a1f3a 100%);
+            font-family: 'Inter', sans-serif;
+            position: relative;
+        }
+        
+        .header {
+            padding-top: 60px;
+            padding-left: 80px;
+            padding-right: 80px;
+            margin-bottom: 0;
+        }
+        
+        .page-title {
+            font-size: 40px;
+            font-weight: 700;
+            color: #00D4FF;
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+        
+        .page-subtitle {
+            font-size: 20px;
+            font-weight: 400;
+            color: #E8EAED;
+            opacity: 0.7;
+            margin-top: 0;
+        }
+        
+        .kpi-section {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            padding-left: 80px;
+            padding-right: 80px;
+            padding-top: 40px;
+            margin-bottom: 0;
+        }
+        
+        .kpi-card {
+            background: rgba(123, 97, 255, 0.08);
+            border: 2px solid;
+            min-height: 140px;
+            padding-top: 24px;
+            padding-left: 24px;
+            padding-right: 24px;
+            text-align: center;
+        }
+        
+        .kpi-card-1 { border-color: #7B61FF; }
+        .kpi-card-2 { border-color: #00D4FF; }
+        .kpi-card-3 { border-color: #00FFA3; }
+        
+        .kpi-icon {
+            font-size: 32px;
+            margin-top: 0;
+            margin-bottom: 12px;
+        }
+        
+        .icon-purple { color: #7B61FF; }
+        .icon-cyan { color: #00D4FF; }
+        .icon-green { color: #00FFA3; }
+        
+        .kpi-value {
+            font-size: 48px;
+            font-weight: 800;
+            margin-top: 0;
+            margin-bottom: 8px;
+            line-height: 1;
+        }
+        
+        .value-purple { color: #7B61FF; }
+        .value-cyan { color: #00D4FF; }
+        .value-green { color: #00FFA3; }
+        
+        .kpi-label {
+            font-size: 16px;
+            font-weight: 500;
+            color: #E8EAED;
+            margin-top: 0;
+        }
+        
+        .analytics-grid {
+            display: grid;
+            grid-template-columns: 55% 45%;
+            gap: 40px;
+            padding-left: 80px;
+            padding-right: 80px;
+            padding-top: 35px;
+        }
+        
+        .funnel-section {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        
+        .section-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: #00FFA3;
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+        
+        .funnel-stage {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .stage-bar {
+            flex: 1;
+            height: 44px;
+            background: rgba(123, 97, 255, 0.15);
+            border-left: 4px solid;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+        
+        .bar-1 { border-left-color: #7B61FF; width: 100%; }
+        .bar-2 { border-left-color: #00D4FF; width: 75%; }
+        .bar-3 { border-left-color: #00FFA3; width: 50%; }
+        .bar-4 { border-left-color: #7B61FF; width: 35%; }
+        .bar-5 { border-left-color: #00D4FF; width: 25%; }
+        
+        .stage-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: #E8EAED;
+        }
+        
+        .stage-count {
+            font-size: 18px;
+            font-weight: 700;
+            color: #00D4FF;
+        }
+        
+        .performance-section {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .recruiter-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(0, 212, 255, 0.08);
+            min-height: 50px;
+            padding-left: 16px;
+            padding-right: 16px;
+            padding-top: 10px;
+        }
+        
+        .recruiter-rank {
+            font-size: 20px;
+            font-weight: 700;
+            color: #00FFA3;
+            min-width: 32px;
+        }
+        
+        .recruiter-info {
+            flex: 1;
+        }
+        
+        .recruiter-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: #E8EAED;
+            margin-top: 0;
+        }
+        
+        .recruiter-stat {
+            font-size: 13px;
+            font-weight: 400;
+            color: #E8EAED;
+            opacity: 0.6;
+            margin-top: 2px;
+        }
+        
+        .recruiter-score {
+            font-size: 22px;
+            font-weight: 700;
+            color: #7B61FF;
+            min-width: 60px;
+            text-align: right;
+        }
+        
+        .accent-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, #7B61FF 0%, #00D4FF 50%, #00FFA3 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h2 class="page-title">Data-Driven Insights Dashboard</h2>
+            <p class="page-subtitle">Real-time analytics and performance metrics for strategic decision-making</p>
+        </div>
+        
+        <div class="kpi-section">
+            <div class="kpi-card kpi-card-1">
+                <div class="kpi-icon icon-purple">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div class="kpi-value value-purple">18</div>
+                <div class="kpi-label">Days Time-to-Hire</div>
+            </div>
+            
+            <div class="kpi-card kpi-card-2">
+                <div class="kpi-icon icon-cyan">
+                    <i class="fas fa-dollar-sign"></i>
+                </div>
+                <div class="kpi-value value-cyan">$3.2K</div>
+                <div class="kpi-label">Cost-per-Hire</div>
+            </div>
+            
+            <div class="kpi-card kpi-card-3">
+                <div class="kpi-icon icon-green">
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="kpi-value value-green">4.6/5</div>
+                <div class="kpi-label">Quality of Hire</div>
+            </div>
+        </div>
+        
+        <div class="analytics-grid">
+            <div class="funnel-section">
+                <h3 class="section-title">Recruitment Conversion Funnel</h3>
+                
+                <div class="funnel-stage">
+                    <div class="stage-bar bar-1">
+                        <span class="stage-name">Applications</span>
+                        <span class="stage-count">1,250</span>
+                    </div>
+                </div>
+                
+                <div class="funnel-stage">
+                    <div class="stage-bar bar-2">
+                        <span class="stage-name">Screening Passed</span>
+                        <span class="stage-count">940</span>
+                    </div>
+                </div>
+                
+                <div class="funnel-stage">
+                    <div class="stage-bar bar-3">
+                        <span class="stage-name">Interviews</span>
+                        <span class="stage-count">625</span>
+                    </div>
+                </div>
+                
+                <div class="funnel-stage">
+                    <div class="stage-bar bar-4">
+                        <span class="stage-name">Offers Extended</span>
+                        <span class="stage-count">438</span>
+                    </div>
+                </div>
+                
+                <div class="funnel-stage">
+                    <div class="stage-bar bar-5">
+                        <span class="stage-name">Hires Completed</span>
+                        <span class="stage-count">312</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="performance-section">
+                <h3 class="section-title">Top Recruiter Performance</h3>
+                
+                <div class="recruiter-item">
+                    <div class="recruiter-rank">#1</div>
+                    <div class="recruiter-info">
+                        <div class="recruiter-name">Sarah Johnson</div>
+                        <div class="recruiter-stat">42 hires • 95% acceptance rate</div>
+                    </div>
+                    <div class="recruiter-score">98</div>
+                </div>
+                
+                <div class="recruiter-item">
+                    <div class="recruiter-rank">#2</div>
+                    <div class="recruiter-info">
+                        <div class="recruiter-name">Ahmed Al-Rashid</div>
+                        <div class="recruiter-stat">38 hires • 92% acceptance rate</div>
+                    </div>
+                    <div class="recruiter-score">94</div>
+                </div>
+                
+                <div class="recruiter-item">
+                    <div class="recruiter-rank">#3</div>
+                    <div class="recruiter-info">
+                        <div class="recruiter-name">Maria Garcia</div>
+                        <div class="recruiter-stat">35 hires • 90% acceptance rate</div>
+                    </div>
+                    <div class="recruiter-score">91</div>
+                </div>
+                
+                <div class="recruiter-item">
+                    <div class="recruiter-rank">#4</div>
+                    <div class="recruiter-info">
+                        <div class="recruiter-name">David Chen</div>
+                        <div class="recruiter-stat">33 hires • 88% acceptance rate</div>
+                    </div>
+                    <div class="recruiter-score">89</div>
+                </div>
+                
+                <div class="recruiter-item">
+                    <div class="recruiter-rank">#5</div>
+                    <div class="recruiter-info">
+                        <div class="recruiter-name">Fatima Hassan</div>
+                        <div class="recruiter-stat">31 hires • 87% acceptance rate</div>
+                    </div>
+                    <div class="recruiter-score">87</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="accent-bar"></div>
+    </div>
+</body>
+</html>

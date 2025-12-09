@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: #0a1628;
+        font-family: 'IBM Plex Sans', sans-serif;
+        position: relative;
+        overflow: hidden;
+      }
+      .grid-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: 
+          linear-gradient(rgba(0, 217, 255, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 217, 255, 0.03) 1px, transparent 1px);
+        background-size: 40px 40px;
+        pointer-events: none;
+      }
+      .border-frame {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+        border: 2px solid rgba(0, 217, 255, 0.3);
+        pointer-events: none;
+      }
+      .content-wrapper {
+        position: relative;
+        z-index: 1;
+        padding-top: 50px; /* keep title top spacing consistent */
+        padding-left: 50px;
+        padding-right: 50px;
+      }
+      .title {
+        font-size: 40px;
+        font-weight: 700;
+        color: #00d9ff;
+        text-align: center;
+        margin-bottom: 35px; /* keep title bottom spacing */
+      }
+      .main-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+      }
+      .table-section {
+        border: 1px solid rgba(0, 217, 255, 0.3);
+        background: rgba(0, 217, 255, 0.03);
+        padding-top: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        min-height: 280px;
+      }
+      .table-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 15px;
+        padding-left: 10px;
+        border-left: 4px solid #00d9ff;
+      }
+      .table-icon {
+        font-size: 24px;
+        color: #00d9ff;
+      }
+      .table-name {
+        font-size: 24px;
+        font-weight: 700;
+        color: #e0e6ed;
+      }
+      .fields-list {
+        margin-top: 12px;
+      }
+      .field-row {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        gap: 15px;
+        padding-top: 8px;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-bottom: 8px;
+        border-left: 2px solid rgba(78, 205, 196, 0.3);
+      }
+      .field-name {
+        font-size: 15px;
+        font-weight: 700;
+        color: #4ecdc4;
+        font-family: 'Courier New', monospace;
+      }
+      .field-type {
+        font-size: 14px;
+        color: #e0e6ed;
+      }
+      .field-desc {
+        font-size: 13px;
+        color: rgba(224, 230, 237, 0.7);
+        grid-column: 1 / -1;
+        margin-top: 2px;
+        padding-left: 10px;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="grid-overlay"></div>
+        <div class="border-frame"></div>
+        
+        <div class="content-wrapper">
+            <div class="title">جداول إدارة التوظيف | Recruitment Pipeline Tables</div>
+            
+            <div class="main-grid">
+                <div class="table-section">
+                    <div class="table-header">
+                        <div class="table-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="table-name">interviews</div>
+                    </div>
+                    <div class="fields-list">
+                        <div class="field-row">
+                            <div class="field-name">id</div>
+                            <div class="field-type">int (PK)</div>
+                        </div>
+                        <div class="field-row">
+                            <div class="field-name">applicationId</div>
+                            <div class="field-type">int (FK)</div>
+                        </div>
+                        <div class="field-row">
+                            <div class="field-name">candidateId</div>
+                            <div class="field-type">int (FK)</div>
+                        </div>
+                        <div class="field-row">
+                            <div class="field-name">interviewerIds</div>
+                            <div class="field-type">json</div>
+                            <div class="field-desc">Array of interviewer user IDs</div>
+                        </div>
+                        <div class="field-row">
+                            <div class="field-name">scheduledAt</div>
+                            <div class="field-type">timestamp</div>
+                            <div class="field-desc">Interview date/time</div>
+                        </div>
+                        <div class="field-row">
+                            <div class="field-name">meetingLink</div>
+                            <div class="field-type">varchar(500)</div>
+                        </div>
+                        <div class="field-row">
+                            <div class="field-name">type</div>
+                            <div class="field-type">enum</div>
+                            <div class="field-desc">phone, video, in-person, technical</div>
+                        </div>
+                        <div class="field-row">
+                            <div class="field-name">status</div>
+                            <div class="field-type">enum</div>
+                            <div class="field-desc">scheduled, completed, cancelled</div>
+                        </div>
+                        <div class="field-row">
+                            <div class="field-name">feedback</div>
+                            <div class="field-type">text</div>
+                        </div>
+                        <div class="field-row">
+                            <div class="field-name">rating</div>
+                            <div class="field-type">int (1-5)</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="table-section">
+                    <div class="table-header">
+                        <div class="table-icon">
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <div class="table-name">jobAlerts</div>
+                    </div>
+                    <div class="fields-list">
+                        <div class="field-row">
+                            <div class="field-name">id</div>
+                            <div class="field-type">int (PK)</div>
+                        </div>
+                        <div class="field-row">
+                            <div class="field-name">userId</div>
+                            <div class="field-type">int (FK)</div>
+                        </div>
+                        <div class="field-row">
+                            <div class="field-name">candidateId</div>
+                            <div class="field-type">int (FK)</div>
+                        </div>
+                        <div class="field-row">
+                            <div class="field-name">keywords</div>
+                            <div class="field-type">json</div>
+                            <div class="field-desc">Search keywords array</div>
+                        </div>
+                        <div class="field-row">
+                            <div class="field-name">location</div>
+                            <div class="field-type">varchar(255)</div>
+                        </div>
+                        <div class="field-row">
+                            <div class="field-name">jobType</div>
+                            <div class="field-type">enum</div>
+                            <div class="field-desc">full-time, part-time, remote</div>
+                        </div>
+                        <div class="field-row">
+                            <div class="field-name">frequency</div>
+                            <div class="field-type">enum</div>
+                            <div class="field-desc">daily, weekly, instant</div>
+                        </div>
+                        <div class="field-row">
+                            <div class="field-name">isActive</div>
+                            <div class="field-type">boolean</div>
+                        </div>
+                        <div class="field-row">
+                            <div class="field-name">lastSentAt</div>
+                            <div class="field-type">timestamp</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

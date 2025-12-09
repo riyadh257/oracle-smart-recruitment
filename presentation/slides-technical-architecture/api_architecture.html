@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      
+      .slide-container {
+        width: 1280px;
+        min-height: 720px;
+        background: #0A0E27;
+        font-family: 'Space Grotesk', sans-serif;
+        color: #E0E6ED;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .content-wrapper {
+        padding-top: 60px;
+        padding-left: 80px;
+        padding-right: 80px;
+      }
+      
+      .headline {
+        font-size: 36px;
+        font-weight: 700;
+        color: #00D9FF;
+        line-height: 1.2;
+        margin-bottom: 35px;
+      }
+      
+      .main-grid {
+        display: grid;
+        grid-template-columns: 45% 55%;
+        gap: 50px;
+        margin-bottom: 25px;
+      }
+      
+      .section-title {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 13px;
+        font-weight: 500;
+        color: #7B61FF;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-bottom: 18px;
+      }
+      
+      .benefits-list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      
+      .benefit-item {
+        display: flex;
+        gap: 12px;
+        align-items: start;
+      }
+      
+      .benefit-indicator {
+        width: 6px;
+        height: 6px;
+        background: #00FF88;
+        margin-top: 8px;
+        flex-shrink: 0;
+      }
+      
+      .benefit-text {
+        font-size: 15px;
+        line-height: 1.5;
+        color: #E0E6ED;
+      }
+      
+      .benefit-highlight {
+        color: #00D9FF;
+        font-weight: 500;
+      }
+      
+      .router-structure {
+        background: rgba(0, 217, 255, 0.03);
+        border: 1px solid rgba(0, 217, 255, 0.15);
+        padding-top: 20px;
+        padding-left: 24px;
+        padding-right: 24px;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 14px;
+        line-height: 1.8;
+      }
+      
+      .router-header {
+        color: rgba(224, 230, 237, 0.6);
+        margin-bottom: 12px;
+        font-size: 13px;
+      }
+      
+      .router-line {
+        color: #E0E6ED;
+        display: flex;
+        align-items: start;
+      }
+      
+      .router-icon {
+        color: #7B61FF;
+        margin-right: 8px;
+      }
+      
+      .router-file {
+        color: #00FF88;
+      }
+      
+      .router-comment {
+        color: rgba(224, 230, 237, 0.5);
+        margin-left: 8px;
+        font-size: 13px;
+      }
+      
+      .procedures-section {
+        background: rgba(123, 97, 255, 0.05);
+        border-top: 2px solid rgba(123, 97, 255, 0.3);
+        padding-top: 18px;
+        padding-left: 30px;
+        padding-right: 30px;
+        margin-top: 20px;
+      }
+      
+      .procedures-title {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 12px;
+        color: #7B61FF;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 14px;
+      }
+      
+      .procedures-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 20px;
+      }
+      
+      .procedure-item {
+        text-align: center;
+      }
+      
+      .procedure-badge {
+        width: 100%;
+        height: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 11px;
+        font-weight: 600;
+        margin-bottom: 6px;
+        letter-spacing: 0.03em;
+      }
+      
+      .procedure-item:nth-child(1) .procedure-badge {
+        background: rgba(0, 255, 136, 0.15);
+        color: #00FF88;
+      }
+      
+      .procedure-item:nth-child(2) .procedure-badge {
+        background: rgba(0, 217, 255, 0.15);
+        color: #00D9FF;
+      }
+      
+      .procedure-item:nth-child(3) .procedure-badge {
+        background: rgba(123, 97, 255, 0.15);
+        color: #7B61FF;
+      }
+      
+      .procedure-item:nth-child(4) .procedure-badge {
+        background: rgba(0, 255, 136, 0.15);
+        color: #00FF88;
+      }
+      
+      .procedure-item:nth-child(5) .procedure-badge {
+        background: rgba(0, 217, 255, 0.15);
+        color: #00D9FF;
+      }
+      
+      .procedure-description {
+        font-size: 12px;
+        line-height: 1.4;
+        color: rgba(224, 230, 237, 0.7);
+      }
+      
+      .accent-bar {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(90deg, #7B61FF, #00D9FF, #00FF88);
+      }
+      
+      .slide-container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: 
+          linear-gradient(rgba(0, 217, 255, 0.02) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 217, 255, 0.02) 1px, transparent 1px);
+        background-size: 80px 80px;
+        pointer-events: none;
+        z-index: 0;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="content-wrapper">
+            <h1 class="headline">Type-Safe API Contracts Eliminate Runtime Errors and Accelerate Development</h1>
+            
+            <div class="main-grid">
+                <div class="left-column">
+                    <div class="section-title">tRPC Benefits</div>
+                    <div class="benefits-list">
+                        <div class="benefit-item">
+                            <div class="benefit-indicator"></div>
+                            <div class="benefit-text">
+                                <span class="benefit-highlight">End-to-end type safety</span> from database to UI without code generation
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-indicator"></div>
+                            <div class="benefit-text">
+                                <span class="benefit-highlight">Automatic validation</span> using Zod schemas for request/response
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-indicator"></div>
+                            <div class="benefit-text">
+                                <span class="benefit-highlight">Built-in error handling</span> with typed error codes and messages
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-indicator"></div>
+                            <div class="benefit-text">
+                                <span class="benefit-highlight">Optimistic updates</span> and cache invalidation via TanStack Query
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-indicator"></div>
+                            <div class="benefit-text">
+                                <span class="benefit-highlight">Superjson serialization</span> maintains Date objects and complex types
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-indicator"></div>
+                            <div class="benefit-text">
+                                <span class="benefit-highlight">Gateway-ready</span> architecture with all RPC traffic under /api/trpc
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="right-column">
+                    <div class="section-title">Router Organization</div>
+                    <div class="router-structure">
+                        <div class="router-header">server/routers/</div>
+                        <div class="router-line">
+                            <span class="router-icon">├──</span>
+                            <span class="router-file">candidatesRouter.ts</span>
+                            <span class="router-comment">Profile, resume, AI coaching</span>
+                        </div>
+                        <div class="router-line">
+                            <span class="router-icon">├──</span>
+                            <span class="router-file">interviewRouter.ts</span>
+                            <span class="router-comment">Scheduling, calendar sync</span>
+                        </div>
+                        <div class="router-line">
+                            <span class="router-icon">├──</span>
+                            <span class="router-file">communicationRouter.ts</span>
+                            <span class="router-comment">Email, notifications</span>
+                        </div>
+                        <div class="router-line">
+                            <span class="router-icon">├──</span>
+                            <span class="router-file">campaignRouter.ts</span>
+                            <span class="router-comment">Bulk outreach, sourcing</span>
+                        </div>
+                        <div class="router-line">
+                            <span class="router-icon">├──</span>
+                            <span class="router-file">feedbackRouter.ts</span>
+                            <span class="router-comment">Interview feedback, ratings</span>
+                        </div>
+                        <div class="router-line">
+                            <span class="router-icon">├──</span>
+                            <span class="router-file">complianceRouter.ts</span>
+                            <span class="router-comment">GDPR, audit logs</span>
+                        </div>
+                        <div class="router-line">
+                            <span class="router-icon">├──</span>
+                            <span class="router-file">betaProgramRouter.ts</span>
+                            <span class="router-comment">Feature flags, early access</span>
+                        </div>
+                        <div class="router-line">
+                            <span class="router-icon">└──</span>
+                            <span class="router-file">arabicNlpRouter.ts</span>
+                            <span class="router-comment">Multilingual, RTL support</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="procedures-section">
+                <div class="procedures-title">Procedure Types</div>
+                <div class="procedures-grid">
+                    <div class="procedure-item">
+                        <div class="procedure-badge">PUBLIC</div>
+                        <div class="procedure-description">Unauthenticated access</div>
+                    </div>
+                    <div class="procedure-item">
+                        <div class="procedure-badge">PROTECTED</div>
+                        <div class="procedure-description">Valid session required</div>
+                    </div>
+                    <div class="procedure-item">
+                        <div class="procedure-badge">ADMIN</div>
+                        <div class="procedure-description">Admin role only</div>
+                    </div>
+                    <div class="procedure-item">
+                        <div class="procedure-badge">EMPLOYER</div>
+                        <div class="procedure-description">Employer operations</div>
+                    </div>
+                    <div class="procedure-item">
+                        <div class="procedure-badge">CANDIDATE</div>
+                        <div class="procedure-description">Candidate operations</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="accent-bar"></div>
+    </div>
+</body>
+</html>

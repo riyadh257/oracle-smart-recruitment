@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: #FFFFFF;
+        font-family: 'Inter', sans-serif;
+        position: relative;
+      }
+      
+      .header-section {
+        text-align: center;
+        padding-top: 60px; /* keep upper padding consistent */
+        padding-left: 80px;
+        padding-right: 80px;
+        margin-bottom: 40px; /* reduced from 60px */
+      }
+      
+      .accent-bar {
+        width: 80px;
+        height: 4px;
+        background: #0066CC;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 16px; /* reduced from 24px */
+      }
+      
+      .page-title {
+        font-size: 40px;
+        font-weight: 700;
+        color: #1a1a1a;
+        line-height: 1.2;
+      }
+      
+      .highlight {
+        color: #0066CC;
+      }
+      
+      .integrations-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px 60px; /* reduced vertical gap from 40px to 28px */
+        padding-left: 80px;
+        padding-right: 80px;
+        max-width: 1120px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      .integration-category {
+        display: flex;
+        flex-direction: column;
+        gap: 12px; /* reduced from 16px */
+      }
+      
+      .category-header {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+      
+      .category-icon {
+        width: 48px; /* reduced from 56px */
+        height: 48px; /* reduced from 56px */
+        background: linear-gradient(135deg, #0066CC 0%, #0052A3 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      
+      .integration-category:nth-child(2) .category-icon {
+        background: linear-gradient(135deg, #FF6B35 0%, #E55A2B 100%);
+      }
+      
+      .integration-category:nth-child(4) .category-icon {
+        background: linear-gradient(135deg, #FF6B35 0%, #E55A2B 100%);
+      }
+      
+      .integration-category:nth-child(6) .category-icon {
+        background: linear-gradient(135deg, #FF6B35 0%, #E55A2B 100%);
+      }
+      
+      .category-icon i {
+        color: #FFFFFF;
+        font-size: 26px; /* keep font size unchanged */
+      }
+      
+      .category-title {
+        font-size: 24px;
+        font-weight: 600;
+        color: #1a1a1a;
+      }
+      
+      .platforms-list {
+        padding-left: 72px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px; /* reduced from 8px */
+      }
+      
+      .platform-item {
+        font-size: 16px;
+        font-weight: 400;
+        color: #666666;
+        line-height: 1.5;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      
+      .platform-item::before {
+        content: "•";
+        color: #0066CC;
+        font-size: 20px;
+        font-weight: 700;
+      }
+      
+      .bottom-accent {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 6px;
+        background: linear-gradient(90deg, #0066CC 0%, #FF6B35 100%);
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header-section">
+            <div class="accent-bar"></div>
+            <h2 class="page-title">
+                Seamless <span class="highlight">Integration Ecosystem</span>
+            </h2>
+        </div>
+        
+        <div class="integrations-grid">
+            <div class="integration-category">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-calendar"></i>
+                    </div>
+                    <h3 class="category-title">Calendar Systems</h3>
+                </div>
+                <div class="platforms-list">
+                    <div class="platform-item">Google Calendar</div>
+                    <div class="platform-item">Microsoft Outlook</div>
+                    <div class="platform-item">Apple iCal</div>
+                </div>
+            </div>
+            
+            <div class="integration-category">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3 class="category-title">Video Conferencing</h3>
+                </div>
+                <div class="platforms-list">
+                    <div class="platform-item">Zoom Meetings</div>
+                    <div class="platform-item">Microsoft Teams</div>
+                    <div class="platform-item">Google Meet</div>
+                </div>
+            </div>
+            
+            <div class="integration-category">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 class="category-title">Email Services</h3>
+                </div>
+                <div class="platforms-list">
+                    <div class="platform-item">Gmail Integration</div>
+                    <div class="platform-item">Outlook Exchange</div>
+                    <div class="platform-item">Custom SMTP</div>
+                </div>
+            </div>
+            
+            <div class="integration-category">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3 class="category-title">Document Storage</h3>
+                </div>
+                <div class="platforms-list">
+                    <div class="platform-item">Google Drive</div>
+                    <div class="platform-item">Dropbox Business</div>
+                    <div class="platform-item">Amazon S3</div>
+                </div>
+            </div>
+            
+            <div class="integration-category">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-comment-dots"></i>
+                    </div>
+                    <h3 class="category-title">Communication</h3>
+                </div>
+                <div class="platforms-list">
+                    <div class="platform-item">Slack Workspace</div>
+                    <div class="platform-item">SMS Notifications</div>
+                    <div class="platform-item">Push Notifications</div>
+                </div>
+            </div>
+            
+            <div class="integration-category">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="category-title">API Architecture</h3>
+                </div>
+                <div class="platforms-list">
+                    <div class="platform-item">RESTful API</div>
+                    <div class="platform-item">Webhook Events</div>
+                    <div class="platform-item">Developer SDK</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="bottom-accent"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: #0a1628;
+        font-family: 'Inter', sans-serif;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .grid-pattern {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.05;
+        background-image: 
+          linear-gradient(#60a5fa 1px, transparent 1px),
+          linear-gradient(90deg, #60a5fa 1px, transparent 1px);
+        background-size: 40px 40px;
+      }
+      
+      .content {
+        position: relative;
+        z-index: 10;
+        padding-top: 60px;
+        padding-left: 80px;
+        padding-right: 80px;
+      }
+      
+      .title {
+        font-size: 40px;
+        font-weight: 700;
+        color: #60a5fa;
+        margin-bottom: 48px;
+        letter-spacing: -0.5px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+      
+      .title-icon {
+        color: #10b981;
+        font-size: 36px;
+      }
+      
+      .stack-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+      }
+      
+      .stack-category {
+        background: rgba(59, 130, 246, 0.05);
+        border: 1px solid rgba(59, 130, 246, 0.2);
+        padding-top: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        min-height: 200px;
+      }
+      
+      .category-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 20px;
+      }
+      
+      .category-icon {
+        width: 36px;
+        height: 36px;
+        background: linear-gradient(135deg, #3b82f6, #10b981);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 16px;
+      }
+      
+      .category-title {
+        font-size: 20px;
+        font-weight: 600;
+        color: #60a5fa;
+      }
+      
+      .tech-list {
+        list-style: none;
+      }
+      
+      .tech-item {
+        font-size: 16px;
+        color: #e2e8f0;
+        margin-bottom: 12px;
+        padding-left: 20px;
+        position: relative;
+      }
+      
+      .tech-item::before {
+        content: "▹";
+        position: absolute;
+        left: 0;
+        color: #10b981;
+        font-weight: bold;
+      }
+      
+      .tech-version {
+        color: #94a3b8;
+        font-size: 14px;
+        margin-left: 6px;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+      <div class="grid-pattern"></div>
+      
+      <div class="content">
+        <div class="title">
+          <i class="fas fa-layer-group title-icon"></i>
+          Technology Stack
+        </div>
+        
+        <div class="stack-grid">
+          <div class="stack-category">
+            <div class="category-header">
+              <div class="category-icon">
+                <i class="fas fa-desktop"></i>
+              </div>
+              <div class="category-title">Frontend</div>
+            </div>
+            <ul class="tech-list">
+              <li class="tech-item">React <span class="tech-version">19.1</span></li>
+              <li class="tech-item">Tailwind CSS <span class="tech-version">4.1</span></li>
+              <li class="tech-item">Wouter <span class="tech-version">3.3</span></li>
+              <li class="tech-item">Radix UI</li>
+              <li class="tech-item">TanStack Query</li>
+              <li class="tech-item">Chart.js</li>
+            </ul>
+          </div>
+          
+          <div class="stack-category">
+            <div class="category-header">
+              <div class="category-icon">
+                <i class="fas fa-server"></i>
+              </div>
+              <div class="category-title">Backend</div>
+            </div>
+            <ul class="tech-list">
+              <li class="tech-item">Node.js <span class="tech-version">22.13</span></li>
+              <li class="tech-item">Express <span class="tech-version">4.21</span></li>
+              <li class="tech-item">tRPC <span class="tech-version">11.6</span></li>
+              <li class="tech-item">TypeScript <span class="tech-version">5.9</span></li>
+              <li class="tech-item">Superjson</li>
+              <li class="tech-item">Zod Validation</li>
+            </ul>
+          </div>
+          
+          <div class="stack-category">
+            <div class="category-header">
+              <div class="category-icon">
+                <i class="fas fa-database"></i>
+              </div>
+              <div class="category-title">Database</div>
+            </div>
+            <ul class="tech-list">
+              <li class="tech-item">MySQL / TiDB</li>
+              <li class="tech-item">Drizzle ORM <span class="tech-version">0.44</span></li>
+              <li class="tech-item">Drizzle Kit</li>
+              <li class="tech-item">JSON Fields</li>
+            </ul>
+          </div>
+          
+          <div class="stack-category">
+            <div class="category-header">
+              <div class="category-icon">
+                <i class="fas fa-brain"></i>
+              </div>
+              <div class="category-title">AI & ML</div>
+            </div>
+            <ul class="tech-list">
+              <li class="tech-item">OpenAI API <span class="tech-version">4.67</span></li>
+              <li class="tech-item">Custom Matching Engine</li>
+              <li class="tech-item">Resume Parser</li>
+              <li class="tech-item">NLP Processing</li>
+            </ul>
+          </div>
+          
+          <div class="stack-category">
+            <div class="category-header">
+              <div class="category-icon">
+                <i class="fas fa-cloud"></i>
+              </div>
+              <div class="category-title">Infrastructure</div>
+            </div>
+            <ul class="tech-list">
+              <li class="tech-item">AWS S3</li>
+              <li class="tech-item">SendGrid Email</li>
+              <li class="tech-item">Socket.io <span class="tech-version">4.8</span></li>
+              <li class="tech-item">Google Calendar API</li>
+              <li class="tech-item">QR Code Generation</li>
+            </ul>
+          </div>
+          
+          <div class="stack-category">
+            <div class="category-header">
+              <div class="category-icon">
+                <i class="fas fa-tools"></i>
+              </div>
+              <div class="category-title">Dev Tools</div>
+            </div>
+            <ul class="tech-list">
+              <li class="tech-item">Vite <span class="tech-version">7.1</span></li>
+              <li class="tech-item">Vitest <span class="tech-version">2.1</span></li>
+              <li class="tech-item">ESBuild</li>
+              <li class="tech-item">Prettier</li>
+              <li class="tech-item">pnpm</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      .slide-container {
+        width: 1280px;
+        min-height: 720px;
+        background: #0A0E27;
+        font-family: 'Inter', sans-serif;
+        color: #E2E8F0;
+        position: relative;
+        padding-top: 60px;
+      }
+      
+      .grid-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: 
+          linear-gradient(rgba(96, 165, 250, 0.02) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(96, 165, 250, 0.02) 1px, transparent 1px);
+        background-size: 40px 40px;
+        pointer-events: none;
+      }
+      
+      .content {
+        position: relative;
+        z-index: 1;
+        padding-left: 80px;
+        padding-right: 80px;
+      }
+      
+      .page-title {
+        font-size: 36px;
+        font-weight: 700;
+        color: #60A5FA;
+        margin-bottom: 45px;
+        letter-spacing: -0.5px;
+      }
+      
+      .main-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 40px;
+        margin-bottom: 30px;
+      }
+      
+      .section-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #34D399;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      
+      .trigger-item {
+        background: rgba(96, 165, 250, 0.05);
+        border-left: 3px solid #60A5FA;
+        padding-top: 14px;
+        padding-left: 14px;
+        padding-right: 14px;
+        margin-bottom: 12px;
+        min-height: 80px;
+      }
+      
+      .trigger-name {
+        font-size: 15px;
+        font-weight: 600;
+        color: #E2E8F0;
+        margin-bottom: 6px;
+      }
+      
+      .trigger-desc {
+        font-size: 13px;
+        color: #94A3B8;
+        line-height: 1.5;
+      }
+      
+      .formula-box {
+        background: rgba(15, 23, 42, 0.9);
+        border: 2px solid #F59E0B;
+        padding-top: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-bottom: 20px;
+        min-height: 100px;
+      }
+      
+      .formula-label {
+        font-size: 13px;
+        color: #F59E0B;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+      
+      .formula-text {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 14px;
+        color: #E2E8F0;
+        line-height: 1.8;
+      }
+      
+      .tier-item {
+        display: grid;
+        grid-template-columns: 100px 1fr;
+        gap: 12px;
+        padding-top: 10px;
+        margin-bottom: 8px;
+        font-size: 13px;
+      }
+      
+      .tier-label {
+        font-family: 'JetBrains Mono', monospace;
+        color: #34D399;
+        font-weight: 600;
+      }
+      
+      .tier-value {
+        color: #CBD5E1;
+      }
+      
+      .workflow-step {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 16px;
+      }
+      
+      .step-number {
+        width: 28px;
+        height: 28px;
+        background: rgba(52, 211, 153, 0.2);
+        border: 2px solid #34D399;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 14px;
+        color: #34D399;
+        flex-shrink: 0;
+      }
+      
+      .step-content {
+        flex: 1;
+        padding-top: 2px;
+      }
+      
+      .step-title {
+        font-size: 14px;
+        font-weight: 600;
+        color: #E2E8F0;
+        margin-bottom: 4px;
+      }
+      
+      .step-desc {
+        font-size: 12px;
+        color: #94A3B8;
+        line-height: 1.5;
+      }
+      
+      .metrics-bar {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 2px solid rgba(96, 165, 250, 0.2);
+      }
+      
+      .metric-box {
+        text-align: center;
+      }
+      
+      .metric-value {
+        font-size: 24px;
+        font-weight: 700;
+        color: #34D399;
+        margin-bottom: 6px;
+      }
+      
+      .metric-label {
+        font-size: 12px;
+        color: #94A3B8;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="grid-overlay"></div>
+        
+        <div class="content">
+            <h1 class="page-title">Pay-for-Performance Billing Model</h1>
+            
+            <div class="main-layout">
+                <div class="left-column">
+                    <div class="section-title">Billing Triggers</div>
+                    
+                    <div class="trigger-item">
+                        <div class="trigger-name">Qualified Application</div>
+                        <div class="trigger-desc">Application meets minimum match score threshold (≥70%) and passes initial screening</div>
+                    </div>
+                    
+                    <div class="trigger-item">
+                        <div class="trigger-name">Interview Scheduled</div>
+                        <div class="trigger-desc">Video interview confirmed via Calendly integration with both parties</div>
+                    </div>
+                    
+                    <div class="trigger-item">
+                        <div class="trigger-name">Candidate Advancement</div>
+                        <div class="trigger-desc">Application status progresses to "interviewing" or "offered" stage</div>
+                    </div>
+                </div>
+                
+                <div class="center-column">
+                    <div class="section-title">Calculation Model</div>
+                    
+                    <div class="formula-box">
+                        <div class="formula-label">BILLING FORMULA</div>
+                        <div class="formula-text">
+                          totalAmount = <br>
+                          &nbsp;&nbsp;(qualifiedApps × $50) +<br>
+                          &nbsp;&nbsp;(scheduledInterviews × $150)
+                        </div>
+                    </div>
+                    
+                    <div class="tier-item">
+                        <div class="tier-label">Base Rate</div>
+                        <div class="tier-value">$50 per qualified application</div>
+                    </div>
+                    
+                    <div class="tier-item">
+                        <div class="tier-label">Interview</div>
+                        <div class="tier-value">$150 per scheduled interview</div>
+                    </div>
+                    
+                    <div class="tier-item">
+                        <div class="tier-label">Billing Cycle</div>
+                        <div class="tier-value">Monthly aggregation with 30-day terms</div>
+                    </div>
+                    
+                    <div class="tier-item">
+                        <div class="tier-label">Model Type</div>
+                        <div class="tier-value">Subscription | Performance | Hybrid</div>
+                    </div>
+                </div>
+                
+                <div class="right-column">
+                    <div class="section-title">Automation Workflow</div>
+                    
+                    <div class="workflow-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <div class="step-title">Event Tracking</div>
+                            <div class="step-desc">Real-time capture of billable events in billingRecords table</div>
+                        </div>
+                    </div>
+                    
+                    <div class="workflow-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <div class="step-title">Period Aggregation</div>
+                            <div class="step-desc">Scheduled job aggregates monthly metrics per employer</div>
+                        </div>
+                    </div>
+                    
+                    <div class="workflow-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <div class="step-title">Invoice Generation</div>
+                            <div class="step-desc">Automated PDF creation with itemized breakdown and branding</div>
+                        </div>
+                    </div>
+                    
+                    <div class="workflow-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <div class="step-title">Email Delivery</div>
+                            <div class="step-desc">Branded invoice email with tracking and payment link</div>
+                        </div>
+                    </div>
+                    
+                    <div class="workflow-step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <div class="step-title">Payment Tracking</div>
+                            <div class="step-desc">Status monitoring (pending → paid) with analytics dashboard</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="metrics-bar">
+                <div class="metric-box">
+                    <div class="metric-value">Real-time</div>
+                    <div class="metric-label">Event Capture</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-value">Automated</div>
+                    <div class="metric-label">Invoice Generation</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-value">3 Models</div>
+                    <div class="metric-label">Billing Options</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-value">100%</div>
+                    <div class="metric-label">Audit Trail</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

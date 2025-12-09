@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font-family: 'Inter', sans-serif; }
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: #0F172A;
+        padding-top: 60px;
+      }
+      .header {
+        padding-left: 80px;
+        padding-right: 80px;
+        margin-bottom: 40px;
+      }
+      .page-title {
+        font-size: 36px;
+        font-weight: 700;
+        color: #3B82F6;
+        margin-bottom: 10px;
+      }
+      .title-underline {
+        width: 80px;
+        height: 3px;
+        background: linear-gradient(90deg, #3B82F6, #10B981);
+      }
+      .content-wrapper {
+        display: grid;
+        grid-template-columns: 35% 65%;
+        gap: 0;
+        min-height: 560px;
+      }
+      .left-visual {
+        background: linear-gradient(135deg, #1E293B, #0F172A);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .ai-icon-wrapper {
+        position: relative;
+        z-index: 2;
+      }
+      .ai-icon-wrapper i {
+        font-size: 140px;
+        color: #3B82F6;
+        opacity: 0.9;
+      }
+      .ai-label {
+        margin-top: 30px;
+        font-size: 18px;
+        font-weight: 600;
+        color: #10B981;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+      .glow-circle {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        border: 2px solid #3B82F6;
+        border-radius: 50%;
+        opacity: 0.2;
+      }
+      .right-content {
+        padding-left: 60px;
+        padding-right: 80px;
+        padding-top: 20px;
+      }
+      .features-list {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+      }
+      .feature-item {
+        display: grid;
+        grid-template-columns: 50px 1fr;
+        gap: 20px;
+        align-items: start;
+      }
+      .feature-number {
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(135deg, #1E3A8A, #3B82F6);
+        color: #FFFFFF;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        font-weight: 700;
+      }
+      .feature-content {
+        padding-top: 5px;
+      }
+      .feature-title {
+        font-size: 20px;
+        font-weight: 600;
+        color: #60A5FA;
+        margin-bottom: 6px;
+      }
+      .feature-description {
+        font-size: 15px;
+        color: #CBD5E1;
+        line-height: 1.5;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+      <div class="header">
+        <h1 class="page-title">Generative AI Capabilities</h1>
+        <div class="title-underline"></div>
+      </div>
+      
+      <div class="content-wrapper">
+        <div class="left-visual">
+          <div class="glow-circle"></div>
+          <div class="ai-icon-wrapper">
+            <i class="fas fa-robot"></i>
+          </div>
+          <div class="ai-label">LLM-Powered</div>
+        </div>
+        
+        <div class="right-content">
+          <div class="features-list">
+            <div class="feature-item">
+              <div class="feature-number">1</div>
+              <div class="feature-content">
+                <h3 class="feature-title">Job Description Enrichment</h3>
+                <p class="feature-description">AI-powered enhancement of job postings with inferred requirements, skill extraction, and clarity scoring for improved candidate attraction.</p>
+              </div>
+            </div>
+            
+            <div class="feature-item">
+              <div class="feature-number">2</div>
+              <div class="feature-content">
+                <h3 class="feature-title">AI Career Coaching</h3>
+                <p class="feature-description">Personalized career guidance including resume reviews, career path planning, interview preparation, and general professional development advice.</p>
+              </div>
+            </div>
+            
+            <div class="feature-item">
+              <div class="feature-number">3</div>
+              <div class="feature-content">
+                <h3 class="feature-title">Resume Analysis</h3>
+                <p class="feature-description">Automated extraction of skills, experience, and attributes from candidate resumes with AI profile scoring and inferred competencies.</p>
+              </div>
+            </div>
+            
+            <div class="feature-item">
+              <div class="feature-number">4</div>
+              <div class="feature-content">
+                <h3 class="feature-title">Interview Preparation</h3>
+                <p class="feature-description">AI-generated interview questions, personalized preparation tips, and coaching sessions tailored to specific job requirements.</p>
+              </div>
+            </div>
+            
+            <div class="feature-item">
+              <div class="feature-number">5</div>
+              <div class="feature-content">
+                <h3 class="feature-title">Personalized Recommendations</h3>
+                <p class="feature-description">Smart candidate-job matching with AI-driven suggestions based on profile analysis, career goals, and similarity detection algorithms.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS `budgetScenarios` (\n  `id` INT AUTO_INCREMENT PRIMARY KEY,\n  `name` VARCHAR(255) NOT NULL,\n  `description` TEXT,\n  `createdBy` INT NOT NULL,\n  `totalCost` INT DEFAULT 0 NOT NULL,\n  `totalRecipients` INT DEFAULT 0 NOT NULL,\n  `expectedConversions` INT DEFAULT 0 NOT NULL,\n  `costPerConversion` INT DEFAULT 0 NOT NULL,\n  `roi` INT DEFAULT 0 NOT NULL,\n  `timeline` JSON,\n  `createdAt` TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,\n  `updatedAt` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL,\n  INDEX `createdBy_idx` (`createdBy`),\n  INDEX `createdAt_idx` (`createdAt`),\n  FOREIGN KEY (`createdBy`) REFERENCES `users`(`id`) ON DELETE CASCADE\n)",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS `budgetScenarios` (\n  `id` INT AUTO_INCREMENT PRIMARY KEY,\n  `name` VARCHAR(255) NOT NULL,\n  `description` TEXT,\n  `createdBy` INT NOT NULL,\n  `totalCost` INT DEFAULT 0 NOT NULL,\n  `totalRecipients` INT DEFAULT 0 NOT NULL,\n  `expectedConversions` INT DEFAULT 0 NOT NULL,\n  `costPerConversion` INT DEFAULT 0 NOT NULL,\n  `roi` INT DEFAULT 0 NOT NULL,\n  `timeline` JSON,\n  `createdAt` TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,\n  `updatedAt` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL,\n  INDEX `createdBy_idx` (`createdBy`),\n  INDEX `createdAt_idx` (`createdAt`),\n  FOREIGN KEY (`createdBy`) REFERENCES `users`(`id`) ON DELETE CASCADE\n)",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1905
+}

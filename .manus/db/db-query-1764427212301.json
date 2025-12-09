@@ -1,0 +1,61 @@
+{
+  "query": "SHOW TABLES;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute SHOW TABLES;",
+  "rows": [
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "ai_detection_results"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "candidate_skills_detailed"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "candidates"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "career_path_skills"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "career_paths"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "detailed_match_scores"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "extension_imports"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "job_applications"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "job_posting_skills"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "job_postings"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "job_skills"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "jobs"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "learning_resources"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "resumes"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "skills_gap_analysis"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "skills_taxonomy"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "users"
+    }
+  ],
+  "messages": [],
+  "stdout": "Tables_in_hjcHA4SjAwhM6aP28vcAkH\nai_detection_results\ncandidate_skills_detailed\ncandidates\ncareer_path_skills\ncareer_paths\ndetailed_match_scores\nextension_imports\njob_applications\njob_posting_skills\njob_postings\njob_skills\njobs\nlearning_resources\nresumes\nskills_gap_analysis\nskills_taxonomy\nusers\n",
+  "stderr": "",
+  "execution_time_ms": 2517
+}

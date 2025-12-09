@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      
+      .slide-container {
+        width: 1280px;
+        min-height: 720px;
+        background: #0A0E27;
+        font-family: 'Space Grotesk', sans-serif;
+        color: #E0E6ED;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .content-wrapper {
+        padding-top: 50px;
+        padding-left: 80px;
+        padding-right: 80px;
+      }
+      
+      .headline {
+        font-size: 36px;
+        font-weight: 700;
+        color: #00D9FF;
+        line-height: 1.2;
+        margin-bottom: 35px;
+      }
+      
+      .main-grid {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        gap: 50px;
+      }
+      
+      .left-column {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      
+      .section {
+        margin-bottom: 8px;
+      }
+      
+      .section-title {
+        font-size: 20px;
+        font-weight: 600;
+        color: #7B61FF;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+      }
+      
+      .section-title::before {
+        content: '';
+        width: 3px;
+        height: 18px;
+        background: #00FF88;
+        margin-right: 10px;
+      }
+      
+      .section-content {
+        font-size: 15px;
+        line-height: 1.5;
+        color: #E0E6ED;
+        padding-left: 13px;
+      }
+      
+      .feature-list {
+        list-style: none;
+        padding-left: 0;
+        margin-top: 8px;
+      }
+      
+      .feature-list li {
+        font-size: 15px;
+        line-height: 1.6;
+        color: #E0E6ED;
+        margin-bottom: 6px;
+        padding-left: 18px;
+        position: relative;
+      }
+      
+      .feature-list li::before {
+        content: '→';
+        position: absolute;
+        left: 0;
+        color: #00FF88;
+        font-weight: 600;
+      }
+      
+      .data-flow-steps {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      
+      .flow-step {
+        display: flex;
+        align-items: start;
+        gap: 10px;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+      
+      .flow-number {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 13px;
+        font-weight: 600;
+        color: #00D9FF;
+        min-width: 20px;
+      }
+      
+      .flow-text {
+        color: #E0E6ED;
+      }
+      
+      .tech-highlight {
+        color: #00D9FF;
+        font-weight: 500;
+      }
+      
+      .right-column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .diagram-container {
+        width: 500px;
+        height: 380px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 217, 255, 0.03);
+        border: 1px solid rgba(0, 217, 255, 0.15);
+      }
+      
+      .diagram-container img {
+        width: 500px;
+        height: 380px;
+        object-fit: contain;
+      }
+      
+      .diagram-label {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 12px;
+        color: rgba(224, 230, 237, 0.6);
+        text-align: center;
+        margin-top: 10px;
+        letter-spacing: 0.05em;
+      }
+      
+      .providers-bar {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(123, 97, 255, 0.05);
+        border-top: 1px solid rgba(123, 97, 255, 0.2);
+        padding-top: 12px;
+        padding-left: 80px;
+        padding-right: 80px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .providers-label {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 11px;
+        color: #7B61FF;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+      
+      .providers-list {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 12px;
+        color: #E0E6ED;
+      }
+      
+      .provider-item {
+        color: #00FF88;
+        margin-left: 4px;
+        margin-right: 4px;
+      }
+      
+      .accent-bar {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(90deg, #7B61FF, #00D9FF, #00FF88);
+      }
+      
+      .slide-container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: 
+          linear-gradient(rgba(0, 217, 255, 0.02) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 217, 255, 0.02) 1px, transparent 1px);
+        background-size: 60px 60px;
+        pointer-events: none;
+        z-index: 0;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="content-wrapper">
+            <h1 class="headline">Bidirectional Sync with External ATS Platforms Maintains Data Consistency</h1>
+            
+            <div class="main-grid">
+                <div class="left-column">
+                    <div class="section">
+                        <div class="section-title">Integration Capabilities</div>
+                        <ul class="feature-list">
+                            <li><span class="tech-highlight">OAuth 2.0</span> authentication for secure API access</li>
+                            <li>Webhook listeners for real-time event processing</li>
+                            <li>Scheduled sync jobs for batch reconciliation</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="section">
+                        <div class="section-title">Data Flow</div>
+                        <div class="data-flow-steps">
+                            <div class="flow-step">
+                                <span class="flow-number">1.</span>
+                                <span class="flow-text"><strong>Outbound Sync</strong> – Push qualified applications to employer's ATS</span>
+                            </div>
+                            <div class="flow-step">
+                                <span class="flow-number">2.</span>
+                                <span class="flow-text"><strong>Inbound Sync</strong> – Pull job postings and candidate status updates</span>
+                            </div>
+                            <div class="flow-step">
+                                <span class="flow-number">3.</span>
+                                <span class="flow-text"><strong>Conflict Resolution</strong> – Timestamp-based merge with manual override</span>
+                            </div>
+                            <div class="flow-step">
+                                <span class="flow-number">4.</span>
+                                <span class="flow-text"><strong>Error Handling</strong> – Retry logic with exponential backoff, dead letter queue</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section">
+                        <div class="section-title">Database Schema</div>
+                        <div class="section-content">
+                            <span class="tech-highlight">atsIntegrations</span> (config & credentials) • 
+                            <span class="tech-highlight">atsJobs</span> (job ID mapping) • 
+                            <span class="tech-highlight">atsCandidates</span> (candidate mapping) • 
+                            <span class="tech-highlight">atsSyncLogs</span> (audit trail)
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="right-column">
+                    <div class="diagram-container">
+                        <img src="/home/ubuntu/oracle-smart-recruitment/presentation/assets/ats-workflow.png" alt="ATS Integration Workflow">
+                    </div>
+                    <div class="diagram-label">ATS INTEGRATION WORKFLOW</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="providers-bar">
+            <span class="providers-label">Supported ATS Providers</span>
+            <span class="providers-list">
+                <span class="provider-item">Greenhouse</span> | 
+                <span class="provider-item">Lever</span> | 
+                <span class="provider-item">Workday</span> | 
+                <span class="provider-item">SAP SuccessFactors</span> | 
+                <span class="provider-item">iCIMS</span>
+            </span>
+        </div>
+        
+        <div class="accent-bar"></div>
+    </div>
+</body>
+</html>

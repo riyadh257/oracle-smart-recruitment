@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Posting Rules Engine</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #000;
+        }
+        
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #0B1A3E;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .content-wrapper {
+            padding-top: 60px; /* keep consistent title spacing */
+            padding-left: 80px;
+            padding-right: 80px;
+        }
+        
+        .slide-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 40px;
+            line-height: 1.3;
+        }
+        
+        .features-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            margin-bottom: 20px; /* reduced from 45px to save height */
+        }
+        
+        .feature-box {
+            flex: 1;
+            background: rgba(59, 130, 246, 0.08);
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 15px;
+            min-height: 85px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        
+        .feature-icon {
+            font-size: 20px;
+            color: #3B82F6;
+        }
+        
+        .feature-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #FFFFFF;
+            line-height: 1.3;
+        }
+        
+        .feature-desc {
+            font-size: 12px;
+            font-weight: 400;
+            color: #E8EDF5;
+            line-height: 1.4;
+        }
+        
+        .flow-diagram {
+            display: grid;
+            grid-template-columns: 28% 44% 28%;
+            gap: 0;
+            align-items: center;
+            margin-bottom: 10px; /* reduced from 35px to save height */
+            position: relative;
+        }
+        
+        .flow-column {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            position: relative;
+        }
+        
+        .flow-box {
+            background: rgba(232, 237, 245, 0.05);
+            border-left: 3px solid #3B82F6;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 12px;
+            min-height: 65px;
+        }
+        
+        .flow-label {
+            font-size: 11px;
+            font-weight: 600;
+            color: #3B82F6;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
+        }
+        
+        .flow-text {
+            font-size: 14px;
+            font-weight: 600;
+            color: #FFFFFF;
+            line-height: 1.3;
+        }
+        
+        .flow-subtext {
+            font-size: 12px;
+            font-weight: 400;
+            color: #E8EDF5;
+            line-height: 1.4;
+            margin-top: 4px;
+        }
+        
+        .engine-box {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(16, 185, 129, 0.15));
+            border: 2px solid #3B82F6;
+            padding-left: 25px;
+            padding-right: 25px;
+            padding-top: 25px;
+            min-height: 280px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            position: relative;
+        }
+        
+        .engine-title {
+            font-size: 20px;
+            font-weight: 800;
+            color: #FFFFFF;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        
+        .engine-icon {
+            font-size: 36px;
+            color: #10B981;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        
+        .engine-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            color: #E8EDF5;
+            line-height: 1.4;
+        }
+        
+        .engine-bullet {
+            width: 6px;
+            height: 6px;
+            background: #10B981;
+            flex-shrink: 0;
+        }
+        
+        .arrow-right {
+            position: absolute;
+            right: -25px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 32px;
+            color: #3B82F6;
+            z-index: 5;
+        }
+        
+        .arrow-left {
+            position: absolute;
+            left: -25px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 32px;
+            color: #3B82F6;
+            z-index: 5;
+        }
+        
+        .output-box {
+            background: rgba(16, 185, 129, 0.1);
+            border-left: 3px solid #10B981;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 12px;
+            min-height: 65px;
+        }
+        
+        .output-label {
+            font-size: 11px;
+            font-weight: 600;
+            color: #10B981;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
+        }
+        
+        .roi-section {
+            background: rgba(16, 185, 129, 0.08);
+            border-top: 3px solid #10B981;
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-top: 20px;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+        
+        .roi-icon {
+            font-size: 40px;
+            color: #10B981;
+        }
+        
+        .roi-content {
+            flex: 1;
+        }
+        
+        .roi-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #10B981;
+            margin-bottom: 6px;
+        }
+        
+        .roi-text {
+            font-size: 14px;
+            font-weight: 400;
+            color: #E8EDF5;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="content-wrapper">
+            <h1 class="slide-title">Automated Platform Selection Optimizes Job Visibility</h1>
+            
+            <div class="features-row">
+                <div class="feature-box">
+                    <div class="feature-icon"><i class="fas fa-brain"></i></div>
+                    <div class="feature-title">Machine Learning</div>
+                    <div class="feature-desc">Analyzes historical data to identify best platforms per job category</div>
+                </div>
+                
+                <div class="feature-box">
+                    <div class="feature-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="feature-title">Location Routing</div>
+                    <div class="feature-desc">Auto-posts to regional boards based on job location</div>
+                </div>
+                
+                <div class="feature-box">
+                    <div class="feature-icon"><i class="fas fa-dollar-sign"></i></div>
+                    <div class="feature-title">Budget Optimization</div>
+                    <div class="feature-desc">Allocates credits to highest-performing platforms</div>
+                </div>
+                
+                <div class="feature-box">
+                    <div class="feature-icon"><i class="fas fa-flask"></i></div>
+                    <div class="feature-title">A/B Testing</div>
+                    <div class="feature-desc">Experiments with different descriptions and strategies</div>
+                </div>
+                
+                <div class="feature-box">
+                    <div class="feature-icon"><i class="fas fa-clock"></i></div>
+                    <div class="feature-title">Optimal Timing</div>
+                    <div class="feature-desc">Posts at peak engagement times per platform</div>
+                </div>
+            </div>
+            
+            <div class="flow-diagram">
+                <div class="flow-column">
+                    <div class="flow-box">
+                        <div class="flow-label">Input</div>
+                        <div class="flow-text">Job Details</div>
+                        <div class="flow-subtext">Category, location, requirements, budget</div>
+                    </div>
+                    
+                    <div class="flow-box">
+                        <div class="flow-label">Data</div>
+                        <div class="flow-text">Historical Performance</div>
+                        <div class="flow-subtext">Past hire rates by platform and job type</div>
+                    </div>
+                    
+                    <div class="flow-box">
+                        <div class="flow-label">Constraints</div>
+                        <div class="flow-text">Budget &amp; Contracts</div>
+                        <div class="flow-subtext">Available credits and platform agreements</div>
+                    </div>
+                </div>
+                
+                <div class="flow-column" style="position: relative;">
+                    <div class="arrow-right"><i class="fas fa-arrow-right"></i></div>
+                    <div class="arrow-left"><i class="fas fa-arrow-left"></i></div>
+                    <div class="engine-box">
+                        <div class="engine-icon"><i class="fas fa-cogs"></i></div>
+                        <div class="engine-title">Smart Rules Engine</div>
+                        
+                        <div class="engine-item">
+                            <div class="engine-bullet"></div>
+                            <span>Analyze job category success patterns</span>
+                        </div>
+                        <div class="engine-item">
+                            <div class="engine-bullet"></div>
+                            <span>Match location to regional boards</span>
+                        </div>
+                        <div class="engine-item">
+                            <div class="engine-bullet"></div>
+                            <span>Calculate platform ROI scores</span>
+                        </div>
+                        <div class="engine-item">
+                            <div class="engine-bullet"></div>
+                            <span>Optimize budget allocation</span>
+                        </div>
+                        <div class="engine-item">
+                            <div class="engine-bullet"></div>
+                            <span>Schedule optimal posting times</span>
+                        </div>
+                        <div class="engine-item">
+                            <div class="engine-bullet"></div>
+                            <span>Generate A/B test variations</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flow-column">
+                    <div class="output-box">
+                        <div class="output-label">Output</div>
+                        <div class="flow-text">Platform Selection</div>
+                        <div class="flow-subtext">LinkedIn, Indeed, Glassdoor, Bayt, etc.</div>
+                    </div>
+                    
+                    <div class="output-box">
+                        <div class="output-label">Timing</div>
+                        <div class="flow-text">Scheduled Posts</div>
+                        <div class="flow-subtext">Optimal engagement windows per platform</div>
+                    </div>
+                    
+                    <div class="output-box">
+                        <div class="output-label">Content</div>
+                        <div class="flow-text">Optimized Descriptions</div>
+                        <div class="flow-subtext">Platform-specific formatting and keywords</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="roi-section">
+                <div class="roi-icon"><i class="fas fa-chart-line"></i></div>
+                <div class="roi-content">
+                    <div class="roi-title">ROI Impact: $2.3M Average Annual Savings for Enterprises</div>
+                    <div class="roi-text">Achieved within 8-18 months through platform optimization and reduced wasted job board spend by 25-35%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

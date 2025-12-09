@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS `jobFailureAlerts` (\n  `id` INT AUTO_INCREMENT PRIMARY KEY,\n  `jobName` VARCHAR(255) NOT NULL,\n  `enabled` TINYINT DEFAULT 1 NOT NULL,\n  `failureThreshold` INT DEFAULT 3 NOT NULL,\n  `alertCooldown` INT DEFAULT 30 NOT NULL,\n  `retryEnabled` TINYINT DEFAULT 1 NOT NULL,\n  `maxRetries` INT DEFAULT 3 NOT NULL,\n  `retryBackoffMultiplier` INT DEFAULT 2 NOT NULL,\n  `escalationEnabled` TINYINT DEFAULT 0 NOT NULL,\n  `escalationThreshold` INT DEFAULT 5 NOT NULL,\n  `lastAlertAt` TIMESTAMP NULL,\n  `totalAlerts` INT DEFAULT 0 NOT NULL,\n  `createdAt` TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,\n  `updatedAt` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL,\n  INDEX `jobName_idx` (`jobName`),\n  INDEX `enabled_idx` (`enabled`)\n)",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS `jobFailureAlerts` (\n  `id` INT AUTO_INCREMENT PRIMARY KEY,\n  `jobName` VARCHAR(255) NOT NULL,\n  `enabled` TINYINT DEFAULT 1 NOT NULL,\n  `failureThreshold` INT DEFAULT 3 NOT NULL,\n  `alertCooldown` INT DEFAULT 30 NOT NULL,\n  `retryEnabled` TINYINT DEFAULT 1 NOT NULL,\n  `maxRetries` INT DEFAULT 3 NOT NULL,\n  `retryBackoffMultiplier` INT DEFAULT 2 NOT NULL,\n  `escalationEnabled` TINYINT DEFAULT 0 NOT NULL,\n  `escalationThreshold` INT DEFAULT 5 NOT NULL,\n  `lastAlertAt` TIMESTAMP NULL,\n  `totalAlerts` INT DEFAULT 0 NOT NULL,\n  `createdAt` TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,\n  `updatedAt` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL,\n  INDEX `jobName_idx` (`jobName`),\n  INDEX `enabled_idx` (`enabled`)\n)",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1754
+}

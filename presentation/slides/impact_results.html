@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Measurable Impact & Results</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #000;
+    }
+    
+    .slide-container {
+      width: 1280px;
+      min-height: 720px;
+      background: linear-gradient(135deg, #0A1628 0%, #0D1F3C 50%, #0A1628 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .content-wrapper {
+      padding-top: 60px;
+      padding-left: 80px;
+      padding-right: 80px;
+    }
+    
+    .page-title {
+      font-size: 40px;
+      font-weight: 700;
+      color: #00D4FF;
+      margin-bottom: 70px;
+      letter-spacing: -0.5px;
+      text-align: center;
+    }
+    
+    .metrics-container {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+    
+    .metrics-row {
+      display: grid;
+      gap: 40px;
+      justify-content: center;
+    }
+    
+    .metrics-row.top {
+      grid-template-columns: repeat(3, 340px);
+    }
+    
+    .metrics-row.bottom {
+      grid-template-columns: repeat(2, 340px);
+    }
+    
+    .metric-box {
+      background: rgba(0, 212, 255, 0.05);
+      border-left: 4px solid #00D4FF;
+      padding-top: 32px;
+      padding-left: 32px;
+      padding-right: 32px;
+      min-height: 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    .metric-box:nth-child(2) {
+      border-left-color: #7B61FF;
+      background: rgba(123, 97, 255, 0.05);
+    }
+    
+    .metric-box:nth-child(3) {
+      border-left-color: #00FFA3;
+      background: rgba(0, 255, 163, 0.05);
+    }
+    
+    .metrics-row.bottom .metric-box:nth-child(1) {
+      border-left-color: #00D4FF;
+      background: rgba(0, 212, 255, 0.05);
+    }
+    
+    .metrics-row.bottom .metric-box:nth-child(2) {
+      border-left-color: #7B61FF;
+      background: rgba(123, 97, 255, 0.05);
+    }
+    
+    .metric-number {
+      font-size: 64px;
+      font-weight: 800;
+      color: #00D4FF;
+      line-height: 1;
+      margin-bottom: 16px;
+      text-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+    }
+    
+    .metric-box:nth-child(2) .metric-number {
+      color: #7B61FF;
+      text-shadow: 0 0 30px rgba(123, 97, 255, 0.3);
+    }
+    
+    .metric-box:nth-child(3) .metric-number {
+      color: #00FFA3;
+      text-shadow: 0 0 30px rgba(0, 255, 163, 0.3);
+    }
+    
+    .metrics-row.bottom .metric-box:nth-child(1) .metric-number {
+      color: #00D4FF;
+      text-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+    }
+    
+    .metrics-row.bottom .metric-box:nth-child(2) .metric-number {
+      color: #7B61FF;
+      text-shadow: 0 0 30px rgba(123, 97, 255, 0.3);
+    }
+    
+    .metric-label {
+      font-size: 18px;
+      font-weight: 600;
+      color: #E8EDF2;
+      line-height: 1.4;
+      margin-bottom: 8px;
+    }
+    
+    .metric-description {
+      font-size: 15px;
+      font-weight: 400;
+      color: rgba(232, 237, 242, 0.6);
+      line-height: 1.5;
+    }
+    
+    .bottom-note {
+      text-align: center;
+      margin-top: 50px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(0, 212, 255, 0.2);
+    }
+    
+    .note-text {
+      font-size: 18px;
+      font-weight: 500;
+      color: rgba(232, 237, 242, 0.7);
+      line-height: 1.6;
+    }
+    
+    .grid-overlay {
+      position: absolute;
+      width: 100%;
+      min-height: 100%;
+      top: 0;
+      left: 0;
+      background-image: 
+        linear-gradient(rgba(0, 212, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 212, 255, 0.02) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      z-index: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="grid-overlay"></div>
+    <div class="content-wrapper">
+      <h1 class="page-title">Measurable Impact & Results</h1>
+      
+      <div class="metrics-container">
+        <div class="metrics-row top">
+          <div class="metric-box">
+            <div class="metric-number">60%</div>
+            <div class="metric-label">Faster Time-to-Hire</div>
+            <div class="metric-description">Reduce average hiring time from 42 days to 17 days</div>
+          </div>
+          
+          <div class="metric-box">
+            <div class="metric-number">98%</div>
+            <div class="metric-label">Efficiency Improvement</div>
+            <div class="metric-description">Significant gains in hiring process efficiency reported by managers</div>
+          </div>
+          
+          <div class="metric-box">
+            <div class="metric-number">10x</div>
+            <div class="metric-label">Screening Capacity</div>
+            <div class="metric-description">Screen 10 times more candidates with the same resources</div>
+          </div>
+        </div>
+        
+        <div class="metrics-row bottom">
+          <div class="metric-box">
+            <div class="metric-number">85%+</div>
+            <div class="metric-label">Matching Accuracy</div>
+            <div class="metric-description">AI-powered job matching with detailed skill-by-skill breakdown</div>
+          </div>
+          
+          <div class="metric-box">
+            <div class="metric-number">67%</div>
+            <div class="metric-label">Reduction in Ghosting</div>
+            <div class="metric-description">Automated follow-up ensures timely candidate communication</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="bottom-note">
+        <p class="note-text">Real-world results from organizations using Oracle Smart Recruitment System</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS `notification_logs` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `applicant_email` varchar(320) NOT NULL,\n  `application_id` int,\n  `notification_type` enum('status_change','document_upload','interview_scheduled','interview_rescheduled','general') NOT NULL,\n  `subject` varchar(500) NOT NULL,\n  `content` text NOT NULL,\n  `sent_at` timestamp NOT NULL DEFAULT (now()),\n  `status` enum('sent','failed','pending') NOT NULL DEFAULT 'sent',\n  `error_message` text,\n  `metadata` text,\n  `created_at` timestamp NOT NULL DEFAULT (now()),\n  CONSTRAINT `notification_logs_id` PRIMARY KEY(`id`)\n);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS `notification_logs` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `applicant_email` varchar(320) NOT NULL,\n  `application_id` int,\n  `notification_type` enum('status_change','document_upload','interview_scheduled','interview_rescheduled','general') NOT NULL,\n  `subject` varchar(500) NOT NULL,\n  `content` text NOT NULL,\n  `sent_at` timestamp NOT NULL DEFAULT (now()),\n  `status` enum('sent','failed','pending') NOT NULL DEFAULT 'sent',\n  `error_message` text,\n  `metadata` text,\n  `created_at` timestamp NOT NULL DEFAULT (now()),\n  CONSTRAINT `notification_logs_id` PRIMARY KEY(`id`)\n);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1806
+}

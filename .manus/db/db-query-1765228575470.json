@@ -1,0 +1,9 @@
+{
+  "query": "ALTER TABLE workPermits \nADD COLUMN candidateName VARCHAR(255) AFTER employeeName,\nADD COLUMN iqamaNumber VARCHAR(50) AFTER employeeNationalId,\nADD COLUMN jobTitle VARCHAR(255) AFTER occupation,\nADD COLUMN calendarEventId VARCHAR(255) AFTER renewalReminderSent;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute ALTER TABLE workPermits \nADD COLUMN candidateName VARCHAR(255) AFTER employeeName,\nADD COLUMN iqamaNumber VARCHAR(50) AFTER employeeNationalId,\nADD COLUMN jobTitle VARCHAR(255) AFTER occupation,\nADD COLUMN calendarEventId VARCHAR(255) AFTER renewalReminderSent;",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 2873
+}

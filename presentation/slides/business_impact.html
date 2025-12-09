@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Measurable Business Impact</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; overflow: hidden; }
+        .slide-container { width: 1280px; min-height: 720px; background: #0A1628; position: relative; }
+        .header { padding-top: 60px; padding-left: 80px; padding-right: 80px; margin-bottom: 44px; }
+        .title { font-size: 36px; font-weight: 700; color: #00D4FF; margin-bottom: 12px; }
+        .title-underline { width: 120px; height: 4px; background: linear-gradient(90deg, #10B981, #00D4FF); }
+        .metrics-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; padding-left: 80px; padding-right: 80px; margin-bottom: 30px; }
+        .metric-item { text-align: center; position: relative; padding-top: 8px; }
+        .metric-icon { width: 50px; height: 50px; margin: 0 auto 12px; background: linear-gradient(135deg, #10B981, #00D4FF); display: flex; align-items: center; justify-content: center; font-size: 28px; color: #0A1628; }
+        .metric-header { display: flex; align-items: flex-end; justify-content: center; gap: 12px; margin-bottom: 6px; }
+        .metric-number { font-size: 80px; font-weight: 700; color: #10B981; line-height: 1; margin: 0; }
+        .metric-label { font-size: 22px; font-weight: 600; color: #E8EDF2; line-height: 1.2; margin: 0; }
+        .metric-description { font-size: 16px; color: #E8EDF2; opacity: 0.7; line-height: 1.4; max-width: 520px; margin: 0 auto; }
+        .bottom-summary { padding-left: 80px; padding-right: 80px; text-align: center; }
+        .summary-box { background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(0, 212, 255, 0.05)); border-top: 3px solid #00D4FF; border-bottom: 3px solid #6366F1; padding-top: 12px; min-height: 0; }
+        .summary-text { font-size: 20px; color: #E8EDF2; font-weight: 600; line-height: 1.4; }
+        .highlight { color: #10B981; }
+        .background-pattern { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 680px; height: 680px; background: radial-gradient(circle, rgba(16, 185, 129, 0.03) 0%, transparent 70%); pointer-events: none; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="background-pattern"></div>
+
+        <div class="header">
+            <h1 class="title">Measurable Business Impact</h1>
+            <div class="title-underline"></div>
+        </div>
+
+        <div class="metrics-grid">
+            <div class="metric-item">
+                <div class="metric-icon"><i class="fas fa-clock"></i></div>
+                <div class="metric-header">
+                    <div class="metric-number">70%</div>
+                    <div class="metric-label">Reduction in Screening Time</div>
+                </div>
+                <div class="metric-description">AI screening cuts review time from 23h to under 7h per hire</div>
+            </div>
+
+            <div class="metric-item">
+                <div class="metric-icon"><i class="fas fa-user-check"></i></div>
+                <div class="metric-header">
+                    <div class="metric-number">85%</div>
+                    <div class="metric-label">Improvement in Candidate Quality</div>
+                </div>
+                <div class="metric-description">AI matching + psychometrics boost job fit and reduce turnover</div>
+            </div>
+
+            <div class="metric-item">
+                <div class="metric-icon"><i class="fas fa-shield-alt"></i></div>
+                <div class="metric-header">
+                    <div class="metric-number">90%</div>
+                    <div class="metric-label">Compliance Accuracy</div>
+                </div>
+                <div class="metric-description">Automated GOSI/Nitaqat monitoring prevents penalties</div>
+            </div>
+
+            <div class="metric-item">
+                <div class="metric-icon"><i class="fas fa-rocket"></i></div>
+                <div class="metric-header">
+                    <div class="metric-number">60%</div>
+                    <div class="metric-label">Faster Time-to-Hire</div>
+                </div>
+                <div class="metric-description">Automated scheduling and follow-ups accelerate hiring</div>
+            </div>
+        </div>
+
+        <div class="bottom-summary">
+            <div class="summary-box">
+                <p class="summary-text">
+                    Organizations using Oracle Smart Recruitment achieve <span class="highlight">3x ROI within 6 months</span> through reduced costs, improved quality, and accelerated hiring
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: linear-gradient(135deg, #0A1628 0%, #1a2942 100%);
+        font-family: 'Inter', sans-serif;
+        color: #E2E8F0;
+        position: relative;
+      }
+      
+      .content-wrapper {
+        padding-top: 60px;
+        padding-left: 60px;
+        padding-right: 60px;
+        min-height: 720px;
+      }
+      
+      .page-title {
+        font-size: 36px;
+        font-weight: 700;
+        color: #60A5FA;
+        margin-bottom: 50px;
+        line-height: 1.2;
+      }
+      
+      .tech-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        margin-bottom: 40px;
+      }
+      
+      .tech-item {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+        background: rgba(59, 130, 246, 0.05);
+        border-left: 3px solid #3B82F6;
+        padding-top: 20px;
+        padding-right: 20px;
+        padding-left: 20px;
+        min-height: 120px;
+      }
+      
+      .tech-icon {
+        width: 50px;
+        height: 50px;
+        min-width: 50px;
+        background: linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        color: #ffffff;
+      }
+      
+      .tech-content {
+        flex: 1;
+      }
+      
+      .tech-name {
+        font-size: 20px;
+        font-weight: 600;
+        color: #E2E8F0;
+        margin-bottom: 8px;
+      }
+      
+      .tech-description {
+        font-size: 15px;
+        font-weight: 400;
+        color: #94A3B8;
+        line-height: 1.5;
+      }
+      
+      .tech-stack-visual {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 30px;
+        padding-top: 30px;
+        border-top: 1px solid rgba(96, 165, 250, 0.2);
+      }
+      
+      .stack-label {
+        font-size: 14px;
+        font-weight: 600;
+        color: #94A3B8;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      
+      .tech-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      
+      .badge {
+        padding: 6px 14px;
+        background: rgba(16, 185, 129, 0.15);
+        border: 1px solid rgba(16, 185, 129, 0.3);
+        font-size: 13px;
+        color: #10B981;
+        font-weight: 500;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="content-wrapper">
+            <h2 class="page-title">Modern React Ecosystem Enables Type-Safe, Responsive User Experience</h2>
+            
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <div class="tech-content">
+                        <div class="tech-name">React 19 + Wouter</div>
+                        <div class="tech-description">Lightweight, performant single-page application framework with efficient routing and component lifecycle management</div>
+                    </div>
+                </div>
+                
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <div class="tech-content">
+                        <div class="tech-name">Tailwind CSS 4 + shadcn/ui</div>
+                        <div class="tech-description">Consistent design system with utility-first CSS and pre-built accessible components for rapid UI development</div>
+                    </div>
+                </div>
+                
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <div class="tech-content">
+                        <div class="tech-name">tRPC React Query Hooks</div>
+                        <div class="tech-description">Eliminates manual API client code with direct procedure calls and full TypeScript inference across client-server boundary</div>
+                    </div>
+                </div>
+                
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="tech-content">
+                        <div class="tech-name">Socket.io Real-Time</div>
+                        <div class="tech-description">Live notifications for application status changes, interview scheduling, and dashboard updates without page refresh</div>
+                    </div>
+                </div>
+                
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="tech-content">
+                        <div class="tech-name">Responsive Design</div>
+                        <div class="tech-description">Mobile-first approach using Tailwind breakpoints and flexible layouts ensuring optimal experience across all devices</div>
+                    </div>
+                </div>
+                
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="tech-content">
+                        <div class="tech-name">TypeScript Integration</div>
+                        <div class="tech-description">End-to-end type safety from database queries through API layer to UI components, eliminating entire classes of runtime errors</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tech-stack-visual">
+                <div class="stack-label">Core Technologies</div>
+                <div class="tech-badges">
+                    <span class="badge">React 19</span>
+                    <span class="badge">TypeScript</span>
+                    <span class="badge">Tailwind CSS 4</span>
+                    <span class="badge">tRPC 11</span>
+                    <span class="badge">Wouter</span>
+                    <span class="badge">Socket.io-client</span>
+                    <span class="badge">React Query</span>
+                    <span class="badge">shadcn/ui</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

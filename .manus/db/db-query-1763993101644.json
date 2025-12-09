@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS `candidate_progress` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `candidate_id` int NOT NULL,\n  `stage` enum('applied','screening','interview','technical_test','offer','hired','rejected') NOT NULL,\n  `status` enum('pending','in_progress','completed','skipped') NOT NULL DEFAULT 'pending',\n  `started_at` timestamp,\n  `completed_at` timestamp,\n  `notes` text,\n  `performed_by` varchar(255),\n  `created_at` timestamp NOT NULL DEFAULT (now()),\n  CONSTRAINT `candidate_progress_id` PRIMARY KEY(`id`)\n);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS `candidate_progress` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `candidate_id` int NOT NULL,\n  `stage` enum('applied','screening','interview','technical_test','offer','hired','rejected') NOT NULL,\n  `status` enum('pending','in_progress','completed','skipped') NOT NULL DEFAULT 'pending',\n  `started_at` timestamp,\n  `completed_at` timestamp,\n  `notes` text,\n  `performed_by` varchar(255),\n  `created_at` timestamp NOT NULL DEFAULT (now()),\n  CONSTRAINT `candidate_progress_id` PRIMARY KEY(`id`)\n);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1649
+}

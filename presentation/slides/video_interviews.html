@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .slide-container {
+      width: 1280px;
+      min-height: 720px;
+      background: #0A1628;
+      position: relative;
+    }
+    
+    .header {
+      padding-top: 60px;
+      padding-left: 80px;
+      padding-right: 80px;
+      margin-bottom: 50px;
+    }
+    
+    .page-title {
+      font-size: 40px;
+      font-weight: 700;
+      color: #FFFFFF;
+      line-height: 1.2;
+    }
+    
+    .content-grid {
+      display: grid;
+      grid-template-columns: 550px 1fr;
+      gap: 60px;
+      padding-left: 80px;
+      padding-right: 80px;
+      align-items: center;
+    }
+    
+    .image-column {
+      width: 550px;
+      height: 400px;
+    }
+    
+    .video-image {
+      width: 550px;
+      height: 400px;
+      object-fit: contain;
+    }
+    
+    .features-column {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+    
+    .feature-item {
+      display: grid;
+      grid-template-columns: 50px 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+    
+    .feature-icon {
+      width: 50px;
+      height: 50px;
+      background: rgba(59, 130, 246, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+    }
+    
+    .feature-content {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    .feature-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #FFFFFF;
+      line-height: 1.3;
+    }
+    
+    .feature-description {
+      font-size: 16px;
+      font-weight: 400;
+      color: #E2E8F0;
+      line-height: 1.6;
+    }
+    
+    .highlight {
+      color: #06B6D4;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="header">
+      <div class="page-title">Intelligent Video Interview Platform</div>
+    </div>
+    
+    <div class="content-grid">
+      <div class="image-column">
+        <img src="/home/ubuntu/oracle-smart-recruitment/presentation/assets/video-interview.jpg" alt="Video Interview Platform" class="video-image">
+      </div>
+      
+      <div class="features-column">
+        <div class="feature-item">
+          <div class="feature-icon">🎥</div>
+          <div class="feature-content">
+            <div class="feature-title">Multi-Provider Integration</div>
+            <div class="feature-description">
+              Seamlessly connect with <span class="highlight">Zoom, Microsoft Teams, and Google Meet</span>. Automatically generate meeting links and credentials for each interview.
+            </div>
+          </div>
+        </div>
+        
+        <div class="feature-item">
+          <div class="feature-icon">📅</div>
+          <div class="feature-content">
+            <div class="feature-title">Automated Scheduling</div>
+            <div class="feature-description">
+              Intelligent conflict detection across interviewer calendars with <span class="highlight">90% reduction in scheduling conflicts</span>. Candidates can self-schedule within defined parameters.
+            </div>
+          </div>
+        </div>
+        
+        <div class="feature-item">
+          <div class="feature-icon">🤖</div>
+          <div class="feature-content">
+            <div class="feature-title">AI-Powered Analysis</div>
+            <div class="feature-description">
+              Advanced AI analyzes interview recordings for communication skills, technical competency indicators, and engagement metrics to support hiring decisions.
+            </div>
+          </div>
+        </div>
+        
+        <div class="feature-item">
+          <div class="feature-icon">📋</div>
+          <div class="feature-content">
+            <div class="feature-title">Structured Feedback Collection</div>
+            <div class="feature-description">
+              Customizable <span class="highlight">scorecard templates</span> with role-specific criteria ensure consistent evaluation across all interviewers and candidates.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

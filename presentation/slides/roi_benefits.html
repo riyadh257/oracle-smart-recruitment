@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: #FFFFFF;
+        font-family: 'Inter', sans-serif;
+        position: relative;
+      }
+      
+      .header-section {
+        padding-top: 60px;
+        padding-left: 80px;
+        padding-right: 80px;
+        margin-bottom: 60px;
+      }
+      
+      .accent-bar {
+        width: 80px;
+        height: 4px;
+        background: #0066CC;
+        margin-bottom: 24px;
+      }
+      
+      .page-title {
+        font-size: 40px;
+        font-weight: 700;
+        color: #1a1a1a;
+        line-height: 1.2;
+      }
+      
+      .highlight {
+        color: #0066CC;
+      }
+      
+      .metrics-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+        padding-left: 80px;
+        padding-right: 80px;
+      }
+      
+      .metric-block {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        position: relative;
+      }
+      
+      .metric-value {
+        font-size: 56px;
+        font-weight: 700;
+        color: #0066CC;
+        line-height: 1;
+      }
+      
+      .metric-block:nth-child(2) .metric-value,
+      .metric-block:nth-child(4) .metric-value,
+      .metric-block:nth-child(6) .metric-value {
+        color: #FF6B35;
+      }
+      
+      .metric-label {
+        font-size: 22px;
+        font-weight: 600;
+        color: #1a1a1a;
+        line-height: 1.3;
+        margin-bottom: 4px;
+      }
+      
+      .metric-description {
+        font-size: 15px;
+        font-weight: 400;
+        color: #666666;
+        line-height: 1.5;
+      }
+      
+      .metric-icon {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 48px;
+        height: 48px;
+        background: #F8FAFB;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .metric-icon i {
+        font-size: 24px;
+        color: #0066CC;
+      }
+      
+      .metric-block:nth-child(2) .metric-icon i,
+      .metric-block:nth-child(4) .metric-icon i,
+      .metric-block:nth-child(6) .metric-icon i {
+        color: #FF6B35;
+      }
+      
+      .divider-line {
+        width: 60px;
+        height: 3px;
+        background: #0066CC;
+        margin-top: 8px;
+      }
+      
+      .metric-block:nth-child(2) .divider-line,
+      .metric-block:nth-child(4) .divider-line,
+      .metric-block:nth-child(6) .divider-line {
+        background: #FF6B35;
+      }
+      
+      .bottom-accent {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 6px;
+        background: linear-gradient(90deg, #0066CC 0%, #FF6B35 100%);
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header-section">
+            <div class="accent-bar"></div>
+            <h2 class="page-title">
+                Measurable <span class="highlight">Business Impact</span>
+            </h2>
+        </div>
+        
+        <div class="metrics-grid">
+            <div class="metric-block">
+                <div class="metric-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div class="metric-value">60%</div>
+                <div class="divider-line"></div>
+                <h3 class="metric-label">Reduced Time-to-Hire</h3>
+                <p class="metric-description">AI screening and automated workflows accelerate candidate evaluation and scheduling processes.</p>
+            </div>
+            
+            <div class="metric-block">
+                <div class="metric-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="metric-value">45%</div>
+                <div class="divider-line"></div>
+                <h3 class="metric-label">Improved Candidate Quality</h3>
+                <p class="metric-description">Intelligent matching algorithms identify better-fit candidates with higher success rates.</p>
+            </div>
+            
+            <div class="metric-block">
+                <div class="metric-icon">
+                    <i class="fas fa-dollar-sign"></i>
+                </div>
+                <div class="metric-value">50%</div>
+                <div class="divider-line"></div>
+                <h3 class="metric-label">Decreased Cost-per-Hire</h3>
+                <p class="metric-description">Automation reduces manual effort and optimizes resource allocation across hiring teams.</p>
+            </div>
+            
+            <div class="metric-block">
+                <div class="metric-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="metric-value">3x</div>
+                <div class="divider-line"></div>
+                <h3 class="metric-label">Recruiter Productivity Gain</h3>
+                <p class="metric-description">Streamlined workflows enable recruiters to manage triple the candidate volume effectively.</p>
+            </div>
+            
+            <div class="metric-block">
+                <div class="metric-icon">
+                    <i class="fas fa-smile"></i>
+                </div>
+                <div class="metric-value">85%</div>
+                <div class="divider-line"></div>
+                <h3 class="metric-label">Candidate Satisfaction</h3>
+                <p class="metric-description">Enhanced communication and transparency improve candidate experience ratings significantly.</p>
+            </div>
+            
+            <div class="metric-block">
+                <div class="metric-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="metric-value">40%</div>
+                <div class="divider-line"></div>
+                <h3 class="metric-label">Diversity Improvement</h3>
+                <p class="metric-description">Bias detection and equitable evaluation frameworks drive measurable diversity gains.</p>
+            </div>
+        </div>
+        
+        <div class="bottom-accent"></div>
+    </div>
+</body>
+</html>

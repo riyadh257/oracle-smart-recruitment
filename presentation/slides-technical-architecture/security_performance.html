@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: linear-gradient(135deg, #0A0E27 0%, #1a1f3a 100%);
+        position: relative;
+        font-family: 'Inter', sans-serif;
+      }
+      
+      .header {
+        padding-top: 60px; /* keep title upper padding consistent */
+        padding-left: 80px;
+        padding-right: 80px;
+        margin-bottom: 25px; /* reduced from 35 to save 10px height */
+      }
+      
+      .page-title {
+        font-size: 40px;
+        font-weight: 700;
+        color: #E0E7FF;
+        margin-bottom: 15px;
+      }
+      
+      .title-accent {
+        width: 120px;
+        height: 4px;
+        background: linear-gradient(90deg, #3B82F6 0%, #8B5CF6 100%);
+      }
+      
+      .content-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        padding-left: 80px;
+        padding-right: 80px;
+        padding-top: 10px;
+      }
+      
+      .column-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 15px; /* reduced from 25 */
+        padding-bottom: 8px; /* reduced from 12 */
+        border-bottom: 2px solid rgba(59, 130, 246, 0.3);
+      }
+      
+      .column-icon {
+        width: 36px; /* reduced from 40 */
+        height: 36px; /* reduced from 40 */
+        min-width: 36px;
+        background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .column-icon i {
+        color: #E0E7FF;
+        font-size: 20px; /* font-size unchanged */
+      }
+      
+      .column-title {
+        font-size: 26px;
+        font-weight: 700;
+        color: #E0E7FF;
+      }
+      
+      .section-block {
+        margin-bottom: 12px; /* reduced from 25 */
+      }
+      
+      .section-header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px; /* reduced from 12 */
+      }
+      
+      .section-icon {
+        width: 24px; /* reduced from 28 */
+        height: 24px; /* reduced from 28 */
+        min-width: 24px;
+        background: rgba(59, 130, 246, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .section-icon i {
+        color: #3B82F6;
+        font-size: 14px; /* font-size unchanged */
+      }
+      
+      .section-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #8B5CF6;
+      }
+      
+      .feature-list {
+        list-style: none;
+        padding-left: 38px;
+      }
+      
+      .feature-list li {
+        font-size: 15px; /* font-size unchanged */
+        color: #94A3B8;
+        line-height: 1.5; /* reduced from 1.6 to save height without changing font-size */
+        margin-bottom: 5px; /* reduced from 8 */
+        padding-left: 18px;
+        position: relative;
+      }
+      
+      .feature-list li:before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: #3B82F6;
+        font-weight: bold;
+        font-size: 18px;
+      }
+      
+      .highlight-badge {
+        display: inline-block;
+        background: rgba(139, 92, 246, 0.2);
+        color: #8B5CF6;
+        padding-top: 2px; /* reduced from 4 */
+        padding-bottom: 2px; /* reduced from 4 */
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 13px; /* unchanged */
+        font-weight: 600;
+        margin-left: 5px;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <div class="page-title">Security & Performance</div>
+            <div class="title-accent"></div>
+        </div>
+        
+        <div class="content-grid">
+            <!-- Security Column -->
+            <div class="security-column">
+                <div class="column-header">
+                    <div class="column-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="column-title">Security</div>
+                </div>
+                
+                <div class="section-block">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-key"></i>
+                        </div>
+                        <div class="section-title">Authentication & Authorization</div>
+                    </div>
+                    <ul class="feature-list">
+                        <li>JWT-based session management <span class="highlight-badge">1-hour expiry</span></li>
+                        <li>OAuth 2.0 with Manus integration</li>
+                        <li>HTTP-only secure cookies with SameSite protection</li>
+                        <li>Role-based access control (RBAC) at API level</li>
+                    </ul>
+                </div>
+                
+                <div class="section-block">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div class="section-title">Data Protection</div>
+                    </div>
+                    <ul class="feature-list">
+                        <li>Encryption at rest (S3) and in transit (TLS/HTTPS)</li>
+                        <li>Secure file storage with presigned URLs</li>
+                        <li>Parameterized queries for SQL injection prevention</li>
+                        <li>XSS and CSRF protection mechanisms</li>
+                    </ul>
+                </div>
+                
+                <div class="section-block">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <div class="section-title">Audit & Compliance</div>
+                    </div>
+                    <ul class="feature-list">
+                        <li>Comprehensive audit logging with timestamps</li>
+                        <li>Security alerts table for threat detection</li>
+                        <li>Automated suspicious pattern analysis</li>
+                        <li>Account lockout after failed login attempts</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Performance Column -->
+            <div class="performance-column">
+                <div class="column-header">
+                    <div class="column-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <div class="column-title">Performance</div>
+                </div>
+                
+                <div class="section-block">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-desktop"></i>
+                        </div>
+                        <div class="section-title">Frontend Optimization</div>
+                    </div>
+                    <ul class="feature-list">
+                        <li>Code splitting and lazy loading with Vite</li>
+                        <li>Optimistic updates for instant UI feedback</li>
+                        <li>Service worker caching for offline support</li>
+                        <li>WebP images and asset compression</li>
+                    </ul>
+                </div>
+                
+                <div class="section-block">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <div class="section-title">Backend Optimization</div>
+                    </div>
+                    <ul class="feature-list">
+                        <li>Connection pooling for database efficiency</li>
+                        <li>Rate limiting to prevent API abuse</li>
+                        <li>Stateless API design for horizontal scaling</li>
+                        <li>Query result caching with Redis</li>
+                    </ul>
+                </div>
+                
+                <div class="section-block">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="section-title">Database Optimization</div>
+                    </div>
+                    <ul class="feature-list">
+                        <li>Strategic indexing on foreign keys and query columns</li>
+                        <li>Composite indexes for complex queries</li>
+                        <li>Read replicas for read-heavy workloads</li>
+                        <li>Query optimization and execution plan analysis</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scalability note removed to keep slide height within 720px -->
+    </div>
+</body>
+</html>

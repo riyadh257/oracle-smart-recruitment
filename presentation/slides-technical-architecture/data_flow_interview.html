@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: #0a1628;
+        font-family: 'IBM Plex Sans', sans-serif;
+        position: relative;
+        overflow: hidden;
+      }
+      .grid-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: 
+          linear-gradient(rgba(0, 217, 255, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 217, 255, 0.03) 1px, transparent 1px);
+        background-size: 40px 40px;
+        pointer-events: none;
+      }
+      .border-frame {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+        border: 2px solid rgba(0, 217, 255, 0.3);
+        pointer-events: none;
+      }
+      .content-wrapper {
+        position: relative;
+        z-index: 1;
+        padding-top: 45px;
+        padding-left: 50px;
+        padding-right: 50px;
+      }
+      .title {
+        font-size: 40px;
+        font-weight: 700;
+        color: #00d9ff;
+        text-align: center;
+        margin-bottom: 35px;
+      }
+      .flow-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1px; /* reduced gap to keep total height under 720px */
+      }
+      .flow-step {
+        display: grid;
+        grid-template-columns: 80px 1fr;
+        gap: 20px;
+        background: rgba(0, 217, 255, 0.03);
+        border: 1px solid rgba(0, 217, 255, 0.3);
+        border-left: 4px solid;
+        padding-top: 10px; /* reduced from 18px */
+        padding-left: 20px;
+        padding-right: 20px;
+        min-height: 90px; /* allow compact steps while preserving readability */
+        position: relative;
+      }
+      .step-1 { border-left-color: #00d9ff; }
+      .step-2 { border-left-color: #4ecdc4; }
+      .step-3 { border-left-color: #ff6b35; }
+      .step-4 { border-left-color: #ffd93d; }
+      .step-5 { border-left-color: #a78bfa; }
+      .step-icon-area {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px; /* slightly tighter icon stack */
+      }
+      .step-number {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        font-weight: 700;
+        background: rgba(0, 217, 255, 0.1);
+        border: 2px solid;
+      }
+      .step-1 .step-number { 
+        color: #00d9ff; 
+        border-color: #00d9ff;
+      }
+      .step-2 .step-number { 
+        color: #4ecdc4; 
+        border-color: #4ecdc4;
+      }
+      .step-3 .step-number { 
+        color: #ff6b35; 
+        border-color: #ff6b35;
+      }
+      .step-4 .step-number { 
+        color: #ffd93d; 
+        border-color: #ffd93d;
+      }
+      .step-5 .step-number { 
+        color: #a78bfa; 
+        border-color: #a78bfa;
+      }
+      .step-icon {
+        font-size: 20px;
+      }
+      .step-1 .step-icon { color: #00d9ff; }
+      .step-2 .step-icon { color: #4ecdc4; }
+      .step-3 .step-icon { color: #ff6b35; }
+      .step-4 .step-icon { color: #ffd93d; }
+      .step-5 .step-icon { color: #a78bfa; }
+      .step-content {
+        display: flex;
+        flex-direction: column;
+        gap: 6px; /* reduced from 8px */
+      }
+      .step-title {
+        font-size: 20px;
+        font-weight: 700;
+        color: #e0e6ed;
+      }
+      .step-description {
+        font-size: 15px;
+        color: rgba(224, 230, 237, 0.85);
+        line-height: 1.5;
+      }
+      .step-technical {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 0; /* removed extra top margin */
+      }
+      .tech-detail {
+        font-size: 13px;
+        color: #4ecdc4;
+        background: rgba(78, 205, 196, 0.1);
+        border: 1px solid rgba(78, 205, 196, 0.3);
+        padding-top: 2px; /* reduced from 4px */
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="grid-overlay"></div>
+        <div class="border-frame"></div>
+        
+        <div class="content-wrapper">
+            <div class="title">تدفق البيانات: جدولة المقابلات<br>Data Flow: Interview Scheduling</div>
+            
+            <div class="flow-container">
+                <div class="flow-step step-1">
+                    <div class="step-icon-area">
+                        <div class="step-number">1</div>
+                        <div class="step-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                    </div>
+                    <div class="step-content">
+                        <div class="step-title">Recruiter Initiates Scheduling</div>
+                        <div class="step-description">
+                            Recruiter selects candidate from application pipeline and initiates interview scheduling process through the dashboard interface.
+                        </div>
+                        <div class="step-technical">
+                            <div class="tech-detail">Frontend: React + tRPC</div>
+                            <div class="tech-detail">Endpoint: interviews.initiate</div>
+                            <div class="tech-detail">Input: applicationId, candidateId</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flow-step step-2">
+                    <div class="step-icon-area">
+                        <div class="step-number">2</div>
+                        <div class="step-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                    </div>
+                    <div class="step-content">
+                        <div class="step-title">Smart Scheduling Queries Calendars</div>
+                        <div class="step-description">
+                            System queries Google Calendar and Outlook APIs to fetch real-time availability for all assigned interviewers and candidate preferences.
+                        </div>
+                        <div class="step-technical">
+                            <div class="tech-detail">OAuth 2.0 Authentication</div>
+                            <div class="tech-detail">Calendar API: Google + Outlook</div>
+                            <div class="tech-detail">15-minute sync intervals</div>
+                            <div class="tech-detail">Conflict detection enabled</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flow-step step-3">
+                    <div class="step-icon-area">
+                        <div class="step-number">3</div>
+                        <div class="step-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                    </div>
+                    <div class="step-content">
+                        <div class="step-title">AI Generates Time Slots with Confidence Scores</div>
+                        <div class="step-description">
+                            Machine learning algorithm analyzes historical patterns, timezone preferences, and availability windows to generate optimal time slot suggestions ranked by confidence score (0-100).
+                        </div>
+                        <div class="step-technical">
+                            <div class="tech-detail">ML Pattern Recognition</div>
+                            <div class="tech-detail">Confidence Scoring: 0-100</div>
+                            <div class="tech-detail">Timezone Optimization</div>
+                            <div class="tech-detail">Historical Data Analysis</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flow-step step-4">
+                    <div class="step-icon-area">
+                        <div class="step-number">4</div>
+                        <div class="step-icon">
+                            <i class="fas fa-paper-plane"></i>
+                        </div>
+                    </div>
+                    <div class="step-content">
+                        <div class="step-title">Confirmation Creates Events &amp; Sends Invitations</div>
+                        <div class="step-description">
+                            Upon confirmation, system creates calendar events with video meeting links, updates database records, and sends automated email invitations to all participants with calendar attachments.
+                        </div>
+                        <div class="step-technical">
+                            <div class="tech-detail">Calendar Event Creation</div>
+                            <div class="tech-detail">Meeting Link Generation</div>
+                            <div class="tech-detail">Email Service: Manus + SMTP</div>
+                            <div class="tech-detail">ICS Calendar Attachments</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flow-step step-5">
+                    <div class="step-icon-area">
+                        <div class="step-number">5</div>
+                        <div class="step-icon">
+                            <i class="fas fa-bell"></i>
+                        </div>
+                    </div>
+                    <div class="step-content">
+                        <div class="step-title">Automated Reminders Scheduled</div>
+                        <div class="step-description">
+                            System schedules multi-channel reminders (email, SMS, push notifications) at strategic intervals: 24 hours before, 1 hour before, and 15 minutes before interview time to minimize no-shows.
+                        </div>
+                        <div class="step-technical">
+                            <div class="tech-detail">Multi-channel: Email + SMS + Push</div>
+                            <div class="tech-detail">Reminder Schedule: -24h, -1h, -15m</div>
+                            <div class="tech-detail">FCM for Mobile Notifications</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

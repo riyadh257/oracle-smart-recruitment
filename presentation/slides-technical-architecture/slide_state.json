@@ -1,0 +1,108 @@
+{
+  "project_info": {
+    "title": "Oracle Smart Recruitment System",
+    "created": 1764987612.5894122,
+    "last_updated": 1764988036.7160497,
+    "total_slides": 12
+  },
+  "slides": {
+    "title": "edited",
+    "system_overview": "edited",
+    "technology_stack": "edited",
+    "architecture_layers": "edited",
+    "data_model": "edited",
+    "ai_matching_engine": "edited",
+    "trpc_api_architecture": "edited",
+    "ksa_compliance": "edited",
+    "b2b_saas_features": "edited",
+    "billing_automation": "edited",
+    "integrations": "edited",
+    "closing": "edited"
+  },
+  "outline": [
+    {
+      "id": "title",
+      "title": "Oracle Smart Recruitment System",
+      "summary": "Title slide introducing the technical architecture presentation with system name and subtitle",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "system_overview",
+      "title": "System Overview",
+      "summary": "High-level overview of the Oracle Smart Recruitment System, its purpose as an AI-powered B2B SaaS platform, and key capabilities including 10,000+ attribute matching, pay-for-performance billing, and ATS integrations",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "technology_stack",
+      "title": "Technology Stack",
+      "summary": "Comprehensive breakdown of the technology stack including React 19, Tailwind CSS 4, Express 4, tRPC 11, Drizzle ORM, MySQL/TiDB, and key libraries for AI, real-time communication, and data processing",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "architecture_layers",
+      "title": "Architecture Layers",
+      "summary": "Three-tier architecture design showing frontend layer (React + Tailwind), backend layer (Express + tRPC), and data layer (MySQL + S3 storage) with communication patterns",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "data_model",
+      "title": "Data Model & Schema",
+      "summary": "Core database entities including users, candidates, employers, jobs, applications, interviews, and their relationships. Highlights JSON fields for flexible attribute storage and AI-inferred data",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "ai_matching_engine",
+      "title": "AI Matching Engine",
+      "summary": "AI-powered matching algorithm that calculates skill match, culture fit, and wellbeing scores using 10,000+ attributes. Integration with OpenAI for profile enrichment and inference",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "trpc_api_architecture",
+      "title": "tRPC API Architecture",
+      "summary": "Type-safe API design using tRPC with end-to-end type safety, superjson serialization, protected and public procedures, and modular router organization",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "ksa_compliance",
+      "title": "KSA Market Differentiation",
+      "summary": "Saudization compliance engine with real-time Nitaqat calculation, MHRSD and Qiwa integration, workforce tracking, and what-if scenario simulation for Saudi market",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "b2b_saas_features",
+      "title": "B2B SaaS Capabilities",
+      "summary": "Enterprise features including pulse surveys, organizational health tracking, skill gap analysis, team performance analytics, and labor market intelligence collection",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "billing_automation",
+      "title": "Pay-for-Performance Billing",
+      "summary": "Automated billing system supporting subscription, performance-based, and hybrid models. Tracks qualified applications and scheduled interviews for performance billing",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "integrations",
+      "title": "External Integrations",
+      "summary": "ATS integrations, email delivery via SendGrid, calendar sync with Google Calendar, S3 storage for files, real-time notifications via Socket.io, and government API integrations",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "closing",
+      "title": "Architecture Summary",
+      "summary": "Closing slide summarizing the robust, scalable, and AI-powered architecture designed for the Saudi recruitment market with enterprise-grade features",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    }
+  ]
+}

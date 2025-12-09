@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: #FFFFFF;
+        font-family: 'Inter', sans-serif;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .content-wrapper {
+        width: 100%;
+        max-width: 1000px;
+        text-align: center;
+        padding-left: 80px;
+        padding-right: 80px;
+      }
+      
+      .top-accent {
+        width: 120px;
+        height: 6px;
+        background: linear-gradient(90deg, #0066CC 0%, #FF6B35 100%);
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 48px;
+      }
+      
+      .main-headline {
+        font-size: 64px;
+        font-weight: 700;
+        color: #1a1a1a;
+        line-height: 1.1;
+        margin-bottom: 24px;
+      }
+      
+      .headline-highlight {
+        color: #0066CC;
+      }
+      
+      .tagline {
+        font-size: 28px;
+        font-weight: 500;
+        color: #666666;
+        line-height: 1.4;
+        margin-bottom: 56px;
+      }
+      
+      .value-props {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+        margin-bottom: 56px;
+      }
+      
+      .value-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+      }
+      
+      .value-icon {
+        width: 72px;
+        height: 72px;
+        background: linear-gradient(135deg, #0066CC 0%, #0052A3 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .value-item:nth-child(2) .value-icon {
+        background: linear-gradient(135deg, #FF6B35 0%, #E55A2B 100%);
+      }
+      
+      .value-item:nth-child(3) .value-icon {
+        background: linear-gradient(135deg, #0066CC 0%, #0052A3 100%);
+      }
+      
+      .value-icon i {
+        color: #FFFFFF;
+        font-size: 32px;
+      }
+      
+      .value-title {
+        font-size: 22px;
+        font-weight: 600;
+        color: #1a1a1a;
+      }
+      
+      .cta-section {
+        margin-bottom: 40px;
+      }
+      
+      .cta-text {
+        font-size: 24px;
+        font-weight: 600;
+        color: #0066CC;
+        line-height: 1.5;
+        margin-bottom: 16px;
+      }
+      
+      .brand-name {
+        font-size: 32px;
+        font-weight: 700;
+        color: #1a1a1a;
+      }
+      
+      .brand-highlight {
+        color: #0066CC;
+      }
+      
+      .geometric-accent-left {
+        position: absolute;
+        bottom: 60px;
+        left: 80px;
+        width: 80px;
+        height: 80px;
+        border: 3px solid #0066CC;
+        transform: rotate(45deg);
+        opacity: 0.3;
+      }
+      
+      .geometric-accent-right {
+        position: absolute;
+        top: 60px;
+        right: 80px;
+        width: 80px;
+        height: 80px;
+        border: 3px solid #FF6B35;
+        transform: rotate(45deg);
+        opacity: 0.3;
+      }
+      
+      .bottom-accent {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 6px;
+        background: linear-gradient(90deg, #0066CC 0%, #FF6B35 100%);
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="geometric-accent-left"></div>
+        <div class="geometric-accent-right"></div>
+        
+        <div class="content-wrapper">
+            <div class="top-accent"></div>
+            
+            <h1 class="main-headline">
+                Transform Your <span class="headline-highlight">Hiring Today</span>
+            </h1>
+            
+            <p class="tagline">
+                Gain a competitive advantage with intelligent hiring technology that delivers results
+            </p>
+            
+            <div class="value-props">
+                <div class="value-item">
+                    <div class="value-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="value-title">Intelligent<br>Automation</h3>
+                </div>
+                
+                <div class="value-item">
+                    <div class="value-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="value-title">Data-Driven<br>Insights</h3>
+                </div>
+                
+                <div class="value-item">
+                    <div class="value-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3 class="value-title">Exceptional<br>Experience</h3>
+                </div>
+            </div>
+            
+            <div class="cta-section">
+                <p class="cta-text">
+                    Modernize your recruitment process and hire the best talent faster
+                </p>
+                <h2 class="brand-name">
+                    <span class="brand-highlight">Oracle</span> Smart Recruitment System
+                </h2>
+            </div>
+        </div>
+        
+        <div class="bottom-accent"></div>
+    </div>
+</body>
+</html>

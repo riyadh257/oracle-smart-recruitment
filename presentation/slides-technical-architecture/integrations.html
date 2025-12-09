@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: #0a1628;
+        font-family: 'Inter', sans-serif;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .grid-pattern {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.05;
+        background-image: 
+          linear-gradient(#60a5fa 1px, transparent 1px),
+          linear-gradient(90deg, #60a5fa 1px, transparent 1px);
+        background-size: 40px 40px;
+      }
+      
+      .content {
+        position: relative;
+        z-index: 10;
+        padding-top: 60px; /* keep title upper padding consistent */
+        padding-left: 80px;
+        padding-right: 80px;
+      }
+      
+      .title {
+        font-size: 40px;
+        font-weight: 700;
+        color: #60a5fa;
+        margin-bottom: 48px;
+        letter-spacing: -0.5px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+      
+      .title-icon {
+        color: #10b981;
+        font-size: 36px;
+      }
+      
+      .integrations-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px; /* reduced from 28px to save vertical space (total -24px across two gaps) */
+      }
+      
+      .integration-card {
+        background: rgba(59, 130, 246, 0.06);
+        border: 1px solid rgba(59, 130, 246, 0.25);
+        padding-top: 14px; /* reduced from 24px (-10px per card) */
+        padding-left: 24px;
+        padding-right: 24px;
+        min-height: 160px;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .card-header {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 10px; /* reduced from 14px (-4px) */
+      }
+      
+      .card-icon {
+        width: 40px; /* reduced from 48px (-8px) */
+        height: 40px; /* reduced from 48px (-8px) */
+        background: linear-gradient(135deg, #3b82f6, #10b981);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 20px;
+        flex-shrink: 0;
+      }
+      
+      .card-title {
+        font-size: 20px;
+        font-weight: 600;
+        color: #60a5fa;
+        line-height: 1.2;
+      }
+      
+      .card-description {
+        font-size: 15px;
+        color: #94a3b8;
+        line-height: 1.6; /* keep font size; spacing unchanged */
+        flex-grow: 1;
+      }
+      
+      .card-tech {
+        font-size: 13px;
+        color: #10b981;
+        font-weight: 500;
+        margin-top: 8px; /* reduced from 12px (-4px) */
+        padding-top: 6px; /* reduced from 12px (-6px) */
+        border-top: 1px solid rgba(59, 130, 246, 0.15);
+      }
+      
+      .highlight {
+        color: #e2e8f0;
+        font-weight: 600;
+      }
+      
+      .card-ats {
+        border-color: rgba(139, 92, 246, 0.3);
+        background: rgba(139, 92, 246, 0.06);
+      }
+      
+      .card-email {
+        border-color: rgba(59, 130, 246, 0.3);
+        background: rgba(59, 130, 246, 0.06);
+      }
+      
+      .card-calendar {
+        border-color: rgba(16, 185, 129, 0.3);
+        background: rgba(16, 185, 129, 0.06);
+      }
+      
+      .card-storage {
+        border-color: rgba(245, 158, 11, 0.3);
+        background: rgba(245, 158, 11, 0.06);
+      }
+      
+      .card-realtime {
+        border-color: rgba(239, 68, 68, 0.3);
+        background: rgba(239, 68, 68, 0.06);
+      }
+      
+      .card-government {
+        border-color: rgba(16, 185, 129, 0.3);
+        background: rgba(16, 185, 129, 0.06);
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+      <div class="grid-pattern"></div>
+      
+      <div class="content">
+        <div class="title">
+          <i class="fas fa-plug title-icon"></i>
+          External Integrations
+        </div>
+        
+        <div class="integrations-grid">
+          <!-- ATS Integration -->
+          <div class="integration-card card-ats">
+            <div class="card-header">
+              <div class="card-icon">
+                <i class="fas fa-briefcase"></i>
+              </div>
+              <div class="card-title">ATS Systems</div>
+            </div>
+            <div class="card-description">
+              Seamless integration with existing Applicant Tracking Systems for <span class="highlight">bi-directional sync</span> of jobs, candidates, and applications
+            </div>
+            <div class="card-tech">
+              <i class="fas fa-sync"></i> Auto-sync enabled
+            </div>
+          </div>
+          
+          <!-- Email Integration -->
+          <div class="integration-card card-email">
+            <div class="card-header">
+              <div class="card-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="card-title">SendGrid Email</div>
+            </div>
+            <div class="card-description">
+              Transactional emails, campaign management, and template-based notifications with <span class="highlight">delivery tracking</span>
+            </div>
+            <div class="card-tech">
+              <i class="fas fa-chart-line"></i> Analytics & tracking
+            </div>
+          </div>
+          
+          <!-- Calendar Integration -->
+          <div class="integration-card card-calendar">
+            <div class="card-header">
+              <div class="card-icon">
+                <i class="fas fa-calendar-alt"></i>
+              </div>
+              <div class="card-title">Google Calendar</div>
+            </div>
+            <div class="card-description">
+              Automated interview scheduling with <span class="highlight">calendar invites</span> and availability checking
+            </div>
+            <div class="card-tech">
+              <i class="fas fa-clock"></i> Real-time availability
+            </div>
+          </div>
+          
+          <!-- Storage Integration -->
+          <div class="integration-card card-storage">
+            <div class="card-header">
+              <div class="card-icon">
+                <i class="fas fa-cloud"></i>
+              </div>
+              <div class="card-title">AWS S3 Storage</div>
+            </div>
+            <div class="card-description">
+              Secure file storage for resumes, documents, and media with <span class="highlight">presigned URL</span> access
+            </div>
+            <div class="card-tech">
+              <i class="fas fa-lock"></i> Encrypted storage
+            </div>
+          </div>
+          
+          <!-- Real-time Integration -->
+          <div class="integration-card card-realtime">
+            <div class="card-header">
+              <div class="card-icon">
+                <i class="fas fa-bolt"></i>
+              </div>
+              <div class="card-title">Socket.io</div>
+            </div>
+            <div class="card-description">
+              Real-time notifications and live updates for application status changes and <span class="highlight">instant messaging</span>
+            </div>
+            <div class="card-tech">
+              <i class="fas fa-wifi"></i> WebSocket connection
+            </div>
+          </div>
+          
+          <!-- Government APIs -->
+          <div class="integration-card card-government">
+            <div class="card-header">
+              <div class="card-icon">
+                <i class="fas fa-landmark"></i>
+              </div>
+              <div class="card-title">Government APIs</div>
+            </div>
+            <div class="card-description">
+              MHRSD and Qiwa integration for <span class="highlight">compliance reporting</span> and work permit management
+            </div>
+            <div class="card-tech">
+              <i class="fas fa-flag-checkered"></i> KSA compliance
+            </div>
+          </div>
+          
+          <!-- Payment Integration -->
+          <div class="integration-card">
+            <div class="card-header">
+              <div class="card-icon">
+                <i class="fas fa-credit-card"></i>
+              </div>
+              <div class="card-title">Payment Gateway</div>
+            </div>
+            <div class="card-description">
+              Automated billing and invoice generation for <span class="highlight">subscription and performance-based</span> pricing models
+            </div>
+            <div class="card-tech">
+              <i class="fas fa-dollar-sign"></i> Multi-currency support
+            </div>
+          </div>
+          
+          <!-- AI Integration -->
+          <div class="integration-card">
+            <div class="card-header">
+              <div class="card-icon">
+                <i class="fas fa-brain"></i>
+              </div>
+              <div class="card-title">OpenAI API</div>
+            </div>
+            <div class="card-description">
+              AI-powered resume parsing, job enrichment, and <span class="highlight">career coaching</span> capabilities
+            </div>
+            <div class="card-tech">
+              <i class="fas fa-robot"></i> GPT-4 powered
+            </div>
+          </div>
+          
+          <!-- Analytics Integration -->
+          <div class="integration-card">
+            <div class="card-header">
+              <div class="card-icon">
+                <i class="fas fa-chart-bar"></i>
+              </div>
+              <div class="card-title">Analytics Platform</div>
+            </div>
+            <div class="card-description">
+              Comprehensive tracking and reporting with <span class="highlight">custom dashboards</span> and data export capabilities
+            </div>
+            <div class="card-tech">
+              <i class="fas fa-file-export"></i> CSV & PDF export
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>

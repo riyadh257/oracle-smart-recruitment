@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS testData (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  executionId INT NOT NULL,\n  dataType ENUM('candidate', 'job', 'application', 'interview', 'email', 'campaign_execution') NOT NULL,\n  recordId INT NOT NULL,\n  recordData JSON,\n  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,\n  FOREIGN KEY (executionId) REFERENCES testExecutions(id) ON DELETE CASCADE,\n  INDEX executionId_idx (executionId),\n  INDEX dataType_idx (dataType)\n)",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS testData (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  executionId INT NOT NULL,\n  dataType ENUM('candidate', 'job', 'application', 'interview', 'email', 'campaign_execution') NOT NULL,\n  recordId INT NOT NULL,\n  recordData JSON,\n  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,\n  FOREIGN KEY (executionId) REFERENCES testExecutions(id) ON DELETE CASCADE,\n  INDEX executionId_idx (executionId),\n  INDEX dataType_idx (dataType)\n)",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1712
+}

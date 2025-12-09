@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: linear-gradient(135deg, #0A1628 0%, #1A2332 100%);
+        font-family: 'Inter', sans-serif;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .grid-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.05;
+        background-image: 
+          linear-gradient(#00D9FF 1px, transparent 1px),
+          linear-gradient(90deg, #00D9FF 1px, transparent 1px);
+        background-size: 40px 40px;
+      }
+      
+      .content-wrapper {
+        position: relative;
+        z-index: 2;
+        padding-top: 60px;
+        padding-left: 80px;
+        padding-right: 80px;
+        min-height: 720px;
+      }
+      
+      .header {
+        margin-bottom: 30px;
+      }
+      
+      .page-title {
+        font-size: 40px;
+        font-weight: 700;
+        color: #00D9FF;
+        margin-bottom: 8px;
+      }
+      
+      .page-subtitle {
+        font-size: 20px;
+        color: #E8EDF2;
+        font-weight: 400;
+      }
+      
+      .main-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+      }
+      
+      .section-block {
+        margin-bottom: 24px;
+      }
+      
+      .section-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 14px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid rgba(0, 217, 255, 0.2);
+      }
+      
+      .section-icon {
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        color: #00D9FF;
+        background: rgba(0, 217, 255, 0.1);
+      }
+      
+      .section-title {
+        font-size: 20px;
+        font-weight: 700;
+        color: #E8EDF2;
+      }
+      
+      .feature-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .feature-item {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+      }
+      
+      .feature-bullet {
+        width: 4px;
+        height: 4px;
+        background: #00CCA3;
+        border-radius: 50%;
+        margin-top: 8px;
+        flex-shrink: 0;
+      }
+      
+      .feature-text {
+        font-size: 16px;
+        color: #E8EDF2;
+        line-height: 1.5;
+        font-weight: 400;
+      }
+      
+      .highlight-box {
+        background: rgba(0, 102, 255, 0.05);
+        border-left: 3px solid #0066FF;
+        padding-top: 12px;
+        padding-left: 16px;
+        padding-right: 16px;
+        min-height: 60px;
+        margin-bottom: 10px;
+      }
+      
+      .highlight-title {
+        font-size: 16px;
+        font-weight: 600;
+        color: #00D9FF;
+        margin-bottom: 6px;
+      }
+      
+      .highlight-desc {
+        font-size: 14px;
+        color: #E8EDF2;
+        opacity: 0.85;
+        line-height: 1.4;
+      }
+      
+      .accent-shape {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        border: 2px solid rgba(0, 204, 163, 0.2);
+        bottom: 80px;
+        right: 80px;
+        transform: rotate(45deg);
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="grid-background"></div>
+        <div class="accent-shape"></div>
+        
+        <div class="content-wrapper">
+            <div class="header">
+                <h1 class="page-title">Deployment & DevOps</h1>
+                <p class="page-subtitle">Automated deployment pipeline with built-in hosting, custom domains, and zero-downtime updates</p>
+            </div>
+            
+            <div class="main-content">
+                <div class="left-column">
+                    <div class="section-block">
+                        <div class="section-header">
+                            <div class="section-icon">
+                                <i class="fas fa-cloud"></i>
+                            </div>
+                            <h2 class="section-title">Manus Hosting Platform</h2>
+                        </div>
+                        <div class="feature-list">
+                            <div class="feature-item">
+                                <div class="feature-bullet"></div>
+                                <p class="feature-text">Fully managed hosting with automatic scaling</p>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-bullet"></div>
+                                <p class="feature-text">Custom domains with SSL certificate automation</p>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-bullet"></div>
+                                <p class="feature-text">Secure secret management through UI</p>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-bullet"></div>
+                                <p class="feature-text">Built-in MySQL with connection pooling</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section-block">
+                        <div class="section-header">
+                            <div class="section-icon">
+                                <i class="fas fa-code-branch"></i>
+                            </div>
+                            <h2 class="section-title">Development Workflow</h2>
+                        </div>
+                        <div class="highlight-box">
+                            <div class="highlight-title">Version Control</div>
+                            <div class="highlight-desc">Git-based checkpoints with rollback capability</div>
+                        </div>
+                        <div class="highlight-box">
+                            <div class="highlight-title">Live Preview</div>
+                            <div class="highlight-desc">Real-time preview of changes before deployment</div>
+                        </div>
+                        <div class="highlight-box">
+                            <div class="highlight-title">Visual Editor</div>
+                            <div class="highlight-desc">Direct UI modifications with automatic checkpoints</div>
+                        </div>
+                        <div class="highlight-box">
+                            <div class="highlight-title">Publish Button</div>
+                            <div class="highlight-desc">One-click deployment from latest checkpoint</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="right-column">
+                    <div class="section-block">
+                        <div class="section-header">
+                            <div class="section-icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <h2 class="section-title">Continuous Integration</h2>
+                        </div>
+                        <div class="feature-list">
+                            <div class="feature-item">
+                                <div class="feature-bullet"></div>
+                                <p class="feature-text">Automated TypeScript compilation and type checking</p>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-bullet"></div>
+                                <p class="feature-text">Vitest unit test execution with coverage reporting</p>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-bullet"></div>
+                                <p class="feature-text">ESLint and Prettier enforce code quality standards</p>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-bullet"></div>
+                                <p class="feature-text">Production builds with minification and tree-shaking</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section-block">
+                        <div class="section-header">
+                            <div class="section-icon">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <h2 class="section-title">Monitoring & Maintenance</h2>
+                        </div>
+                        <div class="highlight-box">
+                            <div class="highlight-title">Uptime Monitoring</div>
+                            <div class="highlight-desc">Automatic health checks and alerting</div>
+                        </div>
+                        <div class="highlight-box">
+                            <div class="highlight-title">Analytics Dashboard</div>
+                            <div class="highlight-desc">UV/PV tracking and user engagement metrics</div>
+                        </div>
+                        <div class="highlight-box">
+                            <div class="highlight-title">Error Logging</div>
+                            <div class="highlight-desc">Centralized error tracking and debugging</div>
+                        </div>
+                        <div class="highlight-box">
+                            <div class="highlight-title">Performance Monitoring</div>
+                            <div class="highlight-desc">Response time and resource utilization tracking</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

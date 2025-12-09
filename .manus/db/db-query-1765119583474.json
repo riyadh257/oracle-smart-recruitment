@@ -1,0 +1,349 @@
+{
+  "query": "SHOW TABLES;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute SHOW TABLES;",
+  "rows": [
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "__drizzle_migrations"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "abTestResults"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "alertHistory"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "apiCredentials"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "apiLogs"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "applications"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "atsIntegrations"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "automation_logs"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "automation_triggers"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "betaFeedback"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "betaOnboardingProgress"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "betaSignups"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "billingRecords"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "broadcastMessages"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "broadcastRecipients"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "bulkSchedulingOperations"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "calendarConnections"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "calendarEvents"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "campaignExecutions"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "campaignPerformanceSnapshots"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "campaignTriggers"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "candidateAttributes"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "candidateAvailability"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "candidateEngagementScores"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "candidateLists"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "candidateValueScores"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "candidates"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "coachingSessions"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "communicationEvents"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "communicationSummaries"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "companyInsights"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "competitiveMetrics"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "complianceAlerts"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "complianceReports"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "customTemplates"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "datasets"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "emailAbTests"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "emailAbVariants"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "emailAnalytics"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "emailBranding"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "emailCampaignVariants"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "emailCampaigns"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "emailEvents"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "emailTemplateCategories"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "emailTemplateLibrary"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "emailTemplateVersions"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "emailTemplates"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "employeeSkills"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "employeeSurveys"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "employerMatchingPreferences"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "employers"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "engagementAlerts"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "engagementScoreHistory"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "engagementThresholds"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "engagement_alert_configs"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "engagement_alerts"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "externalJobs"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "feedbackTemplates"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "governmentSyncLog"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "interviewCalendarInvites"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "interviewConflicts"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "interviewFeedback"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "interviews"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "jobAttributes"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "jobDescriptionAnalysis"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "jobs"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "ksaCoachingSessions"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "ksaMarketData"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "laborLawCompliance"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "listMembers"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "mhrsdRegulations"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "mhrsdReports"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "mhrsdSyncStatus"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "modelInferences"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "mudadContracts"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "nitaqatTracking"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "nlpTrainingData"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "notificationAnalytics"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "notificationHistory"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "notificationPreferences"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "optimalSendTimes"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "performanceAlerts"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "predictiveInsights"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "pushSubscriptions"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "qiwaCompanies"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "qiwaWorkPermits"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "resumeParseResults"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "retentionMetrics"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "savedJobs"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "schedulingConflictResolutions"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "shifts"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "skillGapAnalysis"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "smsProviderConfigs"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "sms_campaign_recipients"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "sms_campaigns"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "strategicRoi"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "syncJobs"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "systemConfig"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "talentPool"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "teamMetrics"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "testCampaigns"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "testData"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "testExecutions"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "testResults"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "testScenarios"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "testTriggers"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "trainingJobs"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "userNotificationPreferences"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "users"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "videoInterviews"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "workPermits"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "workforceHistory"
+    },
+    {
+      "Tables_in_hjcHA4SjAwhM6aP28vcAkH": "workforcePlanningScenarios"
+    }
+  ],
+  "messages": [],
+  "stdout": "Tables_in_hjcHA4SjAwhM6aP28vcAkH\n__drizzle_migrations\nabTestResults\nalertHistory\napiCredentials\napiLogs\napplications\natsIntegrations\nautomation_logs\nautomation_triggers\nbetaFeedback\nbetaOnboardingProgress\nbetaSignups\nbillingRecords\nbroadcastMessages\nbroadcastRecipients\nbulkSchedulingOperations\ncalendarConnections\ncalendarEvents\ncampaignExecutions\ncampaignPerformanceSnapshots\ncampaignTriggers\ncandidateAttributes\ncandidateAvailability\ncandidateEngagementScores\ncandidateLists\ncandidateValueScores\ncandidates\ncoachingSessions\ncommunicationEvents\ncommunicationSummaries\ncompanyInsights\ncompetitiveMetrics\ncomplianceAlerts\ncomplianceReports\ncustomTemplates\ndatasets\nemailAbTests\nemailAbVariants\nemailAnalytics\nemailBranding\nemailCampaignVariants\nemailCampaigns\nemailEvents\nemailTemplateCategories\nemailTemplateLibrary\nemailTemplateVersions\nemailTemplates\nemployeeSkills\nemployeeSurveys\nemployerMatchingPreferences\nemployers\nengagementAlerts\nengagementScoreHistory\nengagementThresholds\nengagement_alert_configs\nengagement_alerts\nexternalJobs\nfeedbackTemplates\ngovernmentSyncLog\ninterviewCalendarInvites\ninterviewConflicts\ninterviewFeedback\ninterviews\njobAttributes\njobDescriptionAnalysis\njobs\nksaCoachingSessions\nksaMarketData\nlaborLawCompliance\nlistMembers\nmhrsdRegulations\nmhrsdReports\nmhrsdSyncStatus\nmodelInferences\nmudadContracts\nnitaqatTracking\nnlpTrainingData\nnotificationAnalytics\nnotificationHistory\nnotificationPreferences\noptimalSendTimes\nperformanceAlerts\npredictiveInsights\npushSubscriptions\nqiwaCompanies\nqiwaWorkPermits\nresumeParseResults\nretentionMetrics\nsavedJobs\nschedulingConflictResolutions\nshifts\nskillGapAnalysis\nsmsProviderConfigs\nsms_campaign_recipients\nsms_campaigns\nstrategicRoi\nsyncJobs\nsystemConfig\ntalentPool\nteamMetrics\ntestCampaigns\ntestData\ntestExecutions\ntestResults\ntestScenarios\ntestTriggers\ntrainingJobs\nuserNotificationPreferences\nusers\nvideoInterviews\nworkPermits\nworkforceHistory\nworkforcePlanningScenarios\n",
+  "stderr": "",
+  "execution_time_ms": 1610
+}

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #0A0E27 0%, #1a1f3a 100%);
+            font-family: 'Inter', sans-serif;
+            position: relative;
+        }
+        
+        .header {
+            padding-top: 60px;
+            padding-left: 80px;
+            padding-right: 80px;
+            margin-bottom: 0;
+        }
+        
+        .page-title {
+            font-size: 40px;
+            font-weight: 700;
+            color: #00D4FF;
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+        
+        .page-subtitle {
+            font-size: 20px;
+            font-weight: 400;
+            color: #E8EAED;
+            opacity: 0.7;
+            margin-top: 0;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            padding-left: 80px;
+            padding-right: 80px;
+            padding-top: 60px;
+            margin-bottom: 0;
+        }
+        
+        .stat-card {
+            text-align: center;
+        }
+        
+        .stat-icon {
+            font-size: 48px;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        
+        .icon-purple {
+            color: #7B61FF;
+        }
+        
+        .icon-cyan {
+            color: #00D4FF;
+        }
+        
+        .icon-green {
+            color: #00FFA3;
+        }
+        
+        .stat-number {
+            font-size: 56px;
+            font-weight: 800;
+            color: #00D4FF;
+            margin-top: 0;
+            margin-bottom: 12px;
+            line-height: 1;
+        }
+        
+        .stat-label {
+            font-size: 18px;
+            font-weight: 500;
+            color: #E8EAED;
+            margin-top: 0;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+        
+        .stat-detail {
+            font-size: 14px;
+            font-weight: 400;
+            color: #E8EAED;
+            opacity: 0.6;
+            margin-top: 0;
+        }
+        
+        .growth-section {
+            padding-left: 80px;
+            padding-right: 80px;
+            padding-top: 50px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+        
+        .growth-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .growth-icon {
+            font-size: 40px;
+            color: #00FFA3;
+            min-width: 60px;
+        }
+        
+        .growth-text {
+            flex: 1;
+        }
+        
+        .growth-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: #00FFA3;
+            margin-top: 0;
+            margin-bottom: 6px;
+            line-height: 1;
+        }
+        
+        .growth-description {
+            font-size: 16px;
+            font-weight: 400;
+            color: #E8EAED;
+            margin-top: 0;
+            opacity: 0.8;
+        }
+        
+        .accent-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, #7B61FF 0%, #00D4FF 50%, #00FFA3 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h2 class="page-title">The AI Recruitment Revolution</h2>
+            <p class="page-subtitle">Market growth and organizational adoption driving transformation</p>
+        </div>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon icon-purple">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="stat-number">$1.12B</div>
+                <div class="stat-label">AI Recruitment Market by 2030</div>
+                <div class="stat-detail">From $661M in 2023 • 6.78% CAGR</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon icon-cyan">
+                    <i class="fas fa-building"></i>
+                </div>
+                <div class="stat-number">67%</div>
+                <div class="stat-label">Organizations Using AI</div>
+                <div class="stat-detail">In recruitment processes today</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon icon-green">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <div class="stat-number">75%</div>
+                <div class="stat-label">HR Professionals</div>
+                <div class="stat-detail">Report AI as top investment priority</div>
+            </div>
+        </div>
+        
+        <div class="growth-section">
+            <div class="growth-item">
+                <div class="growth-icon">
+                    <i class="fas fa-arrow-trend-up"></i>
+                </div>
+                <div class="growth-text">
+                    <div class="growth-value">43% → 26%</div>
+                    <div class="growth-description">Organizations using AI for HR tasks (2024 to 2025 growth)</div>
+                </div>
+            </div>
+            
+            <div class="growth-item">
+                <div class="growth-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="growth-text">
+                    <div class="growth-value">51%</div>
+                    <div class="growth-description">TA professionals believe AI improves quality of hire</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="accent-bar"></div>
+    </div>
+</body>
+</html>

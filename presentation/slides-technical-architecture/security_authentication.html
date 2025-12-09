@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #0A1628 0%, #0D1F38 100%);
+            position: relative;
+            font-family: 'Cairo', sans-serif;
+            color: #E8F1F5;
+        }
+        
+        /* Grid background */
+        .grid-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.05;
+            background-image: 
+                linear-gradient(rgba(0, 217, 255, 0.3) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 217, 255, 0.3) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        
+        /* Accent line */
+        .accent-line {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #00D9FF 0%, #7C3AED 100%);
+        }
+        
+        /* Content wrapper */
+        .content {
+            position: relative;
+            z-index: 10;
+            min-height: 720px;
+        }
+        
+        /* Header */
+        .header {
+            padding-top: 50px;
+            padding-right: 80px;
+            padding-left: 80px;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .header-icon {
+            font-size: 42px;
+            color: #00D9FF;
+        }
+        
+        .title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #00D9FF;
+        }
+        
+        /* Main grid */
+        .security-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding-right: 80px;
+            padding-left: 80px;
+        }
+        
+        /* Section */
+        .security-section {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .section-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 217, 255, 0.15);
+            border: 2px solid rgba(0, 217, 255, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #00D9FF;
+        }
+        
+        .section-title {
+            font-size: 26px;
+            font-weight: 700;
+            color: #E8F1F5;
+        }
+        
+        .section-subtitle {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 12px;
+            color: #00D9FF;
+            opacity: 0.7;
+            letter-spacing: 1px;
+            margin-top: 3px;
+        }
+        
+        /* Features list */
+        .features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .feature-item {
+            background: rgba(0, 217, 255, 0.04);
+            border: 1px solid rgba(0, 217, 255, 0.15);
+            border-right: 3px solid;
+            min-height: 85px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding-right: 25px;
+            padding-left: 25px;
+        }
+        
+        .feature-item:nth-child(1) { border-right-color: #00D9FF; }
+        .feature-item:nth-child(2) { border-right-color: #10B981; }
+        .feature-item:nth-child(3) { border-right-color: #7C3AED; }
+        .feature-item:nth-child(4) { border-right-color: #F59E0B; }
+        
+        .feature-icon {
+            width: 45px;
+            height: 45px;
+            background: rgba(0, 217, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            flex-shrink: 0;
+        }
+        
+        .feature-item:nth-child(1) .feature-icon { color: #00D9FF; }
+        .feature-item:nth-child(2) .feature-icon { color: #10B981; }
+        .feature-item:nth-child(3) .feature-icon { color: #7C3AED; }
+        .feature-item:nth-child(4) .feature-icon { color: #F59E0B; }
+        
+        .feature-content {
+            flex: 1;
+        }
+        
+        .feature-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #E8F1F5;
+            margin-bottom: 5px;
+        }
+        
+        .feature-tech {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 13px;
+            color: #00D9FF;
+            opacity: 0.8;
+        }
+        
+        .feature-description {
+            font-size: 14px;
+            color: #E8F1F5;
+            opacity: 0.75;
+            line-height: 1.4;
+            margin-top: 5px;
+        }
+        
+        /* Defense badge */
+        .defense-badge {
+            background: rgba(124, 58, 237, 0.15);
+            border: 2px solid rgba(124, 58, 237, 0.4);
+            padding-top: 15px;
+            padding-right: 20px;
+            padding-left: 20px;
+            margin-top: 25px;
+            text-align: center;
+        }
+        
+        .defense-badge-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #7C3AED;
+            margin-bottom: 8px;
+        }
+        
+        .defense-badge-text {
+            font-size: 14px;
+            color: #E8F1F5;
+            opacity: 0.85;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <!-- Grid background -->
+        <div class="grid-background"></div>
+        
+        <!-- Accent line -->
+        <div class="accent-line"></div>
+        
+        <!-- Content -->
+        <div class="content">
+            <!-- Header -->
+            <div class="header">
+                <div class="header-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h1 class="title">الأمان والمصادقة</h1>
+            </div>
+            
+            <!-- Security grid -->
+            <div class="security-grid">
+                <!-- Authentication Section -->
+                <div class="security-section">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-key"></i>
+                        </div>
+                        <div>
+                            <div class="section-title">المصادقة</div>
+                            <div class="section-subtitle">AUTHENTICATION</div>
+                        </div>
+                    </div>
+                    
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-user-shield"></i>
+                            </div>
+                            <div class="feature-content">
+                                <div class="feature-title">مصادقة OAuth 2.0</div>
+                                <div class="feature-tech">OAuth 2.0 Integration</div>
+                                <div class="feature-description">تكامل آمن مع خوادم المصادقة الخارجية</div>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-ticket-alt"></i>
+                            </div>
+                            <div class="feature-content">
+                                <div class="feature-title">جلسات JWT</div>
+                                <div class="feature-tech">JWT Sessions</div>
+                                <div class="feature-description">رموز مشفرة قائمة على التوقيع الرقمي</div>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-users-cog"></i>
+                            </div>
+                            <div class="feature-content">
+                                <div class="feature-title">التحكم القائم على الأدوار</div>
+                                <div class="feature-tech">RBAC (Role-Based Access Control)</div>
+                                <div class="feature-description">صلاحيات Admin/User مع عزل الوصول</div>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-cookie"></i>
+                            </div>
+                            <div class="feature-content">
+                                <div class="feature-title">ملفات تعريف آمنة</div>
+                                <div class="feature-tech">HTTP-Only Cookies</div>
+                                <div class="feature-description">حماية من هجمات XSS عبر JavaScript</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Security Layers Section -->
+                <div class="security-section">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div>
+                            <div class="section-title">طبقات الأمان</div>
+                            <div class="section-subtitle">SECURITY LAYERS</div>
+                        </div>
+                    </div>
+                    
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div class="feature-content">
+                                <div class="feature-title">تشفير HTTPS</div>
+                                <div class="feature-tech">HTTPS Encryption</div>
+                                <div class="feature-description">نقل آمن للبيانات بين العميل والخادم</div>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-filter"></i>
+                            </div>
+                            <div class="feature-content">
+                                <div class="feature-title">التحقق من المدخلات</div>
+                                <div class="feature-tech">Input Validation</div>
+                                <div class="feature-description">منع حقن SQL وهجمات XSS</div>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-tachometer-alt"></i>
+                            </div>
+                            <div class="feature-content">
+                                <div class="feature-title">الحماية من DDoS</div>
+                                <div class="feature-tech">Rate Limiting</div>
+                                <div class="feature-description">تحديد معدل الطلبات لمنع الهجمات</div>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-layer-group"></i>
+                            </div>
+                            <div class="feature-content">
+                                <div class="feature-title">الدفاع متعدد الطبقات</div>
+                                <div class="feature-tech">Defense in Depth</div>
+                                <div class="feature-description">طبقات أمان متعددة للحماية الشاملة</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="defense-badge">
+                        <div class="defense-badge-title">
+                            <i class="fas fa-check-circle"></i> مبدأ الامتياز الأدنى
+                        </div>
+                        <div class="defense-badge-text">
+                            منح الحد الأدنى من الصلاحيات اللازمة + تشفير البيانات أثناء النقل والتخزين + سجلات التدقيق الكاملة
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

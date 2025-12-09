@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: linear-gradient(135deg, #0A1628 0%, #1A2332 100%);
+        font-family: 'Inter', sans-serif;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .grid-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.05;
+        background-image: 
+          linear-gradient(#00D9FF 1px, transparent 1px),
+          linear-gradient(90deg, #00D9FF 1px, transparent 1px);
+        background-size: 40px 40px;
+      }
+      
+      .content-wrapper {
+        position: relative;
+        z-index: 2;
+        padding-top: 60px;
+        padding-left: 80px;
+        padding-right: 80px;
+        min-height: 720px;
+      }
+      
+      .header {
+        margin-bottom: 30px;
+      }
+      
+      .page-title {
+        font-size: 40px;
+        font-weight: 700;
+        color: #00D9FF;
+        margin-bottom: 8px;
+      }
+      
+      .page-subtitle {
+        font-size: 20px;
+        color: #E8EDF2;
+        font-weight: 400;
+      }
+      
+      .main-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        margin-bottom: 24px;
+      }
+      
+      .section-title {
+        font-size: 20px;
+        font-weight: 600;
+        color: #00CCA3;
+        margin-bottom: 16px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      
+      .implementation-list {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+      
+      .impl-item {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+      }
+      
+      .impl-icon {
+        width: 28px;
+        height: 28px;
+        background: rgba(0, 217, 255, 0.1);
+        border: 2px solid #0066FF;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+      
+      .impl-icon i {
+        font-size: 12px;
+        color: #00D9FF;
+      }
+      
+      .impl-text {
+        flex: 1;
+      }
+      
+      .impl-title {
+        font-size: 16px;
+        font-weight: 600;
+        color: #E8EDF2;
+        margin-bottom: 4px;
+      }
+      
+      .impl-desc {
+        font-size: 14px;
+        color: #E8EDF2;
+        opacity: 0.8;
+        line-height: 1.5;
+      }
+      
+      .events-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      
+      .event-item {
+        background: rgba(0, 102, 255, 0.05);
+        border-left: 3px solid #0066FF;
+        padding-top: 12px;
+        padding-left: 16px;
+        padding-right: 16px;
+        min-height: 60px;
+      }
+      
+      .event-number {
+        font-size: 12px;
+        color: #00CCA3;
+        font-weight: 600;
+        margin-bottom: 4px;
+      }
+      
+      .event-title {
+        font-size: 16px;
+        font-weight: 600;
+        color: #E8EDF2;
+        margin-bottom: 4px;
+      }
+      
+      .event-desc {
+        font-size: 14px;
+        color: #E8EDF2;
+        opacity: 0.8;
+      }
+      
+      .performance-section {
+        background: rgba(0, 204, 163, 0.05);
+        border-top: 2px solid rgba(0, 204, 163, 0.3);
+        padding-top: 18px;
+        padding-left: 30px;
+        padding-right: 30px;
+        min-height: 100px;
+      }
+      
+      .perf-title {
+        font-size: 16px;
+        color: #00CCA3;
+        font-weight: 600;
+        margin-bottom: 14px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      
+      .perf-items {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+      }
+      
+      .perf-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      
+      .perf-icon {
+        width: 32px;
+        height: 32px;
+        background: rgba(0, 204, 163, 0.15);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      
+      .perf-icon i {
+        font-size: 14px;
+        color: #00CCA3;
+      }
+      
+      .perf-text {
+        font-size: 14px;
+        color: #E8EDF2;
+        font-weight: 500;
+        line-height: 1.3;
+      }
+      
+      .accent-shape {
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        border: 2px solid rgba(0, 217, 255, 0.15);
+        transform: rotate(45deg);
+        top: 80px;
+        right: 60px;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="grid-background"></div>
+        <div class="accent-shape"></div>
+        
+        <div class="content-wrapper">
+            <div class="header">
+                <h1 class="page-title">Real-Time Communication System</h1>
+                <p class="page-subtitle">WebSocket-based architecture enables instant notifications and live dashboard updates</p>
+            </div>
+            
+            <div class="main-content">
+                <div class="left-column">
+                    <h2 class="section-title">Socket.IO Implementation</h2>
+                    <div class="implementation-list">
+                        <div class="impl-item">
+                            <div class="impl-icon"><i class="fas fa-broadcast-tower"></i></div>
+                            <div class="impl-text">
+                                <div class="impl-title">Server-side Broadcasting</div>
+                                <div class="impl-desc">Centralized event emitter in Express server</div>
+                            </div>
+                        </div>
+                        
+                        <div class="impl-item">
+                            <div class="impl-icon"><i class="fas fa-headphones"></i></div>
+                            <div class="impl-text">
+                                <div class="impl-title">Client-side Listeners</div>
+                                <div class="impl-desc">React hooks for automatic UI updates</div>
+                            </div>
+                        </div>
+                        
+                        <div class="impl-item">
+                            <div class="impl-icon"><i class="fas fa-users"></i></div>
+                            <div class="impl-text">
+                                <div class="impl-title">Room-based Targeting</div>
+                                <div class="impl-desc">Employer-specific and user-specific channels</div>
+                            </div>
+                        </div>
+                        
+                        <div class="impl-item">
+                            <div class="impl-icon"><i class="fas fa-sync"></i></div>
+                            <div class="impl-text">
+                                <div class="impl-title">Automatic Reconnection</div>
+                                <div class="impl-desc">Resilient connection with exponential backoff</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="right-column">
+                    <h2 class="section-title">Real-Time Events</h2>
+                    <div class="events-list">
+                        <div class="event-item">
+                            <div class="event-number">EVENT 1</div>
+                            <div class="event-title">Engagement Score Alerts</div>
+                            <div class="event-desc">Instant notifications when candidate engagement crosses thresholds</div>
+                        </div>
+                        
+                        <div class="event-item">
+                            <div class="event-number">EVENT 2</div>
+                            <div class="event-title">A/B Test Results</div>
+                            <div class="event-desc">Live updates when statistical significance is reached</div>
+                        </div>
+                        
+                        <div class="event-item">
+                            <div class="event-number">EVENT 3</div>
+                            <div class="event-title">Interview Reminders</div>
+                            <div class="event-desc">Automated reminders 24 hours before scheduled interviews</div>
+                        </div>
+                        
+                        <div class="event-item">
+                            <div class="event-number">EVENT 4</div>
+                            <div class="event-title">Application Status Changes</div>
+                            <div class="event-desc">Real-time updates to candidates and employers</div>
+                        </div>
+                        
+                        <div class="event-item">
+                            <div class="event-number">EVENT 5</div>
+                            <div class="event-title">Feedback Submission</div>
+                            <div class="event-desc">Immediate alerts when interviewers submit feedback</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="performance-section">
+                <div class="perf-title">Performance Optimization</div>
+                <div class="perf-items">
+                    <div class="perf-item">
+                        <div class="perf-icon"><i class="fas fa-layer-group"></i></div>
+                        <div class="perf-text">Event batching reduces network overhead</div>
+                    </div>
+                    
+                    <div class="perf-item">
+                        <div class="perf-icon"><i class="fas fa-filter"></i></div>
+                        <div class="perf-text">Selective subscription minimizes updates</div>
+                    </div>
+                    
+                    <div class="perf-item">
+                        <div class="perf-icon"><i class="fas fa-code"></i></div>
+                        <div class="perf-text">Efficient JSON serialization with Superjson</div>
+                    </div>
+                    
+                    <div class="perf-item">
+                        <div class="perf-icon"><i class="fas fa-network-wired"></i></div>
+                        <div class="perf-text">Connection pooling for scalability</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

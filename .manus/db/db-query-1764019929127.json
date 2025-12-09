@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS campaign_executions (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  campaign_id INT NOT NULL,\n  candidate_id INT NOT NULL,\n  sent_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,\n  status ENUM('sent', 'delivered', 'opened', 'clicked', 'bounced', 'failed') DEFAULT 'sent',\n  opened_at TIMESTAMP NULL,\n  clicked_at TIMESTAMP NULL,\n  error_message TEXT,\n  FOREIGN KEY (campaign_id) REFERENCES email_campaigns(id) ON DELETE CASCADE\n)",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3HwZw1vuDqLodBY.root --database hjcHA4SjAwhM6aP28vcAkH --execute CREATE TABLE IF NOT EXISTS campaign_executions (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  campaign_id INT NOT NULL,\n  candidate_id INT NOT NULL,\n  sent_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,\n  status ENUM('sent', 'delivered', 'opened', 'clicked', 'bounced', 'failed') DEFAULT 'sent',\n  opened_at TIMESTAMP NULL,\n  clicked_at TIMESTAMP NULL,\n  error_message TEXT,\n  FOREIGN KEY (campaign_id) REFERENCES email_campaigns(id) ON DELETE CASCADE\n)",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1863
+}

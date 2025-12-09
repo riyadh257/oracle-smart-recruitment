@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Measurable Impact</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .slide-container {
+      width: 1280px;
+      min-height: 720px;
+      background: #1F233E;
+      font-family: 'Space Grotesk', sans-serif;
+      color: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      padding-top: 60px;
+      padding-left: 80px;
+      padding-right: 80px;
+      margin-bottom: 50px;
+    }
+
+    .page-title {
+      font-size: 48px;
+      font-weight: 700;
+      color: #FFFFFF;
+      position: relative;
+      display: inline-block;
+    }
+
+    .page-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 120px;
+      height: 4px;
+      background: linear-gradient(90deg, #04DBFA, #00E3B5);
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 35px;
+      padding-left: 80px;
+      padding-right: 80px;
+      padding-top: 20px;
+    }
+
+    .metric-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 2px solid rgba(4, 219, 250, 0.2);
+      min-height: 200px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .metric-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #04DBFA, #00E3B5);
+    }
+
+    .metric-card:nth-child(2)::before {
+      background: linear-gradient(90deg, #00E3B5, #04DBFA);
+    }
+
+    .metric-card:nth-child(3)::before {
+      background: linear-gradient(90deg, #8EC5FC, #04DBFA);
+    }
+
+    .metric-card:nth-child(4)::before {
+      background: linear-gradient(90deg, #04DBFA, #8EC5FC);
+    }
+
+    .metric-value {
+      font-size: 72px;
+      font-weight: 700;
+      color: #04DBFA;
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .metric-card:nth-child(2) .metric-value {
+      color: #00E3B5;
+    }
+
+    .metric-card:nth-child(3) .metric-value {
+      color: #8EC5FC;
+    }
+
+    .metric-card:nth-child(4) .metric-value {
+      color: #04DBFA;
+    }
+
+    .metric-label {
+      font-size: 20px;
+      font-weight: 600;
+      color: #FFFFFF;
+      text-align: center;
+      line-height: 1.3;
+      padding-left: 30px;
+      padding-right: 30px;
+      margin-bottom: 12px;
+    }
+
+    .metric-context {
+      font-size: 14px;
+      font-weight: 300;
+      color: #8EC5FC;
+      text-align: center;
+      padding-left: 30px;
+      padding-right: 30px;
+      line-height: 1.4;
+    }
+
+    .accent-line {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #04DBFA 0%, #00E3B5 50%, #1F233E 100%);
+    }
+
+    .background-pattern {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(4, 219, 250, 0.08) 0%, rgba(4, 219, 250, 0) 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .header,
+    .metrics-grid {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="background-pattern"></div>
+    
+    <div class="header">
+      <h1 class="page-title">Measurable Impact</h1>
+    </div>
+
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-value">70%</div>
+        <div class="metric-label">Reduction in Screening Time</div>
+        <div class="metric-context">AI-powered analysis processes applications in minutes versus days of manual review</div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-value">30%</div>
+        <div class="metric-label">Decrease in Time-to-Hire</div>
+        <div class="metric-context">Automated workflows and intelligent scheduling accelerate the hiring pipeline</div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-value">85%</div>
+        <div class="metric-label">Improvement in Candidate Quality</div>
+        <div class="metric-context">Predictive analytics ensure better job-candidate matching and long-term success</div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-value">40%</div>
+        <div class="metric-label">Reduction in Administrative Overhead</div>
+        <div class="metric-context">Self-service portal and automation free up HR teams for strategic initiatives</div>
+      </div>
+    </div>
+
+    <div class="accent-line"></div>
+  </div>
+</body>
+</html>

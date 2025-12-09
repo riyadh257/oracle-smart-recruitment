@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: linear-gradient(135deg, #0A1628 0%, #1A2332 100%);
+        font-family: 'Inter', sans-serif;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .grid-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.05;
+        background-image: 
+          linear-gradient(#00D9FF 1px, transparent 1px),
+          linear-gradient(90deg, #00D9FF 1px, transparent 1px);
+        background-size: 40px 40px;
+      }
+      
+      .content-wrapper {
+        position: relative;
+        z-index: 2;
+        padding-top: 60px;
+        padding-left: 80px;
+        padding-right: 80px;
+        min-height: 720px;
+      }
+      
+      .header {
+        margin-bottom: 32px;
+      }
+      
+      .page-title {
+        font-size: 40px;
+        font-weight: 700;
+        color: #00D9FF;
+        margin-bottom: 8px;
+      }
+      
+      .page-subtitle {
+        font-size: 20px;
+        color: #E8EDF2;
+        font-weight: 400;
+      }
+      
+      .main-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        margin-bottom: 24px;
+      }
+      
+      .dimensions-section {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+      
+      .section-label {
+        font-size: 16px;
+        color: #00CCA3;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 6px;
+      }
+      
+      .dimension-item {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        background: rgba(0, 217, 255, 0.03);
+        padding-top: 16px;
+        padding-left: 20px;
+        padding-right: 20px;
+        min-height: 80px;
+      }
+      
+      .dimension-weight {
+        width: 70px;
+        height: 70px;
+        border: 3px solid #0066FF;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      
+      .weight-value {
+        font-size: 24px;
+        font-weight: 700;
+        color: #00D9FF;
+      }
+      
+      .dimension-info {
+        flex: 1;
+      }
+      
+      .dimension-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #E8EDF2;
+        margin-bottom: 4px;
+      }
+      
+      .dimension-desc {
+        font-size: 14px;
+        color: #E8EDF2;
+        opacity: 0.8;
+        line-height: 1.4;
+      }
+      
+      .pipeline-section {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .pipeline-step {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding-top: 12px;
+        padding-left: 18px;
+        padding-right: 18px;
+        min-height: 70px;
+        background: rgba(0, 102, 255, 0.05);
+        border-left: 3px solid #00CCA3;
+      }
+      
+      .step-number {
+        width: 32px;
+        height: 32px;
+        background: rgba(0, 217, 255, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        font-weight: 700;
+        color: #00D9FF;
+        flex-shrink: 0;
+      }
+      
+      .step-text {
+        font-size: 16px;
+        color: #E8EDF2;
+        font-weight: 500;
+        line-height: 1.4;
+      }
+      
+      .metrics-section {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(0, 217, 255, 0.2);
+      }
+      
+      .metric-box {
+        text-align: center;
+        padding-top: 16px;
+      }
+      
+      .metric-value {
+        font-size: 28px;
+        font-weight: 700;
+        color: #00D9FF;
+        margin-bottom: 6px;
+      }
+      
+      .metric-label {
+        font-size: 14px;
+        color: #E8EDF2;
+        font-weight: 400;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="grid-background"></div>
+        
+        <div class="content-wrapper">
+            <div class="header">
+                <h1 class="page-title">AI-Powered Matching Engine</h1>
+                <p class="page-subtitle">Multi-dimensional matching algorithm analyzes 10,000+ attributes to identify optimal candidate-job fit</p>
+            </div>
+            
+            <div class="main-content">
+                <div class="dimensions-section">
+                    <div class="section-label">Matching Dimensions</div>
+                    
+                    <div class="dimension-item">
+                        <div class="dimension-weight">
+                            <span class="weight-value">40%</span>
+                        </div>
+                        <div class="dimension-info">
+                            <div class="dimension-title">Technical Skills Matching</div>
+                            <div class="dimension-desc">Exact skill matching, experience level, technology stack, certifications</div>
+                        </div>
+                    </div>
+                    
+                    <div class="dimension-item">
+                        <div class="dimension-weight">
+                            <span class="weight-value">25%</span>
+                        </div>
+                        <div class="dimension-info">
+                            <div class="dimension-title">Cultural Fit Analysis</div>
+                            <div class="dimension-desc">Work style preferences, company culture, collaboration patterns</div>
+                        </div>
+                    </div>
+                    
+                    <div class="dimension-item">
+                        <div class="dimension-weight">
+                            <span class="weight-value">20%</span>
+                        </div>
+                        <div class="dimension-info">
+                            <div class="dimension-title">Wellbeing & Work-Life Balance</div>
+                            <div class="dimension-desc">Remote preferences, schedule flexibility, commute, work-life priorities</div>
+                        </div>
+                    </div>
+                    
+                    <div class="dimension-item">
+                        <div class="dimension-weight">
+                            <span class="weight-value">15%</span>
+                        </div>
+                        <div class="dimension-info">
+                            <div class="dimension-title">Compensation & Benefits</div>
+                            <div class="dimension-desc">Salary range, benefits package, career growth, equity structure</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="pipeline-section">
+                    <div class="section-label">AI Processing Pipeline</div>
+                    
+                    <div class="pipeline-step">
+                        <div class="step-number">1</div>
+                        <div class="step-text">Resume parsing extracts structured data from unstructured documents</div>
+                    </div>
+                    
+                    <div class="pipeline-step">
+                        <div class="step-number">2</div>
+                        <div class="step-text">NLP analysis infers soft skills and personality traits from writing style</div>
+                    </div>
+                    
+                    <div class="pipeline-step">
+                        <div class="step-number">3</div>
+                        <div class="step-text">LLM-powered enrichment generates comprehensive candidate profiles</div>
+                    </div>
+                    
+                    <div class="pipeline-step">
+                        <div class="step-number">4</div>
+                        <div class="step-text">Multi-dimensional scoring algorithm calculates match percentages</div>
+                    </div>
+                    
+                    <div class="pipeline-step">
+                        <div class="step-number">5</div>
+                        <div class="step-text">Explainable AI provides detailed match breakdowns for transparency</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="metrics-section">
+                <div class="metric-box">
+                    <div class="metric-value">Sub-Second</div>
+                    <div class="metric-label">Matching for typical candidate-job pairs</div>
+                </div>
+                
+                <div class="metric-box">
+                    <div class="metric-value">95%+</div>
+                    <div class="metric-label">Accuracy in skill extraction from resumes</div>
+                </div>
+                
+                <div class="metric-box">
+                    <div class="metric-value">Continuous</div>
+                    <div class="metric-label">Learning from hiring outcomes</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

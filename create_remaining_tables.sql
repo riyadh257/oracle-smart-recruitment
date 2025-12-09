@@ -1,0 +1,235 @@
+-- Company Insights from Glassdoor
+CREATE TABLE IF NOT EXISTS companyInsights (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  companyName VARCHAR(255) NOT NULL,
+  glassdoorId VARCHAR(255),
+  overallRating INT,
+  cultureRating INT,
+  workLifeBalanceRating INT,
+  seniorManagementRating INT,
+  compensationRating INT,
+  careerOpportunitiesRating INT,
+  reviewCount INT,
+  recommendToFriend INT,
+  ceoApproval INT,
+  pros TEXT,
+  cons TEXT,
+  industry VARCHAR(255),
+  size VARCHAR(100),
+  headquarters VARCHAR(255),
+  founded INT,
+  lastUpdated TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+  INDEX idx_company_name (companyName)
+);
+
+-- Enhanced Candidate Attributes
+CREATE TABLE IF NOT EXISTS candidateAttributes (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  candidateId INT NOT NULL UNIQUE,
+  communicationScore INT,
+  leadershipScore INT,
+  teamworkScore INT,
+  problemSolvingScore INT,
+  adaptabilityScore INT,
+  creativityScore INT,
+  criticalThinkingScore INT,
+  emotionalIntelligenceScore INT,
+  empathyScore INT,
+  selfAwarenessScore INT,
+  preferredWorkPace ENUM('fast', 'moderate', 'methodical'),
+  preferredTeamSize ENUM('solo', 'small', 'medium', 'large'),
+  preferredManagementStyle ENUM('hands_on', 'collaborative', 'autonomous'),
+  preferredCommunicationStyle ENUM('direct', 'collaborative', 'formal', 'informal'),
+  careerAmbitionLevel INT,
+  learningAgility INT,
+  growthPotential INT,
+  requiresPrayerBreaks BOOLEAN DEFAULT FALSE,
+  prefersSeparateGenderWorkspace BOOLEAN DEFAULT FALSE,
+  requiresHalalDining BOOLEAN DEFAULT FALSE,
+  culturalAccommodationNeeds JSON,
+  maxOvertimeHoursPerWeek INT,
+  requiresFlexibleHours BOOLEAN DEFAULT FALSE,
+  familyCommitments ENUM('none', 'low', 'moderate', 'high'),
+  aiConfidenceScore INT,
+  attributeSource ENUM('self_reported', 'ai_inferred', 'hybrid') DEFAULT 'hybrid',
+  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+  updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL,
+  INDEX idx_candidate_id (candidateId)
+);
+
+-- Enhanced Job Attributes
+CREATE TABLE IF NOT EXISTS jobAttributes (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  jobId INT NOT NULL UNIQUE,
+  requiredCommunicationLevel INT,
+  requiredLeadershipLevel INT,
+  requiredTeamworkLevel INT,
+  requiredProblemSolvingLevel INT,
+  requiredAdaptabilityLevel INT,
+  teamSize INT,
+  teamWorkStyle ENUM('collaborative', 'independent', 'mixed'),
+  managementStyle ENUM('hands_on', 'collaborative', 'autonomous'),
+  workPaceExpectation ENUM('fast', 'moderate', 'methodical'),
+  overtimeExpectation INT,
+  travelRequirement INT,
+  providesPrayerFacilities BOOLEAN DEFAULT FALSE,
+  hasGenderSeparateWorkspaces BOOLEAN DEFAULT FALSE,
+  providesHalalDining BOOLEAN DEFAULT FALSE,
+  saudizationCompliant BOOLEAN DEFAULT FALSE,
+  nitaqatCategory ENUM('platinum', 'green', 'yellow', 'red'),
+  careerGrowthOpportunities INT,
+  trainingBudgetPerYear INT,
+  mentorshipAvailable BOOLEAN DEFAULT FALSE,
+  flexibleHoursAvailable BOOLEAN DEFAULT FALSE,
+  paidTimeOffDays INT,
+  parentalLeaveWeeks INT,
+  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+  updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL,
+  INDEX idx_job_id (jobId)
+);
+
+-- Predictive Recruitment Intelligence
+CREATE TABLE IF NOT EXISTS predictiveInsights (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  employerId INT NOT NULL,
+  predictedHiringNeedDate TIMESTAMP NULL,
+  predictedRole VARCHAR(255),
+  predictedHeadcount INT,
+  predictionConfidence INT,
+  predictionReason TEXT,
+  identifiedSkillGaps JSON,
+  turnoverRiskDepartments JSON,
+  seasonalHiringPattern JSON,
+  talentScarcityLevel ENUM('low', 'moderate', 'high', 'critical'),
+  averageTimeToFillDays INT,
+  competitiveHiringPressure INT,
+  recommendedActions JSON,
+  proactiveTalentPipelineSize INT,
+  status ENUM('active', 'actioned', 'dismissed') DEFAULT 'active',
+  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+  updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL,
+  INDEX idx_employer_id (employerId),
+  INDEX idx_status (status)
+);
+
+-- Retention & Burnout Prevention
+CREATE TABLE IF NOT EXISTS retentionMetrics (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  candidateId INT,
+  employerId INT,
+  applicationId INT,
+  burnoutRiskScore INT,
+  workLifeBalanceScore INT,
+  jobSatisfactionPrediction INT,
+  retentionProbability6Month INT,
+  retentionProbability1Year INT,
+  retentionProbability2Year INT,
+  identifiedRiskFactors JSON,
+  protectiveFactors JSON,
+  recommendedInterventions JSON,
+  careerDevelopmentNeeds JSON,
+  engagementScore INT,
+  motivationLevel INT,
+  assessmentDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+  INDEX idx_candidate_id (candidateId),
+  INDEX idx_employer_id (employerId),
+  INDEX idx_application_id (applicationId)
+);
+
+-- KSA Market Intelligence
+CREATE TABLE IF NOT EXISTS ksaMarketData (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  skillName VARCHAR(255) NOT NULL,
+  demandLevel ENUM('low', 'moderate', 'high', 'critical') NOT NULL,
+  demandTrend ENUM('declining', 'stable', 'growing', 'surging'),
+  averageSalary INT,
+  salaryRangeMin INT,
+  salaryRangeMax INT,
+  primaryIndustries JSON,
+  vision2030Alignment BOOLEAN DEFAULT FALSE,
+  saudizationPriority BOOLEAN DEFAULT FALSE,
+  availableTalentCount INT,
+  talentGapPercentage INT,
+  recommendedCourses JSON,
+  averageTrainingDuration INT,
+  dataSource VARCHAR(255),
+  lastUpdated TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+  INDEX idx_skill_name (skillName),
+  INDEX idx_demand_level (demandLevel)
+);
+
+-- Competitive Intelligence
+CREATE TABLE IF NOT EXISTS competitiveMetrics (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  metricName VARCHAR(255) NOT NULL,
+  metricCategory ENUM('matching', 'speed', 'quality', 'cost', 'features') NOT NULL,
+  oracleValue INT,
+  oracleRank INT,
+  recruitHoldingsValue INT,
+  eightfoldValue INT,
+  industryAverageValue INT,
+  unit VARCHAR(50),
+  higherIsBetter BOOLEAN DEFAULT TRUE,
+  competitiveAdvantage TEXT,
+  improvementOpportunity TEXT,
+  lastUpdated TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+  INDEX idx_metric_category (metricCategory)
+);
+
+-- Strategic ROI Tracking
+CREATE TABLE IF NOT EXISTS strategicRoi (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  employerId INT NOT NULL,
+  hireId INT,
+  candidateId INT,
+  jobId INT,
+  day90PerformanceScore INT,
+  day180PerformanceScore INT,
+  year1PerformanceScore INT,
+  stillEmployed BOOLEAN DEFAULT TRUE,
+  terminationDate TIMESTAMP NULL,
+  terminationReason VARCHAR(255),
+  costPerHire INT,
+  costPerQualityHire INT,
+  timeToHireDays INT,
+  estimatedValueGenerated INT,
+  roiPercentage INT,
+  vsTraditionalRecruitmentCost INT,
+  vsTraditionalRecruitmentTime INT,
+  hireDate TIMESTAMP NOT NULL,
+  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+  updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL,
+  INDEX idx_employer_id (employerId),
+  INDEX idx_candidate_id (candidateId)
+);
+
+-- KSA-Specific Coaching Sessions
+CREATE TABLE IF NOT EXISTS ksaCoachingSessions (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  candidateId INT NOT NULL,
+  sessionType ENUM(
+    'ksa_market_guidance',
+    'vision2030_alignment',
+    'saudization_advice',
+    'arabic_cv_optimization',
+    'cultural_fit_coaching',
+    'salary_negotiation_ksa',
+    'industry_specific_prep'
+  ) NOT NULL,
+  userQuery TEXT,
+  aiResponse TEXT,
+  targetIndustry VARCHAR(255),
+  targetRole VARCHAR(255),
+  skillGapsIdentified JSON,
+  recommendedUpskilling JSON,
+  marketInsightsProvided JSON,
+  actionItemsGenerated JSON,
+  candidateSatisfaction INT,
+  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+  INDEX idx_candidate_id (candidateId),
+  INDEX idx_session_type (sessionType)
+);

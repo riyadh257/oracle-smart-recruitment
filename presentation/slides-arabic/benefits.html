@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font-family: 'Cairo', sans-serif; }
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+      
+      .header {
+        padding-top: 50px;
+        text-align: center;
+        margin-bottom: 45px;
+      }
+      
+      .title {
+        font-size: 36px;
+        font-weight: 700;
+        color: #60A5FA;
+        margin-bottom: 12px;
+      }
+      
+      .subtitle {
+        font-size: 18px;
+        color: #94A3B8;
+      }
+      
+      .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding-left: 80px;
+        padding-right: 80px;
+        margin-bottom: 10px;
+      }
+      
+      .benefit-card {
+        background: rgba(30, 41, 59, 0.5);
+        padding-top: 25px;
+        padding-left: 35px;
+        padding-right: 35px;
+        min-height: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      
+      .benefit-icon-wrapper {
+        width: 70px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 12px;
+      }
+      
+      .benefit-icon {
+        font-size: 40px;
+      }
+      
+      .icon-blue { color: #60A5FA; }
+      .icon-green { color: #10B981; }
+      .icon-purple { color: #8B5CF6; }
+      .icon-orange { color: #F59E0B; }
+      
+      .benefit-percentage {
+        font-size: 48px;
+        font-weight: 800;
+        margin-bottom: 8px;
+        line-height: 1;
+      }
+      
+      .percentage-blue { color: #60A5FA; }
+      .percentage-green { color: #10B981; }
+      .percentage-purple { color: #8B5CF6; }
+      .percentage-orange { color: #F59E0B; }
+      
+      .benefit-title {
+        font-size: 22px;
+        font-weight: 700;
+        color: #E2E8F0;
+        margin-bottom: 8px;
+      }
+      
+      .benefit-desc {
+        font-size: 15px;
+        color: #94A3B8;
+        line-height: 1.6;
+      }
+      
+      .highlight {
+        color: #10B981;
+        font-weight: 600;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1 class="title">الفوائد والنتائج</h1>
+            <p class="subtitle">تأثير ملموس على كفاءة وجودة عملية التوظيف</p>
+        </div>
+        
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon-wrapper">
+                    <i class="fas fa-clock benefit-icon icon-blue"></i>
+                </div>
+                <div class="benefit-percentage percentage-blue">70%</div>
+                <h3 class="benefit-title">توفير الوقت</h3>
+                <p class="benefit-desc">
+                    تقليل وقت عملية التوظيف من <span class="highlight">أسابيع إلى أيام</span> من خلال التحليل الآلي والتقييم السريع
+                </p>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon-wrapper">
+                    <i class="fas fa-trophy benefit-icon icon-green"></i>
+                </div>
+                <div class="benefit-percentage percentage-green">85%</div>
+                <h3 class="benefit-title">تحسين جودة التوظيف</h3>
+                <p class="benefit-desc">
+                    اختيار أفضل المرشحين بناءً على <span class="highlight">معايير موضوعية</span> ودقيقة تضمن التطابق المثالي
+                </p>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon-wrapper">
+                    <i class="fas fa-balance-scale benefit-icon icon-purple"></i>
+                </div>
+                <div class="benefit-percentage percentage-purple">90%</div>
+                <h3 class="benefit-title">تقليل التحيز</h3>
+                <p class="benefit-desc">
+                    قرارات مبنية على <span class="highlight">البيانات والأداء الفعلي</span> دون تأثير العوامل الشخصية
+                </p>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon-wrapper">
+                    <i class="fas fa-chart-line benefit-icon icon-orange"></i>
+                </div>
+                <div class="benefit-percentage percentage-orange">60%</div>
+                <h3 class="benefit-title">زيادة الكفاءة</h3>
+                <p class="benefit-desc">
+                    خفض التكاليف التشغيلية وزيادة <span class="highlight">إنتاجية فريق الموارد البشرية</span> بشكل كبير
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

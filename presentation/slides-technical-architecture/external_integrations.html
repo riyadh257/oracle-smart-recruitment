@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: linear-gradient(135deg, #0A0E27 0%, #1a1f3a 100%);
+        position: relative;
+        font-family: 'Inter', sans-serif;
+      }
+      
+      .header {
+        padding-top: 60px;
+        padding-left: 80px;
+        padding-right: 80px;
+        margin-bottom: 35px;
+      }
+      
+      .page-title {
+        font-size: 40px;
+        font-weight: 700;
+        color: #E0E7FF;
+        margin-bottom: 15px;
+      }
+      
+      .title-accent {
+        width: 120px;
+        height: 4px;
+        background: linear-gradient(90deg, #3B82F6 0%, #8B5CF6 100%);
+      }
+      
+      .integrations-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+        padding-left: 80px;
+        padding-right: 80px;
+        padding-top: 10px;
+      }
+      
+      .integration-column {
+        background: rgba(59, 130, 246, 0.08);
+        border: 2px solid rgba(59, 130, 246, 0.3);
+        padding-top: 30px;
+        padding-left: 25px;
+        padding-right: 25px;
+        min-height: 420px;
+      }
+      
+      .integration-icon-wrapper {
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+      
+      .integration-icon-wrapper i {
+        font-size: 32px;
+        color: #E0E7FF;
+      }
+      
+      .integration-name {
+        font-size: 24px;
+        font-weight: 700;
+        color: #E0E7FF;
+        margin-bottom: 8px;
+      }
+      
+      .integration-type {
+        font-size: 14px;
+        color: #8B5CF6;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+      }
+      
+      .features-list {
+        list-style: none;
+        margin-bottom: 20px;
+      }
+      
+      .feature-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 14px;
+      }
+      
+      .feature-icon {
+        width: 24px;
+        height: 24px;
+        min-width: 24px;
+        background: rgba(59, 130, 246, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 12px;
+        margin-top: 2px;
+      }
+      
+      .feature-icon i {
+        font-size: 12px;
+        color: #3B82F6;
+      }
+      
+      .feature-text {
+        font-size: 16px;
+        color: #94A3B8;
+        line-height: 1.5;
+      }
+      
+      .status-section {
+        padding-left: 80px;
+        padding-right: 80px;
+        padding-top: 25px;
+      }
+      
+      .status-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #8B5CF6;
+        margin-bottom: 15px;
+      }
+      
+      .status-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+      }
+      
+      .status-card {
+        background: rgba(139, 92, 246, 0.08);
+        border: 2px solid rgba(139, 92, 246, 0.2);
+        padding-top: 15px;
+        padding-left: 20px;
+        padding-right: 20px;
+        height: 85px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      
+      .status-label {
+        font-size: 14px;
+        color: #94A3B8;
+        margin-bottom: 8px;
+      }
+      
+      .status-value {
+        font-size: 16px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      
+      .status-ready {
+        color: #3B82F6;
+      }
+      
+      .status-icon {
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(59, 130, 246, 0.2);
+      }
+      
+      .status-icon i {
+        font-size: 12px;
+        color: #3B82F6;
+      }
+      
+      .sync-badge {
+        display: inline-block;
+        background: rgba(59, 130, 246, 0.15);
+        color: #3B82F6;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        padding-left: 12px;
+        padding-right: 12px;
+        font-size: 13px;
+        font-weight: 600;
+        margin-top: 15px;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <div class="page-title">External Integrations</div>
+            <div class="title-accent"></div>
+        </div>
+        
+        <div class="integrations-grid">
+            <!-- Indeed API Integration -->
+            <div class="integration-column">
+                <div class="integration-icon-wrapper">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <div class="integration-name">Indeed API</div>
+                <div class="integration-type">Job Board Integration</div>
+                
+                <ul class="features-list">
+                    <li class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="feature-text">Job search API integration</div>
+                    </li>
+                    <li class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-mouse-pointer"></i>
+                        </div>
+                        <div class="feature-text">One-Click Apply functionality</div>
+                    </li>
+                    <li class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-sync"></i>
+                        </div>
+                        <div class="feature-text">Job posting sync to Indeed</div>
+                    </li>
+                    <li class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-filter"></i>
+                        </div>
+                        <div class="feature-text">Cross-platform deduplication</div>
+                    </li>
+                </ul>
+                
+                <span class="sync-badge"><i class="fas fa-clock"></i> Sync: &lt; 5 minutes</span>
+            </div>
+            
+            <!-- Glassdoor API Integration -->
+            <div class="integration-column">
+                <div class="integration-icon-wrapper">
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="integration-name">Glassdoor API</div>
+                <div class="integration-type">Employer Branding</div>
+                
+                <ul class="features-list">
+                    <li class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <div class="feature-text">Company reviews integration</div>
+                    </li>
+                    <li class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <div class="feature-text">Employer branding with ratings</div>
+                    </li>
+                    <li class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="feature-text">Rating display on job posts</div>
+                    </li>
+                    <li class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-calendar-day"></i>
+                        </div>
+                        <div class="feature-text">Daily sync automation</div>
+                    </li>
+                </ul>
+                
+                <span class="sync-badge"><i class="fas fa-clock"></i> Sync: Daily</span>
+            </div>
+            
+            <!-- ATS Integration -->
+            <div class="integration-column">
+                <div class="integration-icon-wrapper">
+                    <i class="fas fa-network-wired"></i>
+                </div>
+                <div class="integration-name">ATS Integration</div>
+                <div class="integration-type">Multi-System Support</div>
+                
+                <ul class="features-list">
+                    <li class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-plug"></i>
+                        </div>
+                        <div class="feature-text">Multi-system ATS support</div>
+                    </li>
+                    <li class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <div class="feature-text">Bidirectional data sync</div>
+                    </li>
+                    <li class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-webhook"></i>
+                        </div>
+                        <div class="feature-text">Webhook support for events</div>
+                    </li>
+                    <li class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="feature-text">Automated sync workflows</div>
+                    </li>
+                </ul>
+                
+                <span class="sync-badge"><i class="fas fa-bolt"></i> Real-time</span>
+            </div>
+        </div>
+        
+        <div class="status-section">
+            <div class="status-title"><i class="fas fa-info-circle"></i> Implementation Status</div>
+            <div class="status-grid">
+                <div class="status-card">
+                    <div class="status-label">Indeed API</div>
+                    <div class="status-value status-ready">
+                        <div class="status-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <span>Implementation Ready</span>
+                    </div>
+                </div>
+                
+                <div class="status-card">
+                    <div class="status-label">Glassdoor API</div>
+                    <div class="status-value status-ready">
+                        <div class="status-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <span>Implementation Ready</span>
+                    </div>
+                </div>
+                
+                <div class="status-card">
+                    <div class="status-label">ATS Integration</div>
+                    <div class="status-value status-ready">
+                        <div class="status-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <span>Fully Operational</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
